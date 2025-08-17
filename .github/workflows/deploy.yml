@@ -45,5 +45,6 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist
         force_orphan: true
+        enable_jekyll: false
         # 启用 CNAME 文件支持自定义域名（可选）
         # cname: your-domain.com
