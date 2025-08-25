@@ -1,0 +1,12 @@
+{
+  "darkmode": true,
+  "themeLocation": "theme.json",
+  "extend": {
+    "primary": "#16a34a",
+    "success": "#22c55e",
+    "warning": "#f59e0b",
+    "danger": "#ef4444",
+    "info": "#0d9488"
+  },
+  "style": "v2"
+}

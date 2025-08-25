@@ -1,0 +1,199 @@
+<!-- 项目页面 - 新能源编程俱乐部 -->
+<view class="page-container">
+  <!-- 背景效果 -->
+  <view class="absolute-bg">
+    <view class="bg-gradient-1"></view>
+    <view class="bg-gradient-2"></view>
+  </view>
+
+  <!-- 头部 -->
+  <view class="header">
+    <view class="back-btn" bindtap="navigateBack">
+      <image src="../../assets/icons/arrow-left.png" class="back-icon" />
+    </view>
+    <text class="header-title">项目展示</text>
+    <view class="header-actions">
+      <image src="../../assets/icons/search.png" class="action-icon" bindtap="showSearch" />
+      <image src="../../assets/icons/filter.png" class="action-icon" bindtap="showFilter" />
+    </view>
+  </view>
+
+  <!-- 项目分类 -->
+  <view class="project-categories">
+    <scroll-view class="category-scroll" scroll-x="true">
+      <view class="category-list">
+        <view class="category-item {{currentCategory === 'all' ? 'active' : ''}}" bindtap="switchCategory" data-category="all">
+          <text>全部项目</text>
+        </view>
+        <view class="category-item {{currentCategory === 'web' ? 'active' : ''}}" bindtap="switchCategory" data-category="web">
+          <text>Web应用</text>
+        </view>
+        <view class="category-item {{currentCategory === 'mobile' ? 'active' : ''}}" bindtap="switchCategory" data-category="mobile">
+          <text>移动应用</text>
+        </view>
+        <view class="category-item {{currentCategory === 'ai' ? 'active' : ''}}" bindtap="switchCategory" data-category="ai">
+          <text>人工智能</text>
+        </view>
+        <view class="category-item {{currentCategory === 'iot' ? 'active' : ''}}" bindtap="switchCategory" data-category="iot">
+          <text>物联网</text>
+        </view>
+        <view class="category-item {{currentCategory === 'blockchain' ? 'active' : ''}}" bindtap="switchCategory" data-category="blockchain">
+          <text>区块链</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 项目网格 -->
+  <view class="projects-grid">
+    <view wx:for="{{filteredProjects}}" wx:key="id" class="project-card glass-card" bindtap="viewProjectDetail" data-project="{{item}}">
+      <image src="{{item.cover}}" class="project-cover" mode="aspectFill" />
+      <view class="project-badge {{item.status}}">{{item.statusText}}</view>
+      <view class="project-content">
+        <text class="project-title">{{item.title}}</text>
+        <text class="project-desc">{{item.description}}</text>
+        
+        <view class="project-tech">
+          <text wx:for="{{item.technologies.slice(0, 3)}}" wx:key="index" class="tech-tag">{{item}}</text>
+          <text wx:if="{{item.technologies.length > 3}}" class="tech-more">+{{item.technologies.length - 3}}</text>
+        </view>
+
+        <view class="project-meta">
+          <view class="meta-item">
+            <image src="../../assets/icons/calendar.png" class="meta-icon" />
+            <text class="meta-text">{{item.date}}</text>
+          </view>
+          <view class="meta-item">
+            <image src="../../assets/icons/users.png" class="meta-icon" />
+            <text class="meta-text">{{item.teamSize}}人</text>
+          </view>
+        </view>
+
+        <view class="project-progress">
+          <view class="progress-bar">
+            <view class="progress-fill" style="width: {{item.progress}}%;"></view>
+          </view>
+          <text class="progress-text">{{item.progress}}%</text>
+        </view>
+
+        <view class="project-actions">
+          <button class="btn btn-sm btn-outline" bindtap="viewDemo" data-url="{{item.demoUrl}}">演示</button>
+          <button class="btn btn-sm btn-primary" bindtap="viewCode" data-url="{{item.codeUrl}}">代码</button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 加载更多 -->
+  <view class="load-more" wx:if="{{hasMore}}">
+    <button class="btn btn-outline" bindtap="loadMore">加载更多项目</button>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-state" wx:if="{{filteredProjects.length === 0}}">
+    <image src="../../assets/icons/empty-projects.png" class="empty-icon" />
+    <text class="empty-text">暂无项目</text>
+    <text class="empty-desc">当前分类下没有项目</text>
+  </view>
+
+  <!-- 底部导航 -->
+  <view class="bottom-nav">
+    <view class="nav-item" bindtap="switchToHome">
+      <image src="../../assets/icons/home.png" class="nav-icon" />
+      <text class="nav-text">首页</text>
+    </view>
+    <view class="nav-item" bindtap="switchToTeam">
+      <image src="../../assets/icons/team.png" class="nav-icon" />
+      <text class="nav-text">团队</text>
+    </view>
+    <view class="nav-item active">
+      <image src="../../assets/icons/project-active.png" class="nav-icon" />
+      <text class="nav-text">项目</text>
+    </view>
+    <view class="nav-item" bindtap="switchToJoin">
+      <image src="../../assets/icons/join.png" class="nav-icon" />
+      <text class="nav-text">加入</text>
+    </view>
+  </view>
+
+  <!-- 项目详情模态框 -->
+  <view class="modal {{showProjectDetail ? 'show' : ''}}" wx:if="{{showProjectDetail}}">
+    <view class="modal-overlay" bindtap="hideProjectDetail"></view>
+    <view class="modal-content">
+      <view class="modal-header">
+        <text class="modal-title">项目详情</text>
+        <image src="../../assets/icons/close.png" class="modal-close" bindtap="hideProjectDetail" />
+      </view>
+      <scroll-view class="modal-body" scroll-y="true">
+        <view class="project-detail">
+          <image src="{{currentProject.cover}}" class="detail-cover" mode="aspectFill" />
+          <view class="detail-badge {{currentProject.status}}">{{currentProject.statusText}}</view>
+          
+          <text class="detail-title">{{currentProject.title}}</text>
+          <text class="detail-date">{{currentProject.date}}</text>
+          
+          <view class="detail-section">
+            <text class="section-title">项目描述</text>
+            <text class="section-content">{{currentProject.fullDescription}}</text>
+          </view>
+
+          <view class="detail-section">
+            <text class="section-title">技术栈</text>
+            <view class="tech-grid">
+              <text wx:for="{{currentProject.technologies}}" wx:key="index" class="tech-tag large">{{item}}</text>
+            </view>
+          </view>
+
+          <view class="detail-section">
+            <text class="section-title">项目进度</text>
+            <view class="progress-container">
+              <view class="progress-bar large">
+                <view class="progress-fill" style="width: {{currentProject.progress}}%;"></view>
+              </view>
+              <text class="progress-percent">{{currentProject.progress}}%</text>
+            </view>
+          </view>
+
+          <view class="detail-section">
+            <text class="section-title">团队成员</text>
+            <view class="team-members">
+              <view wx:for="{{currentProject.teamMembers}}" wx:key="id" class="member-item">
+                <image src="{{item.avatar}}" class="member-avatar" />
+                <text class="member-name">{{item.name}}</text>
+                <text class="member-role">{{item.role}}</text>
+              </view>
+            </view>
+          </view>
+
+          <view class="detail-section">
+            <text class="section-title">项目成果</text>
+            <view class="achievements">
+              <view wx:for="{{currentProject.achievements}}" wx:key="index" class="achievement-item">
+                <image src="../../assets/icons/check.png" class="achievement-icon" />
+                <text class="achievement-text">{{item}}</text>
+              </view>
+            </view>
+          </view>
+
+          <view class="detail-section">
+            <text class="section-title">相关链接</text>
+            <view class="project-links">
+              <view class="link-item" bindtap="openLink" data-url="{{currentProject.demoUrl}}">
+                <image src="../../assets/icons/link.png" class="link-icon" />
+                <text class="link-text">在线演示</text>
+              </view>
+              <view class="link-item" bindtap="openLink" data-url="{{currentProject.codeUrl}}">
+                <image src="../../assets/icons/github.png" class="link-icon" />
+                <text class="link-text">GitHub仓库</text>
+              </view>
+              <view class="link-item" bindtap="openLink" data-url="{{currentProject.docsUrl}}">
+                <image src="../../assets/icons/docs.png" class="link-icon" />
+                <text class="link-text">项目文档</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

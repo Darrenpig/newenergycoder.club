@@ -1,0 +1,58 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/team/team",
+    "pages/projects/projects",
+    "pages/join/join",
+    "pages/about/about"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#0f172a",
+    "navigationBarTitleText": "新能源编程俱乐部",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#0f172a",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#94a3b8",
+    "selectedColor": "#16a34a",
+    "backgroundColor": "#0f172a",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/icons/home.png",
+        "selectedIconPath": "assets/icons/home-active.png"
+      },
+      {
+        "pagePath": "pages/team/team",
+        "text": "团队",
+        "iconPath": "assets/icons/team.png",
+        "selectedIconPath": "assets/icons/team-active.png"
+      },
+      {
+        "pagePath": "pages/projects/projects",
+        "text": "项目",
+        "iconPath": "assets/icons/project.png",
+        "selectedIconPath": "assets/icons/project-active.png"
+      },
+      {
+        "pagePath": "pages/join/join",
+        "text": "加入",
+        "iconPath": "assets/icons/join.png",
+        "selectedIconPath": "assets/icons/join-active.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false,
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "themeLocation": "theme.json"
+}

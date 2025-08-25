@@ -1,0 +1,126 @@
+<!-- 首页 - 新能源编程俱乐部 -->
+<view class="page-container">
+  <!-- 背景效果 -->
+  <view class="absolute-bg">
+    <view class="bg-gradient-1"></view>
+    <view class="bg-gradient-2"></view>
+    <view class="bg-gradient-3"></view>
+  </view>
+
+  <!-- 主要内容 -->
+  <view class="content-container">
+    <!-- 头部标签 -->
+    <view class="tag-container">
+      <view class="glass-tag">
+        <image src="../../assets/icons/lightning.png" class="tag-icon" />
+        <text class="tag-text">探索科技与可持续发展的未来</text>
+      </view>
+    </view>
+
+    <!-- 主标题 -->
+    <view class="hero-title">
+      <text class="title-text">新能源编程</text>
+      <text class="title-highlight">俱乐部</text>
+    </view>
+
+    <!-- 描述 -->
+    <view class="description">
+      <text>我们致力于将编程技术与新能源创新相结合，培养未来科技领袖，推动可持续发展。</text>
+    </view>
+
+    <!-- 功能卡片 -->
+    <view class="features-grid">
+      <view class="feature-card hover-lift" bindtap="navigateToJoin">
+        <view class="feature-icon-container">
+          <image src="../../assets/icons/code.png" class="feature-icon" />
+        </view>
+        <text class="feature-title">编程工作坊</text>
+        <text class="feature-desc">学习最新编程技术，提升开发技能</text>
+      </view>
+
+      <view class="feature-card hover-lift" bindtap="navigateToProjects">
+        <view class="feature-icon-container">
+          <image src="../../assets/icons/lightbulb.png" class="feature-icon" />
+        </view>
+        <text class="feature-title">创新项目</text>
+        <text class="feature-desc">参与新能源相关的技术项目开发</text>
+      </view>
+
+      <view class="feature-card hover-lift" bindtap="navigateToTeam">
+        <view class="feature-icon-container">
+          <image src="../../assets/icons/connection.png" class="feature-icon" />
+        </view>
+        <text class="feature-title">行业连接</text>
+        <text class="feature-desc">与行业专家和企业建立合作关系</text>
+      </view>
+    </view>
+
+    <!-- 行动按钮 -->
+    <view class="action-buttons">
+      <button class="btn btn-ios-primary" bindtap="navigateToJoin">
+        <text>立即加入</text>
+        <image src="../../assets/icons/arrow-right.png" class="btn-icon" />
+      </button>
+      <button class="btn btn-outline" bindtap="viewGitee">
+        <text>查看代码库</text>
+      </button>
+    </view>
+
+    <!-- 统计数据 -->
+    <view class="stats-container">
+      <view class="stat-item">
+        <text class="stat-number">50+</text>
+        <text class="stat-label">活跃成员</text>
+      </view>
+      <view class="stat-item">
+        <text class="stat-number">20+</text>
+        <text class="stat-label">完成项目</text>
+      </view>
+      <view class="stat-item">
+        <text class="stat-number">10+</text>
+        <text class="stat-label">合作伙伴</text>
+      </view>
+    </view>
+
+    <!-- 最新动态 -->
+    <view class="news-section">
+      <view class="section-header">
+        <text class="section-title">最新动态</text>
+        <text class="section-more" bindtap="viewAllNews">查看全部</text>
+      </view>
+      
+      <view class="news-list">
+        <view class="news-item glass-card">
+          <view class="news-badge">新</view>
+          <text class="news-title">2024开源之夏项目启动</text>
+          <text class="news-date">2024-05-20</text>
+        </view>
+        
+        <view class="news-item glass-card">
+          <text class="news-title">新能源技术研讨会成功举办</text>
+          <text class="news-date">2024-04-15</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部导航 -->
+  <view class="bottom-nav">
+    <view class="nav-item" bindtap="switchToHome">
+      <image src="../../assets/icons/home-active.png" class="nav-icon" />
+      <text class="nav-text">首页</text>
+    </view>
+    <view class="nav-item" bindtap="switchToTeam">
+      <image src="../../assets/icons/team.png" class="nav-icon" />
+      <text class="nav-text">团队</text>
+    </view>
+    <view class="nav-item" bindtap="switchToProjects">
+      <image src="../../assets/icons/project.png" class="nav-icon" />
+      <text class="nav-text">项目</text>
+    </view>
+    <view class="nav-item" bindtap="switchToJoin">
+      <image src="../../assets/icons/join.png" class="nav-icon" />
+      <text class="nav-text">加入</text>
+    </view>
+  </view>
+</view>

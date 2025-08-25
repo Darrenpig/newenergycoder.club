@@ -1,0 +1,156 @@
+<!-- 团队页面 - 新能源编程俱乐部 -->
+<view class="page-container">
+  <!-- 背景效果 -->
+  <view class="absolute-bg">
+    <view class="bg-gradient-1"></view>
+    <view class="bg-gradient-2"></view>
+  </view>
+
+  <!-- 头部 -->
+  <view class="header">
+    <view class="back-btn" bindtap="navigateBack">
+      <image src="../../assets/icons/arrow-left.png" class="back-icon" />
+    </view>
+    <text class="header-title">团队成员</text>
+    <view class="header-actions">
+      <image src="../../assets/icons/search.png" class="action-icon" bindtap="showSearch" />
+      <image src="../../assets/icons/filter.png" class="action-icon" bindtap="showFilter" />
+    </view>
+  </view>
+
+  <!-- 团队分类 -->
+  <view class="team-categories">
+    <scroll-view class="category-scroll" scroll-x="true">
+      <view class="category-list">
+        <view class="category-item {{currentCategory === 'all' ? 'active' : ''}}" bindtap="switchCategory" data-category="all">
+          <text>全部</text>
+        </view>
+        <view class="category-item {{currentCategory === 'maintainer' ? 'active' : ''}}" bindtap="switchCategory" data-category="maintainer">
+          <text>维护者</text>
+        </view>
+        <view class="category-item {{currentCategory === 'developer' ? 'active' : ''}}" bindtap="switchCategory" data-category="developer">
+          <text>开发者</text>
+        </view>
+        <view class="category-item {{currentCategory === 'designer' ? 'active' : ''}}" bindtap="switchCategory" data-category="designer">
+          <text>设计师</text>
+        </view>
+        <view class="category-item {{currentCategory === 'contributor' ? 'active' : ''}}" bindtap="switchCategory" data-category="contributor">
+          <text>贡献者</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 团队成员列表 -->
+  <view class="team-list">
+    <view wx:for="{{filteredMembers}}" wx:key="id" class="member-card glass-card" bindtap="viewMemberDetail" data-member="{{item}}">
+      <image src="{{item.avatar}}" class="member-avatar" mode="aspectFill" />
+      <view class="member-badge {{item.role}}">{{item.roleText}}</view>
+      <view class="member-info">
+        <text class="member-name">{{item.name}}</text>
+        <text class="member-position">{{item.position}}</text>
+        <text class="member-desc">{{item.description}}</text>
+      </view>
+      <view class="member-skills">
+        <text wx:for="{{item.skills}}" wx:key="index" class="skill-tag">{{item}}</text>
+      </view>
+      <view class="member-stats">
+        <view class="stat">
+          <text class="stat-number">{{item.projects}}</text>
+          <text class="stat-label">项目</text>
+        </view>
+        <view class="stat">
+          <text class="stat-number">{{item.contributions}}</text>
+          <text class="stat-label">贡献</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 加载更多 -->
+  <view class="load-more" wx:if="{{hasMore}}">
+    <button class="btn btn-outline" bindtap="loadMore">加载更多</button>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-state" wx:if="{{filteredMembers.length === 0}}">
+    <image src="../../assets/icons/empty-team.png" class="empty-icon" />
+    <text class="empty-text">暂无团队成员</text>
+    <text class="empty-desc">当前分类下没有团队成员</text>
+  </view>
+
+  <!-- 底部导航 -->
+  <view class="bottom-nav">
+    <view class="nav-item" bindtap="switchToHome">
+      <image src="../../assets/icons/home.png" class="nav-icon" />
+      <text class="nav-text">首页</text>
+    </view>
+    <view class="nav-item active">
+      <image src="../../assets/icons/team-active.png" class="nav-icon" />
+      <text class="nav-text">团队</text>
+    </view>
+    <view class="nav-item" bindtap="switchToProjects">
+      <image src="../../assets/icons/project.png" class="nav-icon" />
+      <text class="nav-text">项目</text>
+    </view>
+    <view class="nav-item" bindtap="switchToJoin">
+      <image src="../../assets/icons/join.png" class="nav-icon" />
+      <text class="nav-text">加入</text>
+    </view>
+  </view>
+
+  <!-- 成员详情模态框 -->
+  <view class="modal {{showMemberDetail ? 'show' : ''}}" wx:if="{{showMemberDetail}}">
+    <view class="modal-overlay" bindtap="hideMemberDetail"></view>
+    <view class="modal-content">
+      <view class="modal-header">
+        <text class="modal-title">成员详情</text>
+        <image src="../../assets/icons/close.png" class="modal-close" bindtap="hideMemberDetail" />
+      </view>
+      <scroll-view class="modal-body" scroll-y="true">
+        <view class="member-detail">
+          <image src="{{currentMember.avatar}}" class="detail-avatar" mode="aspectFill" />
+          <view class="detail-badge {{currentMember.role}}">{{currentMember.roleText}}</view>
+          <text class="detail-name">{{currentMember.name}}</text>
+          <text class="detail-position">{{currentMember.position}}</text>
+          
+          <view class="detail-section">
+            <text class="section-title">个人介绍</text>
+            <text class="section-content">{{currentMember.bio}}</text>
+          </view>
+
+          <view class="detail-section">
+            <text class="section-title">专业技能</text>
+            <view class="skills-grid">
+              <text wx:for="{{currentMember.skills}}" wx:key="index" class="skill-tag large">{{item}}</text>
+            </view>
+          </view>
+
+          <view class="detail-section">
+            <text class="section-title">项目经历</text>
+            <view class="projects-list">
+              <view wx:for="{{currentMember.projectsList}}" wx:key="id" class="project-item">
+                <text class="project-name">{{item.name}}</text>
+                <text class="project-desc">{{item.description}}</text>
+              </view>
+            </view>
+          </view>
+
+          <view class="detail-section">
+            <text class="section-title">联系方式</text>
+            <view class="contact-methods">
+              <view class="contact-item" bindtap="copyContact" data-type="email" data-value="{{currentMember.contact.email}}">
+                <image src="../../assets/icons/email.png" class="contact-icon" />
+                <text class="contact-text">{{currentMember.contact.email}}</text>
+              </view>
+              <view class="contact-item" bindtap="copyContact" data-type="github" data-value="{{currentMember.contact.github}}">
+                <image src="../../assets/icons/github.png" class="contact-icon" />
+                <text class="contact-text">{{currentMember.contact.github}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

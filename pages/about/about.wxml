@@ -1,0 +1,198 @@
+<!-- 关于页面 - 新能源编程俱乐部 -->
+<view class="page-container">
+  <!-- 背景效果 -->
+  <view class="absolute-bg">
+    <view class="bg-gradient-1"></view>
+    <view class="bg-gradient-2"></view>
+  </view>
+
+  <!-- 头部 -->
+  <view class="header">
+    <view class="back-btn" bindtap="navigateBack">
+      <image src="../../assets/icons/arrow-left.png" class="back-icon" />
+    </view>
+    <text class="header-title">关于我们</text>
+    <view class="header-actions">
+      <image src="../../assets/icons/info.png" class="action-icon" bindtap="showAboutInfo" />
+    </view>
+  </view>
+
+  <!-- 主要内容 -->
+  <scroll-view class="content-scroll" scroll-y="true">
+    <!-- 关于卡片 -->
+    <view class="about-card">
+      <text class="about-title">新能源编程俱乐部</text>
+      <text class="about-desc">
+        我们是一个专注于新能源技术与软件开发的创新社区。致力于通过技术推动可持续发展，
+        培养优秀的开发者，创造有影响力的开源项目。
+      </text>
+    </view>
+
+    <!-- 使命愿景 -->
+    <view class="mission-vision">
+      <view class="mission-item">
+        <image src="../../assets/icons/mission.png" class="mission-icon" />
+        <text class="mission-title">使命</text>
+        <text class="mission-text">通过技术创新推动新能源发展，培养下一代技术人才</text>
+      </view>
+      <view class="mission-item">
+        <image src="../../assets/icons/vision.png" class="mission-icon" />
+        <text class="mission-title">愿景</text>
+        <text class="mission-text">成为全球领先的新能源技术开源社区</text>
+      </view>
+    </view>
+
+    <!-- 统计信息 -->
+    <view class="stats-grid">
+      <view class="stat-card">
+        <text class="stat-number">50+</text>
+        <text class="stat-label">活跃成员</text>
+      </view>
+      <view class="stat-card">
+        <text class="stat-number">15+</text>
+        <text class="stat-label">进行中项目</text>
+      </view>
+      <view class="stat-card">
+        <text class="stat-number">8</text>
+        <text class="stat-label">已完成项目</text>
+      </view>
+      <view class="stat-card">
+        <text class="stat-number">200+</text>
+        <text class="stat-label">代码提交</text>
+      </view>
+    </view>
+
+    <!-- 发展历程 -->
+    <view class="about-card">
+      <text class="about-title">发展历程</text>
+      <view class="timeline-section">
+        <view class="timeline-item">
+          <view class="timeline-dot"></view>
+          <view class="timeline-content">
+            <text class="timeline-date">2024年1月</text>
+            <text class="timeline-event">俱乐部成立</text>
+            <text class="timeline-desc">由一群热爱新能源技术的开发者共同创立</text>
+          </view>
+        </view>
+        <view class="timeline-item">
+          <view class="timeline-dot"></view>
+          <view class="timeline-content">
+            <text class="timeline-date">2024年3月</text>
+            <text class="timeline-event">首个项目启动</text>
+            <text class="timeline-desc">新能源数据可视化平台项目正式启动</text>
+          </view>
+        </view>
+        <view class="timeline-item">
+          <view class="timeline-dot"></view>
+          <view class="timeline-content">
+            <text class="timeline-date">2024年6月</text>
+            <text class="timeline-event">开源发布</text>
+            <text class="timeline-desc">首个开源项目在GitHub上发布</text>
+          </view>
+        </view>
+        <view class="极速版-item">
+          <view class="timeline-dot"></view>
+          <view class="timeline-content">
+            <text class="timeline-date">2024年9月</text>
+            <text class="timeline-event">社区扩张</text>
+            <text class="timeline-desc">成员数量突破50人，项目数量达到10个</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 合作伙伴 -->
+    <view class="about-card">
+      <text class="about-title">合作伙伴</text>
+      <view class="partners-grid">
+        <view class="partner-card">
+          <image src="../../assets/partners/gitee.png" class="partner-logo" />
+          <text class="partner-name">Gitee</text>
+          <text class="partner-type">代码托管</text>
+        </view>
+        <view class="partner-card">
+          <image src="../../assets/partners/github.png" class="partner-logo" />
+          <text class="partner-name">GitHub</text>
+          <text class="partner-type">开源社区</text>
+        </view>
+        <view class="partner-card">
+          <image src="../../assets/partners/tencent.png" class="partner-logo" />
+          <text class="partner-name">腾讯云</text>
+          <text class="partner-type">云服务</text>
+        </view>
+        <view class="partner-card">
+          <image src="../../assets/partners/opensource.png" class="partner-logo" />
+          <text class="partner-name">开放原子</text>
+          <text class="partner-type">开源基金会</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 技术栈 -->
+    <view class="about-card">
+      <text class="about-title">技术栈</text>
+      <text class="about-desc">
+        我们使用现代化的技术栈进行开发，包括前端框架、后端技术、数据库、
+        云计算平台和开发工具等。
+      </text>
+      <view class="stats-grid">
+        <view class="stat-card">
+          <text class="stat-number">React</text>
+          <text class="stat-label">前端框架</text>
+        </view>
+        <view class="stat-card">
+          <text class="stat-number">Node.js</text>
+          <text class="stat-label">后端运行时</text>
+        </view>
+        <view class="stat-card">
+          <text class="stat-number">MongoDB</text>
+          <text class="stat-label">数据库</text>
+        </view>
+        <view class="stat-card">
+          <text class="stat-number">Docker</text>
+          <text class="stat-label">容器化</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 联系方式 -->
+    <view class="about-card">
+      <text class="about-title">联系我们</text>
+      <text class="about-desc">
+        如果您对我们的工作感兴趣，或者想要加入我们，欢迎通过以下方式联系我们。
+      </text>
+      <view class="stats-grid">
+        <view class="stat-card" bindtap="contactEmail">
+          <image src="../../assets/icons/email.png" class="mission-icon" />
+          <text class="stat-label">邮箱</text>
+          <text class="stat-number">contact@energy-coder-club.org</text>
+        </view>
+        <view class="stat-card" bindtap="contactWechat">
+          <image src="../../assets/icons/wechat.png" class="mission-icon" />
+          <text class="stat-label">微信</text>
+          <text class="stat-number">EnergyCoderClub</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 底部导航 -->
+  <view class="bottom-nav">
+    <view class="nav-item" bindtap="switchToHome">
+      <image src="../../assets/icons/home.png" class="nav-icon" />
+      <text class="nav-text">首页</text>
+    </view>
+    <view class="nav-item" bindtap="switchToTeam">
+      <image src="../../assets/icons/team.png" class="nav-icon" />
+      <text class="nav-text">团队</text>
+    </view>
+    <view class="nav-item" bindtap="switchToProjects">
+      <image src="../../assets/icons/project.png" class="nav-icon" />
+      <text class="nav-text">项目</text>
+    </view>
+    <view class="nav-item" bindtap="switchToJoin">
+      <image src="../../assets/icons/join.png" class="nav-icon" />
+      <text class="nav-text">加入</text>
+    </view>
+  </view>
+</view>
