@@ -1,0 +1,44 @@
+/* 全局字体大小定义 - 不超过三种 */
+:root {
+  --font-size-sm: 24rpx;    /* 小号文字 */
+  --font-size-md: 28rpx;    /* 中号文字（正文） */
+  --font-size-lg: 32rpx;    /* 大号文字（标题） */
+}
+
+/* 基础样式 */
+page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  background: #0f172a;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* 文字大小类 */
+.text-sm { font-size: var(--font-size-sm); }
+.text-md { font-size: var(--font-size-md); }
+.text-lg { font-size: var(--font-size-lg); }
+
+/* 标题样式 */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin: 0 0 16rpx 0;
+}
+
+h1 { font-size: var(--font-size-lg); }
+h2 { font-size: var(--font-size-lg); }
+h3 { font-size: var(--font-size-md); }
+h4 { font-size: var(--font-size-md); }
+h5 { font-size: var(--font-size-md); }
+h6 { font-size: var(--font-size-sm); }
+
+/* 段落和正文 */
+p, .text-body {
+  font-size: var(--font-size-md);
+  margin: 0 0 16rpx 0;
+}
+
+/* 小文字 */
+.small, .text-muted {
+  font-size: var(--font-size-sm);
+  opacity: 0.8;
+}
