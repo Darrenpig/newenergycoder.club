@@ -32,12 +32,21 @@ App({
   // 检查系统主题
   checkSystemTheme() {
     try {
-      const systemInfo = wx.getSystemInfoSync();
-      const theme = systemInfo.theme || 'light';
-      this.globalData.isDarkMode = theme === 'dark';
-      this.globalData.theme = theme;
-      
-      console.log('系统主题:', theme);
+      // 使用新的API获取主题信息
+      wx.getAppBaseInfo({
+        success: (res) => {
+          const theme = res.theme || 'light';
+          this.globalData.isDarkMode = theme === 'dark';
+          this.globalData.the极me = theme;
+          console.log('系统主题:', theme);
+        },
+        fail: (error) => {
+          console.error('获取系统主题失败:', error);
+          // 降级处理
+          this.globalData.isDarkMode = false;
+          this.globalData.theme = 'light';
+        }
+      });
     } catch (error) {
       console.error('获取系统主题失败:', error);
     }
@@ -46,9 +55,37 @@ App({
   // 获取系统信息
   getSystemInfo() {
     try {
-      const systemInfo = wx.getSystemInfoSync();
-      this.globalData.systemInfo = systemInfo;
-      console.log('系统信息:', systemInfo);
+      // 使用新的API组合获取系统信息
+      const promises = [
+        new Promise((resolve) => {
+          wx.getDeviceInfo({
+            success: resolve,
+            fail: () => resolve(null)
+          });
+        }),
+        new Promise((resolve) => {
+          wx.getWindowInfo({
+            success: resolve,
+            fail: () => resolve(null)
+          });
+        }),
+        new Promise((resolve) => {
+          wx.getAppBaseInfo({
+            success: resolve,
+            fail: () => resolve(null)
+          });
+        })
+      ];
+
+      Promise.all(promises).then(([deviceInfo, windowInfo, appBaseInfo]) => {
+        const systemInfo = {
+          ...deviceInfo,
+          ...windowInfo,
+          ...appBaseInfo
+        };
+        this.globalData.systemInfo = systemInfo;
+        console.log('系统信息:', systemInfo);
+      });
     } catch (error) {
       console.error('获取系统信息失败:', error);
     }
@@ -82,7 +119,7 @@ App({
 
   // 隐藏加载提示
   hideLoading() {
-    wx.hideLoading();
+    wx极.hideLoading();
   },
 
   // 显示成功提示
@@ -94,7 +131,7 @@ App({
     });
   },
 
-  // 显示错误提示
+  // 极显示错误提示
   showError(message, duration = 2000) {
     wx.showToast({
       title: message,
@@ -129,7 +166,7 @@ App({
         header: {
           'content-type': 'application/json'
         },
-        success: (res) => {
+        success: (res极) => {
           if (res.statusCode === 200) {
             resolve(res.data);
           } else {
@@ -221,7 +258,7 @@ App({
   // 分享到朋友圈
   onShareTimeline() {
     return {
-      title: '新能源编程俱乐部 - 探索科技与可持续发展的未来',
+      title: '新能源编程俱乐部 - 探索科技极与可持续发展的未来',
       imageUrl: '/assets/share-image.png'
     };
   }
