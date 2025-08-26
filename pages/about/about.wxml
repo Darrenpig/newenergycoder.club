@@ -177,22 +177,5 @@
   </scroll-view>
 
   <!-- 底部导航 -->
-  <view class="bottom-nav">
-    <view class="nav-item" bindtap="switchToHome">
-      <image src="../../assets/icons/home.png" class="nav-icon" />
-      <text class="nav-text">首页</text>
-    </view>
-    <view class="nav-item" bindtap="switchToTeam">
-      <image src="../../assets/icons/team.png" class="nav-icon" />
-      <text class="nav-text">团队</text>
-    </view>
-    <view class="nav-item" bindtap="switchToProjects">
-      <image src="../../assets/icons/project.png" class="nav-icon" />
-      <text class="nav-text">项目</text>
-    </view>
-    <view class="nav-item" bindtap="switchToJoin">
-      <image src="../../assets/icons/join.png" class="nav-icon" />
-      <text class="nav-text">加入</text>
-    </view>
-  </view>
+  
 </view>
