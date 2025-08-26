@@ -160,11 +160,11 @@
         <view class="contact-card" bindtap="sendEmail">
           <image src="../../assets/icons/email.png" class="contact-icon" />
           <text class="contact-title">发送邮件</text>
-          <text class="contact-desc">contact@energy-coder-club.org</text>
+          <text class="contact-desc">22230635@czu.cn</text>
         </view>
-        <view class="contact-card" bindtap="joinQQGroup">
+        <view class="contact-card" bindtap="joinFeiShuGroup">
           <image src="../../assets/icons/qq.png" class="contact-icon" />
-          <text class="contact-title">QQ群</text>
+          <text class="contact-title">Feishu群</text>
           <text class="contact-desc">123456789（新能源编程俱乐部）</text>
         </view>
         <view class="contact-card" bindtap="followWechat">

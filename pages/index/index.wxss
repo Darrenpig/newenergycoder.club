@@ -203,6 +203,10 @@
   transition: all 0.2s ease;
 }
 
+.btn text {
+  text-align: center;
+}
+
 .btn-ios-primary {
   background: linear-gradient(135deg, #16a34a, #0d9488);
   color: white;

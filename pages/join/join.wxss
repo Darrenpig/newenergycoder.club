@@ -330,6 +330,7 @@
   font-weight: 600;
   border-radius: 16rpx;
   margin-top: 32rpx;
+  color: #000000;
 }
 
 .submit-btn:disabled {
