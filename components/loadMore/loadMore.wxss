@@ -1,0 +1,174 @@
+/* 加载更多组件样式 */
+.load-more-container {
+  padding: 40rpx 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 加载中状态 */
+.load-more-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20rpx;
+}
+
+.loading-spinner {
+  display: flex;
+  gap: 8rpx;
+  align-items: center;
+}
+
+.spinner-dot {
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  animation: loading-bounce 1.4s ease-in-out infinite both;
+}
+
+.spinner-dot.dot1 {
+  animation-delay: -0.32s;
+}
+
+.spinner-dot.dot2 {
+  animation-delay: -0.16s;
+}
+
+.spinner-dot.dot3 {
+  animation-delay: 0s;
+}
+
+@keyframes loading-bounce {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+.loading-text {
+  font-size: var(--font-size-md);
+  color: #666;
+  font-weight: 500;
+}
+
+/* 加载更多按钮 */
+.load-more-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.load-more-btn {
+  min-width: 200rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  border: 2rpx solid #e0e0e0;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10rpx);
+  color: #333;
+  font-size: 28rpx;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16rpx;
+  transition: all 0.3s ease;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+}
+
+.load-more-btn:hover {
+  border-color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+  transform: translateY(-2rpx);
+  box-shadow: 0 8rpx 20rpx rgba(102, 126, 234, 0.2);
+}
+
+.load-more-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+.load-more-icon {
+  width: 32rpx;
+  height: 32rpx;
+  opacity: 0.7;
+  transition: transform 0.3s ease;
+}
+
+.load-more-btn:hover .load-more-icon {
+  transform: rotate(180deg);
+}
+
+/* 没有更多数据状态 */
+.load-more-end {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  width: 100%;
+  padding: 0 40rpx;
+}
+
+.end-line {
+  flex: 1;
+  height: 2rpx;
+  background: linear-gradient(90deg, transparent 0%, #e0e0e0 50%, transparent 100%);
+}
+
+.end-text {
+  font-size: var(--font-size-sm);
+  color: #999;
+  white-space: nowrap;
+  padding: 0 20rpx;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20rpx;
+}
+
+/* 响应式设计 */
+@media (max-width: 750rpx) {
+  .load-more-container {
+    padding: 30rpx 0;
+  }
+  
+  .load-more-btn {
+    min-width: 160rpx;
+    height: 70rpx;
+    font-size: var(--font-size-md);
+  }
+  
+  .loading-text {
+    font-size: 26rpx;
+  }
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+  .load-more-btn {
+    background: rgba(0, 0, 0, 0.8);
+    border-color: #333;
+    color: #fff;
+  }
+  
+  .load-more-btn:hover {
+    background: rgba(102, 126, 234, 0.2);
+    border-color: #667eea;
+  }
+  
+  .loading-text {
+    color: #ccc;
+  }
+  
+  .end-text {
+    color: #666;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  .end-line {
+    background: linear-gradient(90deg, transparent 0%, #333 50%, transparent 100%);
+  }
+}

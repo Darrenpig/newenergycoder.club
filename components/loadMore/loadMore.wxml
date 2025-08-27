@@ -1,0 +1,27 @@
+<!-- 加载更多组件 -->
+<view class="load-more-container" wx:if="{{showLoadMore}}">
+  <!-- 加载中状态 -->
+  <view class="load-more-loading" wx:if="{{loading}}">
+    <view class="loading-spinner">
+      <view class="spinner-dot dot1"></view>
+      <view class="spinner-dot dot2"></view>
+      <view class="spinner-dot dot3"></view>
+    </view>
+    <text class="loading-text">{{loadingText || '加载中...'}}</text>
+  </view>
+  
+  <!-- 加载更多按钮 -->
+  <view class="load-more-button" wx:elif="{{hasMore}}" bindtap="onLoadMore">
+    <button class="btn btn-outline load-more-btn">
+      <image src="../../assets/icons/refresh.svg" class="load-more-icon" wx:if="{{!loading}}"></image>
+      {{buttonText || '加载更多'}}
+    </button>
+  </view>
+  
+  <!-- 没有更多数据 -->
+  <view class="load-more-end" wx:else>
+    <view class="end-line"></view>
+    <text class="end-text">{{endText || '没有更多数据了'}}</text>
+    <view class="end-line"></view>
+  </view>
+</view>

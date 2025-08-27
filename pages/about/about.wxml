@@ -21,10 +21,10 @@
   <scroll-view class="content-scroll" scroll-y="true">
     <!-- 关于卡片 -->
     <view class="about-card">
-      <text class="about-title">新能源编程俱乐部</text>
+      <text class="about-title">new energy coder club</text>
       <text class="about-desc">
-        我们是一个专注于新能源技术与软件开发的创新社区。致力于通过技术推动可持续发展，
-        培养优秀的开发者，创造有影响力的开源项目。
+        我们是一个专注于新能源技术与人形机器人的开源仓库。致力于通过技术推动可持续发展，
+        通过高效协作培养优秀的开发者与工程师，创造有技术影响力与人文担当的开源项目。
       </text>
     </view>
 
@@ -53,7 +53,7 @@
         <text class="stat-label">进行中项目</text>
       </view>
       <view class="stat-card">
-        <text class="stat-number">8</text>
+        <text class="stat-number">18</text>
         <text class="stat-label">已完成项目</text>
       </view>
       <view class="stat-card">
@@ -93,9 +93,9 @@
         <view class="极速版-item">
           <view class="timeline-dot"></view>
           <view class="timeline-content">
-            <text class="timeline-date">2024年9月</text>
+            <text class="timeline-date">2024年12月</text>
             <text class="timeline-event">社区扩张</text>
-            <text class="timeline-desc">成员数量突破50人，项目数量达到10个</text>
+            <text class="timeline-desc">成员数量突破80人，项目数量达到10个</text>
           </view>
         </view>
       </view>
@@ -106,22 +106,22 @@
       <text class="about-title">合作伙伴</text>
       <view class="partners-grid">
         <view class="partner-card">
-          <image src="../../assets/partners/gitee.png" class="partner-logo" />
+          
           <text class="partner-name">Gitee</text>
           <text class="partner-type">代码托管</text>
         </view>
         <view class="partner-card">
-          <image src="../../assets/partners/github.png" class="partner-logo" />
+          
           <text class="partner-name">GitHub</text>
           <text class="partner-type">开源社区</text>
         </view>
         <view class="partner-card">
-          <image src="../../assets/partners/tencent.png" class="partner-logo" />
+          
           <text class="partner-name">腾讯云</text>
           <text class="partner-type">云服务</text>
         </view>
         <view class="partner-card">
-          <image src="../../assets/partners/opensource.png" class="partner-logo" />
+          
           <text class="partner-name">开放原子</text>
           <text class="partner-type">开源基金会</text>
         </view>
@@ -132,8 +132,9 @@
     <view class="about-card">
       <text class="about-title">技术栈</text>
       <text class="about-desc">
-        我们使用现代化的技术栈进行开发，包括前端框架、后端技术、数据库、
-        云计算平台和开发工具等。
+        我们使用现代化的技术栈进行开发，包括
+        前端框架、后端技术、数据库、云计算平台
+        和开发工具等。
       </text>
       <view class="stats-grid">
         <view class="stat-card">
@@ -165,12 +166,12 @@
         <view class="stat-card" bindtap="contactEmail">
           <image src="../../assets/icons/email.png" class="mission-icon" />
           <text class="stat-label">邮箱</text>
-          <text class="stat-number">contact@energy-coder-club.org</text>
+          <text class="stat-number">22230635@czu.cn</text>
         </view>
         <view class="stat-card" bindtap="contactWechat">
           <image src="../../assets/icons/wechat.png" class="mission-icon" />
           <text class="stat-label">微信</text>
-          <text class="stat-number">EnergyCoderClub</text>
+          <text class="stat-number">Pei-pei-Zhu-Pig</text>
         </view>
       </view>
     </view>

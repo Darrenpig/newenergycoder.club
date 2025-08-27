@@ -1,5 +1,6 @@
 // projects.js
 const app = getApp()
+const { createLoadMoreHelper, handlePullDownRefresh, handleReachBottom } = require('../../utils/loadMoreHelper')
 
 Page({
   data: {
@@ -11,6 +12,8 @@ Page({
     currentProject: null,
     // 是否还有更多数据
     hasMore: true,
+    // 是否正在加载
+    loading: false,
     // 所有项目数据
     allProjects: [
       {
@@ -29,7 +32,7 @@ Page({
       {
         id: '2',
         title: '20250426星闪手柄',
-        description: '基于WS63的星闪手柄开发项目，采用星闪技术实现低延迟、高可靠性的无线通信，为游戏和控制应用提供优质体验。',
+        description: '基于WS63的星闪手柄开发项目，采用星闪技术实现低延迟、高可靠性的无线通信，为机器人和控制应用提供优质体验。',
         image: 'https://gitee.com/jumuwa/new_energy_coder_club/raw/master/Nearlink_handle.jpg',
         category: 'embedded',
         technologies: ['WS63', '星闪技术', 'NearLink', '嵌入式开发', '无线通信'],
@@ -137,6 +140,13 @@ Page({
 
   onLoad() {
     console.log('项目页面加载')
+    // 初始化加载更多助手
+    this.loadMoreHelper = createLoadMoreHelper({
+      loadingTitle: '加载更多项目...',
+      successTitle: '项目加载成功',
+      noMoreTitle: '没有更多项目了',
+      maxRetries: 3
+    })
     this.initData()
   },
 
@@ -145,16 +155,26 @@ Page({
   },
 
   onPullDownRefresh() {
-    console.log('下拉刷新')
-    setTimeout(() => {
-      wx.stopPullDownRefresh()
+    handlePullDownRefresh(this, () => {
       this.initData()
-    }, 1000)
+      // 重置加载更多助手状态
+      this.loadMoreHelper.reset()
+      this.setData({ hasMore: true })
+    })
   },
 
   onReachBottom() {
-    console.log('滚动到底部')
-    this.loadMore()
+    handleReachBottom(
+      this.loadMoreHelper,
+      this,
+      () => this.getMoreProjects(),
+      {
+        dataKey: 'filteredProjects',
+        hasMoreKey: 'hasMore',
+        loadingKey: 'loading',
+        maxItems: 20 // 最多显示20个项目
+      }
+    )
   },
 
   onShareAppMessage() {
@@ -185,12 +205,23 @@ Page({
     })
   },
 
+  // 显示排序选项
+  showSort() {
+    wx.showActionSheet({
+      itemList: ['按时间排序（最新优先）', '按时间排序（最早优先）', '按标题排序'],
+      success: (res) => {
+        this.sortProjects(res.tapIndex)
+      }
+    })
+  },
+
   // 显示筛选
   showFilter() {
     wx.showActionSheet({
       itemList: ['全部项目', 'AI智能', '物联网', '嵌入式', '机器人', '科研项目', 'Web开发', '移动应用', '其他'],
       success: (res) => {
         const categories = ['all', 'ai', 'iot', 'embedded', 'robotics', 'research', 'web', 'mobile', 'other']
+        const categoryNames = ['全部项目', 'AI智能', '物联网', '嵌入式', '机器人', '科研项目', 'Web开发', '移动应用', '其他']
         this.setData({ currentCategory: categories[res.tapIndex] })
         this.filterByCategory(categories[res.tapIndex])
       }
@@ -199,11 +230,25 @@ Page({
 
   // 按分类筛选
   filterByCategory(category) {
-    if (category === 'all') {
-      this.setData({ filteredProjects: this.data.allProjects })
-    } else {
-      const filtered = this.data.allProjects.filter(project => project.category === category)
-      this.setData({ filteredProjects: filtered })
+    try {
+      let filteredProjects = this.data.allProjects || []
+      
+      if (category && category !== 'all') {
+        filteredProjects = this.data.allProjects.filter(project => 
+          project && project.category === category
+        )
+      }
+      
+      this.setData({ 
+        filteredProjects,
+        currentCategory: category || 'all'
+      })
+    } catch (error) {
+      console.error('分类筛选出错:', error)
+      this.setData({ 
+        filteredProjects: this.data.allProjects || [],
+        currentCategory: 'all'
+      })
     }
   },
 
@@ -219,14 +264,14 @@ Page({
     let sortedProjects = [...this.data.filteredProjects]
     
     switch (type) {
-      case 0: // 按进度排序
-        sortedProjects.sort((a, b) => b.progress - a.progress)
-        break
-      case 1: // 按时间排序
+      case 0: // 按时间排序（最新优先）
         sortedProjects.sort((a, b) => new Date(b.date) - new Date(a.date))
         break
-      case 2: // 按团队规模排序
-        sortedProjects.sort((a, b) => b.teamSize - a.teamSize)
+      case 1: // 按时间排序（最早优先）
+        sortedProjects.sort((a, b) => new Date(a.date) - new Date(b.date))
+        break
+      case 2: // 按标题排序
+        sortedProjects.sort((a, b) => a.title.localeCompare(b.title))
         break
     }
     
@@ -258,77 +303,118 @@ Page({
 
   // 查看代码
   viewCode(e) {
-    const url = e.currentTarget.dataset.url
+    const project = e.currentTarget.dataset.project
+    const url = project.githubUrl
     this.openLink(url)
   },
 
   // 打开链接
   openLink(url) {
-    wx.showModal({
-      title: '打开链接',
-      content: '将在浏览器中打开链接',
+    if (!url) {
+      wx.showToast({
+        title: '链接不存在',
+        icon: 'none',
+        duration: 2000
+      })
+      return
+    }
+    
+    // 显示操作选项
+    wx.showActionSheet({
+      itemList: ['复制链接', '在浏览器中打开'],
       success: (res) => {
-        if (res.confirm) {
+        if (res.tapIndex === 0) {
+          // 复制链接到剪贴板
           wx.setClipboardData({
             data: url,
             success: () => {
               wx.showToast({
-                title: '链接已复制',
-                icon: 'success'
+                title: '链接已复制到剪贴板',
+                icon: 'success',
+                duration: 2000
+              })
+            },
+            fail: () => {
+              wx.showToast({
+                title: '复制失败，请重试',
+                icon: 'none',
+                duration: 2000
               })
             }
           })
+        } else if (res.tapIndex === 1) {
+          // 尝试在浏览器中打开
+          wx.showToast({
+            title: '请在浏览器中访问复制的链接',
+            icon: 'none',
+            duration: 3000
+          })
+          // 同时复制链接方便用户使用
+          wx.setClipboardData({
+            data: url,
+            success: () => {
+              console.log('链接已复制供浏览器使用')
+            }
+          })
         }
+      },
+      fail: () => {
+        // 用户取消操作，直接复制链接
+        wx.setClipboardData({
+          data: url,
+          success: () => {
+            wx.showToast({
+              title: '链接已复制到剪贴板',
+              icon: 'success',
+              duration: 2000
+            })
+          }
+        })
       }
     })
   },
 
-  // 加载更多
-  loadMore() {
-    if (!this.data.hasMore) return
+  // 处理加载更多组件的事件
+  onLoadMoreTrigger() {
+    if (this.data.loading || !this.data.hasMore) {
+      return
+    }
     
-    wx.showLoading({ title: '加载中...' })
-    
-    setTimeout(() => {
-      // 模拟加载更多数据
-      const newProjects = [...this.data.filteredProjects, ...this.getMoreProjects()]
-      this.setData({
-        filteredProjects: newProjects,
-        hasMore: newProjects.length < 10 // 假设最多10个项目
-      })
-      
-      wx.hideLoading()
-    }, 1500)
+    // 触发加载更多逻辑
+    this.onReachBottom()
   },
+
+  // 注意：loadMore方法已被通用的loadMoreHelper替代
+  // 现在通过onReachBottom中的handleReachBottom函数处理加载更多逻辑
 
   // 获取更多项目数据（模拟）
   getMoreProjects() {
     return [
       {
-        id: 6,
+        id: '10',
         title: '太阳能监控系统',
         description: '实时监控太阳能发电系统的性能和效率',
-        cover: '../../assets/projects/solar-monitor.png',
-        status: 'active',
-        statusText: '进行中',
+        image: 'https://gitee.com/darrenpig/new_energy_coder_club/raw/master/shared/images/Image/solar-panel.png',
+        category: 'iot',
         technologies: ['React', 'Python', 'MySQL'],
+        author: '新能源编程俱乐部',
         date: '2024-05-15',
-        teamSize: 3,
-        progress: 30,
-        category: 'iot'
+        githubUrl: 'https://gitee.com/darrenpig/new_energy_coder_club/tree/master/projects/iot/solar-monitor',
+        status: 'active',
+        statusText: '开发中'
       },
       {
-        id: 7,
+        id: '11',
         title: '能源数据分析平台',
         description: '大数据分析平台，处理海量能源数据',
-        cover: '../../assets/projects/data-analysis.png',
-        status: 'planning',
-        statusText: '规划中',
+        image: 'https://gitee.com/darrenpig/new_energy_coder_club/raw/master/shared/images/Image/data-analysis.png',
+        category: 'ai',
         technologies: ['Spark', 'Hadoop', 'Java'],
+        author: '新能源编程俱乐部',
         date: '2024-06-01',
-        teamSize: 4,
-        progress: 10,
-        category: 'ai'
+        githubUrl: 'https://gitee.com/darrenpig/new_energy_coder_club/tree/master/projects/ai/data-analysis',
+        status: 'active',
+        statusText: '开发中'
       }
     ]
   },

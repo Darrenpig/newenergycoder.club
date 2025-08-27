@@ -13,7 +13,7 @@
     </view>
     <text class="header-title">团队成员</text>
     <view class="header-actions">
-      <image src="../../assets/icons/search.png" class="action-icon" bindtap="showSearch" />
+      
       <image src="../../assets/icons/filter.png" class="action-icon" bindtap="showFilter" />
     </view>
   </view>
@@ -67,10 +67,16 @@
     </view>
   </view>
 
-  <!-- 加载更多 -->
-  <view class="load-more" wx:if="{{hasMore}}">
-    <button class="btn btn-outline" bindtap="loadMore">加载更多</button>
-  </view>
+  <!-- 加载更多组件 -->
+  <load-more 
+    show-load-more="{{hasMore || loading}}"
+    loading="{{loading}}"
+    has-more="{{hasMore}}"
+    loading-text="加载中..."
+    button-text="加载更多成员"
+    end-text="没有更多成员了"
+    bind:loadmore="onLoadMoreTrigger">
+  </load-more>
 
   <!-- 空状态 -->
   <view class="empty-state" wx:if="{{filteredMembers.length === 0}}">

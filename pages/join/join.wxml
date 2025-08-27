@@ -8,12 +8,12 @@
 
   <!-- 头部 -->
   <view class="header">
-    <view class="back-btn" bindtap="navigateBack">
-      <image src="../../assets/icons/arrow-left.png" class="back-icon" />
+    <view class="back-btn" bindtap="navigateBack" style="width: 70rpx; display: block; box-sizing: border-box; height: 72rpx">
+      <image style="width: 33rpx; display: inline-block; box-sizing: border-box; height: 35rpx; position: relative; left: 19rpx; top: 16rpx" src="../../assets/icons/arrow-left.png" class="back-icon" />
     </view>
     <text class="header-title">加入我们</text>
     <view class="header-actions">
-      <image src="../../assets/icons/info.png" class="action-icon" bindtap="showInfo" />
+      <image style="width: 70rpx; height: 72rpx; display: block; box-sizing: border-box" src="../../assets/icons/info.png" class="action-icon" bindtap="showInfo" />
     </view>
   </view>
 
@@ -21,8 +21,8 @@
   <scroll-view class="content-scroll" scroll-y="true">
     <!-- 欢迎部分 -->
     <view class="welcome-section">
-      <image src="../../assets/icons/join-hero.png" class="welcome-icon" />
-      <text class="welcome-title">加入新能源编程俱乐部</text>
+      
+      <text class="welcome-title">加入NEC新能源编程俱乐部</text>
       <text class="welcome-desc">与志同道合的开发者一起，用技术推动可持续发展</text>
     </view>
 
@@ -58,27 +58,27 @@
       <text class="section-title">选择你的角色</text>
       <view class="roles-grid">
         <view class="role-card {{selectedRole === 'developer' ? 'active' : ''}}" bindtap="selectRole" data-role="developer">
-          <image src="../../assets/icons/developer.png" class="role-icon" />
+          
           <text class="role-title">开发者</text>
           <text class="role-desc">参与代码开发和系统架构</text>
           <view class="role-skills">
             <text class="skill-tag">编程</text>
-            <text class="skill-tag">架构</text>
-            <text class="skill-tag">测试</text>
+            <text class="skill-tag">仓库架构</text>
+            <text class="skill-tag">硬件测试</text>
           </view>
         </view>
         <view class="role-card {{selectedRole === 'designer' ? 'active' : ''}}" bindtap="selectRole" data-role="designer">
-          <image src="../../assets/icons/designer.png" class="role-icon" />
+          
           <text class="role-title">设计师</text>
           <text class="role-desc">负责UI/UX设计和用户体验</text>
           <view class="role-skills">
             <text class="skill-tag">UI设计</text>
             <text class="skill-tag">用户体验</text>
-            <text class="skill-tag">原型</text>
+            <text class="skill-tag">原型Demo</text>
           </view>
         </view>
         <view class="role-card {{selectedRole === 'researcher' ? 'active' : ''}}" bindtap="selectRole" data-role="researcher">
-          <image src="../../assets/icons/researcher.png" class="role-icon" />
+          
           <text class="role-title">研究员</text>
           <text class="role-desc">进行技术研究和创新探索</text>
           <view class="role-skills">
@@ -88,7 +88,7 @@
           </view>
         </view>
         <view class="role-card {{selectedRole === 'contributor' ? 'active' : ''}}" bindtap="selectRole" data-role="contributor">
-          <image src="../../assets/icons/contributor.png" class="role-icon" />
+          
           <text class="role-title">贡献者</text>
           <text class="role-desc">参与文档编写和社区建设</text>
           <view class="role-skills">
@@ -121,7 +121,7 @@
         <!-- 技能和经验 -->
         <view class="form-group">
           <text class="form-label">技术技能</text>
-          <textarea class="form-textarea" placeholder="请描述您的技术技能（如编程语言、框架等）" value="{{formData.skills}}" bindinput="onInput" data-field="skills"></textarea>
+          <textarea class="form-textarea" placeholder="请描述您的技术技能（如编程语言、架构框架，设计软件Figma、Ai，机械软件SW、Rhino等）与做过哪些另人难忘的东西（经历/项目/里程碑）" value="{{formData.skills}}" bindinput="onInput" data-field="skills"></textarea>
         </view>
         <view class="form-group">
           <text class="form-label">项目经验</text>
@@ -142,8 +142,8 @@
 
         <!-- GitHub信息 -->
         <view class="form-group">
-          <text class="form-label">GitHub用户名</text>
-          <input class="form-input" placeholder="请输入您的GitHub用户名（选填）" value="{{formData.github}}" bindinput="onInput" data-field="github" />
+          <text class="form-label">Gitee用户名</text>
+          <input class="form-input" placeholder="请输入您的Gitee用户名（选填）" value="{{formData.github}}" bindinput="onInput" data-field="gitee" />
         </view>
 
         <!-- 提交按钮 -->
@@ -163,9 +163,10 @@
           <text class="contact-desc">22230635@czu.cn</text>
         </view>
         <view class="contact-card" bindtap="joinFeiShuGroup">
-          <image src="../../assets/icons/qq.png" class="contact-icon" />
-          <text class="contact-title">Feishu群</text>
-          <text class="contact-desc">123456789（新能源编程俱乐部）</text>
+          <image style="width: 58rpx; display: block; box-sizing: border-box" src="../../assets/icons/qq.png" class="contact-icon" />
+          <text class="contact-title">FeiShu
+          飞书群</text>
+          <text class="contact-desc">NEC开源仓库[企业邀请码]NLWQ JDEJ（new_energy_coder_club）</text>
         </view>
         <view class="contact-card" bindtap="followWechat">
           <image src="../../assets/icons/wechat.png" class="contact-icon" />

@@ -13,8 +13,8 @@
     </view>
     <text class="header-title">项目展示</text>
     <view class="header-actions">
-      <image src="../../assets/icons/search.png" class="action-icon" bindtap="showSearch" />
-      <image src="../../assets/icons/filter.png" class="action-icon" bindtap="showFilter" />
+      
+      <image style="width: 60rpx; height: 64rpx; display: block; box-sizing: border-box" src="../../assets/icons/filter.png" class="action-icon" bindtap="showFilter" />
     </view>
   </view>
 
@@ -47,7 +47,7 @@
   <!-- 项目网格 -->
   <view class="projects-grid">
     <view wx:for="{{filteredProjects}}" wx:key="id" class="project-card glass-card" bindtap="viewProjectDetail" data-project="{{item}}">
-      <image src="{{item.cover}}" class="project-cover" mode="aspectFill" />
+      
       <view class="project-badge {{item.status}}">{{item.statusText}}</view>
       <view class="project-content">
         <text class="project-title">{{item.title}}</text>
@@ -65,15 +65,15 @@
           </view>
           <view class="meta-item">
             <image src="../../assets/icons/users.png" class="meta-icon" />
-            <text class="meta-text">{{item.teamSize}}人</text>
+            <text class="meta-text">{{item.teamSize}}5+人</text>
           </view>
         </view>
 
-        <view class="project-progress">
+        <view class="project-progress" style="width: 639rpx; display: block; box-sizing: border-box">
           <view class="progress-bar">
             <view class="progress-fill" style="width: {{item.progress}}%;"></view>
           </view>
-          <text class="progress-text">{{item.progress}}%</text>
+          <text class="progress-text">{{item.progress}}</text>
         </view>
 
         <view class="project-actions">
@@ -84,10 +84,16 @@
     </view>
   </view>
 
-  <!-- 加载更多 -->
-  <view class="load-more" wx:if="{{hasMore}}">
-    <button class="btn btn-outline" bindtap="loadMore">加载更多项目</button>
-  </view>
+  <!-- 加载更多组件 -->
+  <load-more 
+    show-load-more="{{hasMore || loading}}"
+    loading="{{loading}}"
+    has-more="{{hasMore}}"
+    loading-text="加载中..."
+    button-text="加载更多项目"
+    end-text="没有更多项目了"
+    bind:loadmore="onLoadMoreTrigger">
+  </load-more>
 
   <!-- 空状态 -->
   <view class="empty-state" wx:if="{{filteredProjects.length === 0}}">

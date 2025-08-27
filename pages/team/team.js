@@ -1,5 +1,6 @@
 // team.js
 const app = getApp()
+const { createLoadMoreHelper, handlePullDownRefresh, handleReachBottom } = require('../../utils/loadMoreHelper.js')
 
 Page({
   data: {
@@ -11,6 +12,8 @@ Page({
     currentMember: null,
     // 是否还有更多数据
     hasMore: true,
+    // 是否正在加载
+    loading: false,
     // 所有团队成员数据
     allMembers: [
       // 维护者
@@ -582,6 +585,13 @@ Page({
 
   onLoad() {
     console.log('团队页面加载')
+    // 初始化加载更多助手
+    this.loadMoreHelper = createLoadMoreHelper({
+      loadingTitle: '加载更多成员...',
+      successTitle: '成员加载成功',
+      noMoreTitle: '没有更多成员了',
+      maxRetries: 3
+    })
     this.initData()
   },
 
@@ -590,16 +600,26 @@ Page({
   },
 
   onPullDownRefresh() {
-    console.log('下拉刷新')
-    setTimeout(() => {
-      wx.stopPullDownRefresh()
+    handlePullDownRefresh(this, () => {
       this.initData()
-    }, 1000)
+      // 重置加载更多助手状态
+      this.loadMoreHelper.reset()
+      this.setData({ hasMore: true })
+    })
   },
 
   onReachBottom() {
-    console.log('滚动到底部')
-    this.loadMore()
+    handleReachBottom(
+      this.loadMoreHelper,
+      this,
+      () => this.getMoreMembers(),
+      {
+        dataKey: 'filteredMembers',
+        hasMoreKey: 'hasMore',
+        loadingKey: 'loading',
+        maxItems: 50 // 最多显示50个成员
+      }
+    )
   },
 
   onShareAppMessage() {
@@ -689,23 +709,18 @@ Page({
     })
   },
 
-  // 加载更多
-  loadMore() {
-    if (!this.data.hasMore) return
+  // 处理加载更多组件的事件
+  onLoadMoreTrigger() {
+    if (this.data.loading || !this.data.hasMore) {
+      return
+    }
     
-    wx.showLoading({ title: '加载中...' })
-    
-    setTimeout(() => {
-      // 模拟加载更多数据
-      const newMembers = [...this.data.filteredMembers, ...this.getMoreMembers()]
-      this.setData({
-        filteredMembers: newMembers,
-        hasMore: newMembers.length < 20 // 假设最多20个成员
-      })
-      
-      wx.hideLoading()
-    }, 1500)
+    // 触发加载更多逻辑
+    this.onReachBottom()
   },
+
+  // 注意：loadMore方法已被通用的loadMoreHelper替代
+  // 现在通过onReachBottom中的handleReachBottom函数处理加载更多逻辑
 
   // 获取更多成员数据（模拟）
   getMoreMembers() {

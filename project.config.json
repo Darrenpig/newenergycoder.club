@@ -1,7 +1,7 @@
 {
   "setting": {
     "es6": false,
-    "postcss": false,
+    "postcss": true,
     "compileWorklet": false,
     "minified": false,
     "uglifyFileName": false,

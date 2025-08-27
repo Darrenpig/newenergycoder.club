@@ -60,18 +60,26 @@
 }
 
 .back-btn {
-  padding: 16rpx;
+  width: 70rpx;
+  height: 72rpx;
+  display: block;
+  box-sizing: border-box;
   border-radius: 12rpx;
   background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .back-icon {
-  width: 24rpx;
-  height: 24rpx;
+  width: 33rpx;
+  height: 35rpx;
+  display: inline-block;
+  box-sizing: border-box;
 }
 
 .header-title {
-  font-size: 32rpx;
+  font-size: var(--font-size-lg);
   font-weight: 600;
   color: #f1f5f9;
 }
@@ -110,7 +118,7 @@
   background: rgba(30, 41, 59, 0.6);
   border: 1rpx solid rgba(255, 255, 255, 0.1);
   border-radius: 20rpx;
-  font-size: 26rpx;
+  font-size: var(--font-size-md);
   color: #94a3b8;
   transition: all 0.3s ease;
 }
@@ -156,7 +164,7 @@
   right: 32rpx;
   padding: 8rpx 16rpx;
   border-radius: 12rpx;
-  font-size: 20rpx;
+  font-size: var(--font-size-sm);
   font-weight: 600;
 }
 
@@ -193,14 +201,14 @@
 }
 
 .member-position {
-  font-size: 24rpx;
+  font-size: var(--font-size-sm);
   color: #16a34a;
   display: block;
   margin-bottom: 12rpx;
 }
 
 .member-desc {
-  font-size: 26rpx;
+  font-size: var(--font-size-md);
   color: #94a3b8;
   line-height: 1.4;
   display: block;
@@ -235,7 +243,7 @@
 }
 
 .stat-number {
-  font-size: 28rpx;
+  font-size: var(--font-size-md);
   font-weight: 700;
   color: #16a34a;
   display: block;
@@ -243,7 +251,7 @@
 }
 
 .stat-label {
-  font-size: 22rpx;
+  font-size: var(--font-size-sm);
   color: #94a3b8;
   display: block;
 }
@@ -276,7 +284,7 @@
 }
 
 .empty-desc {
-  font-size: 26rpx;
+  font-size: var(--font-size-md);
   color: #94a3b8;
   display: block;
 }
@@ -412,7 +420,7 @@
 }
 
 .detail-name {
-  font-size: 36rpx;
+  font-size: var(--font-size-lg);
   font-weight: 700;
   color: #f1f5f9;
   display: block;
@@ -432,7 +440,7 @@
 }
 
 .section-title {
-  font-size: 28rpx;
+  font-size: var(--font-size-md);
   font-weight: 600;
   color: #f1f5f9;
   display: block;
@@ -454,7 +462,7 @@
 
 .skill-tag.large {
   padding: 8rpx 16rpx;
-  font-size: 24rpx;
+  font-size: var(--font-size-sm);
 }
 
 .projects-list {
@@ -471,7 +479,7 @@
 }
 
 .project-name {
-  font-size: 26rpx;
+  font-size: var(--font-size-md);
   font-weight: 600;
   color: #f1f5f9;
   display: block;
@@ -479,7 +487,7 @@
 }
 
 .project-desc {
-  font-size: 24rpx;
+  font-size: var(--font-size-sm);
   color: #94a3b8;
   display: block;
 }
