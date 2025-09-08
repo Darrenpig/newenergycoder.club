@@ -1,0 +1,75 @@
+/* components/lazyImage/lazyImage.wxss */
+.lazy-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8rpx;
+}
+
+.lazy-image {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.lazy-image.loaded {
+  opacity: 1;
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(15, 23, 42, 0.1);
+  transition: opacity 0.3s ease;
+}
+
+.loading-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loading-spinner {
+  width: 40rpx;
+  height: 40rpx;
+  border: 4rpx solid rgba(148, 163, 184, 0.3);
+  border-top: 4rpx solid #16a34a;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.error-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(239, 68, 68, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.error-overlay.show {
+  opacity: 1;
+}
+
+.error-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.error-text {
+  color: #ef4444;
+  font-size: 24rpx;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

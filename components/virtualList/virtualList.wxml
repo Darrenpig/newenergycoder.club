@@ -1,0 +1,43 @@
+<!-- components/virtualList/virtualList.wxml -->
+<view class="virtual-list-container" style="height: {{containerHeight}}px;">
+  <scroll-view 
+    class="virtual-scroll"
+    scroll-y="{{true}}"
+    scroll-top="{{scrollTop}}"
+    bindscroll="onScroll"
+    enhanced="{{true}}"
+    bounces="{{false}}"
+    style="height: 100%;"
+  >
+    <!-- 总高度占位 -->
+    <view class="virtual-placeholder" style="height: {{totalHeight}}px;">
+      <!-- 可见项目容器 -->
+      <view class="virtual-items" style="transform: translateY({{offsetY}}px);">
+        <view 
+          class="virtual-item"
+          wx:for="{{visibleItems}}"
+          wx:key="_index"
+          data-item="{{item}}"
+          data-index="{{item._index}}"
+          bindtap="onItemTap"
+          style="height: {{itemHeight}}px;"
+        >
+          <slot name="item" item="{{item}}" index="{{item._index}}"></slot>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 加载更多指示器 -->
+    <view class="load-more-indicator {{isLoading ? 'loading' : ''}}" wx:if="{{enablePaging}}">
+      <view class="loading-spinner" wx:if="{{isLoading}}"></view>
+      <text class="load-more-text">
+        {{isLoading ? '加载中...' : (hasMore ? '上拉加载更多' : '没有更多数据')}}
+      </text>
+    </view>
+  </scroll-view>
+  
+  <!-- 刷新按钮 -->
+  <view class="refresh-btn" bindtap="refresh">
+    <text class="refresh-icon">↻</text>
+  </view>
+</view>

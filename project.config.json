@@ -26,5 +26,7 @@
   "packOptions": {
     "ignore": [],
     "include": []
-  }
+  },
+  "appid": "wx9673d5cfffbe2411",
+  "libVersion": "3.9.2"
 }

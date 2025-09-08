@@ -14,7 +14,7 @@
     <text class="header-title">项目展示</text>
     <view class="header-actions">
       
-      <image style="width: 60rpx; height: 64rpx; display: block; box-sizing: border-box" src="../../assets/icons/filter.png" class="action-icon" bindtap="showFilter" />
+      <image style="width: 60rpx; height: 64rpx; display: block; box-sizing: border-box" src="../../assets/icon_xb81kg6k5p/xuanze.png" class="action-icon" bindtap="showFilter" />
     </view>
   </view>
 

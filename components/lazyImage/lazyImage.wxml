@@ -1,0 +1,23 @@
+<!-- components/lazyImage/lazyImage.wxml -->
+<view class="lazy-image-container" style="width: {{width}}; height: {{height}};">
+  <image 
+    class="lazy-image {{isLoaded ? 'loaded' : 'loading'}}"
+    src="{{imageSrc}}"
+    mode="{{mode}}"
+    lazy-load="{{!lazy}}"
+    bindload="onImageLoad"
+    binderror="onImageError"
+    bindtap="onImageTap"
+    style="width: 100%; height: 100%;"
+  />
+  
+  <!-- 加载状态 -->
+  <view class="loading-overlay {{isLoaded ? 'hidden' : ''}}">
+    <view class="loading-spinner"></view>
+  </view>
+  
+  <!-- 错误状态 -->
+  <view class="error-overlay {{isError ? 'show' : 'hidden'}}">
+    <text class="error-text">加载失败</text>
+  </view>
+</view>

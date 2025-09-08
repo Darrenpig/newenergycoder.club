@@ -14,7 +14,7 @@
     <text class="header-title">团队成员</text>
     <view class="header-actions">
       
-      <image src="../../assets/icons/filter.png" class="action-icon" bindtap="showFilter" />
+      <image style="width: 70rpx; height: 70rpx; display: block; box-sizing: border-box" src="../../assets/icon_xb81kg6k5p/xuanze.png" class="action-icon" bindtap="showFilter" />
     </view>
   </view>
 

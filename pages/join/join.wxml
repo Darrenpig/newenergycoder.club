@@ -121,15 +121,15 @@
         <!-- 技能和经验 -->
         <view class="form-group">
           <text class="form-label">技术技能</text>
-          <textarea class="form-textarea" placeholder="请描述您的技术技能（如编程语言、架构框架，设计软件Figma、Ai，机械软件SW、Rhino等）与做过哪些另人难忘的东西（经历/项目/里程碑）" value="{{formData.skills}}" bindinput="onInput" data-field="skills"></textarea>
+          <textarea class="form-textarea" placeholder="请描述您的技术技能（如编程语言、架构框架，设计软件Figma、Ai，机械软件SW、Rhino等）与做过哪些另人难忘的东西（经历/项目/里程碑）" value="{{formData.skills}}" bindinput="onInput" data-field="skills" style="height: 131rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx"></textarea>
         </view>
         <view class="form-group">
           <text class="form-label">项目经验</text>
-          <textarea class="form-textarea" placeholder="请描述您的项目经验" value="{{formData.experience}}" bindinput="onInput" data-field="experience"></textarea>
+          <textarea class="form-textarea" placeholder="请描述您的项目经验" value="{{formData.experience}}" bindinput="onInput" data-field="experience" style="height: 150rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx"></textarea>
         </view>
         <view class="form-group">
           <text class="form-label">加入动机</text>
-          <textarea class="form-textarea" placeholder="请说明您为什么想加入新能源编程俱乐部" value="{{formData.motivation}}" bindinput="onInput" data-field="motivation"></textarea>
+          <textarea class="form-textarea" placeholder="请说明您为什么想加入新能源编程俱乐部" value="{{formData.motivation}}" bindinput="onInput" data-field="motivation" style="height: 85rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx"></textarea>
         </view>
 
         <!-- 时间投入 -->

@@ -1,5 +1,5 @@
 <!-- 首页 - 新能源编程俱乐部 -->
-<view class="page-container">
+<view class="page-container" style="height: 2168rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">
   <!-- 背景效果 -->
   <view class="absolute-bg">
     <view class="bg-gradient-1"></view>
@@ -30,44 +30,44 @@
 
     <!-- 功能卡片 -->
     <view class="features-grid">
-      <view class="feature-card hover-lift" bindtap="navigateToJoin">
-        <view class="feature-icon-container">
+      <view class="feature-card hover-lift" bindtap="navigateToJoin" style="height: 147rpx; display: block; box-sizing: border-box">
+        <view class="feature-icon-container" style="position: relative; left: -273rpx; top: -4rpx">
           <image src="../../assets/icons/code.png" class="feature-icon" />
         </view>
-        <text class="feature-title">编程工作坊</text>
-        <text class="feature-desc">学习最新编程技术，提升开发技能</text>
+        <text class="feature-title" style="position: relative; left: 80rpx; top: -116rpx; width: 200rpx; display: block; box-sizing: border-box">编程工作坊</text>
+        <text class="feature-desc" style="position: relative; left: 95rpx; top: -127rpx; width: 479rpx; display: block; box-sizing: border-box">学习最新编程技术，提升开发技能</text>
       </view>
 
-      <view class="feature-card hover-lift" bindtap="navigateToProjects">
-        <view class="feature-icon-container">
+      <view class="feature-card hover-lift" bindtap="navigateToProjects" style="height: 147rpx; display: block; box-sizing: border-box">
+        <view class="feature-icon-container" style="position: relative; left: -273rpx; top: -10rpx">
           <image src="../../assets/icons/lightbulb.png" class="feature-icon" />
         </view>
-        <text class="feature-title">创新项目</text>
-        <text class="feature-desc">参与新能源相关的技术项目开发</text>
+        <text class="feature-title" style="width: 200rpx; display: block; box-sizing: border-box; position: relative; left: 64rpx; top: -122rpx">创新项目</text>
+        <text class="feature-desc" style="position: relative; left: 85rpx; top: -133rpx; width: 464rpx; display: block; box-sizing: border-box">参与新能源相关的技术项目开发</text>
       </view>
 
-      <view class="feature-card hover-lift" bindtap="navigateToTeam">
-        <view class="feature-icon-container">
+      <view class="feature-card hover-lift" bindtap="navigateToTeam" style="height: 147rpx; display: block; box-sizing: border-box">
+        <view class="feature-icon-container" style="position: relative; left: -273rpx; top: -4rpx">
           <image src="../../assets/icons/connection.png" class="feature-icon" />
         </view>
-        <text class="feature-title">行业连接</text>
-        <text class="feature-desc">与行业专家和企业建立合作关系</text>
+        <text class="feature-title" style="width: 200rpx; display: block; box-sizing: border-box; position: relative; left: 62rpx; top: -116rpx">行业连接</text>
+        <text class="feature-desc" style="width: 510rpx; display: block; box-sizing: border-box; position: relative; left: 58rpx; top: -127rpx">与行业专家和企业建立合作关系</text>
       </view>
     </view>
 
     <!-- 行动按钮 -->
-    <view class="action-buttons">
-      <button class="btn btn-ios-primary" bindtap="navigateToJoin">
+    <view class="action-buttons" style="height: 177rpx; display: flex; box-sizing: border-box; left: 0rpx; top: 0rpx">
+      <button class="btn btn-ios-primary" bindtap="navigateToJoin" style="position: relative; left: 0rpx; top: -15rpx">
         <text>立即加入</text>
-        <image src="../../assets/icons/arrow-right.svg" class="btn-icon" />
+        <image style="width: 39rpx; height: 39rpx; display: flex; box-sizing: border-box" src="../../assets/icons/arrow-right.svg" class="btn-icon" />
       </button>
-      <button class="btn btn-outline" bindtap="viewGitee">
+      <button class="btn btn-outline" bindtap="viewGitee" style="position: relative; left: 2rpx; top: 13rpx">
         <text>查看代码库</text>
       </button>
     </view>
 
     <!-- 统计数据 -->
-    <view class="stats-container">
+    <view class="stats-container" style="height: 143rpx; display: grid; box-sizing: border-box; left: 0rpx; top: 0rpx">
       <view class="stat-item">
         <text class="stat-number">31+</text>
         <text class="stat-label">活跃成员</text>
@@ -84,19 +84,30 @@
 
     <!-- 最新动态 -->
     <view class="news-section">
-      <view class="section-header">
+      <view class="section-header" style="position: relative; left: 0rpx; top: -50rpx">
         <text class="section-title">最新动态</text>
         <text class="section-more" bindtap="viewAllNews">查看全部</text>
       </view>
       
       <view class="news-list">
-        <view class="news-item glass-card">
+        <view class="news-item glass-card" style="position: relative; left: 0rpx; top: -56rpx">
           <view class="news-badge">新</view>
+          <text class="news-title">嘉立创悬赏计划球型机器人合作</text>
+          <text class="news-date">2025-09-10</text>
+        </view>
+        
+        <view class="news-item glass-card" style="position: relative; left: 0rpx; top: -45rpx">
+          <view class="news-badge">新</view>
+          <text class="news-title">2025NEC研究生线下Lab加入</text>
+          <text class="news-date">2025-09-8</text>
+        </view>
+        
+        <view class="news-item glass-card" style="position: relative; left: 0rpx; top: 147rpx">
           <text class="news-title">2025开源之夏项目启动</text>
           <text class="news-date">2025-05-20 https://summer-ospp.ac.cn/</text>
         </view>
         
-        <view class="news-item glass-card">
+        <view class="news-item glass-card" style="position: relative; left: 0rpx; top: -208rpx">
           <text class="news-title">2025ROBOCON成功完赛</text>
           <text class="news-date">2025-07-15 https://robocon-data.airs.org.cn/</text>
         </view>

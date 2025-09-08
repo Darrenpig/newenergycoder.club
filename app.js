@@ -1,6 +1,12 @@
 // app.js
+const { startupOptimizer } = require('./utils/performance');
+const { requestCache } = require('./utils/cache');
+
 App({
   onLaunch() {
+    // 启动性能优化
+    startupOptimizer.init();
+    
     // 小程序启动时的逻辑
     console.log('新能源编程俱乐部小程序启动');
     
@@ -9,6 +15,9 @@ App({
     
     // 获取系统信息
     this.getSystemInfo();
+    
+    // 记录启动完成时间
+    startupOptimizer.getPerformanceManager().mark('app-launch-complete');
   },
 
   onShow() {
@@ -157,26 +166,14 @@ App({
   },
 
   // 网络请求封装
-  request(url, data = {}, method = 'GET') {
-    return new Promise((resolve, reject) => {
-      wx.request({
-        url: url,
-        data: data,
-        method: method,
-        header: {
-          'content-type': 'application/json'
-        },
-        success: (res极) => {
-          if (res.statusCode === 200) {
-            resolve(res.data);
-          } else {
-            reject(new Error(`请求失败: ${res.statusCode}`));
-          }
-        },
-        fail: (error) => {
-          reject(error);
-        }
-      });
+  request(url, data = {}, method = 'GET', options = {}) {
+    // 使用缓存请求替代直接请求
+    return requestCache.request(url, {
+      method,
+      data,
+      cache: options.cache !== false, // 默认启用缓存
+      cacheTTL: options.cacheTTL || 5 * 60 * 1000, // 默认5分钟缓存
+      forceRefresh: options.forceRefresh || false
     });
   },
 

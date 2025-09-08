@@ -30,15 +30,36 @@ Page({
     news: [
       {
         id: 1,
-        title: '2024开源之夏项目启动',
-        date: '2024-05-20',
+        title: '2025流体工作站 初步交付',
+        date: '2025-09-07',
         isNew: true,
         route: '../projects/projects'
       },
       {
         id: 2,
-        title: '新能源技术研讨会成功举办',
-        date: '2024-04-15',
+        title: '嘉立创悬赏计划球型机器人合作',
+        date: '2025-09-15',
+        isNew: true,
+        route: '../projects/projects'
+      },
+      {
+        id: 3,
+        title: '2025NEC研究生线下Lab加入',
+        date: '2025-09-8',
+        isNew: true,
+        route: '../projects/projects'
+      },
+      {
+        id: 4,
+        title: '2025开源之夏项目启动',
+        date: '2025-05-20',
+        isNew: false,
+        route: '../projects/projects'
+      },
+      {
+        id: 5,
+        title: '2025ROBOCON成功完赛',
+        date: '2025-07-15',
         isNew: false,
         route: '../projects/projects'
       }

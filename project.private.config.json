@@ -1,6 +1,6 @@
 {
   "description": "新能源编程俱乐部微信小程序 - 私有配置",
-  "projectname": "energy-coder-club-miniprogram",
+  "projectname": "new-energy-coder-club-miniprogram",
   "setting": {
     "es6": true,
     "postcss": true,
