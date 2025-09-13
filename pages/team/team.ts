@@ -13,7 +13,7 @@ const maintainers = [
   {
     name: 'DarrenPig',
     role: 'Club Founder & BSP 嵌软工程师',
-    bio: 'Renewable energy researcher with a focus on AI applications for energy optimization.',
+    bio: '活跃的开发者，专注于AI在能源优化应用的研究与开发。',
     image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/maintainer/DarrenPig.jpg',
     tags: ['AI', 'BSP', '嵌入式', 'ROBOCON', '能源监测', 'openEuler'],
     github: 'https://github.com/Darrenpig',
