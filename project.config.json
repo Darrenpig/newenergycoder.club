@@ -1,6 +1,6 @@
 {
   "setting": {
-    "es6": false,
+    "es6": true,
     "postcss": true,
     "compileWorklet": false,
     "minified": false,

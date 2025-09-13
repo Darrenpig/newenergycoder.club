@@ -13,7 +13,7 @@
     </view>
     <text class="header-title">团队成员</text>
     <view class="header-actions">
-      
+      <image style="width: 70rpx; height: 70rpx; display: block; box-sizing: border-box; margin-right: 20rpx;" src="../../assets/icons/{{showAvatars ? 'team-active' : 'team'}}.png" class="action-icon" bindtap="toggleAvatars" />
       <image style="width: 70rpx; height: 70rpx; display: block; box-sizing: border-box" src="../../assets/icon_xb81kg6k5p/xuanze.png" class="action-icon" bindtap="showFilter" />
     </view>
   </view>
@@ -44,7 +44,7 @@
   <!-- 团队成员列表 -->
   <view class="team-list">
     <view wx:for="{{filteredMembers}}" wx:key="id" class="member-card glass-card" bindtap="viewMemberDetail" data-member="{{item}}">
-      <image src="{{item.avatar}}" class="member-avatar" mode="aspectFill" />
+      <image wx:if="{{showAvatars}}" src="{{item.avatar}}" class="member-avatar" mode="aspectFill" />
       <view class="member-badge {{item.role}}">{{item.roleText}}</view>
       <view class="member-info">
         <text class="member-name">{{item.name}}</text>

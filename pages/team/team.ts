@@ -1,6 +1,15 @@
-import { TeamMember } from '../types/translations';
+// 团队成员类型定义（内联）
+// interface TeamMember {
+//   name: string;
+//   role: string;
+//   bio: string;
+//   image: string;
+//   tags: string[];
+//   github?: string;
+//   email?: string;
+// }
 
-export const maintainers: TeamMember[] = [
+const maintainers = [
   {
     name: 'DarrenPig',
     role: 'Club Founder & BSP 嵌软工程师',
@@ -36,7 +45,7 @@ export const maintainers: TeamMember[] = [
   }
 ];
 
-export const developers: TeamMember[] = [
+const developers = [
   {
     name: '刘英琪',
     role: '嵌入式开发工程师',
@@ -103,7 +112,7 @@ export const developers: TeamMember[] = [
   }
 ];
 
-export const designers: TeamMember[] = [
+const designers = [
   {
     name: 'Xiux',
     role: 'UI/UX设计师 & 仓库PM',
@@ -148,7 +157,7 @@ export const designers: TeamMember[] = [
   }
 ];
 
-export const contributors: TeamMember[] = [
+const contributors = [
   {
     name: '卢永杰',
     role: '嵌入式&运控算法专家',
@@ -291,7 +300,7 @@ export const contributors: TeamMember[] = [
   },
 ];
 
-export const sponsors: TeamMember[] = [
+const sponsors = [
   {
     name: '开源之夏',
     role: 'Gold Sponsor - ¥12,000',
@@ -309,3 +318,12 @@ export const sponsors: TeamMember[] = [
     github: 'https://oshwhub.com/explore'
   }
 ];
+
+// 导出所有数据
+module.exports = {
+  maintainers,
+  developers,
+  designers,
+  contributors,
+  sponsors
+};
