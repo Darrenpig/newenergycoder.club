@@ -271,7 +271,7 @@ export const contributors: TeamMember[] = [
     name: '郭童童',
     role: '场控FD',
     bio: '专注于嵌入式、机器视觉与硬件研发。',
-    image: 'src/image/contributer/郭童童.jpg',
+    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/郭童童.jpg',
     tags: ['场控FD', '嵌入式', '机器视觉', '硬件'],
     gitee: 'https://gitee.com/guo--tongtong'
   },
