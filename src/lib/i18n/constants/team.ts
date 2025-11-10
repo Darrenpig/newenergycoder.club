@@ -102,6 +102,27 @@ export const developers: TeamMember[] = [
     image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/彭柯颖.jpg',
     tags: ['新成员', '项目开发', '学习成长', 'Web开发', 'JavaScript', '团队协作'],
     github: 'https://github.com/pengkeying'
+  },
+  {
+    name: '孟洁',
+    role: '嵌入式软件工程师',
+    bio: '专注于 STM32、RTOS 与驱动开发，擅长 C/C++。',
+    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/孟洁.jpg',
+    tags: ['STM32', 'RTOS', 'C/C++', '驱动开发']
+  },
+  {
+    name: '文钰婷',
+    role: '嵌入式软件工程师',
+    bio: '熟悉实时操作系统与驱动开发，聚焦 C/C++ 与 STM32。',
+    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/文钰婷.jpg',
+    tags: ['STM32', 'RTOS', 'C/C++', '驱动开发']
+  },
+  {
+    name: '张龚轩',
+    role: '物流自动化系统工程师',
+    bio: '聚焦 PLC、机器视觉与智能分拣系统的工程实现与优化。',
+    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/张龚轩.jpg',
+    tags: ['物流自动化', 'PLC', '机器视觉', '分拣系统', '工业控制']
   }
 ];
 
