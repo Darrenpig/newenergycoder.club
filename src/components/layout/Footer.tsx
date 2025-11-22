@@ -70,7 +70,7 @@ export function Footer() {
         <div>
           <h3 className="font-medium mb-4">{t.footer.resources}</h3>
           <ul className="space-y-2">
-            <li><Link to="/resources" className="text-sm text-muted-foreground hover:text-foreground">{t.footer.learningMaterials}</Link></li>
+            <li><Link to="/resources/selection" className="text-sm text-muted-foreground hover:text-foreground">{t.footer.learningMaterials}</Link></li>
             <li><Link to="/innovation" className="text-sm text-muted-foreground hover:text-foreground">{t.nav.innovation}</Link></li>
             <li><Link to="/contact" className="text-sm text-muted-foreground hover:text-foreground">{t.nav.contact}</Link></li>
             <li><Link to="/join" className="text-sm text-muted-foreground hover:text-foreground">{t.footer.joinClub}</Link></li>

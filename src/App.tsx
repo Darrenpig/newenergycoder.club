@@ -10,6 +10,7 @@ const DashboardPage = React.lazy(() => import("@/pages/DashboardPage"));
 const ProjectsPage = React.lazy(() => import("@/pages/ProjectsPage").then(module => ({ default: module.ProjectsPage })));
 const EventsPage = React.lazy(() => import("@/pages/EventsPage").then(module => ({ default: module.EventsPage })));
 const ResourcesPage = React.lazy(() => import("@/pages/ResourcesPage").then(module => ({ default: module.ResourcesPage })));
+const ResourcesSelectionPage = React.lazy(() => import("@/pages/ResourcesSelectionPage").then(module => ({ default: module.ResourcesSelectionPage })));
 const ContactPage = React.lazy(() => import("@/pages/ContactPage").then(module => ({ default: module.ContactPage })));
 const GettingStartedPage = React.lazy(() => import("@/pages/GettingStartedPage"));
 const EmbeddedDetailPage = React.lazy(() => import("@/pages/EmbeddedDetailPage"));
@@ -60,6 +61,7 @@ function App() {
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/events" element={<EventsPage />} />
             <Route path="/resources" element={<ResourcesPage />} />
+            <Route path="/resources/selection" element={<PageLayout><ResourcesSelectionPage /></PageLayout>} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/team" element={<TeamPage />} />
             <Route path="/innovation" element={<PageLayout><InnovationShowcasePage /></PageLayout>} />
