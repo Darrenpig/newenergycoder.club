@@ -34,11 +34,11 @@ export function PageLayout({
       />
       <Dialog>
         <DialogTrigger asChild>
-          <Button className="fixed bottom-6 right-6 rounded-full h-12 w-12 p-0 shadow-lg" aria-label="AI对话">
+          <Button className="fixed bottom-6 left-6 rounded-full h-12 w-12 p-0 shadow-lg z-[1000] pointer-events-auto bg-primary text-primary-foreground ring-2 ring-primary/50 hover:scale-110 transition-transform" aria-label="AI对话">
             <Bot className="h-5 w-5" />
           </Button>
         </DialogTrigger>
-        <DialogContent className="max-w-3xl">
+        <DialogContent className="max-w-3xl z-[1001]">
           <DialogHeader>
             <DialogTitle>新能源AI产线先知</DialogTitle>
             <DialogDescription>悬浮窗对话</DialogDescription>

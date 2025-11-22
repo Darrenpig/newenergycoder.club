@@ -173,12 +173,40 @@ npm run preview
 在部署平台配置以下环境变量：
 
 ```bash
-# Vercel Analytics（可选）
-VITE_VERCEL_ANALYTICS_ID=your_analytics_id
+176→# Vercel Analytics（可选）
+177→VITE_VERCEL_ANALYTICS_ID=your_analytics_id
 
-# 其他配置
-VITE_APP_TITLE=New Energy Coder Club
-VITE_APP_DESCRIPTION=新能源编程俱乐部官方网站
+ # 其他配置
+ VITE_APP_TITLE=New Energy Coder Club
+ VITE_APP_DESCRIPTION=新能源编程俱乐部官方网站
+ 
+### 飞书接入与对话助手
+
+#### 后端表单转发到飞书
+
+- API 路由: `/api/contact`（Vercel Serverless）
+- 环境变量:
+
+```bash
+FEISHU_WEBHOOK_URL=<飞书群机器人Webhook地址>
+FEISHU_WEBHOOK_SECRET=<可选，若开启签名>
+```
+
+- 表单位置: `src/pages/ContactPage.tsx`（生产环境会调用 `/api/contact`，开发环境本地模拟）
+
+#### 悬浮窗 AI 对话助手
+
+- 组件: `src/components/AIChatAssistant.tsx`
+- 全局接入: `src/components/layout/PageLayout.tsx`（右下角悬浮按钮打开弹窗）
+- 提示词文档: `src/components/新能源AI产线先知Prompt.md`
+
+#### Lark MCP 安装
+
+```bash
+npm install -g @larksuiteoapi/lark-mcp
+```
+
+> 如需在本项目中集成 Lark MCP 服务端/客户端，请在部署平台配置相应的飞书应用凭据，并在服务端路由中完成鉴权与接口调用。
 ```
 
 ### 部署检查清单
@@ -207,9 +235,11 @@ VITE_APP_DESCRIPTION=新能源编程俱乐部官方网站
 - **📅 活动页面**: 发布和管理俱乐部活动、技术研讨会
 - **🚀 项目页面**: 展示开源项目和技术成果
 - **📚 资源页面**: 提供学习资料、开发工具和行业报告
+- **📚 学习资料选型页**: `/resources/selection` 按方向聚合入口（嵌入式/GUI/算法/结构打印）
 - **🤝 加入我们**: 多种加入方式，包括飞书群和表单申请
 - **📞 联系我们**: 完整的联系信息和地图定位
 - **🔬 创新技术展示**: 展示新能源技术领域的创新成果和技术路线图
+- **🤖 AI 对话助手**: 英雄区按钮与全局悬浮窗打开对话，支持查看提示词文档
 - **📊 仪表板**: 用户个人中心和数据管理（需登录）
 
 ### 技术特性

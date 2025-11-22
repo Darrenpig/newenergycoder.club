@@ -338,7 +338,7 @@ export function InnovationShowcasePage() {
               </Button>
               <Dialog>
                 <DialogTrigger asChild>
-                  <Button size="lg" variant="secondary" className="gap-2">
+                  <Button size="lg" variant="default" className="gap-2 bg-primary text-primary-foreground shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200">
                     <Users className="h-5 w-5" />
                     AI对话
                   </Button>
