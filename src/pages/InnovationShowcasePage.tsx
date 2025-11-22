@@ -1,5 +1,4 @@
 import React, { useState, useMemo } from 'react';
-import { PageLayout } from '@/components/layout/PageLayout';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -21,6 +20,7 @@ import {
   InnovationFilters
 } from '@/types/innovation';
 import { useTranslation } from '@/contexts/LanguageContext';
+import AIChatAssistant from '@/components/AIChatAssistant';
 
 // 图标映射
 const iconMap = {
@@ -313,7 +313,6 @@ export function InnovationShowcasePage() {
   };
 
   return (
-    <PageLayout>
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
         {/* 英雄区域 */}
         <section className="relative py-20 px-4">
@@ -323,8 +322,7 @@ export function InnovationShowcasePage() {
               创新技术展示
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
-              体验我们在新能源技术领域的
-              <span className="block">创新成果</span>
+              新能源AI产线先知
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
               探索前沿的新能源技术，从太阳能、风能到储能系统，了解我们如何通过技术创新推动可持续发展的未来。
@@ -338,6 +336,21 @@ export function InnovationShowcasePage() {
                 <Calendar className="h-5 w-5" />
                 技术路线图
               </Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button size="lg" variant="secondary" className="gap-2">
+                    <Users className="h-5 w-5" />
+                    AI对话
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-3xl">
+                  <DialogHeader>
+                    <DialogTitle>新能源AI产线先知</DialogTitle>
+                    <DialogDescription>基于提示词的对话助手</DialogDescription>
+                  </DialogHeader>
+                  <AIChatAssistant />
+                </DialogContent>
+              </Dialog>
             </div>
           </div>
         </section>
@@ -954,6 +967,5 @@ export function InnovationShowcasePage() {
           </div>
         </section>
       </div>
-    </PageLayout>
   );
 }
