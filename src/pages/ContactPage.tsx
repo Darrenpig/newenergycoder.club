@@ -61,8 +61,16 @@ export function ContactPage() {
     setIsSubmitting(true)
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000))
+      if (import.meta.env.PROD) {
+        const resp = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        })
+        if (!resp.ok) throw new Error('submit_failed')
+      } else {
+        await new Promise(resolve => setTimeout(resolve, 800))
+      }
       
       // Reset form
       setFormData({ name: '', email: '', subject: '', message: '' })
@@ -74,7 +82,7 @@ export function ContactPage() {
     } catch (error) {
       toast({
         title: t.contact.form.messageError,
-        description: "Please check your connection and try again.",
+        description: "请检查网络或服务配置(.env)后重试。",
         variant: "destructive",
       })
     } finally {
