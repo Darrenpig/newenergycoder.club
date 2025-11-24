@@ -1,4 +1,3 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node'
 
 async function sendFeishuWebhook(payload: any) {
   const url = process.env.FEISHU_WEBHOOK_URL
@@ -30,7 +29,7 @@ async function sendFeishuWebhook(payload: any) {
   }
 }
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(req: any, res: any) {
   if (req.method !== 'POST') {
     res.status(405).json({ error: 'Method Not Allowed' })
     return
@@ -49,4 +48,3 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     res.status(500).json({ error: err?.message || 'Internal Server Error' })
   }
 }
-
