@@ -357,6 +357,27 @@ export const zhTranslations: Translations = {
         image: 'https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/developer/彭柯颖.jpg',
         tags: ['新成员', '项目开发', '学习成长', 'Web开发', 'JavaScript', '团队协作'],
         github: 'https://github.com/pengkeying'
+      },
+      {
+        name: '孟洁',
+        role: '嵌入式软件工程师',
+        bio: '专注于 STM32、RTOS 与驱动开发，擅长 C/C++。',
+        image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/孟洁.jpg',
+        tags: ['STM32', 'RTOS', 'C/C++', '驱动开发']
+      },
+      {
+        name: '文钰婷',
+        role: '嵌入式软件工程师',
+        bio: '熟悉实时操作系统与驱动开发，聚焦 C/C++ 与 STM32。',
+        image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/文钰婷.jpg',
+        tags: ['STM32', 'RTOS', 'C/C++', '驱动开发']
+      },
+      {
+        name: '张龚轩',
+        role: '物流自动化系统工程师',
+        bio: '聚焦 PLC、机器视觉与智能分拣系统的工程实现与优化。',
+        image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/张龚轩.jpg',
+        tags: ['物流自动化', 'PLC', '机器视觉', '分拣系统', '工业控制']
       }
     ],
     designers: [
@@ -427,6 +448,14 @@ export const zhTranslations: Translations = {
         image: 'https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/崔正阳.jpg',
         tags: ['海鸥派', 'Liunx', 'openEuler', '自动化测试', '性能测试'],
         github: 'https://github.com/cuizhengyang'
+      },
+      {
+        name: '王于豪',
+        role: '成型组组长',
+        bio: '调试3D打印机帮助团队打印物品，负责成型组的管理和技术支持工作。',
+        image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/王于豪.jpg',
+        tags: ['3D打印', '成型技术', '团队管理', '技术支持', '设备调试', '物品制作'],
+        github: 'https://github.com/wangyuhao'
       },
       {
         name: '闻志伟',
@@ -527,6 +556,38 @@ export const zhTranslations: Translations = {
         image: 'https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/孙如婕.jpg',
         tags: ['灵巧手开发', '横向开发', '技术创新', '开发支持', '项目贡献', '技术解决方案'],
         github: 'https://github.com/sunrujie'
+      },
+      {
+        name: '杨彩妮',
+        role: 'Contributor',
+        bio: 'AIC工业视觉SIG pre-sponsor，专注于工业视觉技术的研究和应用。',
+        image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/杨彩妮.jpg',
+        tags: ['工业视觉', 'AIC', 'SIG', 'pre-sponsor', '视觉技术', '技术研究'],
+        github: 'https://github.com/yangcaini'
+      },
+      {
+        name: '孙诗睿',
+        role: 'Contributor',
+        bio: 'AIC工业视觉SIG 嵌硬-单片机专家，专注于嵌入式硬件和单片机开发。',
+        image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/孙诗睿.jpg',
+        tags: ['嵌入式硬件', '单片机', 'AIC', '工业视觉', 'SIG', '硬件开发'],
+        github: 'https://github.com/sunshirui'
+      },
+      {
+        name: '韩祺冉',
+        role: 'Contributor',
+        bio: '数据分析师，专注于数据处理和可视化分析工作。',
+        image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/韩祺冉.jpg',
+        tags: ['数据分析', '数据处理', '统计分析', '数据可视化', '业务分析'],
+        gitee: 'https://gitee.com/han-qiran'
+      },
+      {
+        name: '郭童童',
+        role: '场控FD',
+        bio: '专注于嵌入式、机器视觉与硬件研发。',
+        image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/郭童童.jpg',
+        tags: ['场控FD', '嵌入式', '机器视觉', '硬件'],
+        gitee: 'https://gitee.com/guo--tongtong'
       }
     ],
     sponsors: [
