@@ -1,5 +1,6 @@
 import { maintainers, developers, designers, contributors, sponsors } from '../constants/team';
 import { Translations } from '../types/translations';
+import { learningTranslations } from '../constants/learning';
 
 export const zhTranslations: Translations = {
   joinPage: {
@@ -56,6 +57,24 @@ export const zhTranslations: Translations = {
       addWechat: '添加微信群',
       viewProject: '查看我们的项目',
       tip: '我们迫不及待地想见到您！'
+    },
+    form: {
+      name: '姓名',
+      email: '邮箱',
+      phone: '电话',
+      experience: '经验',
+      interests: '兴趣',
+      submit: '提交',
+      submitting: '提交中...',
+      success: '提交成功',
+      error: '提交失败'
+    },
+    benefits: {
+      title: '会员福利',
+      networking: '人脉拓展',
+      learning: '学习机会',
+      projects: '项目参与',
+      career: '职业发展'
     }
   },
   join: {
@@ -134,6 +153,7 @@ export const zhTranslations: Translations = {
   nav: {
     home: '首页',
     projects: '项目',
+    innovation: '创新成果',
     events: '活动',
     resources: '资源',
     contact: '联系我们',
@@ -231,8 +251,13 @@ export const zhTranslations: Translations = {
       lastUpdated: '最后更新',
       roleDistribution: '角色分布',
       contributionStats: '贡献统计',
-      mainResponsibilities: '主要职责'
+      mainResponsibilities: '主要职责',
+      maintainerResponsibilities: '项目管理、代码审核、技术决策',
+      developerResponsibilities: '功能开发、Bug修复、技术实现',
+      designerResponsibilities: '界面设计、用户体验、视觉规范',
+      contributorResponsibilities: '文档编写、测试反馈、社区支持'
     },
+    teamPhotoDescription: '团队成员在项目开发过程中的珍贵合影，记录了我们共同努力和协作的美好时光。',
     maintainers: [
       {
         name: 'DarrenPig',
@@ -632,6 +657,8 @@ export const zhTranslations: Translations = {
     getInTouch: '联系我们',
     contactInfo: '联系信息',
     followUs: '关注我们',
+    channelsDescription: '您也可以通过以下方式与我们取得联系。',
+    followUsDescription: '在社交平台关注我们，获取最新动态与新闻。',
     form: {
       name: '姓名',
       email: '邮箱',
@@ -644,13 +671,32 @@ export const zhTranslations: Translations = {
       sendMessage: '发送消息',
       sending: '发送中...',
       messageSent: '消息发送成功！',
-      messageError: '发送消息失败。请重试。'
+      messageError: '发送消息失败。请重试。',
+      introText: '请填写下方表单，我们会尽快与您联系。',
+      toastSuccessDescription: '我们会尽快与您取得联系。',
+      toastErrorDescription: '请检查您的网络连接并重试。'
     },
     info: {
       address: '新北区辽河路666号，东一门，玉衡楼 A416',
       phone: '+86 158 9600 0818',
       email: '22230635@czu.cn',
       hours: '周一至周五：上午9点 - 下午6点'
+    },
+    infoLabels: {
+      address: '地址',
+      phone: '电话',
+      email: '邮箱',
+      hours: '办公时间'
+    },
+    social: {
+      gitee: 'Gitee',
+      wechat: '微信',
+      email: '邮箱'
+    },
+    application: {
+      title: 'NEC官网上线申请',
+      description: '申请加入NEC官网，展示您的项目与成果。',
+      applyNow: '立即申请'
     }
   },
   dashboard: {
@@ -693,6 +739,11 @@ export const zhTranslations: Translations = {
     contact: '联系',
     learningMaterials: '学习资料',
     joinClub: '加入NEC仓库实验室',
+    gettingStarted: '入门文档',
+    techRoadmap: {
+      title: '技术路线',
+      description: '专业的技术发展指导'
+    },
     address: '江苏省常州市新北区辽河路666号常州工学院辽河路校区玉衡A416仓库实验室',
     copyright: '© 2025 NEC新能源开发者社区。保留所有权利。'
   },
@@ -710,5 +761,139 @@ export const zhTranslations: Translations = {
       widescreen: '宽屏比例 (16:10)',
       ultrawide: '超宽比例 (21:9)'
     }
-  }
+  },
+  // Getting Started 页面翻译
+  gettingStarted: {
+    hero: {
+      title: '新能源编程俱乐部',
+      description: '探索新能源技术的无限可能，从编程开始改变世界',
+      buttons: {
+        joinClub: '加入俱乐部',
+        viewProjects: '查看项目',
+        visitSite: '访问官网'
+      }
+    },
+    stats: {
+      learnersTitle: '学习者',
+      learnersDesc: '活跃学习者',
+      completedProjectsTitle: '完成项目',
+      completedProjectsDesc: '项目完成数',
+      averageRatingTitle: '平均评分',
+      averageRatingDesc: '学员满意度',
+      successRateTitle: '成功率',
+      successRateDesc: '学习成功率'
+    },
+    directions: {
+      title: '选择你的技术方向',
+      description: '根据你的兴趣和职业规划，选择最适合的学习路径',
+      coreSkills: '核心技能',
+      projectsSuffix: '个项目',
+      startLearning: '开始学习',
+      embedded: {
+        title: '嵌入式开发',
+        description: '学习嵌入式系统开发，掌握硬件与软件结合的核心技术',
+        skills: ['C/C++', 'FreeRTOS', '硬件调试', '通信协议'],
+        duration: '6-8个月'
+      },
+      gui: {
+        title: 'GUI界面开发',
+        description: '掌握跨平台图形界面开发，创建美观实用的桌面应用',
+        skills: ['Qt/QML', 'UI设计', '跨平台开发', '用户体验'],
+        duration: '4-6个月'
+      },
+      algorithm: {
+        title: '算法与数据结构',
+        description: '深入学习算法设计与优化，提升编程思维和解决问题的能力',
+        skills: ['算法设计', '数据结构', '性能优化', '数学建模'],
+        duration: '8-12个月'
+      },
+      structurePrint: {
+        title: '结构打印开发',
+        description: '面向3D结构打印的设计、切片与控制开发',
+        skills: ['CAD建模', '切片软件', '材料工艺', 'G-code/控制'],
+        duration: '5-7个月'
+      }
+    },
+    quickGuides: {
+      title: '快速上手指南',
+      description: '跟随我们的指南，快速开始你的新能源编程之旅',
+      stepsLabel: '步骤：',
+      items: {
+        setup: {
+          title: '环境搭建',
+          description: '快速搭建开发环境，开始你的编程之旅',
+          steps: [
+            '选择适合的开发工具',
+            '安装必要的软件包',
+            '配置开发环境',
+            '运行第一个程序'
+          ],
+          estimatedTime: '30分钟'
+        },
+        firstGoodIssue: {
+          title: '第一个好的问题',
+          description: '寻找并解决你的第一个Good Issue，开始为开源项目做贡献',
+          steps: [
+            '浏览项目Issue列表',
+            '筛选Good First Issue标签',
+            '理解问题描述和要求',
+            'Fork项目并创建分支',
+            '实现解决方案',
+            '提交Pull Request'
+          ],
+          estimatedTime: '25分钟'
+        },
+        firstProject: {
+          title: '第一个项目',
+          description: '通过实际项目快速上手，掌握基础开发流程',
+          steps: [
+            '选择入门项目',
+            '理解项目结构',
+            '编写核心代码',
+            '测试和调试',
+            '项目部署'
+          ],
+          estimatedTime: '2小时'
+        },
+        community: {
+          title: '加入社区',
+          description: '融入学习社区，获得更多支持和交流机会',
+          steps: [
+            '注册俱乐部账号',
+            '完善个人资料',
+            '加入学习小组',
+            '参与讨论交流'
+          ],
+          estimatedTime: '15分钟'
+        }
+      }
+    },
+    baseTutorials: {
+      title: '基础教程',
+      description: '从零开始学习编程基础知识和核心概念',
+      introTitle: '编程入门',
+      introDesc: '编程基础概念和思维方式，了解新能源编程的应用领域和发展前景',
+      fundamentalsTitle: '编程基础',
+      fundamentalsDesc: '变量、函数、控制结构等基础知识，掌握编程的核心概念和语法',
+      startLearning: '开始学习'
+    },
+    trainingResources: {
+      title: '培训资源',
+      description: '丰富的学习资源，助你快速提升技能',
+      githubRepoTitle: 'GitHub 仓库',
+      githubRepoDesc: '查看项目源码和贡献代码',
+      visitGithub: '访问 GitHub',
+      docsTitle: '技术文档',
+      docsDesc: '详细的技术文档和API参考',
+      viewDocs: '查看文档',
+      videosTitle: '视频教程',
+      videosDesc: '观看实战项目视频教程',
+      watchVideos: '观看视频',
+      communityTitle: '社区交流',
+      communityDesc: '加入社区讨论和交流',
+      joinDiscussion: '加入讨论'
+    }
+  },
+  // 学习路径和技术路线翻译
+  learning: learningTranslations.zh
 };
