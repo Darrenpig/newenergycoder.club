@@ -1,33 +1,14 @@
 import { maintainers, developers, designers, contributors, sponsors } from '../constants/team';
 import { Translations } from '../types/translations';
-import { learningTranslations } from '../constants/learning';
 
 export const zhTranslations: Translations = {
   joinPage: {
     title: '加入我们的俱乐部',
     subtitle: '成为我们可持续编程社区的一员',
-    form: {
-      name: '姓名',
-      email: '邮箱',
-      phone: '电话',
-      experience: '经验',
-      interests: '兴趣',
-      submit: '提交',
-      submitting: '提交中...',
-      success: '提交成功',
-      error: '提交失败'
-    },
-    benefits: {
-      title: '会员福利',
-      networking: '网络建设',
-      learning: '学习机会',
-      projects: '项目参与',
-      career: '职业发展'
-    },
     wechat: {
       title: '微信群',
       description: '加入我们的微信群，了解最新更新、项目讨论和社区活动',
-      id: '新能源编程俱乐部',
+      id: 'NEC新能源开发者社区',
       copyButton: '复制群名',
       copied: '已复制！',
       addTips: '如何加入：',
@@ -79,7 +60,7 @@ export const zhTranslations: Translations = {
   },
   join: {
     form: {
-      title: '加入新能源编程俱乐部',
+      title: '加入NEC新能源开发者社区',
       subtitle: '填写此表格成为我们社区的一员',
       basicInfo: {
         title: '基本信息',
@@ -153,10 +134,9 @@ export const zhTranslations: Translations = {
   nav: {
     home: '首页',
     projects: '项目',
-    innovation: '创新成果',
     events: '活动',
     resources: '资源',
-    contact: '合作',
+    contact: '联系我们',
     team: '团队',
     login: '登录',
     logout: '退出',
@@ -164,7 +144,7 @@ export const zhTranslations: Translations = {
     dashboard: '控制台'
   },
   hero: {
-    tagline: '欢迎来到新能源编程俱乐部',
+    tagline: '欢迎来到NEC新能源开发者社区',
     title: '构建可持续',
     titleHighlight: '未来',
     description: '加入我们的社区，通过开源项目、技术研讨会和协作学习，推动可再生能源和可持续技术的发展。',
@@ -179,7 +159,7 @@ export const zhTranslations: Translations = {
   },
   about: {
     title: '关于我们',
-    paragraph1: '新能源编程俱乐部是一个由学生主导的技术社区，致力于通过开源项目和协作学习推动可持续技术的发展。我们的使命是弥合可再生能源与软件开发之间的差距。',
+    paragraph1: 'NEC新能源开发者社区是一个由学生主导的技术社区，致力于通过开源项目和协作学习推动可持续技术的发展。我们的使命是弥合可再生能源与软件开发之间的差距。',
     paragraph2: '成立于2024年，我们已经从一个小型学习小组发展成为一个充满活力的社区，拥有来自不同学科的活跃贡献者，包括计算机科学、电气工程、环境科学等。',
     paragraph3: '我们的项目涵盖人工智能、物联网、嵌入式系统和数据分析，所有这些都专注于解决可再生能源、能源效率和可持续技术方面的现实挑战。',
     learnMore: '了解更多',
@@ -233,8 +213,8 @@ export const zhTranslations: Translations = {
     conferencesDesc: '参加可持续技术活动'
   },
   team: {
-    title: '我们是谁？',
-    description: '一群在代码与梦想交汇处相遇的人。这里有深夜调试的学生，有追求优雅的开发者，有痴迷于「如何让世界更高效、更清洁」的可持续技术信徒。 我们不同——专业、背景、甚至喜欢的编程语言都可能不一样。但我们相同——相信技术向善，相信年轻的力量，相信可持续不是选择而是必须。 在这里，好奇心是通行证，实践是通用语。我们不只是构建产品，更是在构建心中那个更绿色、更公平、更智能的未来。 我们，是一个行动动词。',
+    title: '我们的团队',
+    description: '认识我们多元化团队的学生、开发者和可持续技术爱好者',
     maintainerTitle: '维护者',
     developerTitle: '开发者',
     designerTitle: '设计师',
@@ -244,30 +224,23 @@ export const zhTranslations: Translations = {
     teamPhoto: '团队照片',
     analytics: {
       title: '团队分析',
-      description: '基于Gitee项目贡献者数据的团队组成分析',
-      totalMembers: '总成员数',
+      description: '我们社区增长的详细统计',
+      totalMembers: '总成员',
       activeContributors: '活跃贡献者',
-      giteeReference: '参考：Gitee项目贡献者页面',
+      giteeReference: 'Gitee参考',
       lastUpdated: '最后更新',
       roleDistribution: '角色分布',
       contributionStats: '贡献统计',
-      mainResponsibilities: '主要职责',
-      maintainerResponsibilities: '项目管理、代码审核、技术决策',
-      developerResponsibilities: '功能开发、Bug修复、技术实现',
-      designerResponsibilities: '界面设计、用户体验、视觉规范',
-      contributorResponsibilities: '文档编写、测试反馈、社区支持'
+      mainResponsibilities: '主要职责'
     },
-    teamPhotoDescription: '团队成员在项目开发过程中的珍贵合影，记录了我们共同努力和协作的美好时光。',
     maintainers: [
       {
         name: 'DarrenPig',
         role: 'Club Founder & BSP 嵌软工程师',
-        bio: '专注于将人工智能应用于能源优化的可再生能源研究者。',
+        bio: 'Renewable energy researcher with a focus on AI applications for energy optimization.',
         image: 'https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/maintainer/DarrenPig.jpg',
         tags: ['AI', 'BSP', '嵌入式', 'ROBOCON', '能源监测', 'openEuler'],
-        gitee: 'https://gitee.com/darrenpig',
         github: 'https://github.com/Darrenpig',
-        bonjour: 'https://bonjour.bio/darrenpig',
         email: '22230635@czu.cn'
       },
       {
@@ -405,10 +378,132 @@ export const zhTranslations: Translations = {
         tags: ['UX设计', '用户体验', '设计思维', 'Figma', '用户旅程', '信息架构']
       }
     ],
-    contributors: contributors.map(contributor => ({
-      ...contributor,
-      // 如果需要为特定成员添加中文翻译，可以在这里处理
-    })),
+    contributors: [
+      {
+        name: '卢永杰',
+        role: '嵌入式&运控算法专家',
+        bio: '专注算法部署优化及BSP逻辑协同设计，在嵌入式和运控算法领域有深入研究。',
+        image: 'https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/卢永杰.jpg',
+        tags: ['嵌入式开发', '运控算法', '算法部署', '协同设计', '算法优化'],
+        github: 'https://github.com/luyongjie'
+      },
+      {
+        name: '卢王淳',
+        role: '25RC项管&机械&电控小白',
+        bio: '25RC项目管理，机械和电控领域的学习者，负责项目协调工作。',
+        image: 'https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/卢王淳.jpg',
+        tags: ['项目管理', '机械设计', '电控学习', 'ROBOCON', '团队协调', '25RC'],
+        github: 'https://github.com/luwangchun'
+      },
+      {
+        name: '崔正阳',
+        role: '上位机测试工程师',
+        bio: '专注于上位机软件质量保证，确保项目的稳定性和可靠性。',
+        image: 'https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/崔正阳.jpg',
+        tags: ['海鸥派', 'Liunx', 'openEuler', '自动化测试', '性能测试'],
+        github: 'https://github.com/cuizhengyang'
+      },
+      {
+        name: '闻志伟',
+        role: 'Bronze Sponsor',
+        bio: '致力于推动可持续技术发展的个人赞助者。',
+        image: 'https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/developer/闻志伟.jpg',
+        tags: ['技术赞助', '项目支持', '可持续发展', '创新资助', '社区建设', '人才培养']
+      },
+      {
+        name: '张旺旺',
+        role: '新能源运维工程师',
+        bio: '负责核心项目的真机部署和运维工作，保障系统的稳定运行。',
+        image: 'https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/张旺旺.jpg',
+        tags: ['运维部署', 'Linux', '服务器管理', '监控告警', '故障排查', '系统优化'],
+        github: 'https://github.com/zhangwangwang'
+      },
+      {
+        name: '吴洛斌',
+        role: '开源贡献者&气动自动化专家',
+        bio: '积极参与开源项目，为社区贡献代码商业化文档。',
+        image: 'https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/吴洛斌.jpg',
+        tags: ['气动自动化', '开源贡献', '工业控制', 'PLC', '自动化系统'],
+        github: 'https://github.com/wuluobin'
+      },
+      {
+        name: '余浩铭',
+        role: '机器人日志运营编辑',
+        bio: '专注于宣传和文字，让NEC的每一份理念都能被看见。',
+        image: 'https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/developer/余浩铭.jpg',
+        tags: ['文艺工作', '运营编辑', '宣传策划', '文字编辑', 'NEC理念', '内容创作'],
+        github: 'https://github.com/yuhaoming'
+      },
+      {
+        name: '许子涵',
+        role: '产品经理',
+        bio: '负责产品规划和需求分析，推动项目向正确方向发展。',
+        image: 'https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/许子涵.png',
+        tags: ['产品规划', '需求分析', '用户研究', 'Axure', '原型设计', '数据分析'],
+        github: 'https://github.com/xuzihan'
+      },
+      {
+        name: '卞乐凌',
+        role: '嵌入式学习贡献者',
+        bio: '嵌入式学习中，积极参与开源项目和社区建设。',
+        image: 'https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/卞乐凌.jpg',
+        tags: ['嵌入式学习', '开源贡献', '社区建设', 'STM32', '硬件开发'],
+        github: 'https://github.com/bianleiling'
+      },
+      {
+        name: '王彦君',
+        role: '工业/产品设计师',
+        bio: '致力于通过设计解决实际问题，以更开放的态度寻找更多可能性。',
+        image: 'https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/王彦君.jpg',
+        tags: ['工业设计', '产品设计', 'SolidWorks', 'Rhino', '3D建模', '材料工艺']
+      },
+      {
+        name: '徐海婷',
+        role: '财务管理专员',
+        bio: '聚焦财务流程优化与数据支撑，通过合理预算、风险防控，助力技术实践、行稳致远。',
+        image: 'https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/designer/徐海婷.jpg',
+        tags: ['财务管理', '预算控制', '风险防控', '数据分析', '流程优化', '成本管控']
+      },
+      {
+        name: '张岩皓',
+        role: '摄影&数据可视化&设计师&运营博主',
+        bio: '会摄影，学艺术设计，做漂亮餐，专注于摄影、数据可视化设计和运营推广。',
+        image: 'https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/designer/张岩皓.jpg',
+        tags: ['摄影', '数据可视化', '艺术设计', '运营博主', '视觉传达', '内容创作']
+      },
+      {
+        name: '郑绍恺',
+        role: '算法竞赛选手',
+        bio: '专注于算法研究以及最优化问题',
+        image: 'https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/郑绍恺.jpg',
+        tags: ['算法研究', '最优化', '竞赛选手', '问题求解', '算法优化', '数学建模'],
+        github: 'https://github.com/zhengshaokai'
+      },
+      {
+        name: '杨鑫海',
+        role: 'Developer',
+        bio: '专注于Arduino和ESP32等开发板的代码例程开发。',
+        image: 'https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/杨鑫海.jpg',
+        tags: ['Arduino', 'ESP32', '代码例程', '嵌入式开发', '物联网', '开发板'],
+        github: 'https://github.com/yangxinhai'
+      },
+      {
+        name: '殷子豪',
+        role: 'Developer&文艺工作者',
+        bio: '运营宣传与文字编辑，负责团队内容创作和对外传播。',
+        image: 'https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/殷子豪.jpg',
+        tags: ['运营宣传', '文字编辑', '内容创作', '团队传播', '文案策划', '品牌建设'],
+        github: 'https://github.com/yinzihao'
+      },
+      {
+        name: '孙如婕',
+        role: '灵巧手横向开发贡献者',
+        bio: '专注于灵巧手的横向开发，为项目提供创新的技术解决方案和开发支持。',
+        image: 'https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/孙如婕.jpg',
+        tags: ['灵巧手开发', '横向开发', '技术创新', '开发支持', '项目贡献', '技术解决方案'],
+        github: 'https://github.com/sunrujie'
+      }
+    ],
     sponsors: [
       {
         name: '开源之夏',
@@ -425,46 +520,6 @@ export const zhTranslations: Translations = {
         image: 'https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/sponsor/立创开源广场.png',
         tags: ['开源硬件', '开发板', '技术资源', '硬件开发', '创客平台', '技术支持'],
         github: 'https://oshwhub.com/explore'
-      },
-      {
-        name: '艾迈斯',
-        role: 'Bronze Sponsor - ¥800',
-        bio: '全球领先的连接器解决方案提供商，专注于高性能连接器技术和创新应用。',
-        image: 'https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=ams%20logo%20sensor%20technology%20company%20professional%20corporate%20design&image_size=square',
-        tags: ['传感器技术', '光学传感器', '环境传感器', '汽车传感器', '工业4.0', '物联网'],
-        github: 'https://ams.com/'
-      },
-      {
-        name: '明基',
-        role: 'Product Sponsor - 显示器',
-        bio: '专业显示器设备解决方案提供商，为俱乐部提供高质量显示器支持，致力于提升视觉体验和工作效率。',
-        image: 'https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=benq%20logo%20display%20technology%20monitor%20projector%20professional%20brand&image_size=square',
-        tags: ['显示技术', '投影设备', '专业显示器', '视觉解决方案', '办公设备', '教育科技'],
-        github: 'https://www.benq.com/'
-      },
-      {
-        name: '易百纳社区',
-        role: 'Silver Sponsor - ¥4,500',
-        bio: '专业的技术开发者社区平台，为俱乐部提供开发板支持，汇聚众多技术专家，提供丰富的学习资源和交流机会。',
-        image: 'https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=developer%20community%20logo%20technology%20learning%20platform%20modern%20design&image_size=square',
-        tags: ['开发者社区', '技术交流', '在线学习', '项目分享', '技术文档', '编程教育'],
-        github: 'https://www.ebaina.com/'
-      },
-      {
-        name: 'Gitee',
-        role: 'Platform Partner',
-        bio: '中国领先的代码托管平台，为开发者提供安全、稳定、高效的代码管理服务。',
-        image: 'https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=gitee%20logo%20code%20hosting%20platform%20git%20repository%20red%20chinese&image_size=square',
-        tags: ['代码托管', 'Git仓库', '项目管理', '持续集成', '开源项目', '团队协作'],
-        github: 'https://gitee.com/'
-      },
-      {
-        name: '飞书',
-        role: 'Communication Partner',
-        bio: '字节跳动旗下的新一代企业协作与管理平台，为团队提供高效的沟通与协作解决方案。',
-        image: 'https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=feishu%20lark%20logo%20enterprise%20collaboration%20platform%20blue%20modern&image_size=square',
-        tags: ['团队协作', '即时通讯', '文档协作', '项目管理', '视频会议', '企业服务'],
-        github: 'https://www.feishu.cn/'
       }
     ]
   },
@@ -577,8 +632,6 @@ export const zhTranslations: Translations = {
     getInTouch: '联系我们',
     contactInfo: '联系信息',
     followUs: '关注我们',
-    channelsDescription: '您也可以通过以下方式与我们取得联系。',
-    followUsDescription: '在社交平台关注我们，获取最新动态与新闻。',
     form: {
       name: '姓名',
       email: '邮箱',
@@ -591,164 +644,13 @@ export const zhTranslations: Translations = {
       sendMessage: '发送消息',
       sending: '发送中...',
       messageSent: '消息发送成功！',
-      messageError: '发送消息失败。请重试。',
-      introText: '请填写下方表单，我们会尽快与您联系。',
-      toastSuccessDescription: '我们会尽快与您取得联系。',
-      toastErrorDescription: '请检查您的网络连接并重试。'
+      messageError: '发送消息失败。请重试。'
     },
     info: {
       address: '新北区辽河路666号，东一门，玉衡楼 A416',
       phone: '+86 158 9600 0818',
       email: '22230635@czu.cn',
       hours: '周一至周五：上午9点 - 下午6点'
-    },
-    infoLabels: {
-      address: '地址',
-      phone: '电话',
-      email: '邮箱',
-      hours: '办公时间'
-    },
-    social: {
-      gitee: 'Gitee',
-      wechat: '微信',
-      email: '邮箱'
-    },
-    application: {
-      title: 'NEC官网上线申请',
-      description: '申请加入NEC官网，展示您的项目与成果。',
-      applyNow: '立即申请'
-    }
-  },
-  // Getting Started 页面翻译
-  gettingStarted: {
-    hero: {
-      title: '新能源编程俱乐部',
-      description: '探索新能源技术的无限可能，从编程开始改变世界',
-      buttons: {
-        joinClub: '加入俱乐部',
-        viewProjects: '查看项目',
-        visitSite: '访问官网'
-      }
-    },
-    stats: {
-      learnersTitle: '学习者',
-      learnersDesc: '活跃学习者',
-      completedProjectsTitle: '完成项目',
-      completedProjectsDesc: '项目完成数',
-      averageRatingTitle: '平均评分',
-      averageRatingDesc: '学员满意度',
-      successRateTitle: '成功率',
-      successRateDesc: '学习成功率'
-    },
-    directions: {
-      title: '选择你的技术方向',
-      description: '根据你的兴趣和职业规划，选择最适合的学习路径',
-      coreSkills: '核心技能',
-      projectsSuffix: '个项目',
-      startLearning: '开始学习',
-      embedded: {
-        title: '嵌入式开发',
-        description: '学习嵌入式系统开发，掌握硬件与软件结合的核心技术',
-        skills: ['C/C++', 'FreeRTOS', '硬件调试', '通信协议'],
-        duration: '6-8个月'
-      },
-      gui: {
-        title: 'GUI界面开发',
-        description: '掌握跨平台图形界面开发，创建美观实用的桌面应用',
-        skills: ['Qt/QML', 'UI设计', '跨平台开发', '用户体验'],
-        duration: '4-6个月'
-      },
-      algorithm: {
-        title: '算法与数据结构',
-        description: '深入学习算法设计与优化，提升编程思维和解决问题的能力',
-        skills: ['算法设计', '数据结构', '性能优化', '数学建模'],
-        duration: '8-12个月'
-      },
-      structurePrint: {
-        title: '结构打印开发',
-        description: '面向3D结构打印的设计、切片与控制开发',
-        skills: ['CAD建模', '切片软件', '材料工艺', 'G-code/控制'],
-        duration: '5-7个月'
-      }
-    },
-    quickGuides: {
-      title: '快速上手指南',
-      description: '跟随我们的指南，快速开始你的新能源编程之旅',
-      stepsLabel: '步骤：',
-      items: {
-        setup: {
-          title: '环境搭建',
-          description: '快速搭建开发环境，开始你的编程之旅',
-          steps: [
-            '选择适合的开发工具',
-            '安装必要的软件包',
-            '配置开发环境',
-            '运行第一个程序'
-          ],
-          estimatedTime: '30分钟'
-        },
-        firstGoodIssue: {
-          title: '第一个好的问题',
-          description: '寻找并解决你的第一个Good Issue，开始为开源项目做贡献',
-          steps: [
-            '浏览项目Issue列表',
-            '筛选Good First Issue标签',
-            '理解问题描述和要求',
-            'Fork项目并创建分支',
-            '实现解决方案',
-            '提交Pull Request'
-          ],
-          estimatedTime: '25分钟'
-        },
-        firstProject: {
-          title: '第一个项目',
-          description: '通过实际项目快速上手，掌握基础开发流程',
-          steps: [
-            '选择入门项目',
-            '理解项目结构',
-            '编写核心代码',
-            '测试和调试',
-            '项目部署'
-          ],
-          estimatedTime: '2小时'
-        },
-        community: {
-          title: '加入社区',
-          description: '融入学习社区，获得更多支持和交流机会',
-          steps: [
-            '注册俱乐部账号',
-            '完善个人资料',
-            '加入学习小组',
-            '参与讨论交流'
-          ],
-          estimatedTime: '15分钟'
-        }
-      }
-    },
-    baseTutorials: {
-      title: '基础教程',
-      description: '从零开始学习编程基础知识和核心概念',
-      introTitle: '编程入门',
-      introDesc: '编程基础概念和思维方式，了解新能源编程的应用领域和发展前景',
-      fundamentalsTitle: '编程基础',
-      fundamentalsDesc: '变量、函数、控制结构等基础知识，掌握编程的核心概念和语法',
-      startLearning: '开始学习'
-    },
-    trainingResources: {
-      title: '培训资源',
-      description: '丰富的学习资源，助你快速提升技能',
-      githubRepoTitle: 'GitHub 仓库',
-      githubRepoDesc: '查看项目源码和贡献代码',
-      visitGithub: '访问 GitHub',
-      docsTitle: '技术文档',
-      docsDesc: '详细的技术文档和API参考',
-      viewDocs: '查看文档',
-      videosTitle: '视频教程',
-      videosDesc: '观看实战项目视频教程',
-      watchVideos: '观看视频',
-      communityTitle: '社区交流',
-      communityDesc: '加入社区讨论和交流',
-      joinDiscussion: '加入讨论'
     }
   },
   dashboard: {
@@ -784,24 +686,16 @@ export const zhTranslations: Translations = {
     }
   },
   footer: {
-    clubName: '新能源编程俱乐部',
+    clubName: 'NEC新能源开发者社区',
     description: '通过协作开发构建可持续技术',
     navigation: '导航',
     resources: '资源',
     contact: '联系',
     learningMaterials: '学习资料',
     joinClub: '加入NEC仓库实验室',
-    gettingStarted: '入门文档',
-    techRoadmap: {
-      title: '技术路线',
-      description: '专业的技术发展指导'
-    },
     address: '江苏省常州市新北区辽河路666号常州工学院辽河路校区玉衡A416仓库实验室',
-    copyright: '© 2025 新能源编程俱乐部。保留所有权利。'
+    copyright: '© 2025 NEC新能源开发者社区。保留所有权利。'
   },
-  
-  // 学习路径和技术路线翻译
-  learning: learningTranslations.zh,
   displayRatio: {
     title: '显示比例调整器',
     description: '调整卡片显示比例，查看不同比例下的视觉效果',

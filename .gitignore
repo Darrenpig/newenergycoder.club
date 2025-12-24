@@ -1,17 +1,60 @@
-/dist
-/node_modules
-.DS_Store
-*.local
-.env.local
-.env.*.local
-
-# IDEs
-.idea/
-.vscode/
-
 # Logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Build Output
+dist
+dist-ssr
+build
+out
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDEs and Editors
+.idea
+.vscode
+*.swp
+*.swo
+*.swn
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+!.env.example
+
+# Testing
+coverage
+.nyc_output
+
+# Vercel
 .vercel
+
+# TypeScript
+*.tsbuildinfo
+
+# Analysis Reports
+vercel-render-report.json
+vercel-render-analysis.md
+
+# Local config
+*.local

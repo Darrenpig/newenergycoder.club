@@ -16,11 +16,16 @@ export function AboutSection() {
         <div className="relative rounded-lg shadow-lg overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 backdrop-blur-sm border border-white/10">
           <div className="relative z-10 p-12">
             <div className="text-foreground mb-8">
+                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6 gradient-text">
+                  {t.footer.clubName}
+                </h1>
                 <h2 className="text-3xl font-bold tracking-tight">
+                  <span className="gradient-text mr-2">{`{`}</span>
                   {t.about.title}
+                  <span className="gradient-text ml-2">{`}`}</span>
                 </h2>
                 <div className="mt-6 max-w-4xl mx-auto">
-                  <p className="leading-relaxed text-left font-bold text-primary">
+                  <p className="leading-relaxed text-left">
                     {t.about.paragraph1}
                   </p>
                 </div>
