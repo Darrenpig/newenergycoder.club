@@ -335,6 +335,69 @@ export const contributors: TeamMember[] = [
     image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/孙诗睿.jpg',
     tags: ['嵌入式硬件', '单片机', 'AIC', '工业视觉', 'SIG', '硬件开发'],
     github: 'https://github.com/sunshirui'
+  },
+  {
+    name: '梁新雷',
+    role: '队员',
+    bio: '毫无经验的一只小白，正在努力学习中。',
+    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/梁新雷.jpg',
+    tags: ['小白', '队员', '学习中']
+  },
+  {
+    name: '顾佳欣',
+    role: 'Contributor',
+    bio: '专注于数据库与Unity数据传导技术。',
+    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/顾佳欣.jpg',
+    tags: ['数据库', 'Unity', '数据传导']
+  },
+  {
+    name: '徐康',
+    role: 'Contributor',
+    bio: '擅长3D打印与建模技术。',
+    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/徐康.jpg',
+    tags: ['3D打印', '建模', 'SolidWorks']
+  },
+  {
+    name: '王欣怡',
+    role: '电控组成员',
+    bio: '只要是学习机构中的电控部分，学习过51，32单片机以及sw建模。',
+    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/王欣怡.jpg',
+    tags: ['电控', '51单片机', 'STM32', 'SW建模']
+  },
+  {
+    name: '汪奕希',
+    role: 'Contributor',
+    bio: '目前在视觉岗位，探索计算机视觉技术。',
+    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/汪奕希.jpg',
+    tags: ['视觉', '计算机视觉', '算法']
+  },
+  {
+    name: '岳添俊',
+    role: 'Contributor',
+    bio: '专注于C语言开发与学习。',
+    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/岳添俊.jpg',
+    tags: ['C语言', '编程', '软件开发']
+  },
+  {
+    name: '李畅畅',
+    role: 'Contributor',
+    bio: '负责电控与场地相关工作。',
+    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/李畅畅.jpg',
+    tags: ['电控', '场地运营', '硬件维护']
+  },
+  {
+    name: '孙雯艳',
+    role: 'Designer',
+    bio: '对机械方面了解较多，熟练sw建模，参加过3d设计大赛和农业智能装备大赛，自学单片机。',
+    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/孙雯艳.jpg',
+    tags: ['机械设计', 'SW建模', '3D设计', '单片机', '智能装备']
+  },
+  {
+    name: '陆宇豪',
+    role: '学生',
+    bio: '在读研究生，专注于学术与技术研究。',
+    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/陆宇豪.jpg',
+    tags: ['研究生', '学生', '学术研究']
   }
 ];
 
