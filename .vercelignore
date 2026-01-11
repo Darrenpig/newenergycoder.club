@@ -1,7 +1,9 @@
-node_modules
-build
-dist
 .git
+node_modules
 .trae
-.log
-.figma
+test
+coverage
+*.log
+.env.local
+.DS_Store
+Thumbs.db

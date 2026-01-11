@@ -40,7 +40,16 @@ export default defineConfig({
   assetsInclude: ['**/*.md'],
   build: {
     // 启用代码分割
-    rollupOptions: {},
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'ui-vendor': ['@radix-ui/react-avatar', '@radix-ui/react-checkbox', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-label', '@radix-ui/react-progress', '@radix-ui/react-radio-group', '@radix-ui/react-select', '@radix-ui/react-separator', '@radix-ui/react-slot', '@radix-ui/react-tabs', '@radix-ui/react-toast', '@radix-ui/react-tooltip', 'lucide-react', 'class-variance-authority', 'clsx', 'tailwind-merge'],
+          'framer-motion': ['framer-motion'],
+          'markdown': ['react-markdown', 'react-syntax-highlighter', 'remark-gfm'],
+        }
+      }
+    },
     // 启用压缩
     minify: 'terser',
     // 移除 console 和 debugger
