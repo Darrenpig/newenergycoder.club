@@ -25,6 +25,7 @@ import MettaLogo from '@/image/sponsor/麦塔智能.png?url'
 import AmassLogo from '@/image/sponsor/Amass.png?url'
 import BenqLogo from '@/image/sponsor/benq-logo.png?url'
 import YibainaLogo from '@/image/sponsor/易百纳.png?url'
+import GPUFreeLogo from '@/assets/logo_GPU_Free.png?url'
 import RCBBLogo from '@/RCBB.png?url'
 // 已移除Three.js，保留GIF版本动画组件
 import GifAnimation from '@/components/ui/GifAnimation'
@@ -568,7 +569,8 @@ export function TeamPage() {
               { name: '麦塔科技', logo: MettaLogo, website: 'https://www.myactuator.cn/' },
               { name: '艾迈斯', logo: AmassLogo, website: 'https://www.china-amass.com/' },
               { name: '易百纳社区', logo: YibainaLogo, website: 'https://www.ebaina.com/' },
-              { name: '明基', logo: BenqLogo, website: 'https://www.benq.com.cn/' }
+              { name: '明基', logo: BenqLogo, website: 'https://www.benq.com.cn/' },
+              { name: 'GPUfree 算例自由', logo: GPUFreeLogo, website: 'https://gpufree.org/' }
             ].map((sponsor, index) => (
               <div key={index} className="group">
                 {sponsor.website ? (

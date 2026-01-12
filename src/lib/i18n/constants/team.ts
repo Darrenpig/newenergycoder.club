@@ -5,7 +5,7 @@ export const maintainers: TeamMember[] = [
     name: 'DarrenPig',
     role: 'Club Founder & BSP 嵌软工程师',
     bio: 'Renewable energy researcher with a focus on AI applications for energy optimization.',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/maintainer/DarrenPig.jpg',
+    image: '/image/maintainer/DarrenPig.jpg',
     tags: ['AI', 'BSP', '嵌入式', 'ROBOCON', '能源监测', 'openEuler'],
     gitee: 'https://gitee.com/darrenpig',
     github: 'https://github.com/Darrenpig',
@@ -16,7 +16,7 @@ export const maintainers: TeamMember[] = [
     name: '殷统创',
     role: 'Club Founder & BSP Expert',
     bio: '专注于AI在能源优化应用的可再生能源研究员。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/maintainer/殷统创.jpg',
+    image: '/image/maintainer/殷统创.jpg',
     tags: ['AI', 'BSP', '能源优化', '可再生能源', '华为云AI'],
     github: 'https://github.com/yintongchuang'
   },
@@ -24,7 +24,7 @@ export const maintainers: TeamMember[] = [
     name: '许珑译',
     role: '机器人算法工程师',
     bio: '专注于机器人算法研发部署以及业务逻辑设计。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/maintainer/许珑译.jpg',
+    image: '/image/maintainer/许珑译.jpg',
     tags: ['机器人算法', 'ROBOCON', '人形机器人', '算法部署', 'ROS'],
     github: 'https://github.com/xulongyi'
   },
@@ -32,7 +32,7 @@ export const maintainers: TeamMember[] = [
     name: '张旺旺',
     role: '机器人运行时工程师',
     bio: '负责项目的核心技术攻坚，保障电控系统的稳定运行。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/maintainer/张旺旺.png',
+    image: '/image/maintainer/张旺旺.png',
     tags: ['电控系统', '运行时', 'ROBOCON', '嵌入式', '系统稳定性'],
     github: 'https://github.com/zhangwangwang'
   }
@@ -43,7 +43,7 @@ export const developers: TeamMember[] = [
     name: '刘英琪',
     role: '嵌入式开发工程师',
     bio: '专注于现代机器人技术栈，致力于构建高性能的机器人界面。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/刘英琪.png',
+    image: '/image/developer/刘英琪.png',
     tags: ['React', 'TypeScript', 'Vue', '前端架构', 'UI/UX', 'Vite'],
     github: 'https://github.com/liuyingqi'
   },
@@ -51,7 +51,7 @@ export const developers: TeamMember[] = [
     name: '单广志',
     role: '嵌入式开发工程师',
     bio: '机器人行业电控驱动开发以及硬件电路设计。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/单广志.jpg',
+    image: '/image/developer/单广志.jpg',
     tags: ['嵌入式开发', '电控驱动', '硬件电路设计', '机器人', 'STM32', 'PCB设计'],
     github: 'https://github.com/shanguangzhi'
   },
@@ -59,7 +59,7 @@ export const developers: TeamMember[] = [
     name: '周志',
     role: '全栈开发工程师',
     bio: '具备前后端开发能力，致力于端到端的解决方案开发。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/周志.png',
+    image: '/image/developer/周志.png',
     tags: ['全栈开发', 'JavaScript', 'Python', 'React', 'Node.js', '项目管理'],
     github: 'https://github.com/zhouzhi'
   },
@@ -67,7 +67,7 @@ export const developers: TeamMember[] = [
     name: '李硕',
     role: '硬件系统架构师',
     bio: '专注于硬件系统架构设计和技术选型，为项目提供技术指导。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/李硕.png',
+    image: '/image/developer/李硕.png',
     tags: ['系统架构', '技术选型', '分布式系统', '性能优化', '云原生', 'Kubernetes'],
     github: 'https://github.com/lishuo'
   },
@@ -75,7 +75,7 @@ export const developers: TeamMember[] = [
     name: '牛良旭',
     role: 'DevOps电池管理工程师',
     bio: '负责项目的持续集成和部署，保障开发流程的高效运行。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/牛良旭.jpg',
+    image: '/image/developer/牛良旭.jpg',
     tags: ['DevOps', 'CI/CD', 'Docker', 'Kubernetes', 'GitHub Actions', '自动化部署'],
     github: 'https://github.com/niuliangxu'
   },
@@ -83,7 +83,7 @@ export const developers: TeamMember[] = [
     name: '郑钦文',
     role: '机电一体化开发工程师',
     bio: '专注于机电设计开发，为用户提供优质的移动端体验。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/郑钦文.jpg',
+    image: '/image/developer/郑钦文.jpg',
     tags: ['React Native', 'Flutter', 'iOS', 'Android', '移动端优化', '跨平台开发'],
     github: 'https://github.com/zhengqinwen'
   },
@@ -91,7 +91,7 @@ export const developers: TeamMember[] = [
     name: '杨力滔',
     role: '星闪手柄开发工程师',
     bio: '星闪手柄开发专家，熟悉STM32+RTOS C语言开发。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/杨力滔.JPG',
+    image: '/image/developer/杨力滔.JPG',
     tags: ['星闪手柄', 'STM32', 'RTOS', 'C语言', '嵌入式开发', '硬件控制'],
     github: 'https://github.com/yanglitao'
   },
@@ -99,7 +99,7 @@ export const developers: TeamMember[] = [
     name: '彭柯颖',
     role: '机械R1机器人开发者',
     bio: '新加入的开发团队成员，积极参与机器人项目开发，学习新技术。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/彭柯颖.jpg',
+    image: '/image/developer/彭柯颖.jpg',
     tags: ['新成员', '项目开发', '学习成长', 'Web开发', 'JavaScript', '团队协作'],
     github: 'https://github.com/pengkeying'
   },
@@ -107,21 +107,21 @@ export const developers: TeamMember[] = [
     name: '孟洁',
     role: '嵌入式软件工程师',
     bio: '专注于 STM32、RTOS 与驱动开发，擅长 C/C++。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/孟洁.jpg',
+    image: '/image/developer/孟洁.jpg',
     tags: ['STM32', 'RTOS', 'C/C++', '驱动开发']
   },
   {
     name: '文钰婷',
     role: '嵌入式软件工程师',
     bio: '熟悉实时操作系统与驱动开发，聚焦 C/C++ 与 STM32。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/文钰婷.jpg',
+    image: '/image/developer/文钰婷.jpg',
     tags: ['STM32', 'RTOS', 'C/C++', '驱动开发']
   },
   {
     name: '张龚轩',
     role: '物流自动化系统工程师',
     bio: '聚焦 PLC、机器视觉与智能分拣系统的工程实现与优化。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/张龚轩.jpg',
+    image: '/image/developer/张龚轩.jpg',
     tags: ['物流自动化', 'PLC', '机器视觉', '分拣系统', '工业控制']
   }
 ];
@@ -131,56 +131,56 @@ export const designers: TeamMember[] = [
     name: 'Xiux',
     role: 'UI/UX设计师 & 仓库PM',
     bio: '专注于开发者体验设计和界面优化，为可持续仓库创造美观易用的界面。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/designer/xiux.jpg',
+    image: '/image/designer/xiux.jpg',
     tags: ['UI设计', 'UX设计', 'Figma', 'Sketch', '原型设计', '用户研究']
   },
   {
     name: 'ikkOoOo',
     role: '工业/产品设计师',
     bio: '专注于创意设计和视觉表达，为项目提供独特的设计视角。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/designer/ikkOoOo.jpg',
+    image: '/image/designer/ikkOoOo.jpg',
     tags: ['创意设计', '视觉表达', '设计创新', '艺术指导', '品牌设计', '视觉传达']
   },
   {
     name: '张若璐',
     role: '视觉设计师&财务分析师',
     bio: '专注于品牌落地和财务分析，为项目提供专业的财务视角可行性落地设计。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/designer/张若璐.jpg',
+    image: '/image/designer/张若璐.jpg',
     tags: ['品牌设计', 'Power BI', 'Logo设计', '色彩搭配']
   },
   {
     name: '韦彩日',
     role: '工业产品设计师',
     bio: '负责对接需求，专注于工业产品设计，为项目提供专业的设计解决方案。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/designer/韦彩日.jpg',
+    image: '/image/designer/韦彩日.jpg',
     tags: ['工业设计', '产品设计', '需求对接', '设计解决方案', '用户体验', '产品规划']
   },
   {
     name: '张岩皓',
     role: '摄影&数据可视化&设计师&运营博主',
     bio: '会摄影，学艺术设计，做漂亮餐，专注于摄影、数据可视化设计和运营推广。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/designer/张岩皓.jpg',
+    image: '/image/designer/张岩皓.jpg',
     tags: ['摄影', '数据可视化', '艺术设计', '运营博主', '视觉传达', '内容创作']
   },
   {
     name: '李想',
     role: 'UX设计师',
     bio: '一直在探索技术与设计边界的路上，以用户为中心，以体验为驱动。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/designer/李想.jpg',
+    image: '/image/designer/李想.jpg',
     tags: ['UX设计', '用户体验', '设计思维', 'Figma', '用户旅程', '信息架构']
   },
   {
     name: '李一楠',
     role: '运营组长',
     bio: '为NEC小队宣传以及主持，负责团队运营和对外宣传工作。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/designer/李一楠.jpg',
+    image: '/image/designer/李一楠.jpg',
     tags: ['团队运营', '宣传策划', '活动主持', 'NEC小队', '对外联络', '品牌推广']
   },
   {
     name: '王彦君',
     role: '工业/产品设计师',
     bio: '致力于通过设计解决实际问题，以更开放的态度寻找更多可能性。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/王彦君.jpg',
+    image: '/image/contributer/王彦君.jpg',
     tags: ['工业设计', '产品设计', 'SolidWorks', 'Rhino', '3D建模', '材料工艺']
   }
 ];
@@ -190,7 +190,7 @@ export const contributors: TeamMember[] = [
     name: '卢永杰',
     role: '嵌入式&运控算法专家',
     bio: '专注算法部署优化及BSP逻辑协同设计，在嵌入式和运控算法领域有深入研究。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/卢永杰.jpg',
+    image: '/image/contributer/卢永杰.jpg',
     tags: ['嵌入式开发', '运控算法', '算法部署', '协同设计', '算法优化'],
     github: 'https://github.com/luyongjie'
   },
@@ -198,7 +198,7 @@ export const contributors: TeamMember[] = [
     name: '卢王淳',
     role: '25RC项管&机械&电控小白',
     bio: '25RC项目管理，机械和电控领域的学习者，负责项目协调工作。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/卢王淳.jpg',
+    image: '/image/contributer/卢王淳.jpg',
     tags: ['项目管理', '机械设计', '电控学习', 'ROBOCON', '团队协调', '25RC'],
     github: 'https://github.com/luwangchun'
   },
@@ -206,7 +206,7 @@ export const contributors: TeamMember[] = [
     name: '韩祺冉',
     role: 'Contributor',
     bio: '数据分析师，专注于数据处理和可视化分析工作。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/韩祺冉.jpg',
+    image: '/image/contributer/韩祺冉.jpg',
     tags: ['数据分析', '数据处理', '统计分析', '数据可视化', '业务分析'],
     github: 'https://gitee.com/han-qiran'
   },
@@ -214,7 +214,7 @@ export const contributors: TeamMember[] = [
     name: '崔正阳',
     role: 'Developer/Sponsor',
     bio: '24年华为云IoT大赛加入实验室，24RC全国机器人大赛正式接触机器人，25RC全程参与备赛。主要技能掌握为上位机控制，算法，仿真模型。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/崔正阳.jpg',
+    image: '/image/contributer/崔正阳.jpg',
     tags: ['上位机控制', '算法开发', '仿真模型', 'ROBOCON', '华为云IoT', '机器人竞赛'],
     github: 'https://github.com/cuizhengyang'
   },
@@ -222,7 +222,7 @@ export const contributors: TeamMember[] = [
     name: '王于豪',
     role: '成型组组长',
     bio: '调试3D打印机帮助团队打印物品，负责成型组的管理和技术支持工作。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/王于豪.jpg',
+    image: '/image/contributer/王于豪.jpg',
     tags: ['3D打印', '成型技术', '团队管理', '技术支持', '设备调试', '物品制作'],
     github: 'https://github.com/wangyuhao'
   },
@@ -230,14 +230,14 @@ export const contributors: TeamMember[] = [
     name: '闻志伟',
     role: 'Bronze Sponsor',
     bio: '致力于推动可持续技术发展的个人赞助者。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/闻志伟.jpg',
+    image: '/image/developer/闻志伟.jpg',
     tags: ['技术赞助', '项目支持', '可持续发展', '创新资助', '社区建设', '人才培养']
   },
   {
     name: '张旺旺',
     role: '新能源运维工程师',
     bio: '负责核心项目的真机部署和运维工作，保障系统的稳定运行。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/张旺旺.jpg',
+    image: '/image/contributer/张旺旺.jpg',
     tags: ['运维部署', 'Linux', '服务器管理', '监控告警', '故障排查', '系统优化'],
     github: 'https://github.com/zhangwangwang'
   },
@@ -245,7 +245,7 @@ export const contributors: TeamMember[] = [
     name: '吴洛斌',
     role: '开源贡献者&气动自动化专家',
     bio: '积极参与开源项目，为社区贡献代码商业化文档。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/吴洛斌.jpg',
+    image: '/image/contributer/吴洛斌.jpg',
     tags: ['气动自动化', '开源贡献', '工业控制', 'PLC', '自动化系统'],
     github: 'https://github.com/wuluobin'
   },
@@ -253,7 +253,7 @@ export const contributors: TeamMember[] = [
     name: '余浩铭',
     role: '机器人日志运营编辑',
     bio: '专注于宣传和文字，让NEC的每一份理念都能被看见。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/余浩铭.jpg',
+    image: '/image/developer/余浩铭.jpg',
     tags: ['文艺工作', '运营编辑', '宣传策划', '文字编辑', 'NEC理念', '内容创作'],
     github: 'https://github.com/yuhaoming'
   },
@@ -261,7 +261,7 @@ export const contributors: TeamMember[] = [
     name: '许子涵',
     role: '产品经理',
     bio: '负责产品规划和需求分析，推动项目向正确方向发展。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/许子涵.png',
+    image: '/image/contributer/许子涵.png',
     tags: ['产品规划', '需求分析', '用户研究', 'Axure', '原型设计', '数据分析'],
     github: 'https://github.com/xuzihan'
   },
@@ -269,7 +269,7 @@ export const contributors: TeamMember[] = [
     name: '卞乐凌',
     role: '嵌入式学习贡献者',
     bio: '嵌入式学习中，积极参与开源项目和社区建设。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/卞乐凌.jpg',
+    image: '/image/contributer/卞乐凌.jpg',
     tags: ['嵌入式学习', '开源贡献', '社区建设', 'STM32', '硬件开发'],
     github: 'https://github.com/bianleiling'
   },
@@ -277,14 +277,14 @@ export const contributors: TeamMember[] = [
     name: '徐海婷',
     role: '财务管理专员',
     bio: '聚焦财务流程优化与数据支撑，通过合理预算、风险防控，助力技术实践、行稳致远。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/designer/徐海婷.jpg',
+    image: '/image/designer/徐海婷.jpg',
     tags: ['财务管理', '预算控制', '风险防控', '数据分析', '流程优化', '成本管控']
   },
   {
     name: '郑绍恺',
     role: '算法竞赛选手',
     bio: '专注于算法研究以及最优化问题',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/郑邵凯.png',
+    image: '/image/contributer/郑邵凯.png',
     tags: ['算法研究', '最优化', '竞赛选手', '问题求解', '算法优化', '数学建模'],
     github: 'https://github.com/zhengshaokai'
   },
@@ -292,7 +292,7 @@ export const contributors: TeamMember[] = [
     name: '郭童童',
     role: '场控FD',
     bio: '专注于嵌入式、机器视觉与硬件研发。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/郭童童.jpg',
+    image: '/image/contributer/郭童童.jpg',
     tags: ['场控FD', '嵌入式', '机器视觉', '硬件'],
     gitee: 'https://gitee.com/guo--tongtong'
   },
@@ -300,7 +300,7 @@ export const contributors: TeamMember[] = [
     name: '杨鑫海',
     role: 'Developer',
     bio: '专注于Arduino和ESP32等开发板的代码例程开发。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/杨鑫海.jpg',
+    image: '/image/contributer/杨鑫海.jpg',
     tags: ['Arduino', 'ESP32', '代码例程', '嵌入式开发', '物联网', '开发板'],
     github: 'https://github.com/yangxinhai'
   },
@@ -308,7 +308,7 @@ export const contributors: TeamMember[] = [
     name: '殷子豪',
     role: 'Developer&文艺工作者',
     bio: '运营宣传与文字编辑，负责团队内容创作和对外传播。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/殷子豪.jpg',
+    image: '/image/contributer/殷子豪.jpg',
     tags: ['运营宣传', '文字编辑', '内容创作', '团队传播', '文案策划', '品牌建设'],
     github: 'https://github.com/yinzihao'
   },
@@ -316,7 +316,7 @@ export const contributors: TeamMember[] = [
     name: '孙如婕',
     role: '灵巧手横向开发贡献者',
     bio: '专注于灵巧手的横向开发，为项目提供创新的技术解决方案和开发支持。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/孙如婕.jpg',
+    image: '/image/contributer/孙如婕.jpg',
     tags: ['灵巧手开发', '横向开发', '技术创新', '开发支持', '项目贡献', '技术解决方案'],
     github: 'https://github.com/sunrujie'
   },
@@ -324,7 +324,7 @@ export const contributors: TeamMember[] = [
     name: '杨彩妮',
     role: 'Contributor',
     bio: 'AIC工业视觉SIG pre-sponsor，专注于工业视觉技术的研究和应用。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/杨彩妮.jpg',
+    image: '/image/contributer/杨彩妮.jpg',
     tags: ['工业视觉', 'AIC', 'SIG', 'pre-sponsor', '视觉技术', '技术研究'],
     github: 'https://github.com/yangcaini'
   },
@@ -332,7 +332,7 @@ export const contributors: TeamMember[] = [
     name: '孙诗睿',
     role: 'Contributor',
     bio: 'AIC工业视觉SIG 嵌硬-单片机专家，专注于嵌入式硬件和单片机开发。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/孙诗睿.jpg',
+    image: '/image/contributer/孙诗睿.jpg',
     tags: ['嵌入式硬件', '单片机', 'AIC', '工业视觉', 'SIG', '硬件开发'],
     github: 'https://github.com/sunshirui'
   },
@@ -340,63 +340,63 @@ export const contributors: TeamMember[] = [
     name: '梁新雷',
     role: '队员',
     bio: '毫无经验的一只小白，正在努力学习中。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/梁新雷.jpg',
+    image: '/image/contributer/梁新雷.jpg',
     tags: ['小白', '队员', '学习中']
   },
   {
     name: '顾佳欣',
     role: 'Contributor',
     bio: '专注于数据库与Unity数据传导技术。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/顾佳欣.jpg',
+    image: '/image/contributer/顾佳欣.jpg',
     tags: ['数据库', 'Unity', '数据传导']
   },
   {
     name: '徐康',
     role: 'Contributor',
     bio: '擅长3D打印与建模技术。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/徐康.jpg',
+    image: '/image/contributer/徐康.jpg',
     tags: ['3D打印', '建模', 'SolidWorks']
   },
   {
     name: '王欣怡',
     role: '电控组成员',
     bio: '只要是学习机构中的电控部分，学习过51，32单片机以及sw建模。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/王欣怡.jpg',
+    image: '/image/contributer/王欣怡.jpg',
     tags: ['电控', '51单片机', 'STM32', 'SW建模']
   },
   {
     name: '汪奕希',
     role: 'Contributor',
     bio: '目前在视觉岗位，探索计算机视觉技术。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/汪奕希.jpg',
+    image: '/image/contributer/汪奕希.jpg',
     tags: ['视觉', '计算机视觉', '算法']
   },
   {
     name: '岳添俊',
     role: 'Contributor',
     bio: '专注于C语言开发与学习。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/岳添俊.jpg',
+    image: '/image/contributer/岳添俊.jpg',
     tags: ['C语言', '编程', '软件开发']
   },
   {
     name: '李畅畅',
     role: 'Contributor',
     bio: '负责电控与场地相关工作。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/李畅畅.jpg',
+    image: '/image/contributer/李畅畅.jpg',
     tags: ['电控', '场地运营', '硬件维护']
   },
   {
     name: '孙雯艳',
     role: 'Designer',
     bio: '对机械方面了解较多，熟练sw建模，参加过3d设计大赛和农业智能装备大赛，自学单片机。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/孙雯艳.jpg',
+    image: '/image/contributer/孙雯艳.jpg',
     tags: ['机械设计', 'SW建模', '3D设计', '单片机', '智能装备']
   },
   {
     name: '陆宇豪',
     role: '学生',
     bio: '在读研究生，专注于学术与技术研究。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/陆宇豪.jpg',
+    image: '/image/contributer/陆宇豪.jpg',
     tags: ['研究生', '学生', '学术研究']
   }
 ];
@@ -406,7 +406,7 @@ export const sponsors: TeamMember[] = [
     name: '开源之夏',
     role: 'Gold Sponsor - ¥12,000',
     bio: '中国科学院软件研究所、华为技术有限公司、中科南京软件技术研究院联合主办的开源活动。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/sponsor/开源之夏Logo.png',
+    image: '/image/sponsor/开源之夏Logo.png',
     tags: ['开源软件', '供应链点亮', '学生项目', '技术孵化', '创新推动', '人才培养'],
     github: 'https://summer-ospp.ac.cn/'
   },
@@ -414,9 +414,17 @@ export const sponsors: TeamMember[] = [
     name: '立创开源硬件平台',
     role: 'Silver Sponsor - ¥8,000',
     bio: '专业的开源硬件开发平台，提供丰富的开发板和技术资源。',
-    image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/sponsor/立创开源广场.png',
+    image: '/image/sponsor/立创开源广场.png',
     tags: ['开源硬件', '开发板', '技术资源', '硬件开发', '创客平台', '技术支持'],
     github: 'https://oshwhub.com/explore'
+  },
+  {
+    name: 'GPUfree 算例自由',
+    role: 'Computing Power Partner',
+    bio: '提供免费GPU算力支持，助力AI模型训练与科研探索。',
+    image: '/assets/logo_GPU_Free.png',
+    tags: ['GPU算力', '免费算力', 'AI训练', '科研支持', '合作伙伴'],
+    github: 'https://gpufree.org/'
   }
 ];
 

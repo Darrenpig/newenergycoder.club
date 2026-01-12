@@ -31,100 +31,105 @@ const iconMap = {
 const mockTechnologies: InnovationTechnology[] = [
   {
     id: '1',
-    name: '高效钙钛矿太阳能电池',
-    category: TechnologyCategory.SOLAR,
-    description: '新一代钙钛矿太阳能电池技术，转换效率超过25%',
-    detailedDescription: '采用钙钛矿材料的新型太阳能电池，具有高效率、低成本、柔性等优势。通过优化材料配方和制备工艺，实现了25%以上的光电转换效率，同时具备良好的稳定性和耐久性。',
-    maturity: TechnologyMaturity.PROTOTYPE,
-    image: 'https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=advanced%20perovskite%20solar%20cell%20technology%20laboratory%20research%20high%20efficiency%20photovoltaic%20panels&image_size=landscape_4_3',
-    videoUrl: 'https://example.com/perovskite-demo',
+    name: '电动车72V换电计算',
+    category: TechnologyCategory.ELECTRIC_VEHICLE,
+    description: '针对72V电动车系统的高效换电与能量计算方案',
+    detailedDescription: '该技术方案专注于72V电动车换电系统的能量管理与效率优化。通过精确的电池状态监测（SOC/SOH）算法，结合快速换电接口设计，实现电池包的快速更换与即时能量匹配。系统包含智能充电柜、电池BMS通信协议及云端调度平台，有效解决电动车续航焦虑，提升运营效率。',
+    maturity: TechnologyMaturity.PILOT,
+    image: 'https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=electric%20scooter%20battery%20swap%20station%2072V%20system%20modern%20technology&image_size=landscape_4_3',
     metrics: {
-      efficiency: '25.3%',
-      cost: '¥0.8/W',
-      lifespan: '25年',
-      carbonReduction: '90%'
+      efficiency: '98%',
+      capacity: '72V/50Ah',
+      cost: '¥3000/组',
+      lifespan: '2000次循环'
     },
     applications: [
       {
         id: 'app1',
-        name: '分布式屋顶发电',
-        description: '适用于住宅和商业建筑屋顶',
-        benefits: ['安装简便', '维护成本低', '发电效率高']
+        name: '外卖配送',
+        description: '为外卖骑手提供快速换电服务',
+        benefits: ['零等待', '无限续航', '降低成本']
       },
       {
         id: 'app2',
-        name: '移动设备充电',
-        description: '便携式太阳能充电设备',
-        benefits: ['轻便灵活', '随时充电', '环保节能']
+        name: '共享电动车',
+        description: '共享出行场景下的能源补给',
+        benefits: ['集中管理', '高效运维', '提升周转率']
       }
     ],
-    advantages: ['转换效率高', '制造成本低', '材料丰富', '工艺简单'],
-    challenges: ['长期稳定性', '大规模生产', '环境适应性'],
-    developmentTeam: '新能源材料实验室',
-    developmentDate: '2023-06-15',
-    lastUpdated: '2024-01-15',
-    tags: ['钙钛矿', '高效率', '低成本', '柔性'],
-    relatedTechnologies: ['2', '3']
+    advantages: ['换电速度快', '电池寿命长', '安全性高', '智能化管理'],
+    challenges: ['电池标准化', '网点布局', '初期投入'],
+    developmentTeam: '智能交通能源团队',
+    developmentDate: '2023-08-10',
+    lastUpdated: '2024-02-01',
+    tags: ['换电', '72V', '电动车', '能源管理'],
+    relatedTechnologies: ['3', '5']
   },
   {
     id: '2',
-    name: '智能风力发电系统',
-    category: TechnologyCategory.WIND,
-    description: 'AI驱动的智能风力发电系统，自适应风向和风速',
-    detailedDescription: '集成人工智能算法的智能风力发电系统，能够实时分析风向、风速等环境参数，自动调整叶片角度和转速，最大化发电效率。系统还具备预测性维护功能，能够提前发现潜在故障。',
-    maturity: TechnologyMaturity.PILOT,
-    image: 'https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=smart%20wind%20turbine%20AI%20technology%20renewable%20energy%20intelligent%20control%20system&image_size=landscape_4_3',
+    name: '房车光伏改装系统',
+    category: TechnologyCategory.SOLAR,
+    description: '专为房车设计的柔性光伏发电与储能一体化方案',
+    detailedDescription: '针对房车车顶曲面及空间限制，采用轻量化柔性CIGS或高效单晶硅组件，配合MPPT控制器与磷酸铁锂电池组，构建离网电力系统。系统支持行车充电、市电互补及太阳能优先供电模式，满足房车驻车期间的空调、冰箱及生活用电需求，实现绿色出行。',
+    maturity: TechnologyMaturity.COMMERCIAL,
+    image: 'https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=RV%20camper%20with%20flexible%20solar%20panels%20on%20roof%20nature%20background&image_size=landscape_4_3',
     metrics: {
-      efficiency: '45%',
-      capacity: '3.5MW',
-      cost: '¥6000/kW',
-      lifespan: '20年'
+      efficiency: '22%',
+      capacity: '800W',
+      cost: '¥12000/套',
+      lifespan: '15年'
     },
     applications: [
       {
         id: 'app3',
-        name: '海上风电场',
-        description: '大型海上风力发电项目',
-        benefits: ['风资源丰富', '发电稳定', '环境影响小']
+        name: '房车露营',
+        description: '野外无市电环境下的电力保障',
+        benefits: ['电力自给', '静音环保', '延长驻车时间']
       }
     ],
-    advantages: ['智能控制', '效率优化', '预测维护', '远程监控'],
-    challenges: ['初期投资大', '技术复杂', '维护成本'],
-    developmentTeam: '智能能源系统团队',
-    developmentDate: '2023-09-20',
-    lastUpdated: '2024-01-10',
-    tags: ['AI', '智能控制', '风电', '预测维护'],
-    relatedTechnologies: ['4', '5']
+    advantages: ['安装灵活', '轻量化', '抗震设计', '智能监控'],
+    challenges: ['阴雨天发电', '安装面积限制', '系统匹配'],
+    developmentTeam: '绿色出行改装实验室',
+    developmentDate: '2023-05-20',
+    lastUpdated: '2024-01-25',
+    tags: ['房车', '光伏', '离网系统', 'MPPT'],
+    relatedTechnologies: ['1', '3']
   },
   {
     id: '3',
-    name: '固态锂电池技术',
-    category: TechnologyCategory.ENERGY_STORAGE,
-    description: '下一代固态锂电池，安全性和能量密度大幅提升',
-    detailedDescription: '采用固态电解质的新型锂电池技术，相比传统液态电解质电池具有更高的安全性、能量密度和循环寿命。固态电解质不易燃烧，大大降低了电池起火和爆炸的风险。',
-    maturity: TechnologyMaturity.RESEARCH,
-    image: 'https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=solid%20state%20lithium%20battery%20technology%20advanced%20energy%20storage%20laboratory%20research&image_size=landscape_4_3',
+    name: '电动船舶动力系统',
+    category: TechnologyCategory.ELECTRIC_VEHICLE,
+    description: '纯电动船舶推进与能源管理系统',
+    detailedDescription: '面向内河航运及近海作业船舶的纯电动化解决方案。核心包括大容量船用动力电池包、高压直流配电系统及高效电力推进电机。系统集成能量管理策略，优化船舶在不同工况下的能耗，实现零排放、低噪音航行，符合绿色航运发展趋势。',
+    maturity: TechnologyMaturity.PILOT,
+    image: 'https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=electric%20ship%20vessel%20on%20water%20futuristic%20design%20clean%20energy&image_size=landscape_4_3',
     metrics: {
       efficiency: '95%',
-      capacity: '400Wh/kg',
-      lifespan: '10000次循环',
-      cost: '¥1200/kWh'
+      capacity: '2MWh',
+      lifespan: '10年',
+      cost: '¥500万/套'
     },
     applications: [
       {
         id: 'app4',
-        name: '电动汽车动力电池',
-        description: '新能源汽车的核心动力源',
-        benefits: ['续航里程长', '充电速度快', '安全性高']
+        name: '内河渡轮',
+        description: '城市内河客运及观光船舶',
+        benefits: ['零污染', '低噪音', '运营成本低']
+      },
+      {
+        id: 'app5',
+        name: '港口作业船',
+        description: '拖轮及辅助作业船舶',
+        benefits: ['响应速度快', '动力强劲', '节能减排']
       }
     ],
-    advantages: ['高安全性', '高能量密度', '长循环寿命', '快充能力'],
-    challenges: ['制造工艺复杂', '成本较高', '界面阻抗'],
-    developmentTeam: '先进电池技术研究所',
-    developmentDate: '2023-03-10',
-    lastUpdated: '2024-01-20',
-    tags: ['固态电池', '高安全', '高密度', '长寿命'],
-    relatedTechnologies: ['5', '1']
+    advantages: ['环保零排', '静音舒适', '维护简单', '能源成本低'],
+    challenges: ['续航里程', '充电设施', '电池安全'],
+    developmentTeam: '海洋新能源动力所',
+    developmentDate: '2023-11-15',
+    lastUpdated: '2024-02-10',
+    tags: ['电动船舶', '电力推进', '绿色航运', '船用电池'],
+    relatedTechnologies: ['5', '6']
   },
   {
     id: '4',
