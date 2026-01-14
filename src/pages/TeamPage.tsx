@@ -570,7 +570,7 @@ export function TeamPage() {
               { name: '艾迈斯', logo: AmassLogo, website: 'https://www.china-amass.com/' },
               { name: '易百纳社区', logo: YibainaLogo, website: 'https://www.ebaina.com/' },
               { name: '明基', logo: BenqLogo, website: 'https://www.benq.com.cn/' },
-              { name: 'GPUfree 算例自由', logo: GPUFreeLogo, website: 'https://gpufree.org/' }
+              { name: 'GPUfree 算力自由', logo: GPUFreeLogo, website: 'https://gpufree.org/' }
             ].map((sponsor, index) => (
               <div key={index} className="group">
                 {sponsor.website ? (

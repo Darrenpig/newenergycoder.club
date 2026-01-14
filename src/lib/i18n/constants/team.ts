@@ -419,7 +419,7 @@ export const sponsors: TeamMember[] = [
     github: 'https://oshwhub.com/explore'
   },
   {
-    name: 'GPUfree 算例自由',
+    name: 'GPUfree 算力自由',
     role: 'Computing Power Partner',
     bio: '提供免费GPU算力支持，助力AI模型训练与科研探索。',
     image: '/assets/logo_GPU_Free.png',
