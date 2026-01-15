@@ -1,3 +1,4 @@
+import { Carousel } from '@/components/ui/Carousel'
 import { FloatingControls } from '@/components/ui/floating-controls'
 import { AspectRatio } from '@/types/ui'
 import React from 'react'
@@ -359,6 +360,19 @@ export function TeamPage() {
     return { counts, percentages, total }
   }, [t.team.maintainers, t.team.developers, t.team.designers, t.team.contributors])
 
+  // 整合团队照片用于轮播展示
+  const carouselImages = useMemo(() => [
+    { 
+      src: TeamPhoto2, 
+      alt: "团队横向项目合照", 
+      description: t.team.teamPhotoDescription 
+    },
+    ...TEAM_PHOTOS.map(photo => ({
+      src: photo.src,
+      alt: photo.alt
+    }))
+  ], [t.team.teamPhotoDescription])
+
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
@@ -507,47 +521,17 @@ export function TeamPage() {
           </Card>
         </div>
 
-        {/* Team Project Photo Section */}
+        {/* Team Photos Carousel Section */}
         <div className="mt-16 mb-12">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold tracking-tight mb-4 text-foreground drop-shadow-lg dark:text-white dark:drop-shadow-2xl">
-              团队项目合照
+              {t.team.teamPhoto}
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full shadow-sm"></div>
           </div>
           
-          <Card className={CARD_STYLES.photo}>
-            <CardContent className="p-0">
-              <div className="relative overflow-hidden">
-                <img
-                  src={TeamPhoto2}
-                  alt="团队横向项目合照"
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-              </div>
-              <div className="p-6">
-                <p className="text-center text-muted-foreground dark:text-gray-200">
-                  {t.team.teamPhotoDescription}
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Additional Team Photos Section */}
-        <div className="mt-16 mb-12">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold tracking-tight mb-4 text-foreground drop-shadow-lg dark:text-white dark:drop-shadow-2xl">
-              更多团队合照
-            </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full shadow-sm"></div>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            {TEAM_PHOTOS.map((photo, index) => (
-              <PhotoCard key={index} src={photo.src} alt={photo.alt} />
-            ))}
+          <div className="max-w-5xl mx-auto">
+            <Carousel images={carouselImages} />
           </div>
         </div>
 
