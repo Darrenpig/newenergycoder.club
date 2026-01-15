@@ -13,9 +13,10 @@ interface CarouselProps {
   }[]
   autoPlayInterval?: number
   className?: string
+  captionPosition?: 'bottom' | 'top' | 'center'
 }
 
-export function Carousel({ images, autoPlayInterval = 5000, className }: CarouselProps) {
+export function Carousel({ images, autoPlayInterval = 5000, className, captionPosition = 'bottom' }: CarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [direction, setDirection] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
@@ -107,11 +108,21 @@ export function Carousel({ images, autoPlayInterval = 5000, className }: Carouse
               draggable="false"
             />
             {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+            <div className={cn(
+              "absolute inset-0 pointer-events-none transition-all duration-300",
+              captionPosition === 'bottom' && "bg-gradient-to-t from-black/60 via-transparent to-transparent",
+              captionPosition === 'top' && "bg-gradient-to-b from-black/60 via-transparent to-transparent",
+              captionPosition === 'center' && "bg-black/20"
+            )} />
             
             {/* Description */}
             {images[currentIndex].description && (
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 pointer-events-none">
+              <div className={cn(
+                "absolute pointer-events-none",
+                captionPosition === 'bottom' && "bottom-0 left-0 right-0 p-6 md:p-8",
+                captionPosition === 'top' && "top-0 left-0 right-0 p-6 md:p-8",
+                captionPosition === 'center' && "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full p-6 md:p-8"
+              )}>
                 <motion.p 
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
