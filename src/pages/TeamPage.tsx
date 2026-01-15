@@ -289,9 +289,9 @@ export function TeamPage() {
         const core = hasPeriod ? t.replace(/。$/, "") : t;
         return (
           <>
-            <span className="text-primary font-bold">{"{ "}</span>
-            <span className="text-primary font-bold">{core}</span>
-            <span className="text-primary font-bold">{" }"}</span>
+            <span className="text-green-600 dark:text-green-400 font-bold">{"{ "}</span>
+            <span className="text-green-600 dark:text-green-400 font-bold">{core}</span>
+            <span className="text-green-600 dark:text-green-400 font-bold">{" }"}</span>
             {hasPeriod && <span>。</span>}
           </>
         );
@@ -324,7 +324,7 @@ export function TeamPage() {
       }
       // 用户要求：“我们，是一个行动动词。” 改为主题色的加粗文字
       if (/^我们，是一个行动动词/.test(s)) {
-        cls = "mt-2 leading-relaxed tracking-wide font-bold text-primary"
+        cls = "mt-2 leading-relaxed tracking-wide font-bold text-green-600 dark:text-green-400"
       }
       // 英文版本：将 “Yet we are the same — we believe in technology for good, in the power of youth, and that sustainability is not a choice but a necessity.” 这句加粗
       if (/^Yet we are the same — we believe in technology for good/.test(s)) {
