@@ -22,6 +22,8 @@ import TeamPhoto3 from '@/image/合照1.jpg?url'
 import TeamPhoto4 from '@/image/合照2.jpg?url'
 import TeamPhoto5 from '@/image/合照3.jpg?url'
 import TeamPhoto6 from '@/image/合照4.jpg?url'
+import RoboconTraining from '@/image/2026ROBOCON技术培训（常州工NEC）_01.png?url'
+import RCBBActivity from '@/image/2601罗马车圈活动.jpg?url'
 import MettaLogo from '@/image/sponsor/麦塔智能.png?url'
 import AmassLogo from '@/image/sponsor/Amass.png?url'
 import BenqLogo from '@/image/sponsor/benq-logo.png?url'
@@ -366,6 +368,16 @@ export function TeamPage() {
       src: TeamPhoto2, 
       alt: "团队横向项目合照", 
       description: t.team.teamPhotoDescription 
+    },
+    {
+      src: RoboconTraining,
+      alt: "2026 ROBOCON技术培训",
+      description: "2026 ROBOCON技术培训（常州工NEC）"
+    },
+    {
+      src: RCBBActivity,
+      alt: "罗马车圈活动",
+      description: "2601罗马车圈活动"
     },
     ...TEAM_PHOTOS.map(photo => ({
       src: photo.src,
