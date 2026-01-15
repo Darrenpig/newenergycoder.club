@@ -542,7 +542,7 @@ export function TeamPage() {
               给予我们帮助的合作伙伴
             </h2>
             <p className="text-lg text-muted-foreground dark:text-gray-300 max-w-2xl mx-auto mb-6">
-              麦塔科技 艾迈斯 易百纳社区 明基
+              麦塔科技 艾迈斯 易百纳社区 明基 算力自由
             </p>
             <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full shadow-sm"></div>
           </div>
