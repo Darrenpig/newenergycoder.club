@@ -20,6 +20,8 @@ const AlgorithmDetailPage = React.lazy(() => import("@/pages/AlgorithmDetailPage
 const DesignerDetailPage = React.lazy(() => import("@/pages/DesignerDetailPage"));
 const TeamPage = React.lazy(() => import("@/pages/TeamPage").then(module => ({ default: module.TeamPage })));
 const InnovationShowcasePage = React.lazy(() => import("@/pages/InnovationShowcasePage").then(module => ({ default: module.InnovationShowcasePage })));
+const EvolutionStoryPage = React.lazy(() => import("@/pages/EvolutionStoryPage"));
+const PixelSliceDemoPage = React.lazy(() => import("@/pages/PixelSliceDemoPage"));
 const AdminDashboard = React.lazy(() => import("@/pages/AdminDashboard"));
 const MarkdownViewer = React.lazy(() => import("@/pages/MarkdownViewer").then(module => ({ default: module.MarkdownViewer })));
 const DocumentPage = React.lazy(() => import("@/components/DocumentPage").then(module => ({ default: module.DocumentPage })));
@@ -65,6 +67,8 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/team" element={<TeamPage />} />
             <Route path="/innovation" element={<PageLayout><InnovationShowcasePage /></PageLayout>} />
+            <Route path="/evolution" element={<EvolutionStoryPage />} />
+            <Route path="/pixel-slice" element={<PageLayout><PixelSliceDemoPage /></PageLayout>} />
             <Route path="/getting-started" element={<PageLayout><GettingStartedPage /></PageLayout>} />
             <Route path="/learning/embedded" element={<PageLayout><EmbeddedDetailPage /></PageLayout>} />
             <Route path="/learning/mechanical" element={<PageLayout><MechanicalDetailPage /></PageLayout>} />

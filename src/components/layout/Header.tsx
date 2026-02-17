@@ -28,6 +28,8 @@ export function Header() {
     { label: t.nav.team, href: '/team' },
     // 项目展示页面导航项
     { label: t.nav.projects, href: '/projects' },
+    // 演进历程页面
+    { label: '演进', href: '/evolution' },
     // 学习资源页面导航项
     { label: t.nav.resources, href: '/resources' },
     // 活动页面导航项

@@ -1,0 +1,16 @@
+5: 'export const zhTranslations: Translations = {\n'
+6: '  joinPage: {\n'
+7: "    title: '鍔犲叆鎴戜滑鐨勪勘涔愰儴',\n"
+8: "    subtitle: '鎴愪负鎴戜滑鍙\ue21b寔缁\ue160紪绋嬬ぞ鍖虹殑涓€鍛?,\n"
+9: '    wechat: {\n'
+10: "      title: '寰\ue1bb俊缇?,\n"
+11: "      description: '鍔犲叆鎴戜滑鐨勫井淇＄兢锛屼簡瑙ｆ渶鏂版洿鏂般€侀」鐩\ue1bf\ue17f璁哄拰绀惧尯娲诲姩',\n"
+12: "      id: 'NEC鏂拌兘婧愬紑鍙戣€呯ぞ鍖?,\n"
+13: "      copyButton: '澶嶅埗缇ゅ悕',\n"
+14: "      copied: '宸插\ue632鍒讹紒',\n"
+15: "      addTips: '濡備綍鍔犲叆锛?,\n"
+16: '      addTipsList: [\n'
+17: "        '澶嶅埗涓婇潰鐨勭兢鍚?,\n"
+18: "        '鎵撳紑寰\ue1bb俊',\n"
+19: "        '鎼滅储缇ゅ悕',\n"
+20: "        '鐢宠\ue1ec鍔犲叆'\n"

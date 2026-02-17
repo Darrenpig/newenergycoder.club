@@ -3,6 +3,7 @@ import { Zap, Mail, MapPin } from 'lucide-react'
 import { useLanguage } from '../../contexts/LanguageContext'
 import bonjourIcon from '../../bonjour.ico'
 import wechatImg from '../../assets/wechat.png'
+import { PixelEasterEgg } from '../pixel-egg/PixelEasterEgg'
 
 // Custom icon components
 const GiteeIcon = ({ className }: { className?: string }) => (
@@ -101,6 +102,11 @@ export function Footer() {
         </div>
       </div>
       
+      {/* Pixel Easter Egg Canvas */}
+      <div className="container mt-8">
+        <PixelEasterEgg />
+      </div>
+
       <div className="container mt-10 pt-6 border-t border-border">
         <div className="text-center text-sm text-muted-foreground">
           <p>© 2025 New Energy Coder Club. All rights reserved.</p>
