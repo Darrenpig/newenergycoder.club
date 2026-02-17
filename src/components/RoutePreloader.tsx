@@ -79,9 +79,6 @@ const preloadRoute = async (path: string) => {
       case '/events':
         await import('@/pages/EventsPage');
         break;
-      case '/resources':
-        await import('@/pages/ResourcesPage');
-        break;
       case '/learning':
         await import('@/pages/LearningCenter');
         break;

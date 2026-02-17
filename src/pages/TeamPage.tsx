@@ -26,8 +26,8 @@ const TeamPhoto3 = '/image/合照1.jpg'
 const TeamPhoto4 = '/image/合照2.jpg'
 const TeamPhoto5 = '/image/合照3.jpg'
 const TeamPhoto6 = '/image/合照4.jpg'
-const RoboconTraining = '/image/2026ROBOCON技术培训（常州工NEC）_01.png'
-const RCBBActivity = '/image/2601罗马车圈活动.jpg'
+const RoboconTraining = '/image/2026ROBOCON技术培训（常州工学院）_01.png'
+const RCBBActivity = '/image/合照1.jpg'
 const OSPPLogo = '/image/sponsor/开源之夏Logo.png'
 const LCSCLogo = '/image/sponsor/立创开源广场.png'
 // const GPUFreeLogo = '/assets/logo_GPU_Free.png'
@@ -36,7 +36,7 @@ const LuoboLogo = '/image/sponsor/萝卜小酱.png'
 // const MaittaLogo = '/image/sponsor/麦塔智能.png'
 // const HuaweiLogo = '/image/sponsor/华为云.png'
 const HuayiLogo = '/image/sponsor/华艺塑业.png'
-const RCBBLogo = '/RCBB.png'
+const RCBBLogo = '/image/校门合照.jpg'
 // 已移除Three.js，保留GIF版本动画组件
 import GifAnimation from '@/components/ui/GifAnimation'
 
@@ -76,61 +76,61 @@ interface TeamMemberCardProps {
   selectedRatio?: AspectRatio
 }
 
-function TeamMemberCard({ member, isSponsors, selectedRatio = 'aspect-[3/4]' }: TeamMemberCardProps) {
+function TeamMemberCard({ member, isSponsors, selectedRatio = 'aspect-square' }: TeamMemberCardProps) {
   return (
-    <Card className={CARD_STYLES.base}>
-      <div className="relative overflow-hidden">
-        <div className={isSponsors ? "h-[88px] w-auto" : `${selectedRatio} overflow-hidden relative`}>
-          <Avatar className={isSponsors ? "h-[88px] w-auto rounded-none" : "w-full h-full rounded-none"}>
-          <ImageProxy 
-            src={member.image} 
-            alt={member.name}
-            className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
-            fallbackSrc={`https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(member.name)}`}
-          />
-          <AvatarFallback className="w-full h-full rounded-none text-2xl font-bold bg-gradient-to-br from-primary/20 to-secondary/20">
-            {member.name.slice(0, 2)}
-          </AvatarFallback>
+    <Card className="overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
+      <div className="relative">
+        <div className={isSponsors ? "h-[88px] w-auto" : `${selectedRatio} overflow-hidden`}>
+          <Avatar className={isSponsors ? "h-[88px] w-auto" : "w-full h-full"}>
+            <ImageProxy 
+              src={member.image} 
+              alt={member.name}
+              className="object-cover w-full h-full"
+              fallbackSrc={`https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(member.name)}`}
+            />
+            <AvatarFallback className="w-full h-full text-xl font-bold bg-gray-100 dark:bg-gray-800">
+              {member.name.slice(0, 2)}
+            </AvatarFallback>
           </Avatar>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
-      <CardHeader className="text-center relative z-10">
-         <CardTitle className="text-xl text-foreground dark:text-white drop-shadow-md">
-           {member.github ? (
-             <a
-               href={member.github}
-               target="_blank"
-               rel="noopener noreferrer"
-               className="hover:underline"
-             >
-               {member.name}
-             </a>
-           ) : (
-             member.name
-           )}
-         </CardTitle>
-         <div className="text-base font-medium flex justify-center">
-           <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 transition-colors">
-             {member.role}
-           </Badge>
-         </div>
-       </CardHeader>
-      <CardContent>
-        <p className="text-sm text-muted-foreground dark:text-gray-200 text-center mb-4 leading-relaxed drop-shadow-sm">
-          {member.bio}
-        </p>
+      <CardHeader className="text-center">
+        <CardTitle className="text-base font-semibold">
+          {member.github ? (
+            <a
+              href={member.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
+              {member.name}
+            </a>
+          ) : (
+            member.name
+          )}
+        </CardTitle>
+        <div className="flex justify-center mt-1">
+          <Badge variant="secondary" className="text-xs bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200">
+            {member.role}
+          </Badge>
+        </div>
+      </CardHeader>
+      <CardContent className="pt-0">
+        {member.bio && (
+          <p className="text-xs text-gray-600 dark:text-gray-400 text-center mb-3 leading-relaxed">
+            {member.bio}
+          </p>
+        )}
         
         {/* 技术栈标签 */}
         {member.tags && member.tags.length > 0 && (
-          <div className="mb-4">
-            <h4 className="text-xs font-semibold text-muted-foreground dark:text-gray-300 mb-2 text-center drop-shadow-sm">技能标签</h4>
-            <div className="flex flex-wrap gap-2 justify-center">
+          <div className="mb-3">
+            <div className="flex flex-wrap gap-1 justify-center">
               {member.tags.map((tag, index) => (
                 <Badge 
                   key={index} 
                   variant="outline" 
-                  className="text-xs px-3 py-1.5 bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 hover:from-primary/30 hover:via-secondary/30 hover:to-primary/30 transition-all duration-300 border-primary/30 hover:border-primary/50 hover:scale-105 hover:shadow-lg backdrop-blur-sm bg-white/20 font-medium cursor-default shadow-sm hover:shadow-md"
+                  className="text-xs px-2 py-1 border border-gray-200 dark:border-gray-700"
                 >
                   {tag}
                 </Badge>
@@ -142,7 +142,7 @@ function TeamMemberCard({ member, isSponsors, selectedRatio = 'aspect-[3/4]' }: 
         <div className="flex justify-center gap-2">
           {member.gitee && (
             <Button variant="ghost" size="icon" className="h-8 w-8" asChild>
-              <a href={member.gitee} target="_blank" rel="noopener noreferrer">
+              <a href={member.gitee} target="_blank" rel="noopener noreferrer" aria-label="Gitee profile">
                 <GiteeIcon className="h-4 w-4" />
               </a>
             </Button>
@@ -154,23 +154,16 @@ function TeamMemberCard({ member, isSponsors, selectedRatio = 'aspect-[3/4]' }: 
               </a>
             </Button>
           )}
-          {member.bonjour && (
-            <Button variant="ghost" size="icon" className="h-8 w-8" asChild>
-              <a href={member.bonjour} target="_blank" rel="noopener noreferrer" aria-label="Bonjour profile">
-                <img src={BonjourIcon} alt="Bonjour" className="h-4 w-4" />
-              </a>
-            </Button>
-          )}
           {member.linkedin && (
             <Button variant="ghost" size="icon" className="h-8 w-8" asChild>
-              <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+              <a href={member.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
                 <Linkedin className="h-4 w-4" />
               </a>
             </Button>
           )}
           {member.email && (
             <Button variant="ghost" size="icon" className="h-8 w-8" asChild>
-              <a href={`mailto:${member.email}`}>
+              <a href={`mailto:${member.email}`} aria-label="Email">
                 <Mail className="h-4 w-4" />
               </a>
             </Button>
@@ -189,7 +182,7 @@ function TeamSection({ title, members, selectedRatio }: { title: string; members
         <h2 className="text-3xl font-bold tracking-tight mb-2 text-foreground drop-shadow-lg dark:text-white dark:drop-shadow-2xl">{title}</h2>
         <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full shadow-sm"></div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 min-[3000px]:grid-cols-14 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-6">
         {members.map((member, index) => (
           <TeamMemberCard key={index} member={member} isSponsors={isSponsors} selectedRatio={selectedRatio} />
         ))}
@@ -351,11 +344,9 @@ export function TeamPage() {
   // 使用 useMemo 优化统计计算
   const teamStats = useMemo(() => {
     const counts = {
-      maintainers: t.team.maintainers?.length || 0,
+      maintainers: (t.team.maintainers?.length || 0) + (t.team.preMaintainers?.length || 0),
       developers: t.team.developers?.length || 0,
       designers: t.team.designers?.length || 0,
-      preMaintainers: t.team.preMaintainers?.length || 0,
-      researchers: t.team.researchers?.length || 0,
       contributors: t.team.contributors?.length || 0
     }
     
@@ -369,7 +360,7 @@ export function TeamPage() {
     )
     
     return { counts, percentages, total }
-  }, [t.team.maintainers, t.team.developers, t.team.designers, t.team.preMaintainers, t.team.researchers, t.team.contributors])
+  }, [t.team.maintainers, t.team.developers, t.team.designers, t.team.preMaintainers, t.team.contributors])
 
   // 整合团队照片用于轮播展示
   const carouselImages = useMemo(() => [
@@ -475,11 +466,9 @@ export function TeamPage() {
         </div>
 
         {/* Team Sections */}
-        <TeamSection title={t.team.maintainerTitle} members={t.team.maintainers} selectedRatio={selectedRatio} />
+        <TeamSection title={t.team.maintainerTitle} members={[...(t.team.maintainers || []), ...(t.team.preMaintainers || [])]} selectedRatio={selectedRatio} />
         <TeamSection title={t.team.developerTitle} members={t.team.developers} selectedRatio={selectedRatio} />
         <TeamSection title={t.team.designerTitle} members={t.team.designers} selectedRatio={selectedRatio} />
-        <TeamSection title={t.team.preMaintainerTitle} members={t.team.preMaintainers} selectedRatio={selectedRatio} />
-        <TeamSection title={t.team.researcherTitle} members={t.team.researchers} selectedRatio={selectedRatio} />
         <TeamSection title={t.team.contributorTitle} members={t.team.contributors} selectedRatio={selectedRatio} />
         <TeamSection title={t.team.sponsorTitle} members={t.team.sponsors} selectedRatio={selectedRatio} />
 
@@ -506,7 +495,7 @@ export function TeamPage() {
 
           {/* Statistics Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-8">
-            <StatCard title="维护者" count={teamStats.counts.maintainers} description="核心团队成员" icon={Users} />
+            <StatCard title="维护者" count={teamStats.counts.maintainers} description="核心团队成员（含预备维护者）" icon={Users} />
             <StatCard title="开发者" count={teamStats.counts.developers} description="技术开发人员" icon={Code} />
             <StatCard title="设计师" count={teamStats.counts.designers} description="UI/UX设计师" icon={Palette} />
             <StatCard title="贡献者" count={teamStats.counts.contributors} description="社区贡献者" icon={Heart} />

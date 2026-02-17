@@ -86,47 +86,7 @@ export function JoinPage() {
           </div>
         </section>
 
-        {/* WeChat Contact Section */}
-        <section className="py-16">
-          <div className="container">
-            <div className="max-w-2xl mx-auto">
-              <Card className="glass-card border-primary/20">
-                <CardHeader className="text-center">
-                  <div className="mx-auto mb-4 h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center">
-                    <img src={WeChatIcon} alt="WeChat" className="h-8 w-auto object-contain" />
-                  </div>
-                  <CardTitle className="text-2xl">{t.joinPage.wechat.title}</CardTitle>
-                  <CardDescription>
-                    {t.joinPage.wechat.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="flex flex-wrap items-center justify-center gap-4">
-                    <div className="inline-flex items-center px-4 py-2 bg-primary/10 rounded-lg">
-                      <span className="font-mono text-lg font-bold text-primary">{feishuGroupId}</span>
-                    </div>
-                    <Button 
-                       onClick={copyToClipboard}
-                       className="w-auto"
-                       variant={copied ? "secondary" : "default"}
-                     >
-                       {copied ? t.joinPage.wechat.copied : t.joinPage.wechat.copyButton}
-                     </Button>
-                  </div>
-                  
-                  <div className="bg-muted/50 p-4 rounded-lg">
-                    <h4 className="font-semibold mb-2">{t.joinPage.wechat.addTips}</h4>
-                     <ul className="text-sm text-muted-foreground space-y-1">
-                       <li>• {t.joinPage.wechat.addTipsList[0]}</li>
-                       <li>• {t.joinPage.wechat.addTipsList[1]}</li>
-                       <li>• {t.joinPage.wechat.addTipsList[2]}</li>
-                     </ul>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
+
 
         {/* Roadmap Section */}
         <section className="py-16 bg-muted/30">

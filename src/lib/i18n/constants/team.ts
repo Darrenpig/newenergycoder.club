@@ -116,6 +116,20 @@ export const developers: TeamMember[] = [
     bio: '聚焦 PLC、机器视觉与智能分拣系统的工程实现与优化。',
     image: '/image/developer/张龚轩.jpg',
     tags: ['物流自动化', 'PLC', '机器视觉', '分拣系统', '工业控制']
+  },
+  {
+    name: '徐康',
+    role: 'Researcher & 3D打印专家',
+    bio: '擅长3D打印建模/航模电机驱动，专注于学术研究。',
+    image: '/image/researcher/徐康.jpg',
+    tags: ['3D打印', '建模', 'SolidWorks', '学术研究']
+  },
+  {
+    name: '陆宇豪',
+    role: 'Researcher & AI技术研究者',
+    bio: '在读研究生，专注于学术与Aspen V8与AI技术研究。',
+    image: '/image/researcher/陆宇豪.jpg',
+    tags: ['研究生', '学术研究', '技术探索']
   }
 ];
 

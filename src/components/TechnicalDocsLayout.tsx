@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { FileText, BookOpen, Code, Settings, Zap, ChevronRight } from 'lucide-react';
-import { DocumentPage } from './DocumentPage';
+
 import { TechnicalDocsNavigation } from './TechnicalDocsNavigation';
 import { DocumentTOC } from './DocumentTOC';
 import { TechnicalDocsSearch } from './TechnicalDocsSearch';
@@ -59,7 +59,17 @@ export const TechnicalDocsLayout: React.FC = () => {
           {/* 主要内容区域 */}
           <div className={slug ? (toc.length > 0 ? 'lg:col-span-2' : 'lg:col-span-3') : 'lg:col-span-3'}>
             {slug ? (
-              <DocumentPage />
+              <div className="min-h-[400px] flex items-center justify-center bg-gray-50 dark:bg-gray-800 rounded-lg p-8">
+                <div className="text-center">
+                  <FileText className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">文档页面已移除</h3>
+                  <p className="text-gray-600 dark:text-gray-400 mb-6">该文档页面已被移除或不再可用</p>
+                  <Link to="/docs/technical" className="inline-flex items-center px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors">
+                    返回技术文档中心
+                    <ChevronRight className="w-4 h-4 ml-2" />
+                  </Link>
+                </div>
+              </div>
             ) : (
               <TechnicalDocsOverview />
             )}

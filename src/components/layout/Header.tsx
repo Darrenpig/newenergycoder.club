@@ -28,10 +28,10 @@ export function Header() {
     { label: t.nav.team, href: '/team' },
     // 项目展示页面导航项
     { label: t.nav.projects, href: '/projects' },
-    // 演进历程页面
-    { label: '演进', href: '/evolution' },
-    // 学习资源页面导航项
-    { label: t.nav.resources, href: '/resources' },
+    // 光伏排布页面
+    { label: '光伏排布', href: 'https://solarglyph2.vercel.app/' },
+    // 方管型材排布页面
+    { label: '方管型材排布', href: 'https://fibersteelstudio.vercel.app/' },
     // 活动页面导航项
     { label: t.nav.events, href: '/events' },
     // 联系我们页面导航项
@@ -56,13 +56,25 @@ export function Header() {
         ) : (
           <nav className="flex items-center gap-6">
             {navItems.map((item) => (
-              <Link
-                key={item.href}
-                to={item.href}
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-              >
-                {item.label}
-              </Link>
+              item.href.startsWith('http') ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  {item.label}
+                </Link>
+              )
             ))}
             <div className="flex items-center gap-2">
               <Button variant="ghost" size="sm" className="gap-2" asChild>
@@ -91,14 +103,27 @@ export function Header() {
       {isMobile && mobileMenuOpen && (
         <div className="container py-4 flex flex-col gap-4 pb-6 border-t bg-background">
           {navItems.map((item) => (
-            <Link
-              key={item.href}
-              to={item.href}
-              className="text-sm font-medium py-2 text-muted-foreground transition-colors hover:text-foreground"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {item.label}
-            </Link>
+            item.href.startsWith('http') ? (
+              <a
+                key={item.href}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium py-2 text-muted-foreground transition-colors hover:text-foreground"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.label}
+              </a>
+            ) : (
+              <Link
+                key={item.href}
+                to={item.href}
+                className="text-sm font-medium py-2 text-muted-foreground transition-colors hover:text-foreground"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            )
           ))}
           <div className="flex items-center gap-2 mt-2">
             <Button variant="ghost" size="sm" className="gap-2" asChild>

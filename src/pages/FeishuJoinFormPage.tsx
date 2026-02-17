@@ -69,44 +69,46 @@ export function FeishuJoinFormPage() {
     setIsSubmitting(true)
 
     try {
-      // 模拟发送到飞书多维表
-      const response = await fetch('https://hooks.feishu.cn/your-webhook-url', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...formData,
-          timestamp: new Date().toISOString(),
-          source: '新能源极客俱乐部官网'
-        })
-      })
-
-      if (response.ok) {
+      // 客户端验证
+      if (!formData.name || !formData.email || !formData.phone || !formData.organization || !formData.role || formData.techStack.length === 0 || !formData.motivation || !formData.contribution || !formData.availability) {
         toast({
-          title: t.join.form.submit.success,
-          description: t.join.form.submit.successMessage,
-          duration: 5000
+          title: t.join.form.submit.error,
+          description: "请填写所有必填字段",
+          variant: "destructive"
         })
-        
-        // 重置表单
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          organization: '',
-          role: '',
-          techStack: [],
-          experience: '',
-          motivation: '',
-          availability: '',
-          contribution: '',
-          expectations: ''
-        })
-      } else {
-        throw new Error('提交失败')
+        setIsSubmitting(false)
+        return
       }
+
+      // 模拟发送到飞书多维表（实际项目中替换为真实的API调用）
+      console.log('提交表单数据:', formData)
+      
+      // 模拟网络延迟
+      await new Promise(resolve => setTimeout(resolve, 1500))
+      
+      // 模拟成功响应
+      toast({
+        title: t.join.form.submit.success,
+        description: t.join.form.submit.successMessage,
+        duration: 5000
+      })
+      
+      // 重置表单
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        organization: '',
+        role: '',
+        techStack: [],
+        experience: '',
+        motivation: '',
+        availability: '',
+        contribution: '',
+        expectations: ''
+      })
     } catch (error) {
+      console.error('表单提交错误:', error)
       toast({
           title: t.join.form.submit.error,
           description: t.join.form.submit.errorMessage,
@@ -123,14 +125,25 @@ export function FeishuJoinFormPage() {
       aspectRatio={selectedRatio}
       onAspectRatioChange={setSelectedRatio}
     >
-      <div className="min-h-screen bg-gradient-to-br from-background to-accent/5 py-8">
+      <div className="min-h-screen bg-gradient-to-br from-background to-accent/5">
         <div className="container max-w-4xl">
           {/* Header */}
-          <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold gradient-text mb-4">{t.join.form.title}</h1>
-            <p className="text-lg text-muted-foreground">
-              {t.join.form.subtitle}
-            </p>
+          <div className="mb-8">
+            <div className="flex items-center justify-start mb-4">
+              <Button 
+                variant="ghost" 
+                onClick={() => window.open('/join', '_self')}
+                className="text-muted-foreground hover:text-foreground"
+              >
+                ← 返回加入页面
+              </Button>
+            </div>
+            <div className="text-center">
+              <h1 className="text-4xl font-bold gradient-text mb-4">{t.join.form.title}</h1>
+              <p className="text-lg text-muted-foreground">
+                {t.join.form.subtitle}
+              </p>
+            </div>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">

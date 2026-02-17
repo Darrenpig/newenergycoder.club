@@ -7,12 +7,12 @@ import { Calendar, MapPin, Users, Clock, ExternalLink } from 'lucide-react'
 import { useTranslation } from '@/contexts/LanguageContext'
 import { PageLayout } from '@/components/layout/PageLayout'
 import { FeishuForm } from '@/components/forms/FeishuForm'
-import { type AspectRatio } from '@/components/ui/floating-controls'
+
 import { ImageProxy } from '@/components/ui/image-proxy'
 import { useHeaderHeight } from '@/hooks/useHeaderHeight'
-import { useFilterAnimation } from '@/hooks/useFilterAnimation'
+
 import { useEventCounts } from '@/hooks/useEventCounts'
-import { useAccessibility } from '@/hooks/useAccessibility'
+
 import { FilterButton } from '@/components/ui/filter-button'
 
 type EventCategory = 'all' | 'workshop' | 'hackathon' | 'seminar' | 'competition' | 'networking'
@@ -81,51 +81,6 @@ const mockEvents: Event[] = [
     detailsUrl: 'https://example.com/events/robocon-2026'
   },
   {
-    id: '9',
-    title: 'AIC全球精英算法挑战赛 - 工业视觉赛项',
-    description: '参与AIC全球精英算法挑战赛工业视觉赛项，挑战计算机视觉和图像处理的前沿技术。',
-    image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=250&fit=crop',
-    category: 'competition',
-    date: '2025-10-15',
-    time: '09:00 - 17:00',
-    location: '计算机视觉实验室',
-    participants: 3,
-    maxParticipants: 3,
-    status: 'upcoming',
-    registrationUrl: 'https://example.com/register/aic-vision',
-    detailsUrl: 'https://example.com/events/aic-vision'
-  },
-  {
-    id: '10',
-    title: 'AIC全球精英算法挑战赛 - 智能体赛项',
-    description: '参与AIC全球精英算法挑战赛智能体赛项，探索人工智能代理和多智能体系统的创新应用。',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop',
-    category: 'competition',
-    date: '2025-09-26',
-    time: '10:00 - 18:00',
-    location: '图书馆',
-    participants: 3,
-    maxParticipants: 3,
-    status: 'upcoming',
-    registrationUrl: 'https://example.com/register/aic-agent',
-    detailsUrl: 'https://example.com/events/aic-agent'
-  },
-  {
-    id: '2',
-    title: 'Green Tech Hackathon 2024',
-    description: '48-hour hackathon focused on developing sustainable technology solutions for environmental challenges.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop',
-    category: 'hackathon',
-    date: '2024-05-20',
-    time: '09:00 - 18:00 (2 days)',
-    location: 'Innovation Hub',
-    participants: 45,
-    maxParticipants: 60,
-    status: 'upcoming',
-    registrationUrl: 'https://example.com/register/green-hackathon',
-    detailsUrl: 'https://example.com/events/green-hackathon'
-  },
-  {
     id: '4',
     title: 'Web Development Bootcamp',
     description: 'Intensive 3-day bootcamp covering modern web development with React, Node.js, and cloud deployment.',
@@ -151,45 +106,6 @@ const mockEvents: Event[] = [
     participants: 85,
     status: 'past',
     detailsUrl: 'https://example.com/events/coding-competition'
-  },
-  {
-    id: '6',
-    title: 'Tech Networking Night',
-    description: 'Casual networking event for students, alumni, and industry professionals to connect and share experiences.',
-    image: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=400&h=250&fit=crop',
-    category: 'networking',
-    date: '2024-03-08',
-    time: '18:00 - 21:00',
-    location: 'Student Center',
-    participants: 65,
-    status: 'past',
-    detailsUrl: 'https://example.com/events/networking-night'
-  },
-  {
-    id: '11',
-    title: 'AGL社区文档',
-    description: '汽车级Linux(AGL)官方文档，提供完整的开发指南和技术资源，涵盖信息娱乐、仪表盘、HUD、远程信息处理等汽车应用开发。',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop',
-    category: 'seminar',
-    date: '2025-11-01',
-    time: '全天可访问',
-    location: '在线文档平台',
-    participants: 0,
-    status: 'upcoming',
-    detailsUrl: 'https://docs.automotivelinux.org/en/master/'
-  },
-  {
-    id: '12',
-    title: 'Slake协作平台',
-    description: 'AGL项目协作平台，基于Atlassian Confluence的知识管理和团队协作工具，为AGL开发者提供项目文档和协作空间。',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=250&fit=crop',
-    category: 'networking',
-    date: '2025-11-01',
-    time: '全天可访问',
-    location: '在线协作平台',
-    participants: 0,
-    status: 'upcoming',
-    detailsUrl: 'https://lf-automotivelinux.atlassian.net/wiki/spaces/HOME/overview?mode=global'
   }
 ]
 
@@ -217,30 +133,15 @@ const getCategoryColor = (category: EventCategory) => {
 export function EventsPage() {
   const [selectedCategory, setSelectedCategory] = useState<EventCategory>('all')
   const [activeTab, setActiveTab] = useState<EventStatus>('upcoming')
-  // 显示比例状态管理 - 控制事件卡片图片的宽高比显示
-  const [selectedRatio, setSelectedRatio] = useState<AspectRatio>('aspect-[21/9]')
   const t = useTranslation()
   
   // 使用自定义Hooks
   const headerHeight = useHeaderHeight()
-  const { animationClass, triggerAnimation, isAnimating } = useFilterAnimation()
   const eventCounts = useEventCounts(mockEvents, activeTab)
   
   // 状态管理
   const [hoveredFilter, setHoveredFilter] = useState<EventCategory | null>(null)
   const [listFadeIn, setListFadeIn] = useState(true)
-  const {
-    focusedFilterIndex,
-    announcement,
-    keyboardNavigationActive,
-    showSkipLink,
-    handleKeyNavigation,
-    setFilterRef,
-    handleFilterFocus,
-    handleFilterBlur,
-    announceFilterChange,
-    handleSkipToContent
-  } = useAccessibility()
 
   const filterEvents = (status: EventStatus) => {
     const statusFiltered = mockEvents.filter(event => event.status === status)
@@ -255,52 +156,28 @@ export function EventsPage() {
   // 优化事件处理器
   const handleCategoryChange = useCallback((category: EventCategory) => {
     setSelectedCategory(category)
-    triggerAnimation()
     setListFadeIn(false)
     setTimeout(() => setListFadeIn(true), 100)
-  }, [triggerAnimation])
+  }, [])
 
-  const handleFilterClick = useCallback((filter: EventCategory, labelKey: string, count: number) => {
+  const handleFilterClick = useCallback((filter: EventCategory) => {
     handleCategoryChange(filter)
-    announceFilterChange(t.events[labelKey as keyof typeof t.events], count)
-  }, [handleCategoryChange, announceFilterChange, t.events])
+  }, [handleCategoryChange])
 
-  const EventCard = React.memo(({ event, selectedRatio = 'aspect-[3/4]' }: { event: Event; selectedRatio?: AspectRatio }) => (
-    <Card className="glass-card hover-lift glow-hover group overflow-hidden">
-      <div className={`${selectedRatio} overflow-hidden relative`}>
+  const EventCard = React.memo(({ event }: { event: Event }) => (
+    <Card className="overflow-hidden">
+      <div className="aspect-video overflow-hidden relative">
         <ImageProxy 
           src={event.image}
           alt={event.title}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="h-full w-full object-cover"
           fallbackSrc="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop&crop=center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         <div className="absolute top-4 left-4">
           <Badge className={`${getCategoryColor(event.category)} border`}>
             {t.events[`filter${event.category.charAt(0).toUpperCase() + event.category.slice(1)}` as keyof typeof t.events] || event.category}
           </Badge>
         </div>
-        {event.status === 'upcoming' && (
-          <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="flex gap-2">
-              {event.registrationUrl && (
-                <FeishuForm 
-                  eventId={event.id}
-                  eventTitle={event.title}
-                  className="bg-primary/90 backdrop-blur-sm hover:bg-primary text-sm h-8 px-3"
-                >
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  {t.events.registerNow}
-                </FeishuForm>
-              )}
-              {event.detailsUrl && (
-                <Button size="sm" variant="outline" className="bg-white/20 backdrop-blur-sm hover:bg-white/30 border-white/30">
-                  {t.events.viewDetails}
-                </Button>
-              )}
-            </div>
-          </div>
-        )}
       </div>
       
       <CardHeader className="pb-3">
@@ -333,28 +210,37 @@ export function EventsPage() {
               {event.maxParticipants && ` / ${event.maxParticipants}`}
             </span>
           </div>
-          {event.status === 'past' && event.detailsUrl && (
-            <Button size="sm" variant="outline">
-              {t.events.viewDetails}
-            </Button>
-          )}
+          <div className="flex gap-2">
+            {event.status === 'upcoming' && event.registrationUrl && (
+              <FeishuForm 
+                eventId={event.id}
+                eventTitle={event.title}
+                className="bg-primary text-sm h-8 px-3"
+              >
+                <ExternalLink className="h-4 w-4 mr-2" />
+                {t.events.registerNow}
+              </FeishuForm>
+            )}
+            {event.detailsUrl && (
+              <Button size="sm" variant="outline">
+                {t.events.viewDetails}
+              </Button>
+            )}
+          </div>
         </div>
       </CardContent>
     </Card>
   ))
 
   return (
-    <PageLayout 
-      showAspectRatio={true}
-      aspectRatio={selectedRatio}
-      onAspectRatioChange={setSelectedRatio}
-    >
+    <PageLayout>
+
       <div className="min-h-screen bg-gradient-to-br from-background to-accent/5">
         {/* Hero Section */}
-        <section className="py-24 bg-gradient-to-br from-primary/10 to-accent/10 relative overflow-hidden">
+        <section className="py-24 bg-gradient-to-br from-primary/10 to-accent/10 relative overflow-hidden text-center">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,hsl(var(--primary)/0.1),transparent_50%),radial-gradient(circle_at_75%_75%,hsl(var(--accent)/0.1),transparent_50%)]"></div>
           
-          <div className="container relative z-10 text-center">
+          <div className="container relative z-10">
             <h1 className="text-4xl font-bold gradient-text sm:text-5xl lg:text-6xl mb-6">
               {t.events.title}
             </h1>
@@ -374,147 +260,119 @@ export function EventsPage() {
 
         {/* Filter Section */}
         <section 
-          className={`py-2 border-b bg-background/50 backdrop-blur-sm sticky z-40 transition-all duration-300 filter-section-shadow ${animationClass} ${isAnimating ? 'filter-active' : ''}`}
+          className="py-2 border-b bg-background/50 backdrop-blur-sm sticky z-40 transition-all duration-300 filter-section-shadow"
           style={{ top: `${headerHeight}px` }}
           role="navigation"
           aria-label="事件分类过滤器"
-          onKeyDown={(e) => handleKeyNavigation(e.nativeEvent, categoryFilters.length)}
         >
-          <div className="container">
-            <div className="flex flex-wrap gap-2 sm:gap-3 justify-center mb-6" role="group" aria-label="事件分类选择">
-              {categoryFilters.map((filter, index) => {
-                const count = eventCounts[filter.key]
-                return (
-                  <FilterButton
-                    key={filter.key}
-                    ref={setFilterRef(index)}
-                    id={`filter-${filter.key}`}
-                    isSelected={selectedCategory === filter.key}
-                    count={count}
-                    isFocused={focusedFilterIndex === index}
-                    onClick={() => handleFilterClick(filter.key, filter.labelKey, count)}
-                    onMouseEnter={() => setHoveredFilter(filter.key)}
-                    onMouseLeave={() => setHoveredFilter(null)}
-
-                    onBlur={handleFilterBlur}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault()
-                        handleFilterClick(filter.key, filter.labelKey, count)
-                      }
-                    }}
-                    size="sm"
-                    aria-label={`${t.events[filter.labelKey]} (${count} 个事件)`}
-                    aria-describedby={`filter-${filter.key}-desc`}
-                    className={`filter-hover-feedback ${hoveredFilter === filter.key ? 'scale-105' : ''} ${isAnimating ? 'filter-loading' : ''}`}
-                  >
-                    {t.events[filter.labelKey]}
-                  </FilterButton>
-                )
-              })}
-            </div>
+          <div className="container flex flex-wrap gap-2 sm:gap-3 justify-center mb-6" role="group" aria-label="事件分类选择">
+            {categoryFilters.map((filter) => {
+              const count = eventCounts[filter.key]
+              return (
+                <FilterButton
+                  key={filter.key}
+                  id={`filter-${filter.key}`}
+                  isSelected={selectedCategory === filter.key}
+                  count={count}
+                  onClick={() => handleFilterClick(filter.key)}
+                  onMouseEnter={() => setHoveredFilter(filter.key)}
+                  onMouseLeave={() => setHoveredFilter(null)}
+                  size="sm"
+                  aria-label={`${t.events[filter.labelKey]} (${count} 个事件)`}
+                  aria-describedby={`filter-${filter.key}-desc`}
+                  className={`filter-hover-feedback ${hoveredFilter === filter.key ? 'scale-105' : ''}`}
+                >
+                  {t.events[filter.labelKey]}
+                </FilterButton>
+              )
+            })}
           </div>
         </section>
 
-        {/* Screen reader announcements */}
-        <div 
-          aria-live="polite" 
-          aria-atomic="true" 
-          className="sr-only"
-        >
-          {announcement && (
-            <div className="sr-only" aria-live="polite" aria-atomic="true">
-              {announcement}
-            </div>
-          )}
-        </div>
-
         {/* Events Tabs */}
-        <section className="py-16" id="events-content">
-          <div className="container">
-            <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as EventStatus)} className="w-full">
-              <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12" role="tablist" aria-label="事件时间分类">
-                <TabsTrigger 
-                  value="upcoming" 
-                  className="flex items-center gap-2"
-                  role="tab"
-                  aria-selected={activeTab === 'upcoming'}
-                  aria-controls="upcoming-events"
-                >
-                  <Clock className="h-4 w-4" />
-                  {t.events.upcoming}
-                </TabsTrigger>
-                <TabsTrigger 
-                  value="past" 
-                  className="flex items-center gap-2"
-                  role="tab"
-                  aria-selected={activeTab === 'past'}
-                  aria-controls="past-events"
-                >
-                  <Calendar className="h-4 w-4" />
-                  {t.events.past}
-                </TabsTrigger>
-              </TabsList>
-              
-              <TabsContent 
+        <section className="py-16 container" id="events-content">
+          <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as EventStatus)} className="w-full">
+            <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12" role="tablist" aria-label="事件时间分类">
+              <TabsTrigger 
                 value="upcoming" 
-                className="mt-0"
-                role="tabpanel"
-                id="upcoming-events"
-                aria-labelledby="upcoming-tab"
+                className="flex items-center gap-2"
+                role="tab"
+                aria-selected={activeTab === 'upcoming'}
+                aria-controls="upcoming-events"
               >
-                {upcomingEvents.length > 0 ? (
-                  <div 
-                    className={`grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 transition-all duration-400 ${listFadeIn ? 'events-list-enter-active' : 'events-list-enter'}`}
-                    role="list"
-                    aria-label={`${upcomingEvents.length} 个即将举行的事件`}
-                  >
-                    {upcomingEvents.map((event) => (
-                      <div key={event.id} role="listitem">
-                        <EventCard event={event} selectedRatio={selectedRatio} />
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="text-center py-16" role="status" aria-live="polite">
-                    <Clock className="h-16 w-16 text-muted-foreground mx-auto mb-4" aria-hidden="true" />
-                    <p className="text-muted-foreground text-lg">
-                      {t.events.noUpcoming}
-                    </p>
-                  </div>
-                )}
-              </TabsContent>
-              
-              <TabsContent 
+                <Clock className="h-4 w-4" />
+                {t.events.upcoming}
+              </TabsTrigger>
+              <TabsTrigger 
                 value="past" 
-                className="mt-0"
-                role="tabpanel"
-                id="past-events"
-                aria-labelledby="past-tab"
+                className="flex items-center gap-2"
+                role="tab"
+                aria-selected={activeTab === 'past'}
+                aria-controls="past-events"
               >
-                {pastEvents.length > 0 ? (
-                  <div 
-                    className={`grid gap-8 md:grid-cols-2 lg:grid-cols-3 transition-all duration-400 ${listFadeIn ? 'events-list-enter-active' : 'events-list-enter'}`}
-                    role="list"
-                    aria-label={`${pastEvents.length} 个过往事件`}
-                  >
-                    {pastEvents.map((event) => (
-                      <div key={event.id} role="listitem">
-                        <EventCard event={event} selectedRatio={selectedRatio} />
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="text-center py-16" role="status" aria-live="polite">
-                    <Calendar className="h-16 w-16 text-muted-foreground mx-auto mb-4" aria-hidden="true" />
-                    <p className="text-muted-foreground text-lg">
-                      {t.events.noPast}
-                    </p>
-                  </div>
-                )}
-              </TabsContent>
-            </Tabs>
-          </div>
+                <Calendar className="h-4 w-4" />
+                {t.events.past}
+              </TabsTrigger>
+            </TabsList>
+            
+            <TabsContent 
+              value="upcoming" 
+              className="mt-0"
+              role="tabpanel"
+              id="upcoming-events"
+              aria-labelledby="upcoming-tab"
+            >
+              {upcomingEvents.length > 0 ? (
+                <div 
+                  className="grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                  role="list"
+                  aria-label={`${upcomingEvents.length} 个即将举行的事件`}
+                >
+                  {upcomingEvents.map((event) => (
+                    <div key={event.id} role="listitem">
+                      <EventCard event={event} />
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="text-center py-16" role="status" aria-live="polite">
+                  <Clock className="h-16 w-16 text-muted-foreground mx-auto mb-4" aria-hidden="true" />
+                  <p className="text-muted-foreground text-lg">
+                    {t.events.noUpcoming}
+                  </p>
+                </div>
+              )}
+            </TabsContent>
+            
+            <TabsContent 
+              value="past" 
+              className="mt-0"
+              role="tabpanel"
+              id="past-events"
+              aria-labelledby="past-tab"
+            >
+              {pastEvents.length > 0 ? (
+                <div 
+                  className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+                  role="list"
+                  aria-label={`${pastEvents.length} 个过往事件`}
+                >
+                  {pastEvents.map((event) => (
+                    <div key={event.id} role="listitem">
+                      <EventCard event={event} />
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="text-center py-16" role="status" aria-live="polite">
+                  <Calendar className="h-16 w-16 text-muted-foreground mx-auto mb-4" aria-hidden="true" />
+                  <p className="text-muted-foreground text-lg">
+                    {t.events.noPast}
+                  </p>
+                </div>
+              )}
+            </TabsContent>
+          </Tabs>
         </section>
       </div>
 

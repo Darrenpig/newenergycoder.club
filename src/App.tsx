@@ -9,21 +9,13 @@ const FeishuJoinFormPage = React.lazy(() => import("@/pages/FeishuJoinFormPage")
 const DashboardPage = React.lazy(() => import("@/pages/DashboardPage"));
 const ProjectsPage = React.lazy(() => import("@/pages/ProjectsPage").then(module => ({ default: module.ProjectsPage })));
 const EventsPage = React.lazy(() => import("@/pages/EventsPage").then(module => ({ default: module.EventsPage })));
-const ResourcesPage = React.lazy(() => import("@/pages/ResourcesPage").then(module => ({ default: module.ResourcesPage })));
-const ResourcesSelectionPage = React.lazy(() => import("@/pages/ResourcesSelectionPage").then(module => ({ default: module.ResourcesSelectionPage })));
 const ContactPage = React.lazy(() => import("@/pages/ContactPage").then(module => ({ default: module.ContactPage })));
 const GettingStartedPage = React.lazy(() => import("@/pages/GettingStartedPage"));
-const EmbeddedDetailPage = React.lazy(() => import("@/pages/EmbeddedDetailPage"));
-const MechanicalDetailPage = React.lazy(() => import("@/pages/MechanicalDetailPage"));
-const GuiDetailPage = React.lazy(() => import("@/pages/GuiDetailPage"));
-const AlgorithmDetailPage = React.lazy(() => import("@/pages/AlgorithmDetailPage"));
-const DesignerDetailPage = React.lazy(() => import("@/pages/DesignerDetailPage"));
 const TeamPage = React.lazy(() => import("@/pages/TeamPage").then(module => ({ default: module.TeamPage })));
 const InnovationShowcasePage = React.lazy(() => import("@/pages/InnovationShowcasePage").then(module => ({ default: module.InnovationShowcasePage })));
-const EvolutionStoryPage = React.lazy(() => import("@/pages/EvolutionStoryPage"));
 const AdminDashboard = React.lazy(() => import("@/pages/AdminDashboard"));
-const MarkdownViewer = React.lazy(() => import("@/pages/MarkdownViewer").then(module => ({ default: module.MarkdownViewer })));
-const DocumentPage = React.lazy(() => import("@/components/DocumentPage").then(module => ({ default: module.DocumentPage })));
+
+
 const TechnicalDocsLayout = React.lazy(() => import("@/components/TechnicalDocsLayout").then(module => ({ default: module.TechnicalDocsLayout })));
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -61,30 +53,16 @@ function App() {
             {/* Phase 2 Routes (currently placeholders) */}
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/events" element={<EventsPage />} />
-            <Route path="/resources" element={<ResourcesPage />} />
-            <Route path="/resources/selection" element={<PageLayout><ResourcesSelectionPage /></PageLayout>} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/team" element={<TeamPage />} />
             <Route path="/innovation" element={<PageLayout><InnovationShowcasePage /></PageLayout>} />
-            <Route path="/evolution" element={<EvolutionStoryPage />} />
             <Route path="/getting-started" element={<PageLayout><GettingStartedPage /></PageLayout>} />
-            <Route path="/learning/embedded" element={<PageLayout><EmbeddedDetailPage /></PageLayout>} />
-            <Route path="/learning/mechanical" element={<PageLayout><MechanicalDetailPage /></PageLayout>} />
-            <Route path="/learning/gui" element={<PageLayout><GuiDetailPage /></PageLayout>} />
-            <Route path="/learning/algorithm" element={<PageLayout><AlgorithmDetailPage /></PageLayout>} />
-            <Route path="/learning/designer" element={<PageLayout><DesignerDetailPage /></PageLayout>} />
             
             {/* Document Routes */}
             <Route path="/docs/technical" element={<PageLayout><TechnicalDocsLayout /></PageLayout>} />
-            <Route path="/docs/technical/:slug" element={<PageLayout><DocumentPage /></PageLayout>} />
-            <Route path="/docs/:category/:subcategory/:slug" element={<PageLayout><DocumentPage /></PageLayout>} />
-            <Route path="/docs/:category" element={<PageLayout><DocumentPage /></PageLayout>} />
-            <Route path="/docs/:category/:slug" element={<PageLayout><DocumentPage /></PageLayout>} />
+
             
-            {/* Markdown Editor Routes */}
-            <Route path="/markdown" element={<PageLayout><MarkdownViewer /></PageLayout>} />
-            <Route path="/markdown/editor" element={<PageLayout><MarkdownViewer /></PageLayout>} />
-            <Route path="/markdown/viewer" element={<PageLayout><MarkdownViewer /></PageLayout>} />
+
             <Route path="/join" element={<JoinPage />} />
             <Route path="/join/form" element={<FeishuJoinFormPage />} />
             
