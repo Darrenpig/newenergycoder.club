@@ -907,7 +907,7 @@ export const zhTranslations: Translations = {
       toastErrorDescription: '请检查您的网络连接并重试。'
     },
     info: {
-      address: '江苏省常州市新北区辽河路666号',
+      address: '江苏省常州市新北区辽河路666号玉衡楼A416',
       phone: '+86 158 9600 0818',
       email: '22230635@czu.cn',
       hours: '周一至周六：上午9点- 下午6点'
@@ -1099,58 +1099,31 @@ export const zhTranslations: Translations = {
         }
       }
     },
-    faqs: {
-      title: '常见问题',
-      description: '解答您可能遇到的问题',
-      items: [
-        {
-          question: '我需要什么基础才能开始？',
-          answer: '我们欢迎所有水平的开发者，从初学者到专家。对于初学者，我们提供入门指南和基础教程；对于有经验的开发者，我们有更高级的项目和挑战。'
-        },
-        {
-          question: '如何选择适合我的项目？',
-          answer: '根据您的兴趣、技能水平和职业目标选择项目。我们的项目库中有不同难度和技术领域的项目，您可以浏览并选择最适合您的。'
-        },
-        {
-          question: '我可以获得哪些支持？',
-          answer: '您可以通过社区论坛、每周工作坊、导师指导等方式获得支持。我们的社区成员和导师会定期回答问题并提供帮助。'
-        },
-        {
-          question: '如何展示我的项目成果？',
-          answer: '您可以将项目提交到我们的平台，获得反馈和展示机会。优秀项目还有机会在我们的官网和社交媒体上展示。'
-        }
-      ]
+    baseTutorials: {
+      title: '基础教程',
+      description: '从零开始学习编程基础知识和核心概念',
+      introTitle: '编程入门',
+      introDesc: '编程基础概念和思维方式，了解新能源编程的应用领域和发展前景',
+      fundamentalsTitle: '编程基础',
+      fundamentalsDesc: '变量、函数、控制结构等基础知识，掌握编程的核心概念和语法',
+      startLearning: '开始学习'
     },
-    testimonials: {
-      title: '学员反馈',
-      description: '听听我们的学员怎么说',
-      items: [
-        {
-          name: '张同学',
-          role: '计算机科学专业',
-          content: '通过参与NEC的项目，我不仅提升了编程技能，还学到了如何将技术应用于解决实际的能源问题。',
-          avatar: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/public/image/developer/鍒樿嫳鐞.png'
-        },
-        {
-          name: '李工程师',
-          role: '嵌入式系统开发者',
-          content: 'NEC的学习资源和社区支持帮助我快速掌握了新的技术栈，对我的职业发展非常有帮助。',
-          avatar: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/public/image/developer/鏉ㄥ姏婊.JPG'
-        },
-        {
-          name: '王同学',
-          role: '环境科学专业',
-          content: '作为非计算机专业的学生，NEC的入门课程让我能够轻松开始编程之旅，并将其应用于我的专业研究。',
-          avatar: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/public/image/designer/鏉庝竴妤.jpg'
-        }
-      ]
+    trainingResources: {
+      title: '培训资源',
+      description: '丰富的学习资源，助你快速提升技能',
+      githubRepoTitle: 'GitHub 仓库',
+      githubRepoDesc: '查看项目源码和贡献代码',
+      visitGithub: '访问 GitHub',
+      docsTitle: '技术文档',
+      docsDesc: '详细的技术文档和API参考',
+      viewDocs: '查看文档',
+      videosTitle: '视频教程',
+      videosDesc: '观看实战项目视频教程',
+      watchVideos: '观看视频',
+      communityTitle: '社区交流',
+      communityDesc: '加入社区讨论和交流',
+      joinDiscussion: '加入讨论'
     }
   },
-  // Error 页面翻译
-  error: {
-    title: '出错了',
-    description: '抱歉，页面加载时出现错误。',
-    returnHome: '返回首页',
-    tryAgain: '重试'
-  }
+  learning: learningTranslations.zh
 };
