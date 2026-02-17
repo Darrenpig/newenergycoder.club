@@ -360,6 +360,65 @@ export function InnovationShowcasePage() {
           </div>
         </section>
 
+        {/* 外部项目链接 */}
+        <section className="py-12 px-4 bg-muted/30">
+          <div className="container mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-bold mb-2">相关工具平台</h2>
+              <p className="text-muted-foreground">探索我们开发的专业工具，助力新能源项目设计与优化</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <Card className="group hover:shadow-xl transition-all duration-300 hover:scale-[1.02] cursor-pointer overflow-hidden">
+                <a href="https://solarglyph2.vercel.app/" target="_blank" rel="noopener noreferrer" className="block">
+                  <div className="h-40 bg-gradient-to-br from-amber-500/20 via-orange-500/20 to-yellow-500/20 flex items-center justify-center">
+                    <Sun className="h-16 w-16 text-amber-500 group-hover:scale-110 transition-transform duration-300" />
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      光伏排布
+                      <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                    </CardTitle>
+                    <CardDescription>
+                      厂房设计与光伏一体化，从现场勘测到系统级零碳解决方案
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="secondary">光伏设计</Badge>
+                      <Badge variant="secondary">时序仿真</Badge>
+                      <Badge variant="secondary">零碳园区</Badge>
+                    </div>
+                  </CardContent>
+                </a>
+              </Card>
+              
+              <Card className="group hover:shadow-xl transition-all duration-300 hover:scale-[1.02] cursor-pointer overflow-hidden">
+                <a href="https://fibersteelstudio.vercel.app/" target="_blank" rel="noopener noreferrer" className="block">
+                  <div className="h-40 bg-gradient-to-br from-slate-500/20 via-zinc-500/20 to-gray-500/20 flex items-center justify-center">
+                    <Mountain className="h-16 w-16 text-slate-500 group-hover:scale-110 transition-transform duration-300" />
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      FiberSteel Studio
+                      <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                    </CardTitle>
+                    <CardDescription>
+                      面向型材布置的专业工具集，融合3D透视与强交互控件
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="secondary">3D设计</Badge>
+                      <Badge variant="secondary">CAD绘图</Badge>
+                      <Badge variant="secondary">参数化建模</Badge>
+                    </div>
+                  </CardContent>
+                </a>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         {/* 主要内容区域 */}
         <section className="py-12 px-4">
           <div className="container mx-auto">

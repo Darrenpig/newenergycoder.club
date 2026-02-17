@@ -125,7 +125,7 @@ export function PixelEasterEgg({ containerRef: _containerRef }: PixelEasterEggPr
       {/* Pixel Canvas 特效层 */}
       <PixelCanvas 
         isActive={state === 'ACTIVE'} 
-        containerRef={containerRef}
+        containerRef={_containerRef}
         onDeactivate={deactivate}
       />
 

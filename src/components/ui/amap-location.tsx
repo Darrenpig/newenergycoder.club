@@ -27,7 +27,7 @@ const AMAP_CONFIG = {
 const DESTINATION = {
   longitude: 119.9736,
   latitude: 31.8117,
-  address: '江苏常州新北区辽河路666号，东一门，玉衡楼'
+  address: '江苏省常州市新北区辽河路666号'
 }
 
 // 计算两点间距离 (使用Haversine公式)

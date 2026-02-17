@@ -607,7 +607,7 @@ export const enTranslations: Translations = {
       title: 'Tech Roadmap',
       description: 'Explore our technology learning paths'
     },
-    address: 'Yuheng A416 Warehouse Laboratory, Liaohai Road Campus, Changzhou Institute of Technology, No. 666, Liaohai Road, Xinbei District, Changzhou City, Jiangsu Province',
+    address: 'No. 666, Liaohai Road, Xinbei District, Changzhou City, Jiangsu Province',
     copyright: '© 2025 New Energy Coder Club. All rights reserved.'
   },
   displayRatio: {

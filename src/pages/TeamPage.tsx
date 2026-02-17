@@ -16,6 +16,9 @@ import { ThemeToggle } from '@/components/ui/ThemeToggle'
 import { ImageProxy } from '@/components/ui/image-proxy'
 import { Header } from '@/components/layout/Header'
 import { useState, useMemo } from 'react'
+import ChangzhouNECImg from '@/常州工NEC1.png'
+import CURCRobocon1Img from '@/1.19CURC-ROBOCON线上例会_01(1).png'
+import CURCRobocon2Img from '@/1.20CURC-ROBOCON线上例会2_03.png'
 // 团队照片使用 public 目录下的资源
 const TeamPhoto1 = '/image/校门合照.jpg'
 const TeamPhoto2 = '/image/横向项目合照.jpg'
@@ -379,6 +382,21 @@ export function TeamPage() {
       src: RoboconTraining,
       alt: "2026 ROBOCON技术培训",
       description: "2026 ROBOCON技术培训（常州工NEC）"
+    },
+    {
+      src: ChangzhouNECImg,
+      alt: "常州工NEC",
+      description: "常州工NEC团队"
+    },
+    {
+      src: CURCRobocon1Img,
+      alt: "CURC-ROBOCON线上例会",
+      description: "1.19 CURC-ROBOCON线上例会"
+    },
+    {
+      src: CURCRobocon2Img,
+      alt: "CURC-ROBOCON线上例会2",
+      description: "1.20 CURC-ROBOCON线上例会"
     },
     {
       src: RCBBActivity,

@@ -115,7 +115,7 @@ export const zhTranslations: Translations = {
         ai: 'AI/机器学习',
         other: '其他',
         otherPlaceholder: '请说明其他技术',
-        options: ['前端', '后端', '移动开发', 'AI/ML', 'DevOps', '数据科学']'
+        options: ['前端', '后端', '移动开发', 'AI/ML', 'DevOps', '数据科学']
       },
       experience: {
         title: '经验与动机',
@@ -907,7 +907,7 @@ export const zhTranslations: Translations = {
       toastErrorDescription: '请检查您的网络连接并重试。'
     },
     info: {
-      address: '浙江省杭州市西湖区文三路666号，浙一坊，梦想小镇A416',
+      address: '江苏省常州市新北区辽河路666号',
       phone: '+86 158 9600 0818',
       email: '22230635@czu.cn',
       hours: '周一至周六：上午9点- 下午6点'
@@ -974,7 +974,7 @@ export const zhTranslations: Translations = {
       title: '技术路线',
       description: '专业的技术发展指导'
     },
-    address: '浙江省杭州市西湖区文三路666号杭州电子科技大学下沙校区N416仓库实验室',
+    address: '江苏省常州市新北区辽河路666号',
     copyright: '漏 2025 NEC新能源开发者俱乐部。保留所有权利。'
   },
   displayRatio: {

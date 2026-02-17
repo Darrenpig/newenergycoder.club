@@ -8,6 +8,7 @@ import { type FloatingControls, type AspectRatio } from '@/components/ui/floatin
 import WeChatIcon from '@/assets/wechat.png?url'
 import FeishuIcon from '@/feishu.png?url'
 import DarrenPigFeishu from '@/DarrenPig_Feishu.png?url'
+import QrcodeNEC from '@/qrcode_NEC.jpg?url'
 
 const roadmapSteps = [
   {
@@ -240,12 +241,23 @@ export function JoinPage() {
                       下载飞书
                     </a>
                   </div>
-                  <div className="mt-4 flex justify-center">
-                    <img
-                      src={DarrenPigFeishu}
-                      alt="Maintainer WeChat"
-                      className="h-40 w-auto rounded-md shadow-sm border border-muted"
-                    />
+                  <div className="mt-4 flex justify-center gap-6">
+                    <div className="text-center">
+                      <img
+                        src={DarrenPigFeishu}
+                        alt="Maintainer Feishu"
+                        className="h-40 w-auto rounded-md shadow-sm border border-muted"
+                      />
+                      <p className="mt-2 text-sm text-muted-foreground">Maintainer 飞书</p>
+                    </div>
+                    <div className="text-center">
+                      <img
+                        src={QrcodeNEC}
+                        alt="NEC 二维码"
+                        className="h-40 w-auto rounded-md shadow-sm border border-muted"
+                      />
+                      <p className="mt-2 text-sm text-muted-foreground">NEC 官方群</p>
+                    </div>
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-6">
