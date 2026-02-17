@@ -308,7 +308,7 @@ export const contributors: TeamMember[] = [
     name: '郑绍恺',
     role: '算法竞赛选手',
     bio: '专注于算法研究以及最优化问题',
-    image: '/image/contributer/郑邵凯.png',
+    image: '/image/contributer/郑绍恺.png',
     tags: ['算法研究', '最优化', '竞赛选手', '问题求解', '算法优化', '数学建模'],
     github: 'https://github.com/zhengshaokai'
   },

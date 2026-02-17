@@ -505,7 +505,7 @@ export const zhTranslations: Translations = {
         name: '闻志伟',
         role: 'Bronze Sponsor',
         bio: '致力于推动可持续技术发展的个人赞助者。',
-        image: 'https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/developer/闻志伟.jpg',
+        image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/闻志伟.jpg',
         tags: ['技术赞助', '项目支持', '可持续发展', '创新资助', '社区建设', '人才培养']
       },
       {
@@ -528,7 +528,7 @@ export const zhTranslations: Translations = {
         name: '余浩铭',
         role: '机器人日志运营编辑',
         bio: '专注于宣传和文字，让NEC的每一份理念都能被看见。',
-        image: 'https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/developer/余浩铭.jpg',
+        image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/余浩铭.jpg',
         tags: ['文艺工作', '运营编辑', '宣传策划', '文字编辑', 'NEC理念', '内容创作'],
         github: 'https://github.com/yuhaoming'
       },
@@ -554,7 +554,7 @@ export const zhTranslations: Translations = {
         name: '郑绍恺',
         role: '算法竞赛选手',
         bio: '专注于算法研究以及最优化问题',
-        image: 'https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/郑绍恺.jpg',
+        image: 'https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/contributer/郑绍恺.png',
         tags: ['算法研究', '最优化', '竞赛选手', '问题求解', '算法优化', '数学建模'],
         github: 'https://github.com/zhengshaokai'
       },

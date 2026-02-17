@@ -7,16 +7,15 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
-import { FloatingControls } from '@/components/ui/floating-controls'
 import {
-  BookOpen,
   Code,
   Users,
   Zap,
   ExternalLink,
   Github,
-  FileText,
-  Video,
+  BookOpen,
+  GitBranch,
+  Sparkles,
   Cpu,
   Palette,
   Calculator,
@@ -24,18 +23,11 @@ import {
   Clock,
   Star,
   Target,
-  Play,
   ChevronRight,
   Award,
   TrendingUp,
   Printer
 } from 'lucide-react'
-// 导入技术路线图组件
-import TechRoadmapOverview from '@/components/TechRoadmapOverview'
-// 导入学习资源组件
-import { default as LearningResources } from '@/components/LearningResources'
-import { techRoutes } from '@/data/techRoutes'
-import { trainingCategories } from '@/data/resources'
 
 // 技术方向接口
 interface TechDirection {
@@ -552,87 +544,6 @@ export default function GettingStartedPage() {
         </div>
       </section>
 
-      {/* 基础教程 */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold mb-4">{(t as any).gettingStarted.baseTutorials.title}</h2>
-            <p className="text-lg text-muted-foreground">
-              {(t as any).gettingStarted.baseTutorials.description}
-            </p>
-          </motion.div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              whileHover={{ scale: 1.02 }}
-            >
-              <Card className="hover:shadow-lg transition-all duration-300 h-full">
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                        <BookOpen className="h-6 w-6 text-primary" />
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-semibold mb-2">{(t as any).gettingStarted.baseTutorials.introTitle}</h3>
-                      <p className="text-muted-foreground mb-4">
-                        {(t as any).gettingStarted.baseTutorials.introDesc}
-                      </p>
-                      <Button variant="outline" size="sm" asChild>
-                        <a href="/docs/tutorials/basic/introduction">
-                          {(t as any).gettingStarted.baseTutorials.startLearning}
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </a>
-                      </Button>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              whileHover={{ scale: 1.02 }}
-            >
-              <Card className="hover:shadow-lg transition-all duration-300 h-full">
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                        <Code className="h-6 w-6 text-primary" />
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-semibold mb-2">{(t as any).gettingStarted.baseTutorials.fundamentalsTitle}</h3>
-                      <p className="text-muted-foreground mb-4">
-                        {(t as any).gettingStarted.baseTutorials.fundamentalsDesc}
-                      </p>
-                      <Button variant="outline" size="sm" asChild>
-                        <a href="/docs/tutorials/basic/fundamentals">
-                          {(t as any).gettingStarted.baseTutorials.startLearning}
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </a>
-                      </Button>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* 培训资源 */}
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-6xl mx-auto">
@@ -655,12 +566,13 @@ export default function GettingStartedPage() {
             >
               <Card className="hover:shadow-lg transition-all duration-300 text-center">
                 <CardContent className="p-6">
-                  <Github className="h-12 w-12 mx-auto mb-4 text-primary" />
-                  <h3 className="font-semibold mb-2">{(t as any).gettingStarted.trainingResources.githubRepoTitle}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{(t as any).gettingStarted.trainingResources.githubRepoDesc}</p>
+                  <BookOpen className="h-12 w-12 mx-auto mb-4 text-primary" />
+                  <h3 className="font-semibold mb-2">NEC知识库</h3>
+                  <p className="text-sm text-muted-foreground mb-4">飞书知识库，包含项目文档、技术资料和学习资源</p>
                   <Button variant="outline" size="sm" asChild>
-                    <a href="https://github.com/Darrenpig/new_energy_coder_club" target="_blank" rel="noopener noreferrer">
-                      {(t as any).gettingStarted.trainingResources.visitGithub}
+                    <a href="https://scn0bdoc8zxg.feishu.cn/wiki/S10LwzVZdiWLwxkEnEqcTcmEn6e" target="_blank" rel="noopener noreferrer">
+                      访问知识库
+                      <ExternalLink className="ml-2 h-3 w-3" />
                     </a>
                   </Button>
                 </CardContent>
@@ -673,11 +585,14 @@ export default function GettingStartedPage() {
             >
               <Card className="hover:shadow-lg transition-all duration-300 text-center">
                 <CardContent className="p-6">
-                  <BookOpen className="h-12 w-12 mx-auto mb-4 text-primary" />
-                  <h3 className="font-semibold mb-2">{(t as any).gettingStarted.trainingResources.docsTitle}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{(t as any).gettingStarted.trainingResources.docsDesc}</p>
-                  <Button variant="outline" size="sm">
-                    {(t as any).gettingStarted.trainingResources.viewDocs}
+                  <GitBranch className="h-12 w-12 mx-auto mb-4 text-primary" />
+                  <h3 className="font-semibold mb-2">Gitee参与协作</h3>
+                  <p className="text-sm text-muted-foreground mb-4">了解如何通过Gitee参与项目协作和代码贡献</p>
+                  <Button variant="outline" size="sm" asChild>
+                    <a href="https://scn0bdoc8zxg.feishu.cn/wiki/KeqJwFcBfipgKJkNweccRlPgn94" target="_blank" rel="noopener noreferrer">
+                      查看指南
+                      <ExternalLink className="ml-2 h-3 w-3" />
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
@@ -689,11 +604,14 @@ export default function GettingStartedPage() {
             >
               <Card className="hover:shadow-lg transition-all duration-300 text-center">
                 <CardContent className="p-6">
-                  <Play className="h-12 w-12 mx-auto mb-4 text-primary" />
-                  <h3 className="font-semibold mb-2">{(t as any).gettingStarted.trainingResources.videosTitle}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{(t as any).gettingStarted.trainingResources.videosDesc}</p>
-                  <Button variant="outline" size="sm">
-                    {(t as any).gettingStarted.trainingResources.watchVideos}
+                  <Zap className="h-12 w-12 mx-auto mb-4 text-primary" />
+                  <h3 className="font-semibold mb-2">新人快速上手</h3>
+                  <p className="text-sm text-muted-foreground mb-4">新成员入门指南，快速了解团队和项目</p>
+                  <Button variant="outline" size="sm" asChild>
+                    <a href="https://scn0bdoc8zxg.feishu.cn/wiki/QAtNwr244ir8ZekITEZcwpOZnkg" target="_blank" rel="noopener noreferrer">
+                      开始了解
+                      <ExternalLink className="ml-2 h-3 w-3" />
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
@@ -705,11 +623,32 @@ export default function GettingStartedPage() {
             >
               <Card className="hover:shadow-lg transition-all duration-300 text-center">
                 <CardContent className="p-6">
-                  <Users className="h-12 w-12 mx-auto mb-4 text-primary" />
-                  <h3 className="font-semibold mb-2">{(t as any).gettingStarted.trainingResources.communityTitle}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{(t as any).gettingStarted.trainingResources.communityDesc}</p>
-                  <Button variant="outline" size="sm">
-                    {(t as any).gettingStarted.trainingResources.joinDiscussion}
+                  <Sparkles className="h-12 w-12 mx-auto mb-4 text-primary" />
+                  <h3 className="font-semibold mb-2">AI基础技术学习</h3>
+                  <p className="text-sm text-muted-foreground mb-4">飞书AI学习路径，从入门到实战的完整知识体系</p>
+                  <Button variant="outline" size="sm" asChild>
+                    <a href="https://scn0bdoc8zxg.feishu.cn/wiki/JIRlwpifli5EAEkwLJ4cKgnMnMf" target="_blank" rel="noopener noreferrer">
+                      开始学习
+                      <ExternalLink className="ml-2 h-3 w-3" />
+                    </a>
+                  </Button>
+                </CardContent>
+              </Card>
+            </motion.div>
+            
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+            >
+              <Card className="hover:shadow-lg transition-all duration-300 text-center">
+                <CardContent className="p-6">
+                  <Github className="h-12 w-12 mx-auto mb-4 text-primary" />
+                  <h3 className="font-semibold mb-2">{(t as any).gettingStarted.trainingResources.githubRepoTitle}</h3>
+                  <p className="text-sm text-muted-foreground mb-4">{(t as any).gettingStarted.trainingResources.githubRepoDesc}</p>
+                  <Button variant="outline" size="sm" asChild>
+                    <a href="https://github.com/Darrenpig/new_energy_coder_club" target="_blank" rel="noopener noreferrer">
+                      {(t as any).gettingStarted.trainingResources.visitGithub}
+                    </a>
                   </Button>
                 </CardContent>
               </Card>

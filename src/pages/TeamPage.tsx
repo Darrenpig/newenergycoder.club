@@ -16,20 +16,24 @@ import { ThemeToggle } from '@/components/ui/ThemeToggle'
 import { ImageProxy } from '@/components/ui/image-proxy'
 import { Header } from '@/components/layout/Header'
 import { useState, useMemo } from 'react'
-import TeamPhoto1 from '@/image/校门合照.jpg?url'
-import TeamPhoto2 from '@/image/横向项目合照.jpg?url'
-import TeamPhoto3 from '@/image/合照1.jpg?url'
-import TeamPhoto4 from '@/image/合照2.jpg?url'
-import TeamPhoto5 from '@/image/合照3.jpg?url'
-import TeamPhoto6 from '@/image/合照4.jpg?url'
-import RoboconTraining from '@/image/2026ROBOCON技术培训（常州工NEC）_01.png?url'
-import RCBBActivity from '@/image/2601罗马车圈活动.jpg?url'
-import MettaLogo from '@/image/sponsor/脉塔智能.png?url'
-import AmassLogo from '@/image/sponsor/Amass.png?url'
-import BenqLogo from '@/image/sponsor/benq-logo.png?url'
-import YibainaLogo from '@/image/sponsor/易百纳.png?url'
-import GPUFreeLogo from '@/assets/logo_GPU_Free.png?url'
-import RCBBLogo from '@/RCBB.png?url'
+// 团队照片使用 public 目录下的资源
+const TeamPhoto1 = '/image/校门合照.jpg'
+const TeamPhoto2 = '/image/横向项目合照.jpg'
+const TeamPhoto3 = '/image/合照1.jpg'
+const TeamPhoto4 = '/image/合照2.jpg'
+const TeamPhoto5 = '/image/合照3.jpg'
+const TeamPhoto6 = '/image/合照4.jpg'
+const RoboconTraining = '/image/2026ROBOCON技术培训（常州工NEC）_01.png'
+const RCBBActivity = '/image/2601罗马车圈活动.jpg'
+const OSPPLogo = '/image/sponsor/开源之夏Logo.png'
+const LCSCLogo = '/image/sponsor/立创开源广场.png'
+const GPUFreeLogo = '/assets/logo_GPU_Free.png'
+const CubeMarsLogo = '/image/sponsor/CubeMars.png'
+const LuoboLogo = '/image/sponsor/萝卜小酱.png'
+const MaittaLogo = '/image/sponsor/麦塔智能.png'
+const HuaweiLogo = '/image/sponsor/华为云.png'
+const HuayiLogo = '/image/sponsor/华艺塑业.png'
+const RCBBLogo = '/RCBB.png'
 // 已移除Three.js，保留GIF版本动画组件
 import GifAnimation from '@/components/ui/GifAnimation'
 
@@ -558,7 +562,7 @@ export function TeamPage() {
               给予我们帮助的合作伙伴
             </h2>
             <p className="text-lg text-muted-foreground dark:text-gray-300 max-w-2xl mx-auto mb-6">
-              麦塔科技 艾迈斯 易百纳社区 明基 算力自由
+              开源之夏、立创开源硬件平台、GPUfree、CubeMars、萝卜小酱、脉塔智能、华为云、华艺塑业
             </p>
             <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full shadow-sm"></div>
           </div>
@@ -566,11 +570,14 @@ export function TeamPage() {
           {/* Sponsors Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-8 mb-12">
             {[
-              { name: '麦塔科技', logo: MettaLogo, website: 'https://www.myactuator.cn/' },
-              { name: '艾迈斯', logo: AmassLogo, website: 'https://www.china-amass.com/' },
-              { name: '易百纳社区', logo: YibainaLogo, website: 'https://www.ebaina.com/' },
-              { name: '明基', logo: BenqLogo, website: 'https://www.benq.com.cn/' },
-              { name: 'GPUfree 算力自由', logo: GPUFreeLogo, website: 'https://gpufree.org/' }
+              { name: '开源之夏', logo: OSPPLogo, website: 'https://summer-ospp.ac.cn/' },
+              { name: '立创开源硬件平台', logo: LCSCLogo, website: 'https://oshwhub.com/explore' },
+              { name: 'GPUfree 算力自由', logo: GPUFreeLogo, website: 'https://gpufree.org/' },
+              { name: 'CubeMars', logo: CubeMarsLogo, website: '#' },
+              { name: '萝卜小酱', logo: LuoboLogo, website: '#' },
+              { name: '脉塔智能', logo: MaittaLogo, website: 'https://www.myactuator.cn/' },
+              { name: '华为云', logo: HuaweiLogo, website: 'https://www.huaweicloud.com/' },
+              { name: '华艺塑业', logo: HuayiLogo, website: 'https://m.tb.cn/h.7C6uKBnRQ1NxAMB' }
             ].map((sponsor, index) => (
               <div key={index} className="group">
                 {sponsor.website ? (
