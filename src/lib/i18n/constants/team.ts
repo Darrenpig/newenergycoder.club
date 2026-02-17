@@ -479,14 +479,14 @@ export const sponsors: TeamMember[] = [
     tags: ['开源硬件', '开发板', '技术资源', '硬件开发', '创客平台', '技术支持'],
     github: 'https://oshwhub.com/explore'
   },
-  {
-    name: 'GPUfree 算力自由',
-    role: 'Computing Power Partner',
-    bio: '提供1000元算力代金券，助力AI模型训练与科研探索。',
-    image: '/assets/logo_GPU_Free.png',
-    tags: ['GPU算力', '免费算力', 'AI训练', '科研支持', '合作伙伴'],
-    github: 'https://gpufree.org/'
-  },
+  // {
+  //   name: 'GPUfree 算力自由',
+  //   role: 'Computing Power Partner',
+  //   bio: '提供1000元算力代金券，助力AI模型训练与科研探索。',
+  //   image: '/assets/logo_GPU_Free.png',
+  //   tags: ['GPU算力', '免费算力', 'AI训练', '科研支持', '合作伙伴'],
+  //   github: 'https://gpufree.org/'
+  // },
   {
     name: 'CubeMars',
     role: 'Motor Partner - 无限量电机',
@@ -501,20 +501,20 @@ export const sponsors: TeamMember[] = [
     image: '/image/sponsor/萝卜小酱.png',
     tags: ['工具', '螺丝刀', '精密工具', '硬件维护', ' sponsor']
   },
-  {
-    name: '脉塔智能',
-    role: 'RMD电机1W采购额度',
-    bio: '专业RMD电机及驱动解决方案提供商，提供1万元电机采购额度支持。',
-    image: '/image/sponsor/脉塔智能科技.png',
-    tags: ['RMD电机', '驱动器', '电机控制', '采购额度', ' sponsor']
-  },
-  {
-    name: '华为云',
-    role: 'Hardware Sponsor - 香橙派开发板',
-    bio: '华为云提供香橙派开发板支持，助力嵌入式开发与边缘计算项目。',
-    image: '/image/sponsor/华为云.png',
-    tags: ['华为云', '香橙派', '开发板', '嵌入式', '边缘计算', ' sponsor']
-  },
+  // {
+  //   name: '脉塔智能',
+  //   role: 'RMD电机1W采购额度',
+  //   bio: '专业RMD电机及驱动解决方案提供商，提供1万元电机采购额度支持。',
+  //   image: '/image/sponsor/脉塔智能科技.png',
+  //   tags: ['RMD电机', '驱动器', '电机控制', '采购额度', ' sponsor']
+  // },
+  // {
+  //   name: '华为云',
+  //   role: 'Hardware Sponsor - 香橙派开发板',
+  //   bio: '华为云提供香橙派开发板支持，助力嵌入式开发与边缘计算项目。',
+  //   image: '/image/sponsor/华为云.png',
+  //   tags: ['华为云', '香橙派', '开发板', '嵌入式', '边缘计算', ' sponsor']
+  // },
   {
     name: '华艺塑业',
     role: 'Hardware Sponsor - 碳纤维加工支持',

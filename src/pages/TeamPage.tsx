@@ -27,11 +27,11 @@ const RoboconTraining = '/image/2026ROBOCON技术培训（常州工NEC）_01.png
 const RCBBActivity = '/image/2601罗马车圈活动.jpg'
 const OSPPLogo = '/image/sponsor/开源之夏Logo.png'
 const LCSCLogo = '/image/sponsor/立创开源广场.png'
-const GPUFreeLogo = '/assets/logo_GPU_Free.png'
+// const GPUFreeLogo = '/assets/logo_GPU_Free.png'
 const CubeMarsLogo = '/image/sponsor/CubeMars.png'
 const LuoboLogo = '/image/sponsor/萝卜小酱.png'
-const MaittaLogo = '/image/sponsor/麦塔智能.png'
-const HuaweiLogo = '/image/sponsor/华为云.png'
+// const MaittaLogo = '/image/sponsor/麦塔智能.png'
+// const HuaweiLogo = '/image/sponsor/华为云.png'
 const HuayiLogo = '/image/sponsor/华艺塑业.png'
 const RCBBLogo = '/RCBB.png'
 // 已移除Three.js，保留GIF版本动画组件
@@ -562,7 +562,7 @@ export function TeamPage() {
               给予我们帮助的合作伙伴
             </h2>
             <p className="text-lg text-muted-foreground dark:text-gray-300 max-w-2xl mx-auto mb-6">
-              开源之夏、立创开源硬件平台、GPUfree、CubeMars、萝卜小酱、脉塔智能、华为云、华艺塑业
+              开源之夏、立创开源硬件平台、CubeMars、萝卜小酱、华艺塑业
             </p>
             <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full shadow-sm"></div>
           </div>
@@ -572,11 +572,11 @@ export function TeamPage() {
             {[
               { name: '开源之夏', logo: OSPPLogo, website: 'https://summer-ospp.ac.cn/' },
               { name: '立创开源硬件平台', logo: LCSCLogo, website: 'https://oshwhub.com/explore' },
-              { name: 'GPUfree 算力自由', logo: GPUFreeLogo, website: 'https://gpufree.org/' },
+              // { name: 'GPUfree 算力自由', logo: GPUFreeLogo, website: '#' },
               { name: 'CubeMars', logo: CubeMarsLogo, website: '#' },
               { name: '萝卜小酱', logo: LuoboLogo, website: '#' },
-              { name: '脉塔智能', logo: MaittaLogo, website: 'https://www.myactuator.cn/' },
-              { name: '华为云', logo: HuaweiLogo, website: 'https://www.huaweicloud.com/' },
+              // { name: '脉塔智能', logo: MaittaLogo, website: '#' },
+              // { name: '华为云', logo: HuaweiLogo, website: '#' },
               { name: '华艺塑业', logo: HuayiLogo, website: 'https://m.tb.cn/h.7C6uKBnRQ1NxAMB' }
             ].map((sponsor, index) => (
               <div key={index} className="group">

@@ -1,168 +1,168 @@
-
+﻿
 
 
           
-# 团队成员图片目录说明 (Team Image Directory Documentation)
+# 鍥㈤槦鎴愬憳鍥剧墖鐩綍璇存槑 (Team Image Directory Documentation)
 
-## 📁 目录结构 (Directory Structure)
+## 馃搧 鐩綍缁撴瀯 (Directory Structure)
 
 ```
-src/image/
-├── contributer/          # 贡献者 (Contributors)
-├── designer/            # 设计师 (Designers)
-├── developer/           # 开发者 (Developers)
-├── maintainer/          # 维护者 (Maintainers)
-├── sponsor/             # 赞助商 (Sponsors)
-├── 校门合照.jpg         # 团队校门合照 (School Gate Group Photo)
-└── 横向项目合照.jpg     # 项目组合照 (Project Team Photo)
+public/image/
+鈹溾攢鈹€ contributer/          # 璐＄尞鑰?(Contributors)
+鈹溾攢鈹€ designer/            # 璁捐甯?(Designers)
+鈹溾攢鈹€ developer/           # 寮€鍙戣€?(Developers)
+鈹溾攢鈹€ maintainer/          # 缁存姢鑰?(Maintainers)
+鈹溾攢鈹€ sponsor/             # 璧炲姪鍟?(Sponsors)
+鈹溾攢鈹€ 鏍￠棬鍚堢収.jpg         # 鍥㈤槦鏍￠棬鍚堢収 (School Gate Group Photo)
+鈹斺攢鈹€ 妯悜椤圭洰鍚堢収.jpg     # 椤圭洰缁勫悎鐓?(Project Team Photo)
 ```
 
-## 👥 团队成员详情 (Team Members Details)
+## 馃懃 鍥㈤槦鎴愬憳璇︽儏 (Team Members Details)
 
-### 🔧 维护者团队 (Maintainers Team)
-对应i18n.ts中的 `team.maintainers` 数组
+### 馃敡 缁存姢鑰呭洟闃?(Maintainers Team)
+瀵瑰簲i18n.ts涓殑 `team.maintainers` 鏁扮粍
 
-| 图片文件 | 姓名 | 职责 | 个人简介 | GitHub图片链接 |
+| 鍥剧墖鏂囦欢 | 濮撳悕 | 鑱岃矗 | 涓汉绠€浠?| GitHub鍥剧墖閾炬帴 |
 |---------|------|------|----------|----------------|
-| `DarrenPig.jpg` | DarrenPig | Club Founder & BSP 嵌软工程师 | Renewable energy researcher with a focus on AI applications for energy optimization. | `https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/maintainer/DarrenPig.jpg` |
-| `殷统创.jpg` | 殷统创 | Club Founder & BSP Expert | 专注于AI在能源优化应用的可再生能源研究员。 | `https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/maintainer/殷统创.jpg` |
-| `许珑译.jpg` | 许珑译 | 机器人算法工程师 | 专注于机器人算法研发部署以及业务逻辑设计。 | `https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/maintainer/许珑译.jpg` |
-| `张旺旺.png` | 张旺旺 | 机器人运行时工程师 | 负责项目的核心技术攻坚，保障电控系统的稳定运行。 | `https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/maintainer/张旺旺.png` |
+| `DarrenPig.jpg` | DarrenPig | Club Founder & BSP 宓岃蒋宸ョ▼甯?| Renewable energy researcher with a focus on AI applications for energy optimization. | `https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/public/image/maintainer/DarrenPig.jpg` |
+| `娈风粺鍒?jpg` | 娈风粺鍒?| Club Founder & BSP Expert | 涓撴敞浜嶢I鍦ㄨ兘婧愪紭鍖栧簲鐢ㄧ殑鍙啀鐢熻兘婧愮爺绌跺憳銆?| `https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/public/image/maintainer/娈风粺鍒?jpg` |
+| `璁哥彂璇?jpg` | 璁哥彂璇?| 鏈哄櫒浜虹畻娉曞伐绋嬪笀 | 涓撴敞浜庢満鍣ㄤ汉绠楁硶鐮斿彂閮ㄧ讲浠ュ強涓氬姟閫昏緫璁捐銆?| `https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/public/image/maintainer/璁哥彂璇?jpg` |
+| `寮犳椇鏃?png` | 寮犳椇鏃?| 鏈哄櫒浜鸿繍琛屾椂宸ョ▼甯?| 璐熻矗椤圭洰鐨勬牳蹇冩妧鏈敾鍧氾紝淇濋殰鐢垫帶绯荤粺鐨勭ǔ瀹氳繍琛屻€?| `https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/public/image/maintainer/寮犳椇鏃?png` |
 
-### 💻 开发团队 (Developers Team)
-对应i18n.ts中的 `team.developers` 数组
+### 馃捇 寮€鍙戝洟闃?(Developers Team)
+瀵瑰簲i18n.ts涓殑 `team.developers` 鏁扮粍
 
-| 图片文件 | 姓名 | 职责 | 个人简介 | GitHub图片链接 |
+| 鍥剧墖鏂囦欢 | 濮撳悕 | 鑱岃矗 | 涓汉绠€浠?| GitHub鍥剧墖閾炬帴 |
 |---------|------|------|----------|----------------|
-| `刘英琪.png` | 刘英琪 | 嵌入式开发工程师 | 专注于现代机器人技术栈，致力于构建高性能的机器人界面。 | `https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/刘英琪.png` |
-| `单广志.jpg` | 单广志 | 嵌入式开发工程师 | 机器人行业电控驱动开发以及硬件电路设计。 | `https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/单广志.jpg` |
-| `周志.png` | 周志 | 全栈开发工程师 | 具备前后端开发能力，致力于端到端的解决方案开发。 | `https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/周志.png` |
-| `李硕.png` | 李硕 | 硬件系统架构师 | 专注于硬件系统架构设计和技术选型，为项目提供技术指导。 | `https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/李硕.png` |
-| `牛良旭.jpg` | 牛良旭 | DevOps电池管理工程师 | 负责项目的持续集成和部署，保障开发流程的高效运行。 | `https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/牛良旭.jpg` |
-| `郑钦文.jpg` | 郑钦文 | 机电一体化开发工程师 | 专注于机电设计开发，为用户提供优质的移动端体验。 | `https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/郑钦文.jpg` |
-| `杨力滔.JPG` | 杨力滔 | 星闪手柄开发工程师 | 星闪手柄开发专家，熟悉STM32+RTOS C语言开发。 | `https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/杨力滔.JPG` |
-| `彭柯颖.jpg` | 彭柯颖 | 机械R1机器人开发者 | 新加入的开发团队成员，积极参与机器人项目开发，学习新技术。 | `https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/src/image/developer/彭柯颖.jpg` |
+| `鍒樿嫳鐞?png` | 鍒樿嫳鐞?| 宓屽叆寮忓紑鍙戝伐绋嬪笀 | 涓撴敞浜庣幇浠ｆ満鍣ㄤ汉鎶€鏈爤锛岃嚧鍔涗簬鏋勫缓楂樻€ц兘鐨勬満鍣ㄤ汉鐣岄潰銆?| `https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/public/image/developer/鍒樿嫳鐞?png` |
+| `鍗曞箍蹇?jpg` | 鍗曞箍蹇?| 宓屽叆寮忓紑鍙戝伐绋嬪笀 | 鏈哄櫒浜鸿涓氱數鎺ч┍鍔ㄥ紑鍙戜互鍙婄‖浠剁數璺璁°€?| `https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/public/image/developer/鍗曞箍蹇?jpg` |
+| `鍛ㄥ織.png` | 鍛ㄥ織 | 鍏ㄦ爤寮€鍙戝伐绋嬪笀 | 鍏峰鍓嶅悗绔紑鍙戣兘鍔涳紝鑷村姏浜庣鍒扮鐨勮В鍐虫柟妗堝紑鍙戙€?| `https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/public/image/developer/鍛ㄥ織.png` |
+| `鏉庣.png` | 鏉庣 | 纭欢绯荤粺鏋舵瀯甯?| 涓撴敞浜庣‖浠剁郴缁熸灦鏋勮璁″拰鎶€鏈€夊瀷锛屼负椤圭洰鎻愪緵鎶€鏈寚瀵笺€?| `https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/public/image/developer/鏉庣.png` |
+| `鐗涜壇鏃?jpg` | 鐗涜壇鏃?| DevOps鐢垫睜绠＄悊宸ョ▼甯?| 璐熻矗椤圭洰鐨勬寔缁泦鎴愬拰閮ㄧ讲锛屼繚闅滃紑鍙戞祦绋嬬殑楂樻晥杩愯銆?| `https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/public/image/developer/鐗涜壇鏃?jpg` |
+| `閮戦挦鏂?jpg` | 閮戦挦鏂?| 鏈虹數涓€浣撳寲寮€鍙戝伐绋嬪笀 | 涓撴敞浜庢満鐢佃璁″紑鍙戯紝涓虹敤鎴锋彁渚涗紭璐ㄧ殑绉诲姩绔綋楠屻€?| `https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/public/image/developer/閮戦挦鏂?jpg` |
+| `鏉ㄥ姏婊?JPG` | 鏉ㄥ姏婊?| 鏄熼棯鎵嬫焺寮€鍙戝伐绋嬪笀 | 鏄熼棯鎵嬫焺寮€鍙戜笓瀹讹紝鐔熸倝STM32+RTOS C璇█寮€鍙戙€?| `https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/public/image/developer/鏉ㄥ姏婊?JPG` |
+| `褰煰棰?jpg` | 褰煰棰?| 鏈烘R1鏈哄櫒浜哄紑鍙戣€?| 鏂板姞鍏ョ殑寮€鍙戝洟闃熸垚鍛橈紝绉瀬鍙備笌鏈哄櫒浜洪」鐩紑鍙戯紝瀛︿範鏂版妧鏈€?| `https://raw.githubusercontent.com/Darrenpig/newenergycoder.club/main/public/image/developer/褰煰棰?jpg` |
 
-### 🎨 设计团队 (Designers Team)
-对应i18n.ts中的 `team.designers` 数组
+### 馃帹 璁捐鍥㈤槦 (Designers Team)
+瀵瑰簲i18n.ts涓殑 `team.designers` 鏁扮粍
 
-| 图片文件 | 姓名 | 职责 | 个人简介 | GitHub图片链接 |
+| 鍥剧墖鏂囦欢 | 濮撳悕 | 鑱岃矗 | 涓汉绠€浠?| GitHub鍥剧墖閾炬帴 |
 |---------|------|------|----------|----------------|
-| `xiux.jpg` | Xiux | UI/UX设计师 & 仓库PM | 专注于开发者体验设计和界面优化，为可持续仓库创造美观易用的界面。 | `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/designer/xiux.jpg` |
-| `ikkOoOo.jpg` | ikkOoOo | 工业/产品设计师 | 专注于创意设计和视觉表达，为项目提供独特的设计视角。 | `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/designer/ikkOoOo.jpg` |
-| `张若璐.jpg` | 张若璐 | 视觉设计师&财务分析师 | 专注于品牌落地和财务分析，为项目提供专业的财务视角可行性落地设计。 | `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/designer/张若璐.jpg` |
-| `韦彩日.jpg` | 韦彩日 | 工业产品设计师 | 负责对接需求，专注于工业产品设计，为项目提供专业的设计解决方案。 | `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/designer/韦彩日.jpg` |
-| `张岩皓.jpg` | 张岩皓 | 摄影&数据可视化&设计师&运营博主 | 会摄影，学艺术设计，做漂亮餐，专注于摄影、数据可视化设计和运营推广。 | `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/designer/张岩皓.jpg` |
-| `李想.jpg` | 李想 | UX设计师 | 一直在探索技术与设计边界的路上，以用户为中心，以体验为驱动。 | `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/designer/李想.jpg` |
-| `李一楠.jpg` | 李一楠 | 运营组长 | 为NEC小队宣传以及主持，负责团队运营和对外宣传工作。 | `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/designer/李一楠.jpg` |
-| `韩祺冉.jpg` | 韩祺冉 | Contributor | 数据分析师，专注于数据处理和可视化分析工作。 | `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/韩祺冉.jpg` |
+| `xiux.jpg` | Xiux | UI/UX璁捐甯?& 浠撳簱PM | 涓撴敞浜庡紑鍙戣€呬綋楠岃璁″拰鐣岄潰浼樺寲锛屼负鍙寔缁粨搴撳垱閫犵編瑙傛槗鐢ㄧ殑鐣岄潰銆?| `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/public/image/designer/xiux.jpg` |
+| `ikkOoOo.jpg` | ikkOoOo | 宸ヤ笟/浜у搧璁捐甯?| 涓撴敞浜庡垱鎰忚璁″拰瑙嗚琛ㄨ揪锛屼负椤圭洰鎻愪緵鐙壒鐨勮璁¤瑙掋€?| `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/public/image/designer/ikkOoOo.jpg` |
+| `寮犺嫢鐠?jpg` | 寮犺嫢鐠?| 瑙嗚璁捐甯?璐㈠姟鍒嗘瀽甯?| 涓撴敞浜庡搧鐗岃惤鍦板拰璐㈠姟鍒嗘瀽锛屼负椤圭洰鎻愪緵涓撲笟鐨勮储鍔¤瑙掑彲琛屾€ц惤鍦拌璁°€?| `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/public/image/designer/寮犺嫢鐠?jpg` |
+| `闊﹀僵鏃?jpg` | 闊﹀僵鏃?| 宸ヤ笟浜у搧璁捐甯?| 璐熻矗瀵规帴闇€姹傦紝涓撴敞浜庡伐涓氫骇鍝佽璁★紝涓洪」鐩彁渚涗笓涓氱殑璁捐瑙ｅ喅鏂规銆?| `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/public/image/designer/闊﹀僵鏃?jpg` |
+| `寮犲博鐨?jpg` | 寮犲博鐨?| 鎽勫奖&鏁版嵁鍙鍖?璁捐甯?杩愯惀鍗氫富 | 浼氭憚褰憋紝瀛﹁壓鏈璁★紝鍋氭紓浜锛屼笓娉ㄤ簬鎽勫奖銆佹暟鎹彲瑙嗗寲璁捐鍜岃繍钀ユ帹骞裤€?| `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/public/image/designer/寮犲博鐨?jpg` |
+| `鏉庢兂.jpg` | 鏉庢兂 | UX璁捐甯?| 涓€鐩村湪鎺㈢储鎶€鏈笌璁捐杈圭晫鐨勮矾涓婏紝浠ョ敤鎴蜂负涓績锛屼互浣撻獙涓洪┍鍔ㄣ€?| `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/public/image/designer/鏉庢兂.jpg` |
+| `鏉庝竴妤?jpg` | 鏉庝竴妤?| 杩愯惀缁勯暱 | 涓篘EC灏忛槦瀹ｄ紶浠ュ強涓绘寔锛岃礋璐ｅ洟闃熻繍钀ュ拰瀵瑰瀹ｄ紶宸ヤ綔銆?| `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/public/image/designer/鏉庝竴妤?jpg` |
+| `闊╃ズ鍐?jpg` | 闊╃ズ鍐?| Contributor | 鏁版嵁鍒嗘瀽甯堬紝涓撴敞浜庢暟鎹鐞嗗拰鍙鍖栧垎鏋愬伐浣溿€?| `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/public/image/contributer/闊╃ズ鍐?jpg` |
 
-### 🤝 贡献者团队 (Contributors Team)
-对应i18n.ts中的 `team.contributors` 数组
+### 馃 璐＄尞鑰呭洟闃?(Contributors Team)
+瀵瑰簲i18n.ts涓殑 `team.contributors` 鏁扮粍
 
-| 图片文件 | 姓名 | 职责 | 个人简介 | GitHub图片链接 |
+| 鍥剧墖鏂囦欢 | 濮撳悕 | 鑱岃矗 | 涓汉绠€浠?| GitHub鍥剧墖閾炬帴 |
 |---------|------|------|----------|----------------|
-| `卢永杰.jpg` | 卢永杰 | 嵌入式&运控算法专家 | 专注算法部署优化及BSP逻辑协同设计，在嵌入式和运控算法领域有深入研究。 | `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/卢永杰.jpg` |
-| `卢王淳.jpg` | 卢王淳 | 25RC项管&机械&电控小白 | 25RC项目管理，机械和电控领域的学习者，负责项目协调工作。 | `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/卢王淳.jpg` |
-| `崔正阳2.jpg` | 崔正阳 | Developer/Sponsor | 24年华为云IoT大赛加入实验室，24RC全国机器人大赛正式接触机器人，25RC全程参与备赛。主要技能掌握为上位机控制，算法，仿真模型。 | `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/崔正阳2.jpg` |
-| `王于豪.jpg` | 王于豪 | 成型组组长 | 调试3D打印机帮助团队打印物品，负责成型组的管理和技术支持工作。 | `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/王于豪.jpg` |
-| `闻志伟.jpg` | 闻志伟 | Bronze Sponsor | 致力于推动可持续技术发展的个人赞助者。 | `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/developer/闻志伟.jpg` |
-| `张旺旺.jpg` | 张旺旺 | 新能源运维工程师 | 负责核心项目的真机部署和运维工作，保障系统的稳定运行。 | `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/张旺旺.jpg` |
-| `吴洛斌.jpg` | 吴洛斌 | 开源贡献者&气动自动化专家 | 积极参与开源项目，为社区贡献代码商业化文档。 | `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/吴洛斌.jpg` |
-| `余浩铭.jpg` | 余浩铭 | 机器人日志运营编辑 | 专注于宣传和文字，让NEC的每一份理念都能被看见。 | `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/developer/余浩铭.jpg` |
-| `许子涵.png` | 许子涵 | 产品经理 | 负责产品规划和需求分析，推动项目向正确方向发展。 | `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/许子涵.png` |
-| `卞乐凌.jpg` | 卞乐凌 | 嵌入式学习贡献者 | 嵌入式学习中，积极参与开源项目和社区建设。 | `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/卞乐凌.jpg` |
-| `王彦君.jpg` | 王彦君 | 工业/产品设计师 | 致力于通过设计解决实际问题，以更开放的态度寻找更多可能性。 | `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/王彦君.jpg` |
-| `徐海婷.jpg` | 徐海婷 | 财务管理专员 | 聚焦财务流程优化与数据支撑，通过合理预算、风险防控，助力技术实践、行稳致远。 | `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/designer/徐海婷.jpg` |
-| `郑绍恺.jpg` | 郑绍恺 | 算法竞赛选手 | 专注于算法研究以及最优化问题 | `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/郑绍恺.jpg` |
-| `杨鑫海.jpg` | 杨鑫海 | Developer | 专注于Arduino和ESP32等开发板的代码例程开发。 | `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/杨鑫海.jpg` |
-| `殷子豪.jpg` | 殷子豪 | Developer&文艺工作者 | 运营宣传与文字编辑，负责团队内容创作和对外传播。 | `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/殷子豪.jpg` |
-| `孙如婕.jpg` | 孙如婕 | 灵巧手横向开发贡献者 | 专注于灵巧手的横向开发，为项目提供创新的技术解决方案和开发支持。 | `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/contributer/孙如婕.jpg` |
+| `鍗㈡案鏉?jpg` | 鍗㈡案鏉?| 宓屽叆寮?杩愭帶绠楁硶涓撳 | 涓撴敞绠楁硶閮ㄧ讲浼樺寲鍙夿SP閫昏緫鍗忓悓璁捐锛屽湪宓屽叆寮忓拰杩愭帶绠楁硶棰嗗煙鏈夋繁鍏ョ爺绌躲€?| `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/public/image/contributer/鍗㈡案鏉?jpg` |
+| `鍗㈢帇娣?jpg` | 鍗㈢帇娣?| 25RC椤圭&鏈烘&鐢垫帶灏忕櫧 | 25RC椤圭洰绠＄悊锛屾満姊板拰鐢垫帶棰嗗煙鐨勫涔犺€咃紝璐熻矗椤圭洰鍗忚皟宸ヤ綔銆?| `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/public/image/contributer/鍗㈢帇娣?jpg` |
+| `宕旀闃?.jpg` | 宕旀闃?| Developer/Sponsor | 24骞村崕涓轰簯IoT澶ц禌鍔犲叆瀹為獙瀹わ紝24RC鍏ㄥ浗鏈哄櫒浜哄ぇ璧涙寮忔帴瑙︽満鍣ㄤ汉锛?5RC鍏ㄧ▼鍙備笌澶囪禌銆備富瑕佹妧鑳芥帉鎻′负涓婁綅鏈烘帶鍒讹紝绠楁硶锛屼豢鐪熸ā鍨嬨€?| `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/public/image/contributer/宕旀闃?.jpg` |
+| `鐜嬩簬璞?jpg` | 鐜嬩簬璞?| 鎴愬瀷缁勭粍闀?| 璋冭瘯3D鎵撳嵃鏈哄府鍔╁洟闃熸墦鍗扮墿鍝侊紝璐熻矗鎴愬瀷缁勭殑绠＄悊鍜屾妧鏈敮鎸佸伐浣溿€?| `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/public/image/contributer/鐜嬩簬璞?jpg` |
+| `闂诲織浼?jpg` | 闂诲織浼?| Bronze Sponsor | 鑷村姏浜庢帹鍔ㄥ彲鎸佺画鎶€鏈彂灞曠殑涓汉璧炲姪鑰呫€?| `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/public/image/developer/闂诲織浼?jpg` |
+| `寮犳椇鏃?jpg` | 寮犳椇鏃?| 鏂拌兘婧愯繍缁村伐绋嬪笀 | 璐熻矗鏍稿績椤圭洰鐨勭湡鏈洪儴缃插拰杩愮淮宸ヤ綔锛屼繚闅滅郴缁熺殑绋冲畾杩愯銆?| `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/public/image/contributer/寮犳椇鏃?jpg` |
+| `鍚存礇鏂?jpg` | 鍚存礇鏂?| 寮€婧愯础鐚€?姘斿姩鑷姩鍖栦笓瀹?| 绉瀬鍙備笌寮€婧愰」鐩紝涓虹ぞ鍖鸿础鐚唬鐮佸晢涓氬寲鏂囨。銆?| `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/public/image/contributer/鍚存礇鏂?jpg` |
+| `浣欐旦閾?jpg` | 浣欐旦閾?| 鏈哄櫒浜烘棩蹇楄繍钀ョ紪杈?| 涓撴敞浜庡浼犲拰鏂囧瓧锛岃NEC鐨勬瘡涓€浠界悊蹇甸兘鑳借鐪嬭銆?| `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/public/image/developer/浣欐旦閾?jpg` |
+| `璁稿瓙娑?png` | 璁稿瓙娑?| 浜у搧缁忕悊 | 璐熻矗浜у搧瑙勫垝鍜岄渶姹傚垎鏋愶紝鎺ㄥ姩椤圭洰鍚戞纭柟鍚戝彂灞曘€?| `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/public/image/contributer/璁稿瓙娑?png` |
+| `鍗炰箰鍑?jpg` | 鍗炰箰鍑?| 宓屽叆寮忓涔犺础鐚€?| 宓屽叆寮忓涔犱腑锛岀Н鏋佸弬涓庡紑婧愰」鐩拰绀惧尯寤鸿銆?| `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/public/image/contributer/鍗炰箰鍑?jpg` |
+| `鐜嬪溅鍚?jpg` | 鐜嬪溅鍚?| 宸ヤ笟/浜у搧璁捐甯?| 鑷村姏浜庨€氳繃璁捐瑙ｅ喅瀹為檯闂锛屼互鏇村紑鏀剧殑鎬佸害瀵绘壘鏇村鍙兘鎬с€?| `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/public/image/contributer/鐜嬪溅鍚?jpg` |
+| `寰愭捣濠?jpg` | 寰愭捣濠?| 璐㈠姟绠＄悊涓撳憳 | 鑱氱劍璐㈠姟娴佺▼浼樺寲涓庢暟鎹敮鎾戯紝閫氳繃鍚堢悊棰勭畻銆侀闄╅槻鎺э紝鍔╁姏鎶€鏈疄璺点€佽绋宠嚧杩溿€?| `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/public/image/designer/寰愭捣濠?jpg` |
+| `閮戠粛鎭?jpg` | 閮戠粛鎭?| 绠楁硶绔炶禌閫夋墜 | 涓撴敞浜庣畻娉曠爺绌朵互鍙婃渶浼樺寲闂 | `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/public/image/contributer/閮戠粛鎭?jpg` |
+| `鏉ㄩ懌娴?jpg` | 鏉ㄩ懌娴?| Developer | 涓撴敞浜嶢rduino鍜孍SP32绛夊紑鍙戞澘鐨勪唬鐮佷緥绋嬪紑鍙戙€?| `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/public/image/contributer/鏉ㄩ懌娴?jpg` |
+| `娈峰瓙璞?jpg` | 娈峰瓙璞?| Developer&鏂囪壓宸ヤ綔鑰?| 杩愯惀瀹ｄ紶涓庢枃瀛楃紪杈戯紝璐熻矗鍥㈤槦鍐呭鍒涗綔鍜屽澶栦紶鎾€?| `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/public/image/contributer/娈峰瓙璞?jpg` |
+| `瀛欏濠?jpg` | 瀛欏濠?| 鐏靛阀鎵嬫í鍚戝紑鍙戣础鐚€?| 涓撴敞浜庣伒宸ф墜鐨勬í鍚戝紑鍙戯紝涓洪」鐩彁渚涘垱鏂扮殑鎶€鏈В鍐虫柟妗堝拰寮€鍙戞敮鎸併€?| `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/public/image/contributer/瀛欏濠?jpg` |
 
-### 💰 赞助商团队 (Sponsors Team)
-对应i18n.ts中的 `team.sponsors` 数组
+### 馃挵 璧炲姪鍟嗗洟闃?(Sponsors Team)
+瀵瑰簲i18n.ts涓殑 `team.sponsors` 鏁扮粍
 
-| 图片文件 | 姓名 | 职责 | 个人简介 | GitHub图片链接 |
+| 鍥剧墖鏂囦欢 | 濮撳悕 | 鑱岃矗 | 涓汉绠€浠?| GitHub鍥剧墖閾炬帴 |
 |---------|------|------|----------|----------------|
-| `开源之夏Logo.png` | 开源之夏 | Gold Sponsor - ¥12,000 | 中国科学院软件研究所、华为技术有限公司、中科南京软件技术研究院联合主办的开源活动。 | `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/sponsor/开源之夏Logo.png` |
-| `立创开源广场.png` | 立创开源硬件平台 | Silver Sponsor - ¥8,000 | 专业的开源硬件开发平台，提供丰富的开发板和技术资源。 | `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/sponsor/立创开源广场.png` |
+| `寮€婧愪箣澶廘ogo.png` | 寮€婧愪箣澶?| Gold Sponsor - 楼12,000 | 涓浗绉戝闄㈣蒋浠剁爺绌舵墍銆佸崕涓烘妧鏈湁闄愬叕鍙搞€佷腑绉戝崡浜蒋浠舵妧鏈爺绌堕櫌鑱斿悎涓诲姙鐨勫紑婧愭椿鍔ㄣ€?| `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/public/image/sponsor/寮€婧愪箣澶廘ogo.png` |
+| `绔嬪垱寮€婧愬箍鍦?png` | 绔嬪垱寮€婧愮‖浠跺钩鍙?| Silver Sponsor - 楼8,000 | 涓撲笟鐨勫紑婧愮‖浠跺紑鍙戝钩鍙帮紝鎻愪緵涓板瘜鐨勫紑鍙戞澘鍜屾妧鏈祫婧愩€?| `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/public/image/sponsor/绔嬪垱寮€婧愬箍鍦?png` |
 
-## 📸 团队合照 (Team Group Photos)
+## 馃摳 鍥㈤槦鍚堢収 (Team Group Photos)
 
-| 图片文件 | 描述 | 用途 |
+| 鍥剧墖鏂囦欢 | 鎻忚堪 | 鐢ㄩ€?|
 |----------|------|------|
-| `校门合照.jpg` | 团队在校门口的集体合照 | 用于团队介绍页面，展示团队整体形象 |
-| `横向项目合照.jpg` | 项目开发期间的团队工作照 | 用于项目展示页面，展示团队协作场景 |
+| `鏍￠棬鍚堢収.jpg` | 鍥㈤槦鍦ㄦ牎闂ㄥ彛鐨勯泦浣撳悎鐓?| 鐢ㄤ簬鍥㈤槦浠嬬粛椤甸潰锛屽睍绀哄洟闃熸暣浣撳舰璞?|
+| `妯悜椤圭洰鍚堢収.jpg` | 椤圭洰寮€鍙戞湡闂寸殑鍥㈤槦宸ヤ綔鐓?| 鐢ㄤ簬椤圭洰灞曠ず椤甸潰锛屽睍绀哄洟闃熷崗浣滃満鏅?|
 
-## 🔗 数据对应关系 (Data Mapping)
+## 馃敆 鏁版嵁瀵瑰簲鍏崇郴 (Data Mapping)
 
-### 与team.ts和TeamPage.tsx的对应关系
+### 涓巘eam.ts鍜孴eamPage.tsx鐨勫搴斿叧绯?
 
-1. **图片路径规则**: `src/image/{role}/{filename}` → `https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/src/image/{role}/{filename}`
+1. **鍥剧墖璺緞瑙勫垯**: `public/image/{role}/{filename}` 鈫?`https://raw.githubusercontent.com/Darrenpig/Energy-Coder-Club-Website/main/public/image/{role}/{filename}`
 
-2. **角色映射**:
-   - `maintainer/` → `team.maintainers`
-   - `developer/` → `team.developers`
-   - `designer/` → `team.designers`
-   - `contributer/` → `team.contributors`
-   - `sponsor/` → `team.sponsors`
+2. **瑙掕壊鏄犲皠**:
+   - `maintainer/` 鈫?`team.maintainers`
+   - `developer/` 鈫?`team.developers`
+   - `designer/` 鈫?`team.designers`
+   - `contributer/` 鈫?`team.contributors`
+   - `sponsor/` 鈫?`team.sponsors`
 
-3. **数据格式**:
+3. **鏁版嵁鏍煎紡**:
    ```typescript
    {
-     name: "成员姓名",
-     role: "职责描述",
-     bio: "个人简介",
-     image: "完整的GitHub Raw图片链接",
-     tags?: string[], // 技能标签数组，在TeamPage.tsx第43-54行渲染
-     github?: string, // GitHub链接
-     linkedin?: string, // LinkedIn链接
-     email?: string // 邮箱地址
+     name: "鎴愬憳濮撳悕",
+     role: "鑱岃矗鎻忚堪",
+     bio: "涓汉绠€浠?,
+     image: "瀹屾暣鐨凣itHub Raw鍥剧墖閾炬帴",
+     tags?: string[], // 鎶€鑳芥爣绛炬暟缁勶紝鍦═eamPage.tsx绗?3-54琛屾覆鏌?
+     github?: string, // GitHub閾炬帴
+     linkedin?: string, // LinkedIn閾炬帴
+     email?: string // 閭鍦板潃
    }
    ```
 
-4. **Tags字段渲染位置**:
-   - 文件: `src/pages/TeamPage.tsx`
-   - 行数: 第43-54行
-   - 功能: 在团队成员卡片中显示技能标签，使用Badge组件渲染
-   - 样式: 渐变背景、毛玻璃效果、悬停动画
+4. **Tags瀛楁娓叉煋浣嶇疆**:
+   - 鏂囦欢: `src/pages/TeamPage.tsx`
+   - 琛屾暟: 绗?3-54琛?
+   - 鍔熻兘: 鍦ㄥ洟闃熸垚鍛樺崱鐗囦腑鏄剧ず鎶€鑳芥爣绛撅紝浣跨敤Badge缁勪欢娓叉煋
+   - 鏍峰紡: 娓愬彉鑳屾櫙銆佹瘺鐜荤拑鏁堟灉銆佹偓鍋滃姩鐢?
 
-## 📝 使用规范 (Usage Guidelines)
+## 馃摑 浣跨敤瑙勮寖 (Usage Guidelines)
 
-### 图片命名规范
-- 使用成员真实姓名作为文件名
-- 中文姓名直接使用中文
-- 如有重名，添加数字后缀，如：`张旺旺.jpg`, `张旺旺2.jpg`
+### 鍥剧墖鍛藉悕瑙勮寖
+- 浣跨敤鎴愬憳鐪熷疄濮撳悕浣滀负鏂囦欢鍚?
+- 涓枃濮撳悕鐩存帴浣跨敤涓枃
+- 濡傛湁閲嶅悕锛屾坊鍔犳暟瀛楀悗缂€锛屽锛歚寮犳椇鏃?jpg`, `寮犳椇鏃?.jpg`
 
-### 图片格式要求
-- 支持格式：`.jpg`, `.jpeg`, `.png`
-- 推荐尺寸：300x300px 或 400x400px（正方形）
-- 文件大小：建议不超过500KB
-- 背景：建议使用纯色背景或透明背景
+### 鍥剧墖鏍煎紡瑕佹眰
+- 鏀寔鏍煎紡锛歚.jpg`, `.jpeg`, `.png`
+- 鎺ㄨ崘灏哄锛?00x300px 鎴?400x400px锛堟鏂瑰舰锛?
+- 鏂囦欢澶у皬锛氬缓璁笉瓒呰繃500KB
+- 鑳屾櫙锛氬缓璁娇鐢ㄧ函鑹茶儗鏅垨閫忔槑鑳屾櫙
 
-### 更新流程
-1. 将新图片按角色分类放入对应文件夹
-2. 在i18n.ts中添加对应的成员信息
-3. 确保图片链接格式正确
-4. 测试图片在网站上的显示效果
+### 鏇存柊娴佺▼
+1. 灏嗘柊鍥剧墖鎸夎鑹插垎绫绘斁鍏ュ搴旀枃浠跺す
+2. 鍦╥18n.ts涓坊鍔犲搴旂殑鎴愬憳淇℃伅
+3. 纭繚鍥剧墖閾炬帴鏍煎紡姝ｇ‘
+4. 娴嬭瘯鍥剧墖鍦ㄧ綉绔欎笂鐨勬樉绀烘晥鏋?
 
-## 🔄 版本记录 (Version History)
+## 馃攧 鐗堟湰璁板綍 (Version History)
 
-- **v1.0 (2024年)**: 初始团队成员照片收集完成
-- **v1.1 (2024年)**: 新增彭柯颖、卞乐凌等新成员
-- **v1.2 (2024年)**: 优化图片质量和统一格式
-- **持续更新中**: 欢迎更多成员加入
+- **v1.0 (2024骞?**: 鍒濆鍥㈤槦鎴愬憳鐓х墖鏀堕泦瀹屾垚
+- **v1.1 (2024骞?**: 鏂板褰煰棰栥€佸崬涔愬噷绛夋柊鎴愬憳
+- **v1.2 (2024骞?**: 浼樺寲鍥剧墖璐ㄩ噺鍜岀粺涓€鏍煎紡
+- **鎸佺画鏇存柊涓?*: 娆㈣繋鏇村鎴愬憳鍔犲叆
 
-## 📞 联系方式 (Contact)
+## 馃摓 鑱旂郴鏂瑰紡 (Contact)
 
-如有图片更新需求，请联系：
+濡傛湁鍥剧墖鏇存柊闇€姹傦紝璇疯仈绯伙細
 - GitHub Issues: [Energy-Coder-Club-Website](https://github.com/Darrenpig/Energy-Coder-Club-Website/issues)
-- 邮件：energy.coder.club@gmail.com
+- 閭欢锛歟nergy.coder.club@gmail.com
 
 ---
 
-**最后更新**: 2024年12月
-**文档维护**: Energy Coder Club团队
+**鏈€鍚庢洿鏂?*: 2024骞?2鏈?
+**鏂囨。缁存姢**: Energy Coder Club鍥㈤槦
         
 
 

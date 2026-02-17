@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { PageLayout } from '@/components/layout/PageLayout'
 import { useTranslation } from '@/contexts/LanguageContext'
@@ -16,33 +16,14 @@ import {
   BookOpen,
   GitBranch,
   Sparkles,
-  Cpu,
-  Palette,
-  Calculator,
   ArrowRight,
-  Clock,
   Star,
   Target,
   ChevronRight,
   Award,
   TrendingUp,
-  Printer
+  Eye
 } from 'lucide-react'
-
-// 技术方向接口
-interface TechDirection {
-  id: string
-  title: string
-  description: string
-  icon: React.ComponentType<any>
-  color: string
-  gradient: string
-  skills: string[]
-  difficulty: 'beginner' | 'intermediate' | 'advanced'
-  duration: string
-  projects: number
-  link: string
-}
 
 // 快速上手指南接口
 interface QuickGuide {
@@ -62,62 +43,6 @@ interface LearningStats {
   averageRating: number
   successRate: number
 }
-
-// 技术方向数据
-const techDirections: TechDirection[] = [
-  {
-    id: 'embedded',
-    title: '嵌入式开发',
-    description: '学习嵌入式系统开发，掌握硬件与软件结合的核心技术',
-    icon: Cpu,
-    color: 'blue',
-    gradient: 'from-blue-500 to-cyan-500',
-    skills: ['C/C++', 'FreeRTOS', '硬件调试', '通信协议'],
-    difficulty: 'intermediate',
-    duration: '6-8个月',
-    projects: 12,
-    link: '/learning/embedded'
-  },
-  {
-    id: 'gui',
-    title: 'GUI界面开发',
-    description: '掌握跨平台图形界面开发，创建美观实用的桌面应用',
-    icon: Palette,
-    color: 'purple',
-    gradient: 'from-purple-500 to-pink-500',
-    skills: ['Qt/QML', 'UI设计', '跨平台开发', '用户体验'],
-    difficulty: 'beginner',
-    duration: '4-6个月',
-    projects: 10,
-    link: '/learning/gui'
-  },
-  {
-    id: 'algorithm',
-    title: '算法与数据结构',
-    description: '深入学习算法设计与优化，提升编程思维和解决问题的能力',
-    icon: Calculator,
-    color: 'green',
-    gradient: 'from-green-500 to-emerald-500',
-    skills: ['算法设计', '数据结构', '性能优化', '数学建模'],
-    difficulty: 'advanced',
-    duration: '8-12个月',
-    projects: 15,
-    link: '/learning/algorithm'
-  },
-  {
-    id: 'structurePrint',
-    title: '结构打印开发',
-    description: '面向3D结构打印的设计、切片与控制开发',
-    icon: Printer,
-    color: 'orange',
-    gradient: 'from-orange-500 to-amber-500',
-    skills: ['CAD建模', '切片软件', '材料工艺', 'G-code/控制'],
-    difficulty: 'intermediate',
-    duration: '5-7个月',
-    projects: 8,
-    link: '/learning/mechanical'
-  }
-]
 
 // 快速上手指南数据
 const quickGuides: QuickGuide[] = [
@@ -190,88 +115,48 @@ const learningStats: LearningStats = {
   successRate: 92
 }
 
-// 技术方向卡片组件
-function TechDirectionCard({ direction }: { direction: TechDirection }) {
-  const t = useTranslation()
-  const Icon = direction.icon
-  
-  const getDifficultyColor = (difficulty: string) => {
-    switch (difficulty) {
-      case 'beginner': return 'text-green-600 bg-green-100'
-      case 'intermediate': return 'text-yellow-600 bg-yellow-100'
-      case 'advanced': return 'text-red-600 bg-red-100'
-      default: return 'text-gray-600 bg-gray-100'
-    }
-  }
+// Gitee API 响应接口
+interface GiteeWatcher {
+  id: number
+  login: string
+  name: string
+  avatar_url: string
+  url: string
+  html_url: string
+  remark: string
+  followers_url: string
+  following_url: string
+  gists_url: string
+  starred_url: string
+  subscriptions_url: string
+  organizations_url: string
+  repos_url: string
+  events_url: string
+  received_events_url: string
+  type: string
+  site_admin: boolean
+  blog: string | null
+  weibo: string | null
+  bio: string
+  public_repos: number
+  public_gists: number
+  followers: number
+  following: number
+  stared: number
+  watched: number
+  created_at: string
+  updated_at: string
+  email: string | null
+}
 
-  const getDifficultyText = (difficulty: string) => {
-    switch (difficulty) {
-      case 'beginner': return '入门'
-      case 'intermediate': return '进阶'
-      case 'advanced': return '高级'
-      default: return '未知'
-    }
-  }
-
-  return (
-    <motion.div
-      whileHover={{ scale: 1.02, y: -5 }}
-      transition={{ duration: 0.2 }}
-    >
-      <Card className="h-full overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-        <div className={`h-2 bg-gradient-to-r ${direction.gradient}`} />
-        <CardHeader className="pb-4">
-          <div className="flex items-center justify-between mb-3">
-            <div className={`p-3 rounded-xl bg-gradient-to-r ${direction.gradient} text-white`}>
-              <Icon className="h-6 w-6" />
-            </div>
-            <Badge className={getDifficultyColor(direction.difficulty)}>
-              {getDifficultyText(direction.difficulty)}
-            </Badge>
-          </div>
-          <CardTitle className="text-xl mb-2">{(t as any).gettingStarted.directions[direction.id].title}</CardTitle>
-          <CardDescription className="text-muted-foreground leading-relaxed">
-            {(t as any).gettingStarted.directions[direction.id].description}
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="pt-0">
-          <div className="space-y-4">
-            <div className="flex items-center justify-between text-sm text-muted-foreground">
-              <div className="flex items-center gap-1">
-                <Clock className="h-4 w-4" />
-                <span>{(t as any).gettingStarted.directions[direction.id].duration}</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <Target className="h-4 w-4" />
-                <span>
-                  {direction.projects}
-                  {(t as any).gettingStarted.directions.projectsSuffix}
-                </span>
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="font-medium text-sm mb-2">{(t as any).gettingStarted.directions.coreSkills}</h4>
-              <div className="flex flex-wrap gap-1">
-                {((t as any).gettingStarted.directions[direction.id].skills as string[]).map((skill, index) => (
-                  <Badge key={index} variant="secondary" className="text-xs">
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-            
-            <Button className="w-full mt-4" asChild>
-              <a href={direction.link}>
-                {(t as any).gettingStarted.directions.startLearning}
-                <ArrowRight className="h-4 w-4 ml-2" />
-              </a>
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
-    </motion.div>
-  )
+// CSDN 统计 API 响应接口
+interface CSDNStats {
+  username: string
+  totalVisits: number | null
+  fans: number | null
+  originalArticles: number | null
+  rank: number | null
+  updatedAt: string
 }
 
 // 快速指南卡片组件
@@ -392,8 +277,41 @@ function StatsCard({ icon: Icon, title, value, description }: {
 }
 
 export default function GettingStartedPage() {
-  const [selectedDirection, setSelectedDirection] = useState<string | null>(null)
   const t = useTranslation()
+  const [watchersCount, setWatchersCount] = useState<number>(1200)
+  const [csdnVisits, setCsdnVisits] = useState<number>(538475)
+  const [isLoading, setIsLoading] = useState(true)
+
+  // 获取 Gitee watchers 数量和 CSDN 访问量
+  useEffect(() => {
+    const fetchStats = async () => {
+      try {
+        // 并行获取 Gitee 和 CSDN 数据
+        const [giteeResponse, csdnResponse] = await Promise.all([
+          fetch('https://gitee.com/api/v5/repos/darrenpig/new_energy_coder_club/watchers?page=1&per_page=100'),
+          fetch('/api/csdn-stats?username=m0_74037814')
+        ])
+
+        if (giteeResponse.ok) {
+          const data: GiteeWatcher[] = await giteeResponse.json()
+          setWatchersCount(data.length)
+        }
+
+        if (csdnResponse.ok) {
+          const data: CSDNStats = await csdnResponse.json()
+          if (data.totalVisits) {
+            setCsdnVisits(data.totalVisits)
+          }
+        }
+      } catch (error) {
+        console.error('Failed to fetch stats:', error)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    fetchStats()
+  }, [])
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5">
@@ -458,14 +376,14 @@ export default function GettingStartedPage() {
             <StatsCard
               icon={Users}
               title={(t as any).gettingStarted.stats.learnersTitle}
-              value={learningStats.totalStudents}
+              value={isLoading ? '...' : watchersCount}
               description={(t as any).gettingStarted.stats.learnersDesc}
             />
             <StatsCard
-              icon={Target}
-              title={(t as any).gettingStarted.stats.completedProjectsTitle}
-              value={learningStats.completedProjects}
-              description={(t as any).gettingStarted.stats.completedProjectsDesc}
+              icon={Eye}
+              title="CSDN 访问量"
+              value={isLoading ? '...' : csdnVisits.toLocaleString()}
+              description="博客总访问次数"
             />
             <StatsCard
               icon={Star}
@@ -480,37 +398,6 @@ export default function GettingStartedPage() {
               description={(t as any).gettingStarted.stats.successRateDesc}
             />
           </motion.div>
-        </div>
-      </section>
-
-      {/* 技术方向选择 */}
-      <section className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">{(t as any).gettingStarted.directions.title}</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              {(t as any).gettingStarted.directions.description}
-            </p>
-          </motion.div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {techDirections.map((direction, index) => (
-              <motion.div
-                key={direction.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                onClick={() => setSelectedDirection(selectedDirection === direction.id ? null : direction.id)}
-              >
-                <TechDirectionCard direction={direction} />
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -568,7 +455,7 @@ export default function GettingStartedPage() {
                 <CardContent className="p-6">
                   <BookOpen className="h-12 w-12 mx-auto mb-4 text-primary" />
                   <h3 className="font-semibold mb-2">NEC知识库</h3>
-                  <p className="text-sm text-muted-foreground mb-4">飞书知识库，包含项目文档、技术资料和学习资源</p>
+                  <p className="text-sm text-muted-foreground mb-4">飞书知识库（需登录），包含项目文档、技术资料和学习资源</p>
                   <Button variant="outline" size="sm" asChild>
                     <a href="https://scn0bdoc8zxg.feishu.cn/wiki/S10LwzVZdiWLwxkEnEqcTcmEn6e" target="_blank" rel="noopener noreferrer">
                       访问知识库
@@ -587,7 +474,7 @@ export default function GettingStartedPage() {
                 <CardContent className="p-6">
                   <GitBranch className="h-12 w-12 mx-auto mb-4 text-primary" />
                   <h3 className="font-semibold mb-2">Gitee参与协作</h3>
-                  <p className="text-sm text-muted-foreground mb-4">了解如何通过Gitee参与项目协作和代码贡献</p>
+                  <p className="text-sm text-muted-foreground mb-4">飞书文档（需登录）：了解如何通过Gitee参与项目协作</p>
                   <Button variant="outline" size="sm" asChild>
                     <a href="https://scn0bdoc8zxg.feishu.cn/wiki/KeqJwFcBfipgKJkNweccRlPgn94" target="_blank" rel="noopener noreferrer">
                       查看指南
@@ -606,7 +493,7 @@ export default function GettingStartedPage() {
                 <CardContent className="p-6">
                   <Zap className="h-12 w-12 mx-auto mb-4 text-primary" />
                   <h3 className="font-semibold mb-2">新人快速上手</h3>
-                  <p className="text-sm text-muted-foreground mb-4">新成员入门指南，快速了解团队和项目</p>
+                  <p className="text-sm text-muted-foreground mb-4">飞书文档（需登录）：新成员入门指南，快速了解团队</p>
                   <Button variant="outline" size="sm" asChild>
                     <a href="https://scn0bdoc8zxg.feishu.cn/wiki/QAtNwr244ir8ZekITEZcwpOZnkg" target="_blank" rel="noopener noreferrer">
                       开始了解
@@ -625,7 +512,7 @@ export default function GettingStartedPage() {
                 <CardContent className="p-6">
                   <Sparkles className="h-12 w-12 mx-auto mb-4 text-primary" />
                   <h3 className="font-semibold mb-2">AI基础技术学习</h3>
-                  <p className="text-sm text-muted-foreground mb-4">飞书AI学习路径，从入门到实战的完整知识体系</p>
+                  <p className="text-sm text-muted-foreground mb-4">飞书文档（需登录）：AI学习路径，从入门到实战</p>
                   <Button variant="outline" size="sm" asChild>
                     <a href="https://scn0bdoc8zxg.feishu.cn/wiki/JIRlwpifli5EAEkwLJ4cKgnMnMf" target="_blank" rel="noopener noreferrer">
                       开始学习
