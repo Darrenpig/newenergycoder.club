@@ -1,4 +1,4 @@
-import { maintainers, developers, designers, contributors, sponsors } from '../constants/team';
+import { maintainers, developers, designers, preMaintainers, researchers, contributors, sponsors } from '../constants/team';
 import { Translations } from '../types/translations';
 import { learningTranslations } from '../constants/learning';
 
@@ -174,6 +174,8 @@ export const enTranslations: Translations = {
     maintainerTitle: 'Maintainer',
     developerTitle: 'Developer',
     designerTitle: 'Designer',
+    preMaintainerTitle: 'Pre-Maintainer',
+    researcherTitle: 'Researcher',
     contributorTitle: 'Contributor',
     sponsorTitle: 'Sponsor',
     viewFullTeam: 'View Full Team',
@@ -197,6 +199,8 @@ export const enTranslations: Translations = {
     maintainers,
     developers,
     designers,
+    preMaintainers,
+    researchers,
     contributors,
     sponsors
   },

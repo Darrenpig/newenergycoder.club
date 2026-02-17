@@ -347,6 +347,8 @@ export function TeamPage() {
       maintainers: t.team.maintainers?.length || 0,
       developers: t.team.developers?.length || 0,
       designers: t.team.designers?.length || 0,
+      preMaintainers: t.team.preMaintainers?.length || 0,
+      researchers: t.team.researchers?.length || 0,
       contributors: t.team.contributors?.length || 0
     }
     
@@ -360,7 +362,7 @@ export function TeamPage() {
     )
     
     return { counts, percentages, total }
-  }, [t.team.maintainers, t.team.developers, t.team.designers, t.team.contributors])
+  }, [t.team.maintainers, t.team.developers, t.team.designers, t.team.preMaintainers, t.team.researchers, t.team.contributors])
 
   // 整合团队照片用于轮播展示
   const carouselImages = useMemo(() => [
@@ -454,6 +456,8 @@ export function TeamPage() {
         <TeamSection title={t.team.maintainerTitle} members={t.team.maintainers} selectedRatio={selectedRatio} />
         <TeamSection title={t.team.developerTitle} members={t.team.developers} selectedRatio={selectedRatio} />
         <TeamSection title={t.team.designerTitle} members={t.team.designers} selectedRatio={selectedRatio} />
+        <TeamSection title={t.team.preMaintainerTitle} members={t.team.preMaintainers} selectedRatio={selectedRatio} />
+        <TeamSection title={t.team.researcherTitle} members={t.team.researchers} selectedRatio={selectedRatio} />
         <TeamSection title={t.team.contributorTitle} members={t.team.contributors} selectedRatio={selectedRatio} />
         <TeamSection title={t.team.sponsorTitle} members={t.team.sponsors} selectedRatio={selectedRatio} />
 

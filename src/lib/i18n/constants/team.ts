@@ -47,14 +47,7 @@ export const developers: TeamMember[] = [
     tags: ['React', 'TypeScript', 'Vue', '前端架构', 'UI/UX', 'Vite'],
     github: 'https://github.com/liuyingqi'
   },
-  {
-    name: '单广志',
-    role: '嵌入式开发工程师',
-    bio: '机器人行业电控驱动开发以及硬件电路设计。',
-    image: '/image/developer/单广志.jpg',
-    tags: ['嵌入式开发', '电控驱动', '硬件电路设计', '机器人', 'STM32', 'PCB设计'],
-    github: 'https://github.com/shanguangzhi'
-  },
+
   {
     name: '周志',
     role: '全栈开发工程师',
@@ -185,6 +178,57 @@ export const designers: TeamMember[] = [
   }
 ];
 
+export const preMaintainers: TeamMember[] = [
+  {
+    name: '卢王淳',
+    role: '25RC项管&机械&电控',
+    bio: '25RC项目管理，机械和电控领域的学习者，Pre-Maintainer培养中。',
+    image: '/image/preMaintainer/卢王淳.jpg',
+    tags: ['项目管理', '机械设计', '电控学习', 'ROBOCON', 'Pre-Maintainer', '25RC'],
+    github: 'https://github.com/luwangchun'
+  },
+  {
+    name: '徐海婷',
+    role: 'Pre-Maintainer&财务管理',
+    bio: '聚焦财务流程优化与数据支撑，通过合理预算、风险防控，助力技术实践、行稳致远。Pre-Maintainer培养中。',
+    image: '/image/preMaintainer/徐海婷.jpg',
+    tags: ['财务管理', '预算控制', '风险防控', 'Pre-Maintainer', '成本管控']
+  },
+  {
+    name: '单广志',
+    role: 'Pre-Maintainer&嵌入式开发',
+    bio: '机器人行业电控驱动开发以及硬件电路设计，Pre-Maintainer培养中。',
+    image: '/image/preMaintainer/单广志.jpg',
+    tags: ['嵌入式开发', '电控驱动', '硬件电路设计', 'Pre-Maintainer', '机器人', 'STM32'],
+    github: 'https://github.com/shanguangzhi'
+  },
+  {
+    name: '许子涵',
+    role: 'Pre-Maintainer&产品经理',
+    bio: '负责产品规划和需求分析，推动项目向正确方向发展，Pre-Maintainer培养中。',
+    image: '/image/preMaintainer/许子涵.png',
+    tags: ['产品规划', '需求分析', '用户研究', 'Pre-Maintainer', '原型设计'],
+    github: 'https://github.com/xuzihan'
+  }
+];
+
+export const researchers: TeamMember[] = [
+  {
+    name: '徐康',
+    role: 'Researcher',
+    bio: '擅长3D打印建模/航模电机驱动，专注于学术研究。',
+    image: '/image/researcher/徐康.jpg',
+    tags: ['3D打印', '建模', 'SolidWorks', '学术研究']
+  },
+  {
+    name: '陆宇豪',
+    role: 'Researcher',
+    bio: '在读研究生，专注于学术与Aspen V8与AI技术研究。',
+    image: '/image/researcher/陆宇豪.jpg',
+    tags: ['研究生', '学术研究', '技术探索']
+  }
+];
+
 export const contributors: TeamMember[] = [
   {
     name: '卢永杰',
@@ -194,14 +238,7 @@ export const contributors: TeamMember[] = [
     tags: ['嵌入式开发', '运控算法', '算法部署', '协同设计', '算法优化'],
     github: 'https://github.com/luyongjie'
   },
-  {
-    name: '卢王淳',
-    role: '25RC项管&机械&电控小白',
-    bio: '25RC项目管理，机械和电控领域的学习者，负责项目协调工作。',
-    image: '/image/contributer/卢王淳.jpg',
-    tags: ['项目管理', '机械设计', '电控学习', 'ROBOCON', '团队协调', '25RC'],
-    github: 'https://github.com/luwangchun'
-  },
+
   {
     name: '韩祺冉',
     role: 'Contributor',
@@ -212,7 +249,7 @@ export const contributors: TeamMember[] = [
   },
   {
     name: '崔正阳',
-    role: 'Developer/Sponsor',
+    role: 'Developer',
     bio: '24年华为云IoT大赛加入实验室，24RC全国机器人大赛正式接触机器人，25RC全程参与备赛。主要技能掌握为上位机控制，算法，仿真模型。',
     image: '/image/contributer/崔正阳.jpg',
     tags: ['上位机控制', '算法开发', '仿真模型', 'ROBOCON', '华为云IoT', '机器人竞赛'],
@@ -257,14 +294,7 @@ export const contributors: TeamMember[] = [
     tags: ['文艺工作', '运营编辑', '宣传策划', '文字编辑', 'NEC理念', '内容创作'],
     github: 'https://github.com/yuhaoming'
   },
-  {
-    name: '许子涵',
-    role: '产品经理',
-    bio: '负责产品规划和需求分析，推动项目向正确方向发展。',
-    image: '/image/contributer/许子涵.png',
-    tags: ['产品规划', '需求分析', '用户研究', 'Axure', '原型设计', '数据分析'],
-    github: 'https://github.com/xuzihan'
-  },
+
   {
     name: '卞乐凌',
     role: '嵌入式学习贡献者',
@@ -273,13 +303,7 @@ export const contributors: TeamMember[] = [
     tags: ['嵌入式学习', '开源贡献', '社区建设', 'STM32', '硬件开发'],
     github: 'https://github.com/bianleiling'
   },
-  {
-    name: '徐海婷',
-    role: '财务管理专员',
-    bio: '聚焦财务流程优化与数据支撑，通过合理预算、风险防控，助力技术实践、行稳致远。',
-    image: '/image/designer/徐海婷.jpg',
-    tags: ['财务管理', '预算控制', '风险防控', '数据分析', '流程优化', '成本管控']
-  },
+
   {
     name: '郑绍恺',
     role: '算法竞赛选手',
@@ -350,13 +374,7 @@ export const contributors: TeamMember[] = [
     image: '/image/contributer/顾佳欣.jpg',
     tags: ['数据库', 'Unity', '数据传导']
   },
-  {
-    name: '徐康',
-    role: 'Contributor',
-    bio: '擅长3D打印与建模技术。',
-    image: '/image/contributer/徐康.jpg',
-    tags: ['3D打印', '建模', 'SolidWorks']
-  },
+
   {
     name: '王欣怡',
     role: '电控组成员',
@@ -392,12 +410,55 @@ export const contributors: TeamMember[] = [
     image: '/image/contributer/孙雯艳.jpg',
     tags: ['机械设计', 'SW建模', '3D设计', '单片机', '智能装备']
   },
+
   {
-    name: '陆宇豪',
-    role: '学生',
-    bio: '在读研究生，专注于学术与技术研究。',
-    image: '/image/contributer/陆宇豪.jpg',
-    tags: ['研究生', '学生', '学术研究']
+    name: '吴梦婷',
+    role: 'Contributor',
+    bio: '大创的汽车发动机/电机初创项目进行中。',
+    image: '/image/contributer/吴梦婷.jpg',
+    tags: ['大创', '汽车发动机', '电机', '初创项目']
+  },
+  {
+    name: '陈春林',
+    role: '视觉算法',
+    bio: '高二奥林匹克化学广西市二等奖，RC27预备队员。',
+    image: '/image/contributer/陈春林.jpg',
+    tags: ['视觉算法', '奥林匹克化学', 'RC27', '预备队员']
+  },
+  {
+    name: '白逸鸣',
+    role: 'Contributor',
+    bio: 'RC 全国机器人大赛参与者，仓库数字化，AI飞书原生开发。',
+    image: '/image/contributer/白逸鸣.jpg',
+    tags: ['RC', '全国机器人大赛', '仓库数字化', 'AI飞书', '原生开发']
+  },
+  {
+    name: '严文颖',
+    role: 'Contributor',
+    bio: '负责数据库管理与运营工作。',
+    image: '/image/contributer/严文颖.jpg',
+    tags: ['数据库', '运营', '数据管理']
+  },
+  {
+    name: '李嘉涵',
+    role: 'Contributor',
+    bio: '获得过国家奖学金，会SolidWorks、CATIA等软件，目前在做大创。',
+    image: '/image/contributer/李嘉涵.jpg',
+    tags: ['国家奖学金', 'SolidWorks', 'CATIA', '大创']
+  },
+  {
+    name: '黄宇雯',
+    role: 'Contributor',
+    bio: '运用三维建模软件进行机构设计、动画演示。',
+    image: '/image/contributer/黄宇雯.jpg',
+    tags: ['三维建模', '机构设计', '动画演示']
+  },
+  {
+    name: '魏卫',
+    role: 'Contributor',
+    bio: '野心大的半吊子全栈(不碰硬件版)。',
+    image: '/image/contributer/魏卫.jpg',
+    tags: ['全栈开发', '软件开发']
   }
 ];
 
@@ -421,10 +482,46 @@ export const sponsors: TeamMember[] = [
   {
     name: 'GPUfree 算力自由',
     role: 'Computing Power Partner',
-    bio: '提供免费GPU算力支持，助力AI模型训练与科研探索。',
+    bio: '提供1000元算力代金券，助力AI模型训练与科研探索。',
     image: '/assets/logo_GPU_Free.png',
     tags: ['GPU算力', '免费算力', 'AI训练', '科研支持', '合作伙伴'],
     github: 'https://gpufree.org/'
+  },
+  {
+    name: 'CubeMars',
+    role: 'Motor Partner - 无限量电机',
+    bio: '专业电机解决方案提供商，为机器人项目提供高性能电机支持。',
+    image: '/image/sponsor/CubeMars.png',
+    tags: ['电机', '无刷电机', '机器人动力', '高性能电机', ' sponsor']
+  },
+  {
+    name: '萝卜小酱',
+    role: 'Tool Sponsor - 螺丝刀',
+    bio: '专业工具品牌，为团队提供精密螺丝刀等工具支持。',
+    image: '/image/sponsor/萝卜小酱.png',
+    tags: ['工具', '螺丝刀', '精密工具', '硬件维护', ' sponsor']
+  },
+  {
+    name: '脉塔智能',
+    role: 'RMD电机1W采购额度',
+    bio: '专业RMD电机及驱动解决方案提供商，提供1万元电机采购额度支持。',
+    image: '/image/sponsor/脉塔智能科技.png',
+    tags: ['RMD电机', '驱动器', '电机控制', '采购额度', ' sponsor']
+  },
+  {
+    name: '华为云',
+    role: 'Hardware Sponsor - 香橙派开发板',
+    bio: '华为云提供香橙派开发板支持，助力嵌入式开发与边缘计算项目。',
+    image: '/image/sponsor/华为云.png',
+    tags: ['华为云', '香橙派', '开发板', '嵌入式', '边缘计算', ' sponsor']
+  },
+  {
+    name: '华艺塑业',
+    role: 'Hardware Sponsor - 碳纤维加工支持',
+    bio: '提供碳纤维加工支持，助力机器人结构件制作。',
+    image: '/image/sponsor/华艺塑业.png',
+    tags: ['亚克力', '结构件', '加工支持', '赞助商'],
+    github: 'https://m.tb.cn/h.7C6uKBnRQ1NxAMB'
   }
 ];
 

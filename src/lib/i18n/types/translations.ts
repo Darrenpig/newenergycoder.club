@@ -103,6 +103,8 @@ export interface Translations {
     maintainerTitle: string;
     developerTitle: string;
     designerTitle: string;
+    preMaintainerTitle: string;
+    researcherTitle: string;
     contributorTitle: string;
     sponsorTitle: string;
     viewFullTeam: string;
@@ -126,6 +128,8 @@ export interface Translations {
     maintainers: TeamMember[];
     developers: TeamMember[];
     designers: TeamMember[];
+    preMaintainers: TeamMember[];
+    researchers: TeamMember[];
     contributors: TeamMember[];
     sponsors: TeamMember[];
   };
