@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Menu, X, Zap, BookOpen } from 'lucide-react'
+import { Menu, X, Zap, BookOpen, ChevronDown, Wrench, Code2, ExternalLink } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { cn } from '@/lib/utils'
@@ -10,162 +10,297 @@ import { useAuthStore } from '@/store/auth-store'
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher'
 import { useTranslation } from '@/contexts/LanguageContext'
 
-// Navigation items will be translated dynamically
+// 工具菜单项
+const toolItems = [
+  { 
+    label: '光伏排布工具', 
+    href: 'https://solarglyph2.vercel.app/',
+    description: '光伏电站布局设计'
+  },
+  { 
+    label: '方管型材排布', 
+    href: 'https://fibersteelstudio.vercel.app/',
+    description: '机械结构件设计工具'
+  },
+]
+
+// 资源菜单项
+const resourceItems = [
+  { 
+    label: '入门文档', 
+    href: '/getting-started',
+    description: '新手指南与快速开始'
+  },
+  { 
+    label: '技术博客', 
+    href: '/blog',
+    description: '技术文章与经验分享'
+  },
+  { 
+    label: '开源仓库', 
+    href: 'https://gitee.com/darrenpig/new_energy_coder_club',
+    description: 'Gitee 代码仓库',
+    external: true
+  },
+]
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [toolsOpen, setToolsOpen] = useState(false)
+  const [resourcesOpen, setResourcesOpen] = useState(false)
   const isMobile = useIsMobile()
   const { isAuthenticated } = useAuthStore()
   const t = useTranslation()
   
-  // 定义导航菜单项数组
-  // 每个菜单项包含标签(label)和对应的路由地址(href)
-  const navItems = [
-    // 首页导航项
+  // 主导航项
+  const mainNavItems = [
     { label: t.nav.home, href: '/' },
-
-    // 团队页面导航项
     { label: t.nav.team, href: '/team' },
-    // 项目展示页面导航项
     { label: t.nav.projects, href: '/projects' },
-    // 光伏排布页面
-    { label: '光伏排布', href: 'https://solarglyph2.vercel.app/' },
-    // 方管型材排布页面
-    { label: '方管型材排布', href: 'https://fibersteelstudio.vercel.app/' },
-    // 活动页面导航项
     { label: t.nav.events, href: '/events' },
-    // 联系我们页面导航项
     { label: t.nav.contact, href: '/contact' },
   ]
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/90 backdrop-blur-sm">
-      <div className="container flex h-16 items-center gap-8">
-        <Link to="/" className="flex items-center gap-2">
-          <Zap className="h-6 w-6 text-primary" />
-          <span className="text-lg font-semibold tracking-tight truncate">
-            New Energy Coder Club
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container flex h-16 items-center justify-between">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-2 flex-shrink-0">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-primary/80">
+            <Zap className="h-5 w-5 text-primary-foreground" />
+          </div>
+          <span className="text-lg font-bold tracking-tight hidden sm:inline">
+            NEC 新能源开发者社区
           </span>
+          <span className="text-lg font-bold tracking-tight sm:hidden">NEC</span>
         </Link>
         
-        {isMobile ? (
-          <div className="flex items-center gap-2 ml-auto">
-            <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+        {/* Desktop Navigation */}
+        {!isMobile && (
+          <nav className="flex items-center gap-1">
+            {mainNavItems.map((item) => (
+              <Link
+                key={item.href}
+                to={item.href}
+                className="px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground rounded-md hover:bg-accent"
+              >
+                {item.label}
+              </Link>
+            ))}
+            
+            {/* 工具下拉菜单 */}
+            <div className="relative">
+              <button
+                onClick={() => setToolsOpen(!toolsOpen)}
+                onBlur={() => setTimeout(() => setToolsOpen(false), 150)}
+                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground rounded-md hover:bg-accent"
+              >
+                <Wrench className="h-4 w-4" />
+                工具箱
+                <ChevronDown className={cn("h-3 w-3 transition-transform", toolsOpen && "rotate-180")} />
+              </button>
+              
+              {toolsOpen && (
+                <div className="absolute top-full left-0 mt-1 w-56 rounded-md border bg-popover p-1 shadow-lg">
+                  {toolItems.map((item) => (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex flex-col gap-0.5 rounded-sm px-3 py-2 text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                    >
+                      <span className="font-medium flex items-center gap-1">
+                        {item.label}
+                        <ExternalLink className="h-3 w-3 opacity-50" />
+                      </span>
+                      <span className="text-xs text-muted-foreground">{item.description}</span>
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* 资源下拉菜单 */}
+            <div className="relative">
+              <button
+                onClick={() => setResourcesOpen(!resourcesOpen)}
+                onBlur={() => setTimeout(() => setResourcesOpen(false), 150)}
+                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground rounded-md hover:bg-accent"
+              >
+                <BookOpen className="h-4 w-4" />
+                文档
+                <ChevronDown className={cn("h-3 w-3 transition-transform", resourcesOpen && "rotate-180")} />
+              </button>
+              
+              {resourcesOpen && (
+                <div className="absolute top-full left-0 mt-1 w-56 rounded-md border bg-popover p-1 shadow-lg">
+                  {resourceItems.map((item) => (
+                    item.external ? (
+                      <a
+                        key={item.href}
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex flex-col gap-0.5 rounded-sm px-3 py-2 text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                      >
+                        <span className="font-medium flex items-center gap-1">
+                          {item.label}
+                          <ExternalLink className="h-3 w-3 opacity-50" />
+                        </span>
+                        <span className="text-xs text-muted-foreground">{item.description}</span>
+                      </a>
+                    ) : (
+                      <Link
+                        key={item.href}
+                        to={item.href}
+                        className="flex flex-col gap-0.5 rounded-sm px-3 py-2 text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                      >
+                        <span className="font-medium">{item.label}</span>
+                        <span className="text-xs text-muted-foreground">{item.description}</span>
+                      </Link>
+                    )
+                  ))}
+                </div>
+              )}
+            </div>
+          </nav>
+        )}
+
+        {/* Right Side Actions */}
+        <div className="flex items-center gap-2">
+          <LanguageSwitcher />
+          
+          {!isMobile && (
+            <>
+              {isAuthenticated ? (
+                <UserMenu />
+              ) : (
+                <>
+                  <LoginButton className="text-sm">
+                    {t.nav.login}
+                  </LoginButton>
+                  <Button size="sm" asChild>
+                    <Link to="/join">加入协作</Link>
+                  </Button>
+                </>
+              )}
+            </>
+          )}
+          
+          {/* Mobile Menu Button */}
+          {isMobile && (
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
               {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
-          </div>
-        ) : (
-          <nav className="flex items-center gap-6">
-            {navItems.map((item) => (
-              item.href.startsWith('http') ? (
+          )}
+        </div>
+      </div>
+      
+      {/* Mobile menu */}
+      {isMobile && mobileMenuOpen && (
+        <div className="border-t bg-background">
+          <div className="container py-4 flex flex-col gap-2">
+            {mainNavItems.map((item) => (
+              <Link
+                key={item.href}
+                to={item.href}
+                className="px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground hover:bg-accent rounded-md"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
+            
+            {/* Mobile Tools Section */}
+            <div className="mt-2 pt-2 border-t">
+              <p className="px-3 py-1 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                工具箱
+              </p>
+              {toolItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                  className="flex items-center justify-between px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground hover:bg-accent rounded-md"
+                  onClick={() => setMobileMenuOpen(false)}
                 >
-                  {item.label}
+                  <span>{item.label}</span>
+                  <ExternalLink className="h-3 w-3" />
                 </a>
-              ) : (
-                <Link
-                  key={item.href}
-                  to={item.href}
-                  className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  {item.label}
-                </Link>
-              )
-            ))}
-            <div className="flex items-center gap-2">
-              <Button variant="ghost" size="sm" className="gap-2" asChild>
-                <Link to="/getting-started">
-                  <BookOpen className="h-4 w-4" />
-                  <span className="hidden sm:inline">入门文档</span>
-                </Link>
-              </Button>
-              <LanguageSwitcher />
+              ))}
+            </div>
+
+            {/* Mobile Resources Section */}
+            <div className="mt-2 pt-2 border-t">
+              <p className="px-3 py-1 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                文档资源
+              </p>
+              {resourceItems.map((item) => (
+                item.external ? (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground hover:bg-accent rounded-md"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <span>{item.label}</span>
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                ) : (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    className="px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground hover:bg-accent rounded-md"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                )
+              ))}
+            </div>
+            
+            {/* Mobile Auth Buttons */}
+            <div className="mt-4 pt-4 border-t flex flex-col gap-2">
               {isAuthenticated ? (
-                <UserMenu />
+                <Button 
+                  variant="destructive" 
+                  size="sm"
+                  onClick={() => {
+                    useAuthStore.getState().logout()
+                    setMobileMenuOpen(false)
+                  }}
+                >
+                  {t.nav.logout}
+                </Button>
               ) : (
                 <>
-                  <LoginButton className="text-sm">{t.nav.login}</LoginButton>
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    onClick={() => {
+                      document.querySelector('[role="dialog"]')?.classList.remove('hidden')
+                      setMobileMenuOpen(false)
+                    }}
+                  >
+                    {t.nav.login}
+                  </Button>
                   <Button size="sm" asChild>
-                    <Link to="/join">{t.nav.joinClub}</Link>
+                    <Link to="/join" onClick={() => setMobileMenuOpen(false)}>
+                      加入协作
+                    </Link>
                   </Button>
                 </>
               )}
             </div>
-          </nav>
-        )}
-      </div>
-      
-      {/* Mobile menu */}
-      {isMobile && mobileMenuOpen && (
-        <div className="container py-4 flex flex-col gap-4 pb-6 border-t bg-background">
-          {navItems.map((item) => (
-            item.href.startsWith('http') ? (
-              <a
-                key={item.href}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-medium py-2 text-muted-foreground transition-colors hover:text-foreground"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.label}
-              </a>
-            ) : (
-              <Link
-                key={item.href}
-                to={item.href}
-                className="text-sm font-medium py-2 text-muted-foreground transition-colors hover:text-foreground"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.label}
-              </Link>
-            )
-          ))}
-          <div className="flex items-center gap-2 mt-2">
-            <Button variant="ghost" size="sm" className="gap-2" asChild>
-              <Link to="/getting-started" onClick={() => setMobileMenuOpen(false)}>
-                <BookOpen className="h-4 w-4" />
-                <span>入门文档</span>
-              </Link>
-            </Button>
-            <LanguageSwitcher />
           </div>
-          {isAuthenticated ? (
-            <div className="flex items-center gap-2 mt-2">
-              <Button 
-                size="sm" 
-                variant="destructive" 
-                className="w-full"
-                onClick={() => {
-                  useAuthStore.getState().logout();
-                  setMobileMenuOpen(false);
-                }}
-              >
-                {t.nav.logout}
-              </Button>
-            </div>
-          ) : (
-            <div className="flex flex-col gap-2 mt-2">
-              <Button 
-                size="sm" 
-                variant="outline" 
-                className="w-full"
-                onClick={() => {
-                  document.querySelector('[role="dialog"]')?.classList.remove('hidden');
-                  setMobileMenuOpen(false);
-                }}
-              >
-                Log in
-              </Button>
-              <Button size="sm" className="w-full" asChild>
-                <Link to="/join" onClick={() => setMobileMenuOpen(false)}>Join Club</Link>
-              </Button>
-            </div>
-          )}
         </div>
       )}
     </header>

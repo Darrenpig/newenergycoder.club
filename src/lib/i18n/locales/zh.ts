@@ -9,7 +9,7 @@ export const zhTranslations: Translations = {
     wechat: {
       title: '微信群',
       description: '加入我们的技术群，了解最新更新、项目计划和社区活动',
-      id: 'NEC新能源开发者俱乐部',
+      id: 'NEC 新能源开发者社区',
       copyButton: '复制群名',
       copied: '已复制！',
       addTips: '如何加入？',
@@ -79,7 +79,7 @@ export const zhTranslations: Translations = {
   },
   join: {
     form: {
-      title: '加入NEC新能源开发者俱乐部？',
+      title: '加入 NEC 新能源开发者社区？',
       subtitle: '填写此表格成为我们社区的一员',
       basicInfo: {
         title: '基本信息',
@@ -164,24 +164,24 @@ export const zhTranslations: Translations = {
     dashboard: '控制台'
   },
   hero: {
-    tagline: '欢迎来到NEC新能源开发者俱乐部！',
-    title: '构建可持续',
-    titleHighlight: '未来',
-    description: '加入我们的社区，通过开源项目、技术研讨会和工作学习，推动可再生能源和可持续技术的发展。',
-    joinCommunity: '加入社区',
-    viewGithub: '查看Gitee',
-    codingWorkshops: '编程工作坊',
-    codingWorkshopsDesc: '每周动手编程工作坊',
-    innovationProjects: '创新项目',
-    innovationProjectsDesc: '可再生能源开源项目',
-    industryConnections: '行业联系',
-    industryConnectionsDesc: '与可持续技术倡导者建立联系'
+    tagline: '面向 ROBOCON 与新能源工程的开源技术社区',
+    title: '提供经过真实竞赛验证的',
+    titleHighlight: '成本敏感开源方案',
+    description: '模块化代码基线、硬件方案与协作工具。NEC 新能源开发者社区 出品，服务多所高校 ROBOCON 竞赛队伍。',
+    joinCommunity: '查看开源项目',
+    viewGithub: '加入协作',
+    codingWorkshops: '模块化代码库',
+    codingWorkshopsDesc: '嵌入式、视觉、控制算法',
+    innovationProjects: '硬件方案开源',
+    innovationProjectsDesc: '机械、电路、PCB 完全开源',
+    industryConnections: '线上线下协作',
+    industryConnectionsDesc: 'A416 实验室实体开发环境'
   },
   about: {
     title: '关于我们',
-    paragraph1: 'NEC新能源开发者俱乐部是一个由学生主导的技术社区，致力于通过开源项目和协作学习推动可持续技术的发展。我们的使命是弥合可再生能源与开发者之间的差距。',
-    paragraph2: '成立于2024年，我们已经从一个小型学习小组发展成为一个充满活力的社区，拥有来自不同学科的活跃贡献者，包括计算机科学、电气工程、环境科学等。',
-    paragraph3: '我们的项目涵盖人工智能、物联网、嵌入式系统和数据分析，所有这些都专注于解决可再生能源、能源效率和可持续技术方面的实际挑战。',
+    paragraph1: 'NEC（New Energy Coder Club）是一个面向 ROBOCON 机器人竞赛与新能源工程的开源技术社区。我们提供经过真实竞赛验证的模块化代码基线、硬件方案与协作工具。',
+    paragraph2: 'NEC 新能源开发者社区 从 2024 年开始系统性地开源 ROBOCON 竞赛中的技术积累，目前代码库已获得 260+ commits，服务多所高校的竞赛队伍。',
+    paragraph3: '我们的开源项目覆盖嵌入式控制、计算机视觉、机械设计、电机控制等领域，所有方案均经过实际竞赛环境验证，可直接复用或二次开发。',
     learnMore: '了解更多',
     projectOrigin: {
       title: '项目起源',
@@ -217,20 +217,20 @@ export const zhTranslations: Translations = {
     }
   },
   features: {
-    title: '俱乐部特色',
-    subtitle: '加入我们的社区，享受这些独特的好处',
-    weeklyWorkshops: '每周工作坊',
-    weeklyWorkshopsDesc: '定期举办编程和技术研讨会',
-    openSource: '开源项目',
-    openSourceDesc: '为真正的可持续技术项目做贡献',
-    hackathons: '黑客马拉松',
-    hackathonsDesc: '参加专注的编程竞赛',
-    guestSpeakers: '客座演讲者',
-    guestSpeakersDesc: '向行业专家学习',
-    networking: '网络交流',
-    networkingDesc: '与志同道合的人建立联系',
-    conferences: '会议',
-    conferencesDesc: '参加可持续技术活动'
+    title: '开源工程基础设施',
+    subtitle: '不是「社团活动」，而是可复用的工程方案',
+    weeklyWorkshops: '模块化代码库',
+    weeklyWorkshopsDesc: '经过竞赛验证的嵌入式、视觉、控制算法',
+    openSource: '硬件方案开源',
+    openSourceDesc: '机械结构、电路原理图、PCB布局完全开源',
+    hackathons: '协作工具链',
+    hackathonsDesc: '光伏排布、型材计算等工程辅助工具',
+    guestSpeakers: '分层贡献体系',
+    guestSpeakersDesc: '从Good First Issue到核心模块维护的清晰路径',
+    networking: '线上线下结合',
+    networkingDesc: 'A416实验室提供实体开发环境',
+    conferences: '技术文档中心',
+    conferencesDesc: '详细的API文档、赛题解析、开发笔记'
   },
   team: {
     title: '我们是谁？',
@@ -452,7 +452,7 @@ export const zhTranslations: Translations = {
     }
   },
   footer: {
-    clubName: 'NEC新能源开发者俱乐部',
+    clubName: 'NEC 新能源开发者社区',
     description: '通过合作开发构建可持续技术',
     navigation: '导航',
     resources: '资源',
@@ -465,7 +465,7 @@ export const zhTranslations: Translations = {
       description: '专业的技术发展指导'
     },
     address: '江苏省常州市新北区辽河路666号',
-    copyright: '漏 2025 NEC新能源开发者俱乐部。保留所有权利。'
+    copyright: '© 2025 NEC 新能源开发者社区。保留所有权利。'
   },
   displayRatio: {
     title: '显示比例调整器',

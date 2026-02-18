@@ -1,4 +1,5 @@
 export type { Translations, TeamMember, Language } from './types/translations';
+export type { Sponsor, SponsorLevel, SponsorSupport } from './constants/team';
 export { enTranslations } from './locales/en';
 export { zhTranslations } from './locales/zh';
 export { maintainers, developers, designers, contributors, sponsors } from './constants/team';

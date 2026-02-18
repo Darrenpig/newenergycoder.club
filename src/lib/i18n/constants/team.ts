@@ -1,5 +1,21 @@
 import { TeamMember } from '../types/translations';
 
+// 赞助商等级类型
+export type SponsorLevel = 'strategic' | 'gold' | 'silver' | 'bronze' | 'partner';
+
+// 赞助商支持内容
+export interface SponsorSupport {
+  item: string;
+  quantity?: string;
+}
+
+// 扩展赞助商类型
+export interface Sponsor extends TeamMember {
+  level: SponsorLevel;
+  supports: SponsorSupport[];
+  website?: string;
+}
+
 export const maintainers: TeamMember[] = [
   {
     name: 'DarrenPig',
@@ -476,66 +492,76 @@ export const contributors: TeamMember[] = [
   }
 ];
 
-export const sponsors: TeamMember[] = [
+export const sponsors: Sponsor[] = [
   {
     name: '开源之夏',
-    role: 'Gold Sponsor - ¥12,000',
-    bio: '中国科学院软件研究所、华为技术有限公司、中科南京软件技术研究院联合主办的开源活动。',
+    role: '战略合作伙伴',
+    level: 'strategic',
+    bio: '中国科学院软件研究所、华为、中科南京软件技术研究院联合主办，专注开源人才培养。',
     image: '/image/sponsor/开源之夏Logo.png',
-    tags: ['开源软件', '供应链点亮', '学生项目', '技术孵化', '创新推动', '人才培养'],
-    github: 'https://summer-ospp.ac.cn/'
+    tags: ['学生项目', '技术孵化'],
+    supports: [
+      { item: '开源项目资助', quantity: '年度项目名额' },
+      { item: '导师资源对接' },
+      { item: '社区活动支持' }
+    ],
+    website: 'https://summer-ospp.ac.cn/'
   },
   {
     name: '立创开源硬件平台',
-    role: 'Silver Sponsor - ¥8,000',
-    bio: '专业的开源硬件开发平台，提供丰富的开发板和技术资源。',
+    role: 'Gold Sponsor',
+    level: 'gold',
+    bio: '专业开源硬件开发平台，提供PCB打样、元器件采购一站式服务。',
     image: '/image/sponsor/立创开源广场.png',
-    tags: ['开源硬件', '开发板', '技术资源', '硬件开发', '创客平台', '技术支持'],
-    github: 'https://oshwhub.com/explore'
+    tags: ['开源硬件', 'PCB打样'],
+    supports: [
+      { item: 'PCB打样券', quantity: '年度额度' },
+      { item: '元器件采购支持' },
+      { item: '开源广场曝光推荐' }
+    ],
+    website: 'https://oshwhub.com/explore'
   },
-  // {
-  //   name: 'GPUfree 算力自由',
-  //   role: 'Computing Power Partner',
-  //   bio: '提供1000元算力代金券，助力AI模型训练与科研探索。',
-  //   image: '/assets/logo_GPU_Free.png',
-  //   tags: ['GPU算力', '免费算力', 'AI训练', '科研支持', '合作伙伴'],
-  //   github: 'https://gpufree.org/'
-  // },
   {
     name: 'CubeMars',
-    role: 'Motor Partner - 无限量电机',
-    bio: '专业电机解决方案提供商，为机器人项目提供高性能电机支持。',
+    role: 'Motor Partner',
+    level: 'gold',
+    bio: '专业电机解决方案提供商，专注高性能无刷电机及驱动系统。',
     image: '/image/sponsor/CubeMars.png',
-    tags: ['电机', '无刷电机', '机器人动力', '高性能电机', ' sponsor']
+    tags: ['电机', '驱动系统'],
+    supports: [
+      { item: 'AK系列电机', quantity: '竞赛项目支持' },
+      { item: '驱动器套件' },
+      { item: '技术咨询支持' }
+    ],
+    website: 'https://www.cubemars.com/'
   },
   {
     name: '萝卜小酱',
-    role: 'Tool Sponsor - 螺丝刀',
-    bio: '专业工具品牌，为团队提供精密螺丝刀等工具支持。',
+    role: 'Tool Partner',
+    level: 'silver',
+    bio: '专业精密工具品牌，专注电子维修与机器人组装工具。',
     image: '/image/sponsor/萝卜小酱.png',
-    tags: ['工具', '螺丝刀', '精密工具', '硬件维护', ' sponsor']
+    tags: ['精密工具', '螺丝刀'],
+    supports: [
+      { item: '精密螺丝刀套装', quantity: '团队标配' },
+      { item: '焊接工具套件' },
+      { item: '维修工作台' }
+    ],
+    website: '#'
   },
-  // {
-  //   name: '脉塔智能',
-  //   role: 'RMD电机1W采购额度',
-  //   bio: '专业RMD电机及驱动解决方案提供商，提供1万元电机采购额度支持。',
-  //   image: '/image/sponsor/脉塔智能科技.png',
-  //   tags: ['RMD电机', '驱动器', '电机控制', '采购额度', ' sponsor']
-  // },
-  // {
-  //   name: '华为云',
-  //   role: 'Hardware Sponsor - 香橙派开发板',
-  //   bio: '华为云提供香橙派开发板支持，助力嵌入式开发与边缘计算项目。',
-  //   image: '/image/sponsor/华为云.png',
-  //   tags: ['华为云', '香橙派', '开发板', '嵌入式', '边缘计算', ' sponsor']
-  // },
   {
     name: '华艺塑业',
-    role: 'Hardware Sponsor - 碳纤维加工支持',
-    bio: '提供碳纤维加工支持，助力机器人结构件制作。',
+    role: 'Hardware Partner',
+    level: 'bronze',
+    bio: '专业碳纤维及工程塑料加工，提供机器人结构件定制服务。',
     image: '/image/sponsor/华艺塑业.png',
-    tags: ['亚克力', '结构件', '加工支持', '赞助商'],
-    github: 'https://m.tb.cn/h.7C6uKBnRQ1NxAMB'
+    tags: ['碳纤维', '结构加工'],
+    supports: [
+      { item: '碳纤维板加工' },
+      { item: '亚克力切割' },
+      { item: '结构件打样' }
+    ],
+    website: 'https://m.tb.cn/h.7C6uKBnRQ1NxAMB'
   }
 ];
 
