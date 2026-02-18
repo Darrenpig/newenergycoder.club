@@ -170,7 +170,7 @@ export const enTranslations: Translations = {
   },
   team: {
     title: 'Who Are We?',
-    description: 'We are a group meeting at the intersection of code and dreams. There are students debugging late at night, developers chasing elegance, and sustainability believers obsessed with "how to make the world more efficient and cleaner". We differ — in majors, backgrounds, and even the programming languages we love. Yet we are the same — we believe in technology for good, in the power of youth, and that sustainability is not a choice but a necessity. Here, curiosity is a passport and practice is the common language. We are not only building products; we are building a greener, fairer, and smarter future. We are a verb in action.',
+    description: "What makes us attractive isn't 'perfection' — it's the grit to keep debugging with a smile at our darkest moments. The stubbornness to finish the competition with 1/10 of others' budget. It's people passing tools around while lying on the lab floor, collaborating across time zones on Gitee, desperately trying to make it work. That's the soul of NEC.",
     maintainerTitle: 'Maintainer',
     developerTitle: 'Developer',
     designerTitle: 'Designer',
