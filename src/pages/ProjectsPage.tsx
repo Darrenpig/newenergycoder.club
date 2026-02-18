@@ -2,140 +2,176 @@ import { useState } from 'react'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { ExternalLink, Calendar, User, ChevronDown, ChevronUp } from 'lucide-react'
+import { ExternalLink, Calendar, User, Code2, Bot, Cpu, Cog, Plane, Microscope, Boxes } from 'lucide-react'
 import { GiteeIcon } from '@/components/ui/gitee-icon'
-import { useTranslation } from '@/contexts/LanguageContext'
+import { useLanguage } from '@/contexts/LanguageContext'
 import { PageLayout } from '@/components/layout/PageLayout'
 import { FloatingControls, type AspectRatio } from '@/components/ui/floating-controls'
-import { ProjectImage } from '@/components/ui/project-image'
 
-type ProjectCategory = 'all' | 'web' | 'mobile' | 'ai' | 'iot' | 'embedded' | 'robotics' | 'research' | 'aerospace' | 'system' | 'other'
+type ProjectCategory = 'all' | 'robocon' | 'embedded' | 'aerospace' | 'mechanical' | 'control'
 
 interface Project {
   id: string
   title: string
+  titleEn: string
   description: string
-  image: string
+  descriptionEn: string
+  image?: string
   category: ProjectCategory
   technologies: string[]
+  technologiesEn: string[]
   author: string
   date: string
-  projectUrl?: string
   githubUrl?: string
+  status: 'active' | 'archived' | 'prototype'
 }
 
-const mockProjects: Project[] = [
+// 诚实展示ROBOCON和机器人项目，删除"新能源"虚假宣传
+const projects: Project[] = [
   {
     id: '1',
-    title: '20250319流体工作站',
-    description: '流体工作站监控系统，实现对流体设备的实时监控和数据采集，提供高精度的流体参数测量和控制功能。',
-    image: 'https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=800&h=600&fit=crop&crop=center',
-    category: 'ai',
-    technologies: ['嵌入式系统', '传感器技术', 'C/C++', '数据采集', 'SCADA'],
-    author: '新能源编程俱乐部',
-    date: '2025-03-19',
-    githubUrl: 'https://gitee.com/darrenpig/new_energy_coder_club/tree/master/projects/ai/energy-monitoring/20250319流体工作站'
+    title: 'ROBOCON 2025 竞技机器人',
+    titleEn: 'ROBOCON 2025 Competition Robot',
+    description: '全国大学生机器人大赛参赛项目，包括机械结构、电控系统和视觉识别模块。',
+    descriptionEn: 'National College Robot Competition entry, including mechanical structure, control systems, and vision modules.',
+    category: 'robocon',
+    technologies: ['STM32', 'ROS2', 'OpenCV', 'SolidWorks'],
+    technologiesEn: ['STM32', 'ROS2', 'OpenCV', 'SolidWorks'],
+    author: 'NEC Robotics Team',
+    date: '2024-2025',
+    githubUrl: 'https://gitee.com/darrenpig/new_energy_coder_club/tree/master/competitions/2025/robocon',
+    status: 'active'
   },
   {
     id: '2',
-    title: '20250426星闪手柄',
-    description: '基于WS63的星闪手柄开发项目，采用星闪技术实现低延迟、高可靠性的无线通信，为游戏和控制应用提供优质体验。',
-    image: 'https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=800&h=600&fit=crop&crop=center',
-    category: 'embedded',
-    technologies: ['WS63', '星闪技术', 'NearLink', '嵌入式开发', '无线通信'],
-    author: '新能源编程俱乐部',
-    date: '2025-04-26',
-    githubUrl: 'https://gitee.com/darrenpig/new_energy_coder_club/tree/master/projects/embedded/nearlink/20250426星闪手柄'
+    title: '人形机器人控制平台',
+    titleEn: 'Humanoid Robot Control Platform',
+    description: '双足机器人运动控制与平衡算法研究，基于ROS的仿真与实机测试。',
+    descriptionEn: 'Bipedal robot motion control and balance algorithms, ROS-based simulation and hardware testing.',
+    category: 'control',
+    technologies: ['ROS', 'MATLAB', 'C++', '动力学建模'],
+    technologiesEn: ['ROS', 'MATLAB', 'C++', 'Dynamics Modeling'],
+    author: 'NEC Robotics Team',
+    date: '2024',
+    githubUrl: 'https://gitee.com/darrenpig/new_energy_coder_club/tree/master/projects/robotics/humanoid-robot',
+    status: 'active'
   },
   {
     id: '3',
-    title: '20241201人形机器人主线',
-    description: '人形机器人核心开发项目，涵盖机器人运动控制、感知系统、决策算法等关键技术，致力于打造智能化的人形机器人平台。',
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop&crop=center',
-    category: 'robotics',
-    technologies: ['ROS', '运动控制', '计算机视觉', '深度学习', '传感器融合'],
-    author: '新能源编程俱乐部',
-    date: '2024-12-01',
-    githubUrl: 'https://gitee.com/darrenpig/new_energy_coder_club/tree/master/projects/robotics/humanoid-robot/人形机器人主线'
+    title: '星闪无线控制模块',
+    titleEn: 'NearLink Wireless Control Module',
+    description: '基于华为星闪技术的低延迟遥控方案，用于机器人无线通信。',
+    descriptionEn: 'Low-latency wireless control using Huawei NearLink technology for robot communication.',
+    category: 'embedded',
+    technologies: ['WS63', 'NearLink', 'C', '无线通信'],
+    technologiesEn: ['WS63', 'NearLink', 'C', 'Wireless Communication'],
+    author: 'NEC Embedded Team',
+    date: '2024-2025',
+    githubUrl: 'https://gitee.com/darrenpig/new_energy_coder_club/tree/master/projects/embedded/nearlink',
+    status: 'prototype'
   },
   {
-      id: '4',
-      title: '20241115飞控通讯（飞行汽车项目组）',
-      description: '飞行汽车项目的核心飞控通讯模块，实现飞行器与地面站之间的可靠数据传输和控制指令交互。',
-      image: 'https://camo.githubusercontent.com/f28cc104ea4a3debc18eb8132e9e6e4d925d08a51a9af332119c642db75c2499/68747470733a2f2f64726f6e65636f64652e6f72672f77702d636f6e74656e742f75706c6f6164732f73697465732f32342f323032302f30382f64726f6e65636f64655f6c6f676f5f64656661756c742d312e706e67',
-      category: 'aerospace',
-      technologies: ['飞控系统', '无线通信', '实时控制', '嵌入式系统', '航空电子'],
-      author: '新能源编程俱乐部',
-      date: '2024-11-15',
-      githubUrl: 'https://gitee.com/darrenpig/new_energy_coder_club/tree/master/projects/aerospace/flight-control-comm'
-    },
+    id: '4',
+    title: '流体动力实验平台',
+    titleEn: 'Fluid Power Test Platform',
+    description: '液压与气动系统教学实验台，用于机器人抓取与驱动机构测试。',
+    descriptionEn: 'Hydraulic and pneumatic teaching platform for robot gripper and actuator testing.',
+    category: 'mechanical',
+    technologies: ['液压系统', '气动控制', 'PLC', '传感器'],
+    technologiesEn: ['Hydraulics', 'Pneumatics', 'PLC', 'Sensors'],
+    author: 'NEC Mechanical Team',
+    date: '2025',
+    githubUrl: 'https://gitee.com/darrenpig/new_energy_coder_club/tree/master/projects/ai/energy-monitoring',
+    status: 'active'
+  },
   {
-      id: '5',
-      title: 'NEC 横向项目（真实需求企业级命题）',
-      description: '产学研合作项目，与企业和科研院所合作开展技术研发，将理论研究与实际应用相结合，推动科技成果转化。',
-      image: 'https://picsum.photos/800/600?random=5',
-      category: 'research',
-      technologies: ['产学研合作', '技术转化', '项目管理', '创新研发'],
-      author: '新能源编程俱乐部',
-      date: '2024-10-01',
-      githubUrl: 'https://gitee.com/darrenpig/new_energy_coder_club/tree/master/projects/科研「横向项目」'
-    },
+    id: '5',
+    title: '飞行汽车飞控系统',
+    titleEn: 'eVTOL Flight Control System',
+    description: '电动垂直起降飞行器通信与控制系统，空地协同数据传输。',
+    descriptionEn: 'eVTOL communication and control system, air-ground data link.',
+    category: 'aerospace',
+    technologies: ['飞控算法', '无线通信', '嵌入式', '传感器融合'],
+    technologiesEn: ['Flight Control', 'Wireless Comm', 'Embedded', 'Sensor Fusion'],
+    author: 'NEC Aerospace Team',
+    date: '2024',
+    githubUrl: 'https://gitee.com/darrenpig/new_energy_coder_club/tree/master/projects/aerospace/flight-control-comm',
+    status: 'prototype'
+  },
   {
     id: '6',
-    title: '人形机器人UMI低成本灵巧手',
-    description: 'UMI（Universal Manipulation Interface）人形机器人低成本灵巧手的设计与实现，提供精确的抓取和操作能力。',
-    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop&crop=center',
-    category: 'robotics',
-    technologies: ['机器人学', '灵巧手', '运动控制', '传感器融合', '机械设计'],
-    author: '新能源编程俱乐部',
-    date: '2024-09-15',
-    githubUrl: 'https://gitee.com/darrenpig/new_energy_coder_club/tree/master/projects/robotics/umi-dexterous-hand'
+    title: 'UMI低成本灵巧手',
+    titleEn: 'UMI Low-Cost Dexterous Hand',
+    description: '面向人形机器人的低成本抓取末端执行器，3D打印结构件。',
+    descriptionEn: 'Low-cost end-effector for humanoid robots, 3D-printed structural parts.',
+    category: 'mechanical',
+    technologies: ['3D打印', '舵机控制', '抓取算法', '机械设计'],
+    technologiesEn: ['3D Printing', 'Servo Control', 'Grasping', 'Mechanical Design'],
+    author: 'NEC Robotics Team',
+    date: '2024',
+    githubUrl: 'https://gitee.com/darrenpig/new_energy_coder_club/tree/master/projects/robotics/umi-dexterous-hand',
+    status: 'active'
   },
   {
-      id: '7',
-      title: 'MICA混合关键系统验证',
-      description: 'MICA（Mixed-Criticality Architecture）混合关键系统的设计与验证，确保系统在不同关键级别下的可靠性和安全性。',
-      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop&crop=center',
-      category: 'system',
-      technologies: ['混合关键系统', '系统验证', '安全关键', '实时系统', '形式化验证'],
-      author: '新能源编程俱乐部',
-      date: '2024-10-20',
-      githubUrl: 'https://gitee.com/darrenpig/new_energy_coder_club/tree/master/projects/system/mica-verification'
-    },
+    id: '7',
+    title: 'MICA实时系统验证',
+    titleEn: 'MICA Real-Time System Verification',
+    description: '混合关键级嵌入式系统可靠性验证，用于机器人安全关键模块。',
+    descriptionEn: 'Mixed-criticality embedded system verification for robot safety-critical modules.',
+    category: 'control',
+    technologies: ['实时系统', '形式化验证', 'C/C++', '安全关键'],
+    technologiesEn: ['Real-Time Systems', 'Formal Verification', 'C/C++', 'Safety-Critical'],
+    author: 'NEC System Team',
+    date: '2024',
+    githubUrl: 'https://gitee.com/darrenpig/new_energy_coder_club/tree/master/projects/system/mica-verification',
+    status: 'active'
+  },
   {
-      id: '8',
-      title: '3D打印成型SIG',
-      description: '专业3D打印服务团队，提供从设计到成型的一站式3D打印解决方案，支持多种材料和复杂结构的打印需求。',
-      image: 'https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=800&h=600&fit=crop&crop=center',
-      category: 'research',
-      technologies: ['3D打印', 'CAD设计', '材料科学', '快速成型', '后处理工艺'],
-      author: '新能源编程俱乐部',
-      date: '2024-07-10',
-      githubUrl: 'https://gitee.com/darrenpig/new_energy_coder_club/tree/master/projects/科研「横向项目」/3d-printing-team'
-    }
+    id: '8',
+    title: '3D打印快速成型服务',
+    titleEn: '3D Printing Rapid Prototyping',
+    description: '机器人结构件快速制造，支持FDM/光固化多种工艺。',
+    descriptionEn: 'Rapid prototyping for robot parts, supporting FDM and resin printing.',
+    category: 'mechanical',
+    technologies: ['FDM', '光固化', 'CAD', '材料工艺'],
+    technologiesEn: ['FDM', 'Resin Printing', 'CAD', 'Material Science'],
+    author: 'NEC Fabrication Team',
+    date: '2024',
+    githubUrl: 'https://gitee.com/darrenpig/new_energy_coder_club/tree/master/projects/科研「横向项目」/3d-printing-team',
+    status: 'active'
+  }
 ]
 
 const categoryFilters = [
-  { key: 'all' as ProjectCategory, labelKey: 'filterAll' },
-  { key: 'ai' as ProjectCategory, labelKey: 'filterAI' },
-  { key: 'iot' as ProjectCategory, labelKey: 'filterIoT' },
-  { key: 'embedded' as ProjectCategory, labelKey: 'filterEmbedded' },
-  { key: 'robotics' as ProjectCategory, labelKey: 'filterRobotics' },
-  { key: 'research' as ProjectCategory, labelKey: 'filterResearch' },
-  { key: 'web' as ProjectCategory, labelKey: 'filterWeb' },
-  { key: 'mobile' as ProjectCategory, labelKey: 'filterMobile' },
-  { key: 'other' as ProjectCategory, labelKey: 'filterOther' }
+  { key: 'all' as ProjectCategory, label: '全部项目', labelEn: 'All Projects', icon: Boxes },
+  { key: 'robocon' as ProjectCategory, label: 'ROBOCON', labelEn: 'ROBOCON', icon: Bot },
+  { key: 'mechanical' as ProjectCategory, label: '机械结构', labelEn: 'Mechanical', icon: Cog },
+  { key: 'embedded' as ProjectCategory, label: '嵌入式', labelEn: 'Embedded', icon: Cpu },
+  { key: 'control' as ProjectCategory, label: '控制系统', labelEn: 'Control Systems', icon: Code2 },
+  { key: 'aerospace' as ProjectCategory, label: '飞行器', labelEn: 'Aerospace', icon: Plane },
 ]
+
+const statusColors = {
+  active: 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20',
+  prototype: 'bg-amber-500/10 text-amber-600 border-amber-500/20',
+  archived: 'bg-gray-500/10 text-gray-600 border-gray-500/20'
+}
+
+const statusLabels = {
+  active: { zh: '进行中', en: 'Active' },
+  prototype: { zh: '原型阶段', en: 'Prototype' },
+  archived: { zh: '已归档', en: 'Archived' }
+}
 
 export function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState<ProjectCategory>('all')
-  const [selectedRatio, setSelectedRatio] = useState<AspectRatio>('aspect-[21/9]')
-  const [isFilterExpanded, setIsFilterExpanded] = useState(true)
-  const t = useTranslation()
+  const [selectedRatio, setSelectedRatio] = useState<AspectRatio>('aspect-video')
+  const { language } = useLanguage()
+  const isEn = language === 'en'
 
   const filteredProjects = selectedCategory === 'all' 
-    ? mockProjects 
-    : mockProjects.filter(project => project.category === selectedCategory)
+    ? projects 
+    : projects.filter(project => project.category === selectedCategory)
 
   return (
     <PageLayout 
@@ -143,186 +179,149 @@ export function ProjectsPage() {
       aspectRatio={selectedRatio}
       onAspectRatioChange={setSelectedRatio}
     >
-      {/* 主容器div - 设置最小高度为全屏，添加从背景色到强调色的渐变背景 */}
-      <div className="min-h-screen bg-gradient-to-br from-background to-accent/5">
-      {/* Hero Section - 页面顶部英雄区域 */}
-      <section className="py-16 lg:py-24 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 relative overflow-hidden">
-        {/* 背景装饰div - 创建径向渐变背景效果，绝对定位覆盖整个section */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,hsl(var(--primary)/0.1),transparent_50%),radial-gradient(circle_at_75%_75%,hsl(var(--accent)/0.1),transparent_50%)]"></div>
-        
-        {/* 内容容器div - 相对定位，z-index为10确保在背景之上，文本居中对齐 */}
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              {t.projects.title}
-            </h1>
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              {t.projects.description}
-            </p>
-          </div>
-        </div>
-      </section>
-
-{/* ProjectsPage 组件
-├── useState 管理 selectedRatio 状态
-├── 通过 PageLayout 传递属性
-│   ├── showAspectRatio={true}
-│   ├── aspectRatio={selectedRatio}
-│   └── onAspectRatioChange={setSelectedRatio}
-└── 在项目卡片中应用：className={`${selectedRatio} overflow-hidden relative`} */}
-
-
-      {/* Filter Section - 筛选器区域 */}
-      <section className="py-8">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap gap-2 justify-center">
-            {categoryFilters.map((filter) => (
-              <Button
-                key={filter.key}
-                variant={selectedCategory === filter.key ? 'default' : 'outline'}
-                size="sm"
-                onClick={() => setSelectedCategory(filter.key)}
-                className="transition-all duration-200 hover-lift"
-              >
-                {t.projects[filter.labelKey]}
-              </Button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Grid - 项目网格区域 */}
-      <section className="py-16">
-        {/* 项目网格容器div - 使用container类进行响应式布局 */}
-        <div className="container">
-          {/* 项目网格div - 网格布局，间距为6，响应式列数：小屏1列，中屏2列，大屏3列 */}
-          <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {filteredProjects.map((project) => (
-              <Card key={project.id} className="glass-card hover-lift glow-hover group overflow-hidden">
-                {/* 项目图片容器div - 使用选定的宽高比，隐藏溢出内容，相对定位 */}
-                <div className={`${selectedRatio} overflow-hidden relative`}>
-                  <ProjectImage 
-                    src={project.image}
-                    alt={project.title}
-                    className="h-full w-full"
-                  />
-                  {/* 
-                    悬停遮罩层 - 项目卡片图片的交互遮罩效果
-                    - absolute inset-0: 绝对定位，覆盖整个父容器（图片区域）
-                    - bg-gradient-to-t: 从底部到顶部的渐变背景
-                    - from-black/60: 渐变起点为60%透明度的黑色
-                    - via-transparent: 渐变中间为完全透明
-                    - to-transparent: 渐变终点为完全透明
-                    - opacity-0: 默认状态下完全透明（不可见）
-                    - group-hover:opacity-100: 当父元素（.group）被悬停时，遮罩变为完全不透明
-                    - transition-opacity duration-300: 透明度变化的过渡动画，持续300毫秒
-                    作用：为项目卡片提供优雅的悬停视觉反馈，增强用户交互体验
-                  */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  
-                  {/* 
-                    悬停按钮容器 - 项目操作按钮的定位容器
-                    - absolute: 绝对定位，脱离文档流
-                    - bottom-4 left-4 right-4: 距离底部、左侧、右侧各16px（4 * 4px）
-                    - opacity-0: 默认状态下完全透明（隐藏按钮）
-                    - group-hover:opacity-100: 悬停时显示按钮（完全不透明）
-                    - transition-opacity duration-300: 透明度变化的平滑过渡动画
-                    作用：在用户悬停项目卡片时，在图片底部显示操作按钮
-                  */}
-                  <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {/* 
-                      按钮组布局容器 - 水平排列多个操作按钮
-                      - flex: 弹性布局，子元素水平排列
-                      - gap-2: 子元素之间的间距为8px（2 * 4px）
-                      作用：确保多个按钮之间有适当的间距，保持整齐的布局
-                    */}
-                    <div className="flex gap-2">
-                      {/* 条件渲染：只有当项目有项目链接时才显示查看项目按钮 */}
-                      {project.projectUrl && (
-                        /* 
-                          查看项目按钮 - 跳转到项目详情页面的操作按钮
-                          - size="sm": 小尺寸按钮，适合在卡片中使用
-                          - bg-white/20: 20%透明度的白色背景
-                          - backdrop-blur-sm: 小程度的背景模糊效果（毛玻璃效果）
-                          - hover:bg-white/30: 悬停时背景透明度增加到30%
-                          - ExternalLink图标: 表示外部链接的视觉提示
-                          - mr-2: 图标右侧边距8px，与文字保持间距
-                          作用：提供访问项目详情的快捷入口，视觉效果现代且优雅
-                        */
-                        <Button size="sm" className="bg-white/20 backdrop-blur-sm hover:bg-white/30">
-                          <ExternalLink className="h-4 w-4 mr-2" />
-                          {t.projects.viewProject}
-                        </Button>
-                      )}
-                      {project.githubUrl && (
-                        /* 查看代码按钮 - 小尺寸，轮廓样式，半透明背景，点击打开新窗口 */
-                        <Button size="sm" variant="outline" className="bg-white/20 backdrop-blur-sm hover:bg-white/30 border-white/30" onClick={() => window.open(project.githubUrl, '_blank')}>
-                          <GiteeIcon className="h-4 w-4 mr-2" />
-                          {t.projects.viewCode}
-                        </Button>
-                      )}
-                    </div>
-                  </div>
-                </div>
-                
-                <CardHeader className="pb-3">
-                  <h3 className="font-bold text-xl mb-2">{project.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {project.description}
-                  </p>
-                </CardHeader>
-                
-                <CardContent className="space-y-4">
-                  {/* 技术栈区域div - 包含标题和技术标签 */}
-                  <div>
-                    <h4 className="text-sm font-semibold mb-2 text-primary">{t.projects.technologies}</h4>
-                    {/* 技术标签容器div - 水平排列可换行，间距为1 */}
-                    <div className="flex flex-wrap gap-1">
-                      {project.technologies.map((tech) => (
-                        <Badge key={tech} variant="secondary" className="text-xs">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                  
-
-                  {/* 项目状态区域div - 柔和背景，圆角，内边距，小字体 */}
-                  <div className="bg-muted/50 rounded-lg p-3 text-sm">
-                    <p className="text-muted-foreground">项目状态: 开发中</p>
-                  </div>
-                  
-                  {/* 项目信息底部区域div - 水平排列两端对齐，顶部边框，内边距 */}
-                  <div className="flex items-center justify-between text-sm text-muted-foreground pt-2 border-t">
-                    {/* 作者信息容器div - 水平排列居中对齐，间距为1 */}
-                    <div className="flex items-center gap-1">
-                      <User className="h-4 w-4" />
-                      <span>{project.author}</span>
-                    </div>
-                    {/* 日期信息容器div - 水平排列居中对齐，间距为1 */}
-                    <div className="flex items-center gap-1">
-                      <Calendar className="h-4 w-4" />
-                      <span>{new Date(project.date).toLocaleDateString()}</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
+        {/* Hero Section - 诚实定位 */}
+        <section className="py-16 lg:py-20 bg-slate-900 text-white relative overflow-hidden">
+          {/* 工程蓝图背景 */}
+          <div className="absolute inset-0 opacity-10">
+            <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00FF88" strokeWidth="0.5"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#grid)"/>
+            </svg>
           </div>
           
-          {/* 空状态提示 - 当筛选结果为空时显示 */}
-          {filteredProjects.length === 0 && (
-            /* 空状态容器div - 文本居中，垂直内边距为16 */
-            <div className="text-center py-16">
-              <p className="text-muted-foreground text-lg">
-                No projects found in this category.
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="text-3xl lg:text-5xl font-bold mb-4">
+                {isEn ? 'ROBOCON & Robotics Projects' : 'ROBOCON 与机器人项目'}
+              </h1>
+              <p className="text-lg text-slate-400 mb-4 leading-relaxed">
+                {isEn 
+                  ? 'Open-source hardware and software projects for the National College Robot Competition (ROBOCON) and robotics research.'
+                  : '全国大学生机器人大赛（ROBOCON）参赛项目与机器人技术研究开源硬件及软件方案。'
+                }
+              </p>
+              <p className="text-sm text-slate-500">
+                {isEn 
+                  ? 'Based at Changzhou Institute of Technology, A416 Lab'
+                  : '常州工学院 A416 实验室出品'
+                }
               </p>
             </div>
-          )}
-        </div>
-      </section>
-      {/* 主容器div结束标签 */}
+          </div>
+        </section>
+
+        {/* Filter Section */}
+        <section className="py-6 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-wrap gap-2 justify-center">
+              {categoryFilters.map((filter) => (
+                <Button
+                  key={filter.key}
+                  variant={selectedCategory === filter.key ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => setSelectedCategory(filter.key)}
+                  className={`transition-all duration-200 ${
+                    selectedCategory === filter.key 
+                      ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900' 
+                      : 'border-slate-300 dark:border-slate-700'
+                  }`}
+                >
+                  <filter.icon className="h-4 w-4 mr-1.5" />
+                  {isEn ? filter.labelEn : filter.label}
+                </Button>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Projects Grid */}
+        <section className="py-12">
+          <div className="container mx-auto px-4">
+            <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {filteredProjects.map((project) => (
+                <Card 
+                  key={project.id} 
+                  className="group overflow-hidden border-slate-200 dark:border-slate-800 
+                    hover:shadow-lg hover:-translate-y-1 transition-all duration-300
+                    bg-white dark:bg-slate-900 flex flex-col"
+                >
+                  {/* 项目图标/标识 */}
+                  <div className={`${selectedRatio} bg-slate-100 dark:bg-slate-800 
+                    flex items-center justify-center relative overflow-hidden
+                    group-hover:bg-slate-200 dark:group-hover:bg-slate-700 transition-colors`}
+                  >
+                    {/* 状态标签 */}
+                    <Badge 
+                      className={`absolute top-3 left-3 ${statusColors[project.status]} border`}
+                    >
+                      {isEn ? statusLabels[project.status].en : statusLabels[project.status].zh}
+                    </Badge>
+                    
+                    {/* 项目类型图标 */}
+                    <div className="text-slate-400 dark:text-slate-600">
+                      {project.category === 'robocon' && <Bot className="h-16 w-16" />}
+                      {project.category === 'mechanical' && <Cog className="h-16 w-16" />}
+                      {project.category === 'embedded' && <Cpu className="h-16 w-16" />}
+                      {project.category === 'control' && <Code2 className="h-16 w-16" />}
+                      {project.category === 'aerospace' && <Plane className="h-16 w-16" />}
+                    </div>
+                  </div>
+
+                  <CardHeader className="pb-2">
+                    <h3 className="font-bold text-lg line-clamp-1">
+                      {isEn ? project.titleEn : project.title}
+                    </h3>
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <Calendar className="h-3 w-3" />
+                      <span>{project.date}</span>
+                    </div>
+                  </CardHeader>
+
+                  <CardContent className="flex-1 flex flex-col">
+                    <p className="text-sm text-muted-foreground mb-4 line-clamp-2 flex-1">
+                      {isEn ? project.descriptionEn : project.description}
+                    </p>
+
+                    {/* 技术栈标签 */}
+                    <div className="flex flex-wrap gap-1.5 mb-4">
+                      {(isEn ? project.technologiesEn : project.technologies).slice(0, 4).map((tech) => (
+                        <span 
+                          key={tech}
+                          className="text-[10px] px-2 py-0.5 bg-slate-100 dark:bg-slate-800 
+                            text-slate-600 dark:text-slate-400 rounded-full"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* 代码链接 */}
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 w-full py-2 
+                          bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700
+                          rounded-md text-sm font-medium transition-colors"
+                      >
+                        <GiteeIcon className="h-4 w-4" />
+                        {isEn ? 'View Code' : '查看代码'}
+                        <ExternalLink className="h-3 w-3" />
+                      </a>
+                    )}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
       </div>
-      </PageLayout>
+    </PageLayout>
   )
 }

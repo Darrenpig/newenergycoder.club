@@ -1,5 +1,6 @@
 import { PageLayout } from '@/components/layout/PageLayout'
 import { HeroSection } from '@/components/home/HeroSection'
+import { OriginStory } from '@/components/home/OriginStory'
 import { AboutSection } from '@/components/home/AboutSection'
 import { FeaturesSection } from '@/components/home/FeaturesSection'
 import { TeamSection } from '@/components/home/TeamSection'
@@ -23,6 +24,7 @@ function HomePage() {
       onAspectRatioChange={setSelectedRatio}
     >
       <HeroSection />
+      <OriginStory />
       <AboutSection />
       <FeaturesSection />
       <TeamSection selectedRatio={selectedRatio} />

@@ -205,9 +205,9 @@ export const enTranslations: Translations = {
     sponsors
   },
   cta: {
-    title: 'Ready to Make an Impact?',
-    description: 'Join our community of developers creating sustainable technology solutions.',
-    getStarted: 'Get Started Today'
+    title: "Come On, Don't Just Watch",
+    description: "If we can build robots on 200 RMB, what's stopping you? Broken boards are normal — that moment when it finally works is the real high.",
+    getStarted: 'Join the Chaos'
   },
   joinPage: {
     title: 'Join Our Club',
@@ -303,29 +303,29 @@ export const enTranslations: Translations = {
     returnHome: 'Return to Home'
   },
   projects: {
-    title: 'Our Projects',
-    description: 'Explore open-source projects focused on renewable energy and sustainability',
-    filterTitle: 'Filter Projects',
-    expandFilters: 'Expand Filters',
-    collapseFilters: 'Collapse Filters',
-    filterAll: 'All',
+    title: 'ROBOCON & Robotics Projects',
+    description: 'Open-source hardware and software for the National College Robot Competition (ROBOCON)',
+    filterTitle: 'Filter by Category',
+    expandFilters: 'Expand',
+    collapseFilters: 'Collapse',
+    filterAll: 'All Projects',
     filterAI: 'AI & Machine Learning',
-    filterIoT: 'Internet of Things',
+    filterIoT: 'IoT',
     filterEmbedded: 'Embedded Systems',
     filterRobotics: 'Robotics',
     filterResearch: 'Research',
-    filterWeb: 'Web Development',
-    filterMobile: 'Mobile Apps',
+    filterWeb: 'Web',
+    filterMobile: 'Mobile',
     filterOther: 'Other',
     viewProject: 'View Project',
     viewCode: 'View Code',
-    technologies: 'Technologies',
-    author: 'Author',
-    date: 'Date'
+    technologies: 'Tech Stack',
+    author: 'Team',
+    date: 'Year'
   },
   events: {
-    title: 'Future / 未来',
-    description: 'Join our upcoming events and workshops on sustainable technology',
+    title: 'Events',
+    description: 'Tech sharing, workshops, and ROBOCON preparation activities',
     filterTitle: 'Filter Events',
     expandFilters: 'Expand Filters',
     collapseFilters: 'Collapse Filters',

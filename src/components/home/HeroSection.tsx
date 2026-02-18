@@ -80,12 +80,12 @@ export function HeroSection() {
           <div className="flex items-center justify-center mb-6">
             <Badge 
               variant="outline" 
-              className="px-4 py-1.5 text-sm bg-emerald-500/10 border-emerald-500/30 text-emerald-400 backdrop-blur-sm"
+              className="px-4 py-1.5 text-sm bg-amber-500/10 border-amber-500/30 text-amber-400 backdrop-blur-sm"
             >
               <Cpu className="mr-2 h-4 w-4" />
               {isEn 
-                ? 'Open Source Community for ROBOCON & New Energy Engineering'
-                : '面向 ROBOCON 与新能源工程的开源社区'
+                ? 'From 200 RMB to Competition Robot'
+                : '从200块生活费到竞赛机器人'
               }
             </Badge>
           </div>
@@ -94,29 +94,23 @@ export function HeroSection() {
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
             {isEn ? (
               <>
-                <span className="text-slate-100">Battle-Tested</span>
+                <span className="text-slate-100">Code Born in</span>
                 <br />
-                <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-                  Cost-Effective
+                <span className="bg-gradient-to-r from-amber-400 via-orange-400 to-amber-400 bg-clip-text text-transparent">
+                  Engineering Fires
                 </span>
                 <br />
-                <span className="text-slate-100">Open Source Solutions</span>
+                <span className="text-slate-100">Not PowerPoints</span>
               </>
             ) : (
               <>
-                <span className="text-slate-100">提供经过</span>
+                <span className="text-slate-100">代码诞生于</span>
                 <br />
-                <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-                  真实竞赛验证
+                <span className="bg-gradient-to-r from-amber-400 via-orange-400 to-amber-400 bg-clip-text text-transparent font-extrabold">
+                  工程现场
                 </span>
                 <br />
-                <span className="relative inline-block">
-                  <span className="relative z-10 bg-gradient-to-r from-amber-400 via-orange-400 to-amber-400 bg-clip-text text-transparent font-extrabold">
-                    成本敏感
-                  </span>
-                  <span className="absolute inset-0 -skew-x-6 bg-amber-500/20 rounded-lg -z-0 animate-pulse"/>
-                </span>
-                <span className="text-slate-100">开源方案</span>
+                <span className="text-slate-100">而非PPT</span>
               </>
             )}
           </h1>
@@ -124,8 +118,8 @@ export function HeroSection() {
           {/* 副标题 */}
           <p className="mt-6 text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto">
             {isEn 
-              ? 'Modular code baselines, hardware designs, and collaboration tools. Built by NEC for ROBOCON teams nationwide.'
-              : '模块化代码基线、硬件方案与协作工具。NEC 新能源开发者社区 出品，服务多所高校 ROBOCON 竞赛队伍。'
+              ? 'We built a competition robot on 200 RMB, two bricked ESP32s, and 20 hours of non-stop debugging. Now we open-source the blood, sweat, and code for the next team.'
+              : '我们曾在200块生活费、两块变砖的ESP32、和20小时不眠调试中做出竞赛机器人。现在把这些血泪代码开源给下一支队伍。'
             }
           </p>
           
@@ -136,7 +130,7 @@ export function HeroSection() {
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button 
               size="lg" 
-              className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 h-12 text-base"
+              className="bg-amber-500 hover:bg-amber-600 text-white px-8 h-12 text-base"
               asChild
             >
               <a 
@@ -145,7 +139,7 @@ export function HeroSection() {
                 rel="noopener noreferrer"
               >
                 <Code className="mr-2 h-5 w-5" />
-                {isEn ? 'View Projects' : '查看开源项目'}
+                {isEn ? 'Steal Our Code' : '抄我们代码'}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>
@@ -155,9 +149,9 @@ export function HeroSection() {
               className="border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-white px-8 h-12 text-base"
               asChild
             >
-              <Link to="/join">
+              <Link to="/team">
                 <Users className="mr-2 h-5 w-5" />
-                {isEn ? 'Join Us' : '加入协作'}
+                {isEn ? 'Meet the Survivors' : '认识幸存者'}
               </Link>
             </Button>
           </div>

@@ -10,40 +10,40 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 const features = [
   {
-    title: '模块化代码库',
-    description: '经过 ROBOCON 竞赛验证的嵌入式控制、视觉识别、路径规划等模块化代码，开箱即用',
+    title: '200块预算方案',
+    description: '从ROBOCON血泪史中提炼的低成本方案：国产芯片替代、模块化设计、可复用结构。钱少也能玩',
     icon: Code2,
-    tags: ['嵌入式', 'ROS', 'YOLO']
+    tags: ['低成本', '国产化', '复用']
   },
   {
-    title: '硬件方案开源',
-    description: '机械结构设计、电路原理图、PCB 布局完全开源，提供详细的制作与调试指南',
+    title: '踩坑文档库',
+    description: '烧过的ESP32、炸过的MOS管、调不通的CAN总线——所有错误都有记录，让你少踩一遍我们踩过的坑',
     icon: Cpu,
-    tags: ['SolidWorks', 'Altium', '3D打印']
+    tags: ['故障记录', '调试笔记', '避坑']
   },
   {
-    title: '协作工具链',
-    description: '光伏排布、型材计算等工程辅助工具，提升团队设计与开发效率',
+    title: '熬夜调机指南',
+    description: '20小时连轴转的实战经验：如何快速定位问题、应急修复方案、比赛现场Debug流程',
     icon: Wrench,
-    tags: ['Web工具', '自动化', '仿真']
+    tags: ['应急修复', '现场调试', '实战']
   },
   {
-    title: '分层贡献体系',
-    description: '从 Good First Issue 到核心模块维护，清晰的贡献者成长路径与代码审查机制',
+    title: '代码先能用再说',
+    description: '没有完美架构，只有能跑起来的代码。从验证机到比赛机的迭代过程全部开源，丑陋但真实',
     icon: GitFork,
-    tags: ['Git工作流', 'Code Review', 'CI/CD']
+    tags: ['迭代记录', '版本对比', '实战代码']
   },
   {
-    title: '线上线下结合',
-    description: 'A416 实验室提供实体开发环境，配合线上文档与社区支持',
+    title: 'A416实验室',
+    description: '不是高大上的「创新中心」，是堆满板子、线材、空饭盒的真实战场。来这你能闻到松香味',
     icon: Layers,
-    tags: ['实验室', '工作坊', '技术培训']
+    tags: ['实体空间', '工具共享', '线下hack']
   },
   {
-    title: '技术文档中心',
-    description: '详细的 API 文档、赛题解析、开发笔记，降低新人上手门槛',
+    title: '失败博物馆',
+    description: '变砖的ESP32、烧糊的PCB、机械结构报废件——展示我们走过的路，失败比成功更有教育意义',
     icon: BookOpen,
-    tags: ['Wiki', '教程', 'FAQ']
+    tags: ['失败案例', '复盘', '成长']
   },
 ]
 
@@ -54,10 +54,10 @@ export function FeaturesSection() {
         {/* 标题部分 */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            开源工程基础设施
+            真实的工程资产
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            不是「社团活动」，而是可复用的工程方案
+            不是 polished 的演示项目，是带着 solder smell 的战场遗物
           </p>
         </div>
         
@@ -101,9 +101,9 @@ export function FeaturesSection() {
         <div className="mt-16 p-6 rounded-xl bg-gradient-to-r from-slate-900 to-slate-800 text-white">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              <h3 className="text-xl font-semibold mb-2">如何开始贡献？</h3>
+              <h3 className="text-xl font-semibold mb-2">怎么入坑？</h3>
               <p className="text-slate-400 text-sm">
-                Fork → 克隆开发环境（提供 Docker/脚本）→ 提交 PR → Code Review → 合并
+                不用 fork，直接加群 → 来 A416 看看 → 领块板子开始折腾 → 烧了也别怕，我们有一箱
               </p>
             </div>
             <div className="flex gap-3">
@@ -113,13 +113,13 @@ export function FeaturesSection() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-md text-sm font-medium transition-colors"
               >
-                阅读贡献指南
+                贡献指南（随缘版）
               </a>
               <a 
                 href="/getting-started"
                 className="inline-flex items-center px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-md text-sm font-medium transition-colors"
               >
-                查看文档
+                踩坑手册
               </a>
             </div>
           </div>

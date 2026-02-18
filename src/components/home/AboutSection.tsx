@@ -90,8 +90,8 @@ export function AboutSection() {
         {/* Core Advantages */}
         <div className="mt-12">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold gradient-text mb-2">为什么选择 NEC？</h3>
-            <p className="text-muted-foreground">不只是代码仓库，更是可持续的技术社区</p>
+            <h3 className="text-2xl font-bold gradient-text mb-2">我们有什么？</h3>
+            <p className="text-muted-foreground">不是 polished 的演示，是沾满松香和焊锡膏的真实资产</p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {/* 双驱动结构 */}
@@ -101,12 +101,12 @@ export function AboutSection() {
                   <div className="p-2 rounded-lg bg-primary/10">
                     <Trophy className="h-5 w-5 text-primary" />
                   </div>
-                  <CardTitle className="text-lg">双驱动结构</CardTitle>
+                  <CardTitle className="text-lg">比赛+项目双轨</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="pt-0">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  <strong>竞赛 + 项目</strong>，不是"一次性赛题仓"。 competitions/（历年赛季资产）+ projects/（长期项目沉淀）+ docs/（新手路径/贡献）+ shared/（通用资源），比常见"一个仓=一个比赛"的结构更可持续。
+                  competitions/ 是血泪赛场，projects/ 是长期沉淀。每个文件夹里都有 README 记录着当时为什么踩了这个坑。不是「赛题仓库」，是「错题本」。
                 </p>
               </CardContent>
             </Card>
@@ -118,12 +118,12 @@ export function AboutSection() {
                   <div className="p-2 rounded-lg bg-accent/10">
                     <FolderGit2 className="h-5 w-5 text-accent" />
                   </div>
-                  <CardTitle className="text-lg">全周期资产库</CardTitle>
+                  <CardTitle className="text-lg">过程全记录</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="pt-0">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  不是"最后一版代码"。README 直接强调覆盖 <strong>2022–2026</strong> 的赛季资料、FRC 图纸、标准化型材库、从 0 到 1 的过程记录，这种"复盘 + 资产化"是很多竞赛仓做不到的。
+                  不是只有「最终版」。v0.1 到 v2.0 的全部 commit 都留着，包括那些「哎呀这个方案不行」的 revert。失败的路径和成功的一样有价值。
                 </p>
               </CardContent>
             </Card>
@@ -135,12 +135,12 @@ export function AboutSection() {
                   <div className="p-2 rounded-lg bg-green-500/10">
                     <Map className="h-5 w-5 text-green-500" />
                   </div>
-                  <CardTitle className="text-lg">新手友好</CardTitle>
+                  <CardTitle className="text-lg">入坑有路</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="pt-0">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  把<strong>"快速上手 / First Good Issue / 岗位路线图"</strong>放在导航里，本质是在做"社区型仓库"而不是"队内私仓开源"。这对扩大贡献者非常关键。
+                  我们写了「踩坑手册」，记录了每一块板子是怎么烧的。不看也没事，反正你来了我们也会再带你踩一遍（笑）。
                 </p>
               </CardContent>
             </Card>
@@ -152,12 +152,12 @@ export function AboutSection() {
                   <div className="p-2 rounded-lg bg-orange-500/10">
                     <MapPin className="h-5 w-5 text-orange-500" />
                   </div>
-                  <CardTitle className="text-lg">线上线下联动</CardTitle>
+                  <CardTitle className="text-lg">A416 据点</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="pt-0">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  很多竞赛仓只解决"代码怎么跑"，我们把<strong>线上协作 + A416 线下据点</strong>也写进定位，天然更像组织/社区。
+                  不是「创客空间」，是个堆满板子、线材、还有泡面味儿的实验室。来这你能闻到松香，看到我们是怎么把 200 块活成 2000 块的效果。
                 </p>
               </CardContent>
             </Card>
@@ -169,12 +169,12 @@ export function AboutSection() {
                   <div className="p-2 rounded-lg bg-purple-500/10">
                     <ExternalLink className="h-5 w-5 text-purple-500" />
                   </div>
-                  <CardTitle className="text-lg">文档/知识库外置联动</CardTitle>
+                  <CardTitle className="text-lg">知识库</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="pt-0">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  主流竞赛仓经常 README=全部文档；我们明确把<strong>官网 + 飞书知识库</strong>作为入口（这对规模化很重要）。实现"线上文档协作 + 线下实验室实践"的完整闭环，让知识沉淀与传承更加高效。
+                  飞书知识库里有我们整理的「失败案例集」，比成功案例厚三倍。官网和仓库只是入口，真正的血泪史都在文档里。
                 </p>
                 <div className="mt-4 flex gap-3">
                   <Button variant="outline" size="sm" asChild>
@@ -186,7 +186,7 @@ export function AboutSection() {
                   <Button variant="outline" size="sm" asChild>
                     <Link to="/getting-started">
                       <Code className="mr-2 h-4 w-4" />
-                      快速上手
+                      踩坑手册
                     </Link>
                   </Button>
                 </div>

@@ -52,11 +52,11 @@ export const zhTranslations: Translations = {
       ]
     },
     cta: {
-      title: '准备好加入了吗？',
-      description: '迈出第一步，成为我们致力于可持续技术的充满活力的社区的一部分',
-      addWechat: '添加微信群',
-      viewProject: '查看我们的项目',
-      tip: '我们迫不及待地想见到你！'
+      title: '想入坑？',
+      description: '我们不收简历，只看你能不能熬夜调板子',
+      addWechat: '加群吹水',
+      viewProject: '先看项目',
+      tip: '💡 提示：加群后记得自我介绍，说说你烧过几块板子'
     },
     form: {
       name: '姓名',
@@ -269,9 +269,9 @@ export const zhTranslations: Translations = {
     sponsors
   },
   cta: {
-    title: '准备好开始了吗？',
-    description: '加入我们的社区，参与可持续技术项目',
-    getStarted: '立即开始'
+    title: '来吧，别光看',
+    description: '200块都能玩机器人，你还怕啥？ broken board 是常态，调通的那一刻才是高潮',
+    getStarted: '入坑指南'
   },
   common: {
     loading: '加载中...',
@@ -292,13 +292,13 @@ export const zhTranslations: Translations = {
     returnHome: '返回首页'
   },
   projects: {
-    title: '我们的项目',
-    description: '探索专注于可再生能源和可持续发展的开源项目',
-    filterTitle: '筛选项目',
-    expandFilters: '展开筛选',
-    collapseFilters: '收起筛选',
-    filterAll: '全部',
-    filterAI: '人工智能与机器学习',
+    title: 'ROBOCON 与机器人项目',
+    description: '全国大学生机器人大赛（ROBOCON）参赛项目与机器人技术研究',
+    filterTitle: '项目分类',
+    expandFilters: '展开',
+    collapseFilters: '收起',
+    filterAll: '全部项目',
+    filterAI: '人工智能',
     filterIoT: '物联网',
     filterEmbedded: '嵌入式系统',
     filterRobotics: '机器人技术',
@@ -308,13 +308,13 @@ export const zhTranslations: Translations = {
     filterOther: '其他',
     viewProject: '查看项目',
     viewCode: '查看代码',
-    technologies: '技术',
-    author: '作者',
-    date: '日期'
+    technologies: '技术栈',
+    author: '开发团队',
+    date: '年份'
   },
   events: {
-    title: 'Future / 未来',
-    description: '参加我们即将举办的可持续技术活动和研讨会',
+    title: '活动',
+    description: '技术分享、工作坊与ROBOCON备赛活动',
     filterTitle: '筛选活动',
     expandFilters: '展开筛选',
     collapseFilters: '收起筛选',
