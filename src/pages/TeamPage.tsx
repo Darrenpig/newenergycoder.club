@@ -66,16 +66,19 @@ function TeamMemberCard({ member, roleBadge }: TeamMemberCardProps) {
     <Card className="group overflow-hidden border border-gray-200 dark:border-gray-700 
       hover:shadow-xl hover:-translate-y-1 transition-all duration-300 
       bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm
-      flex flex-col h-[380px]">
+      flex flex-col h-full min-h-[400px]">
       
-      {/* 头像区域 */}
+      {/* 头像区域 - 统一规范 */}
       <div className="pt-6 pb-4 flex justify-center">
         <div className="relative">
-          <div className="w-[100px] h-[100px] rounded-2xl overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow">
+          <div className="w-[100px] h-[100px] rounded-full overflow-hidden shadow-md 
+            border-2 border-primary/20 group-hover:border-primary/40 transition-all
+            bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
             <img 
               src={member.image} 
               alt={member.name}
-              className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+              className="object-cover w-full h-full grayscale-[20%] group-hover:grayscale-0 
+                group-hover:scale-105 transition-all duration-300"
               onError={(e) => {
                 (e.target as HTMLImageElement).src = `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(member.name)}&backgroundColor=e2e8f0`
               }}
@@ -89,56 +92,82 @@ function TeamMemberCard({ member, roleBadge }: TeamMemberCardProps) {
         </div>
       </div>
 
-      {/* 内容区域 */}
-      <CardContent className="flex-1 flex flex-col px-5 py-0">
-        <h3 className="text-lg font-bold text-center text-gray-900 dark:text-gray-100 mb-1">
-          {member.github ? (
-            <a
-              href={member.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary transition-colors inline-flex items-center gap-1"
-            >
-              {member.name}
-            </a>
-          ) : (
-            member.name
-          )}
+      {/* 内容区域 - 严格控制高度 */}
+      <CardContent className="flex-1 flex flex-col px-5 py-0 min-h-0">
+        {/* 姓名 - 固定高度 */}
+        <h3 className="text-lg font-bold text-center text-gray-900 dark:text-gray-100 mb-1 truncate">
+          {member.name}
         </h3>
         
-        <div className="flex justify-center mb-2">
-          <Badge variant="outline" className={`text-xs px-2 py-0.5 ${ROLE_BADGE_STYLES[roleBadge]}`}>
+        {/* 角色标签 - 固定高度 */}
+        <div className="flex justify-center mb-2 h-6">
+          <Badge variant="outline" className={`text-xs px-2 py-0.5 whitespace-nowrap ${ROLE_BADGE_STYLES[roleBadge]}`}>
             {member.role}
           </Badge>
         </div>
         
+        {/* 简介 - 严格限制3行 */}
         {member.bio && (
-          <p className="text-sm text-gray-600 dark:text-gray-400 text-center mb-3 leading-relaxed line-clamp-2">
-            {member.bio}
-          </p>
-        )}
-        
-        {member.tags && member.tags.length > 0 && (
-          <div className="flex flex-wrap gap-1 justify-center mb-3">
-            {member.tags.slice(0, 3).map((tag, index) => (
-              <span key={index} className="text-[10px] px-1.5 py-0.5 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded">
-                {tag}
-              </span>
-            ))}
+          <div className="flex-1 min-h-[60px] max-h-[60px] overflow-hidden mb-3">
+            <p className="text-sm text-gray-600 dark:text-gray-400 text-center leading-relaxed line-clamp-3">
+              {member.bio}
+            </p>
           </div>
         )}
         
-        <div className="flex justify-center gap-1 mt-auto pt-2 pb-2">
+        {/* 标签 - 固定显示3个，确保对齐 */}
+        <div className="h-6 flex flex-wrap gap-1 justify-center mb-3">
+          {(member.tags || []).slice(0, 3).map((tag, index) => (
+            <span key={index} className="text-[10px] px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-full border border-gray-200 dark:border-gray-700">
+              {tag}
+            </span>
+          ))}
+        </div>
+        
+        {/* 技能熟练度条 - 填充底部留白 */}
+        <div className="mt-auto pt-3 pb-3 space-y-2">
+          {(member.tags || []).slice(0, 2).map((tag, index) => (
+            <div key={index} className="flex items-center gap-2">
+              <span className="text-[10px] text-gray-500 dark:text-gray-400 w-16 truncate">{tag}</span>
+              <div className="flex-1 h-1.5 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+                <div 
+                  className="h-full bg-gradient-to-r from-primary to-primary/60 rounded-full"
+                  style={{ width: `${[85, 70, 90][index % 3]}%` }}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* 社交链接 - 带悬停提示 */}
+        <div className="flex justify-center gap-2 pt-2 pb-2 border-t border-gray-100 dark:border-gray-800">
           {member.github && (
-            <a href={member.github} target="_blank" rel="noopener noreferrer" 
-               className="w-7 h-7 rounded-md flex items-center justify-center text-gray-500 hover:text-primary hover:bg-primary/10 transition-all">
-              <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <a 
+              href={member.github} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              title="查看 GitHub"
+              className="w-8 h-8 rounded-full flex items-center justify-center 
+                text-gray-400 hover:text-white hover:bg-gray-900 
+                dark:hover:bg-white dark:hover:text-gray-900
+                transition-all duration-200 group/icon"
+            >
+              <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
             </a>
           )}
           {member.email && (
-            <a href={`mailto:${member.email}`} 
-               className="w-7 h-7 rounded-md flex items-center justify-center text-gray-500 hover:text-primary hover:bg-primary/10 transition-all">
-              <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+            <a 
+              href={`mailto:${member.email}`}
+              title="发送邮件"
+              className="w-8 h-8 rounded-full flex items-center justify-center 
+                text-gray-400 hover:text-primary hover:bg-primary/10 
+                transition-all duration-200"
+            >
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
             </a>
           )}
         </div>
@@ -274,7 +303,9 @@ function TeamSection({ title, members, roleBadge, filter }: TeamSectionProps) {
   
   if (!members || members.length === 0) return null
 
+  // 6人强制使用3×2或2×3布局，避免4+2的尴尬缺口
   const getGridCols = (count: number) => {
+    if (count === 6) return 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
     if (count <= 2) return 'grid-cols-1 md:grid-cols-2'
     if (count <= 3) return 'grid-cols-1 md:grid-cols-3'
     if (count <= 4) return 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4'
@@ -287,7 +318,7 @@ function TeamSection({ title, members, roleBadge, filter }: TeamSectionProps) {
         <h3 className="text-xl font-bold tracking-tight text-foreground dark:text-white">{title}</h3>
         <p className="mt-1 text-sm text-muted-foreground">{members.length} 人</p>
       </div>
-      <div className={`grid ${getGridCols(members.length)} gap-5`}>
+      <div className={`grid ${getGridCols(members.length)} gap-5 max-w-5xl mx-auto`}>
         {members.map((member, index) => (
           <TeamMemberCard key={index} member={member} roleBadge={roleBadge} />
         ))}
@@ -493,6 +524,22 @@ export function TeamPage() {
                     </h3>
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                       {[...sponsorsByLevel.silver, ...sponsorsByLevel.bronze].map((sponsor, idx) => (
+                        <SponsorCard key={idx} sponsor={sponsor} />
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Community Partners */}
+                {sponsorsByLevel.partner.length > 0 && (
+                  <div>
+                    <h3 className="text-lg font-semibold mb-4 text-center">
+                      <span className="inline-block px-4 py-1 rounded-full bg-gradient-to-r from-blue-400 to-cyan-500 text-white text-sm">
+                        Community Partners
+                      </span>
+                    </h3>
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                      {sponsorsByLevel.partner.map((sponsor, idx) => (
                         <SponsorCard key={idx} sponsor={sponsor} />
                       ))}
                     </div>

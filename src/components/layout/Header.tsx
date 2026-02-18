@@ -8,38 +8,38 @@ import { LoginButton } from '@/components/auth/LoginModal'
 import { UserMenu } from '@/components/auth/UserMenu'
 import { useAuthStore } from '@/store/auth-store'
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher'
-import { useTranslation } from '@/contexts/LanguageContext'
+import { useLanguage } from '@/contexts/LanguageContext'
 
-// 工具菜单项
-const toolItems = [
+// 工具菜单项 - 支持国际化
+const getToolItems = (isEn: boolean) => [
   { 
-    label: '光伏排布工具', 
+    label: isEn ? 'Solar Layout Tool' : '光伏排布工具', 
     href: 'https://solarglyph2.vercel.app/',
-    description: '光伏电站布局设计'
+    description: isEn ? 'PV plant layout design' : '光伏电站布局设计'
   },
   { 
-    label: '方管型材排布', 
+    label: isEn ? 'Steel Frame Designer' : '方管型材排布', 
     href: 'https://fibersteelstudio.vercel.app/',
-    description: '机械结构件设计工具'
+    description: isEn ? 'Mechanical structure design tool' : '机械结构件设计工具'
   },
 ]
 
-// 资源菜单项
-const resourceItems = [
+// 资源菜单项 - 支持国际化
+const getResourceItems = (isEn: boolean) => [
   { 
-    label: '入门文档', 
+    label: isEn ? 'Getting Started' : '入门文档', 
     href: '/getting-started',
-    description: '新手指南与快速开始'
+    description: isEn ? 'Quick start guide for beginners' : '新手指南与快速开始'
   },
   { 
-    label: '技术博客', 
+    label: isEn ? 'Tech Blog' : '技术博客', 
     href: '/blog',
-    description: '技术文章与经验分享'
+    description: isEn ? 'Technical articles and experience sharing' : '技术文章与经验分享'
   },
   { 
-    label: '开源仓库', 
+    label: isEn ? 'Open Source Repo' : '开源仓库', 
     href: 'https://gitee.com/darrenpig/new_energy_coder_club',
-    description: 'Gitee 代码仓库',
+    description: isEn ? 'Gitee code repository' : 'Gitee 代码仓库',
     external: true
   },
 ]
@@ -50,7 +50,12 @@ export function Header() {
   const [resourcesOpen, setResourcesOpen] = useState(false)
   const isMobile = useIsMobile()
   const { isAuthenticated } = useAuthStore()
-  const t = useTranslation()
+  const { t, language } = useLanguage()
+  const isEn = language === 'en'
+  
+  // 获取国际化菜单项
+  const toolItems = getToolItems(isEn)
+  const resourceItems = getResourceItems(isEn)
   
   // 主导航项
   const mainNavItems = [
@@ -70,7 +75,7 @@ export function Header() {
             <Zap className="h-5 w-5 text-primary-foreground" />
           </div>
           <span className="text-lg font-bold tracking-tight hidden sm:inline">
-            NEC 新能源开发者社区
+            {isEn ? 'NEC New Energy Coder Club' : 'NEC 新能源开发者社区'}
           </span>
           <span className="text-lg font-bold tracking-tight sm:hidden">NEC</span>
         </Link>
@@ -96,7 +101,7 @@ export function Header() {
                 className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground rounded-md hover:bg-accent"
               >
                 <Wrench className="h-4 w-4" />
-                工具箱
+                {isEn ? 'Tools' : '工具箱'}
                 <ChevronDown className={cn("h-3 w-3 transition-transform", toolsOpen && "rotate-180")} />
               </button>
               
@@ -129,7 +134,7 @@ export function Header() {
                 className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground rounded-md hover:bg-accent"
               >
                 <BookOpen className="h-4 w-4" />
-                文档
+                {isEn ? 'Docs' : '文档'}
                 <ChevronDown className={cn("h-3 w-3 transition-transform", resourcesOpen && "rotate-180")} />
               </button>
               
@@ -219,7 +224,7 @@ export function Header() {
             {/* Mobile Tools Section */}
             <div className="mt-2 pt-2 border-t">
               <p className="px-3 py-1 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                工具箱
+                {isEn ? 'Tools' : '工具箱'}
               </p>
               {toolItems.map((item) => (
                 <a
@@ -239,7 +244,7 @@ export function Header() {
             {/* Mobile Resources Section */}
             <div className="mt-2 pt-2 border-t">
               <p className="px-3 py-1 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                文档资源
+                {isEn ? 'Resources' : '文档资源'}
               </p>
               {resourceItems.map((item) => (
                 item.external ? (

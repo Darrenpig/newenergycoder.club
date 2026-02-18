@@ -20,7 +20,7 @@ export const maintainers: TeamMember[] = [
   {
     name: 'DarrenPig',
     role: 'Club Founder & BSP 嵌软工程师',
-    bio: 'Renewable energy researcher with a focus on AI applications for energy optimization.',
+    bio: '小系统专家，AI 在新能源行业的应用。',
     image: '/image/maintainer/DarrenPig.jpg',
     tags: ['AI', 'BSP', '嵌入式', 'ROBOCON', '能源监测', 'openEuler'],
     gitee: 'https://gitee.com/darrenpig',
@@ -31,7 +31,7 @@ export const maintainers: TeamMember[] = [
   {
     name: '殷统创',
     role: 'Club Founder & BSP Expert',
-    bio: '专注于AI在能源优化应用的可再生能源研究员。',
+    bio: '新能源背景的嵌入式 Linux 工程师。',
     image: '/image/maintainer/殷统创.jpg',
     tags: ['AI', 'BSP', '能源优化', '可再生能源', '华为云AI'],
     github: 'https://github.com/yintongchuang'
@@ -47,7 +47,7 @@ export const maintainers: TeamMember[] = [
   {
     name: '张旺旺',
     role: '机器人运行时工程师',
-    bio: '负责项目的核心技术攻坚，保障电控系统的稳定运行。',
+    bio: '新能源背景的光伏追踪支架研究者，专注于 ESP 和电缸驱动。',
     image: '/image/maintainer/张旺旺.png',
     tags: ['电控系统', '运行时', 'ROBOCON', '嵌入式', '系统稳定性'],
     github: 'https://github.com/zhangwangwang'
@@ -57,59 +57,59 @@ export const maintainers: TeamMember[] = [
 export const developers: TeamMember[] = [
   {
     name: '刘英琪',
-    role: '嵌入式开发工程师',
-    bio: '专注于现代机器人技术栈，致力于构建高性能的机器人界面。',
+    role: '嵌入式工程师',
+    bio: 'ROBOCON 24-25 赛季队长。',
     image: '/image/developer/刘英琪.png',
-    tags: ['React', 'TypeScript', 'Vue', '前端架构', 'UI/UX', 'Vite'],
+    tags: ['STM32', 'RTOS', 'C/C++'],
     github: 'https://github.com/liuyingqi'
   },
 
   {
     name: '周志',
-    role: '全栈开发工程师',
-    bio: '具备前后端开发能力，致力于端到端的解决方案开发。',
+    role: '全栈开发',
+    bio: '负责项目工具链开发与维护。',
     image: '/image/developer/周志.png',
-    tags: ['全栈开发', 'JavaScript', 'Python', 'React', 'Node.js', '项目管理'],
+    tags: ['Python', 'JavaScript', 'Node.js'],
     github: 'https://github.com/zhouzhi'
   },
   {
     name: '李硕',
-    role: '硬件系统架构师',
-    bio: '专注于硬件系统架构设计和技术选型，为项目提供技术指导。',
+    role: '硬件开发',
+    bio: '负责电路设计与硬件调试。',
     image: '/image/developer/李硕.png',
-    tags: ['系统架构', '技术选型', '分布式系统', '性能优化', '云原生', 'Kubernetes'],
+    tags: ['PCB设计', '电路调试', 'Altium Designer'],
     github: 'https://github.com/lishuo'
   },
   {
     name: '牛良旭',
-    role: 'DevOps电池管理工程师',
-    bio: '负责项目的持续集成和部署，保障开发流程的高效运行。',
+    role: '电池管理开发',
+    bio: '负责电池管理系统开发与测试。',
     image: '/image/developer/牛良旭.jpg',
-    tags: ['DevOps', 'CI/CD', 'Docker', 'Kubernetes', 'GitHub Actions', '自动化部署'],
+    tags: ['BMS', '电池测试', 'C/C++'],
     github: 'https://github.com/niuliangxu'
   },
   {
     name: '郑钦文',
-    role: '机电一体化开发工程师',
-    bio: '专注于机电设计开发，为用户提供优质的移动端体验。',
+    role: '机电设计',
+    bio: '负责机械结构设计与装配。',
     image: '/image/developer/郑钦文.jpg',
-    tags: ['React Native', 'Flutter', 'iOS', 'Android', '移动端优化', '跨平台开发'],
+    tags: ['SolidWorks', '机械设计', '3D打印'],
     github: 'https://github.com/zhengqinwen'
   },
   {
     name: '杨力滔',
-    role: '星闪手柄开发工程师',
-    bio: '星闪手柄开发专家，熟悉STM32+RTOS C语言开发。',
+    role: '嵌入式开发',
+    bio: '负责星闪手柄固件开发，熟悉 STM32 与 RTOS。',
     image: '/image/developer/杨力滔.JPG',
-    tags: ['星闪手柄', 'STM32', 'RTOS', 'C语言', '嵌入式开发', '硬件控制'],
+    tags: ['STM32', 'RTOS', 'C语言'],
     github: 'https://github.com/yanglitao'
   },
   {
     name: '彭柯颖',
-    role: '机械R1机器人开发者',
-    bio: '新加入的开发团队成员，积极参与机器人项目开发，学习新技术。',
+    role: '机械设计',
+    bio: '参与机械结构设计与制作。',
     image: '/image/developer/彭柯颖.jpg',
-    tags: ['新成员', '项目开发', '学习成长', 'Web开发', 'JavaScript', '团队协作'],
+    tags: ['SolidWorks', '机械加工'],
     github: 'https://github.com/pengkeying'
   },
   {
@@ -135,109 +135,109 @@ export const developers: TeamMember[] = [
   },
   {
     name: '徐康',
-    role: 'Researcher & 3D打印专家',
-    bio: '擅长3D打印建模/航模电机驱动，专注于学术研究。',
+    role: '3D打印',
+    bio: '负责3D打印建模与航模电机驱动调试。',
     image: '/image/researcher/徐康.jpg',
-    tags: ['3D打印', '建模', 'SolidWorks', '学术研究']
+    tags: ['3D打印', 'SolidWorks', '航模']
   },
   {
     name: '陆宇豪',
-    role: 'Researcher & AI技术研究者',
-    bio: '在读研究生，专注于学术与Aspen V8与AI技术研究。',
+    role: '化工模拟',
+    bio: '负责化工流程模拟与数据分析。',
     image: '/image/researcher/陆宇豪.jpg',
-    tags: ['研究生', '学术研究', '技术探索']
+    tags: ['Aspen', '化工模拟', '数据分析']
   }
 ];
 
 export const designers: TeamMember[] = [
   {
     name: 'Xiux',
-    role: 'UI/UX设计师 & 仓库PM',
-    bio: '专注于开发者体验设计和界面优化，为可持续仓库创造美观易用的界面。',
+    role: 'UI设计',
+    bio: '负责社区官网界面设计。',
     image: '/image/designer/xiux.jpg',
-    tags: ['UI设计', 'UX设计', 'Figma', 'Sketch', '原型设计', '用户研究']
+    tags: ['Figma', 'UI设计', '界面设计']
   },
   {
     name: 'ikkOoOo',
-    role: '工业/产品设计师',
-    bio: '专注于创意设计和视觉表达，为项目提供独特的设计视角。',
+    role: '产品设计',
+    bio: '负责产品外观与结构设计。',
     image: '/image/designer/ikkOoOo.jpg',
-    tags: ['创意设计', '视觉表达', '设计创新', '艺术指导', '品牌设计', '视觉传达']
+    tags: ['Rhino', 'KeyShot', '产品设计']
   },
   {
     name: '张若璐',
-    role: '视觉设计师&财务分析师',
-    bio: '专注于品牌落地和财务分析，为项目提供专业的财务视角可行性落地设计。',
+    role: '视觉设计',
+    bio: '负责品牌设计与数据可视化。',
     image: '/image/designer/张若璐.jpg',
-    tags: ['品牌设计', 'Power BI', 'Logo设计', '色彩搭配']
+    tags: ['品牌设计', '数据可视化', 'Power BI']
   },
   {
     name: '韦彩日',
-    role: '工业产品设计师',
-    bio: '负责对接需求，专注于工业产品设计，为项目提供专业的设计解决方案。',
+    role: '工业设计',
+    bio: '负责机械结构外观设计与需求对接。',
     image: '/image/designer/韦彩日.jpg',
-    tags: ['工业设计', '产品设计', '需求对接', '设计解决方案', '用户体验', '产品规划']
+    tags: ['SolidWorks', '外观设计', '结构设计']
   },
   {
     name: '张岩皓',
-    role: '摄影&数据可视化&设计师&运营博主',
-    bio: '会摄影，学艺术设计，做漂亮餐，专注于摄影、数据可视化设计和运营推广。',
+    role: '摄影/数据可视化',
+    bio: '负责活动摄影记录与数据分析可视化。',
     image: '/image/designer/张岩皓.jpg',
-    tags: ['摄影', '数据可视化', '艺术设计', '运营博主', '视觉传达', '内容创作']
+    tags: ['摄影', '数据可视化', 'PR/达芬奇']
   },
   {
     name: '李想',
-    role: 'UX设计师',
-    bio: '一直在探索技术与设计边界的路上，以用户为中心，以体验为驱动。',
+    role: 'UX设计',
+    bio: '负责交互设计与用户研究。',
     image: '/image/designer/李想.jpg',
-    tags: ['UX设计', '用户体验', '设计思维', 'Figma', '用户旅程', '信息架构']
+    tags: ['Figma', '交互设计', '用户研究']
   },
   {
     name: '李一楠',
-    role: '运营组长',
-    bio: '为NEC小队宣传以及主持，负责团队运营和对外宣传工作。',
+    role: '运营',
+    bio: '负责社群运营与活动组织。',
     image: '/image/designer/李一楠.jpg',
-    tags: ['团队运营', '宣传策划', '活动主持', 'NEC小队', '对外联络', '品牌推广']
+    tags: ['社群运营', '活动策划']
   },
   {
     name: '王彦君',
-    role: '工业/产品设计师',
-    bio: '致力于通过设计解决实际问题，以更开放的态度寻找更多可能性。',
+    role: '产品设计',
+    bio: '负责产品建模与渲染。',
     image: '/image/contributer/王彦君.jpg',
-    tags: ['工业设计', '产品设计', 'SolidWorks', 'Rhino', '3D建模', '材料工艺']
+    tags: ['SolidWorks', 'Rhino', 'KeyShot']
   }
 ];
 
 export const preMaintainers: TeamMember[] = [
   {
     name: '卢王淳',
-    role: '25RC项管&机械&电控',
-    bio: '25RC项目管理，机械和电控领域的学习者，Pre-Maintainer培养中。',
+    role: '项目管理',
+    bio: '负责2025 ROBOCON项目协调，参与机械与电控开发。',
     image: '/image/preMaintainer/卢王淳.jpg',
-    tags: ['项目管理', '机械设计', '电控学习', 'ROBOCON', 'Pre-Maintainer', '25RC'],
+    tags: ['项目管理', '机械设计', '电控'],
     github: 'https://github.com/luwangchun'
   },
   {
     name: '徐海婷',
-    role: 'Pre-Maintainer&财务管理',
-    bio: '聚焦财务流程优化与数据支撑，通过合理预算、风险防控，助力技术实践、行稳致远。Pre-Maintainer培养中。',
+    role: '财务管理',
+    bio: '负责团队预算管理与费用报销。',
     image: '/image/preMaintainer/徐海婷.jpg',
-    tags: ['财务管理', '预算控制', '风险防控', 'Pre-Maintainer', '成本管控']
+    tags: ['财务管理', '预算']
   },
   {
     name: '单广志',
-    role: 'Pre-Maintainer&嵌入式开发',
-    bio: '机器人行业电控驱动开发以及硬件电路设计，Pre-Maintainer培养中。',
+    role: '嵌入式开发',
+    bio: '负责电机驱动开发与电路调试。',
     image: '/image/preMaintainer/单广志.jpg',
-    tags: ['嵌入式开发', '电控驱动', '硬件电路设计', 'Pre-Maintainer', '机器人', 'STM32'],
+    tags: ['STM32', '电机驱动', 'PCB'],
     github: 'https://github.com/shanguangzhi'
   },
   {
     name: '许子涵',
-    role: 'Pre-Maintainer&产品经理',
-    bio: '负责产品规划和需求分析，推动项目向正确方向发展，Pre-Maintainer培养中。',
+    role: '产品助理',
+    bio: '协助需求整理与文档撰写。',
     image: '/image/preMaintainer/许子涵.png',
-    tags: ['产品规划', '需求分析', '用户研究', 'Pre-Maintainer', '原型设计'],
+    tags: ['需求分析', '文档'],
     github: 'https://github.com/xuzihan'
   }
 ];
@@ -262,233 +262,221 @@ export const researchers: TeamMember[] = [
 export const contributors: TeamMember[] = [
   {
     name: '卢永杰',
-    role: '嵌入式&运控算法专家',
-    bio: '专注算法部署优化及BSP逻辑协同设计，在嵌入式和运控算法领域有深入研究。',
+    role: '嵌入式开发',
+    bio: '负责算法部署与BSP开发。',
     image: '/image/contributer/卢永杰.jpg',
-    tags: ['嵌入式开发', '运控算法', '算法部署', '协同设计', '算法优化'],
+    tags: ['STM32', '运控算法', 'C/C++'],
     github: 'https://github.com/luyongjie'
   },
-
   {
     name: '韩祺冉',
-    role: 'Contributor',
-    bio: '数据分析师，专注于数据处理和可视化分析工作。',
+    role: '数据分析',
+    bio: '负责数据处理与可视化。',
     image: '/image/contributer/韩祺冉.jpg',
-    tags: ['数据分析', '数据处理', '统计分析', '数据可视化', '业务分析'],
+    tags: ['Python', '数据分析', '可视化'],
     github: 'https://gitee.com/han-qiran'
   },
   {
     name: '崔正阳',
-    role: 'Developer',
-    bio: '24年华为云IoT大赛加入实验室，24RC全国机器人大赛正式接触机器人，25RC全程参与备赛。主要技能掌握为上位机控制，算法，仿真模型。',
+    role: '上位机开发',
+    bio: '负责上位机控制软件开发与仿真。',
     image: '/image/contributer/崔正阳.jpg',
-    tags: ['上位机控制', '算法开发', '仿真模型', 'ROBOCON', '华为云IoT', '机器人竞赛'],
+    tags: ['Python', '上位机', '仿真'],
     github: 'https://github.com/cuizhengyang'
   },
   {
     name: '王于豪',
-    role: '成型组组长',
-    bio: '调试3D打印机帮助团队打印物品，负责成型组的管理和技术支持工作。',
+    role: '成型组',
+    bio: '负责3D打印与设备维护。',
     image: '/image/contributer/王于豪.jpg',
-    tags: ['3D打印', '成型技术', '团队管理', '技术支持', '设备调试', '物品制作'],
+    tags: ['3D打印', '设备维护'],
     github: 'https://github.com/wangyuhao'
   },
   {
-    name: '闻志伟',
-    role: 'Bronze Sponsor',
-    bio: '致力于推动可持续技术发展的个人赞助者。',
-    image: '/image/developer/闻志伟.jpg',
-    tags: ['技术赞助', '项目支持', '可持续发展', '创新资助', '社区建设', '人才培养']
-  },
-  {
     name: '张旺旺',
-    role: '新能源运维工程师',
-    bio: '负责核心项目的真机部署和运维工作，保障系统的稳定运行。',
+    role: '机器人运行时工程师',
+    bio: '新能源背景的光伏追踪支架研究者，专注于 ESP 和电缸驱动。',
     image: '/image/contributer/张旺旺.jpg',
-    tags: ['运维部署', 'Linux', '服务器管理', '监控告警', '故障排查', '系统优化'],
+    tags: ['ESP32', '电缸驱动', '光伏'],
     github: 'https://github.com/zhangwangwang'
   },
   {
     name: '吴洛斌',
-    role: '开源贡献者&气动自动化专家',
-    bio: '积极参与开源项目，为社区贡献代码商业化文档。',
+    role: '气动控制',
+    bio: '负责气动系统设计与PLC编程。',
     image: '/image/contributer/吴洛斌.jpg',
-    tags: ['气动自动化', '开源贡献', '工业控制', 'PLC', '自动化系统'],
+    tags: ['气动控制', 'PLC', '工业自动化'],
     github: 'https://github.com/wuluobin'
   },
   {
     name: '余浩铭',
-    role: '机器人日志运营编辑',
-    bio: '专注于宣传和文字，让NEC的每一份理念都能被看见。',
+    role: '内容运营',
+    bio: '负责宣传文案与内容编辑。',
     image: '/image/developer/余浩铭.jpg',
-    tags: ['文艺工作', '运营编辑', '宣传策划', '文字编辑', 'NEC理念', '内容创作'],
+    tags: ['文案', '内容运营'],
     github: 'https://github.com/yuhaoming'
   },
-
   {
     name: '卞乐凌',
-    role: '嵌入式学习贡献者',
-    bio: '嵌入式学习中，积极参与开源项目和社区建设。',
+    role: '嵌入式学习',
+    bio: '嵌入式方向学习者。',
     image: '/image/contributer/卞乐凌.jpg',
-    tags: ['嵌入式学习', '开源贡献', '社区建设', 'STM32', '硬件开发'],
+    tags: ['STM32', '嵌入式学习'],
     github: 'https://github.com/bianleiling'
   },
-
   {
     name: '郑绍恺',
-    role: '算法竞赛选手',
-    bio: '专注于算法研究以及最优化问题',
+    role: '算法开发',
+    bio: '负责算法优化与实现。',
     image: '/image/contributer/郑绍恺.png',
-    tags: ['算法研究', '最优化', '竞赛选手', '问题求解', '算法优化', '数学建模'],
+    tags: ['算法', 'C/C++'],
     github: 'https://github.com/zhengshaokai'
   },
   {
     name: '郭童童',
-    role: '场控FD',
-    bio: '专注于嵌入式、机器视觉与硬件研发。',
+    role: '现场执行',
+    bio: '负责比赛现场协调与设备管理。',
     image: '/image/contributer/郭童童.jpg',
-    tags: ['场控FD', '嵌入式', '机器视觉', '硬件'],
+    tags: ['现场执行', '设备管理'],
     gitee: 'https://gitee.com/guo--tongtong'
   },
   {
     name: '杨鑫海',
-    role: 'Developer',
-    bio: '专注于Arduino和ESP32等开发板的代码例程开发。',
+    role: '嵌入式开发',
+    bio: '负责Arduino与ESP32开发。',
     image: '/image/contributer/杨鑫海.jpg',
-    tags: ['Arduino', 'ESP32', '代码例程', '嵌入式开发', '物联网', '开发板'],
+    tags: ['Arduino', 'ESP32'],
     github: 'https://github.com/yangxinhai'
   },
   {
     name: '殷子豪',
-    role: 'Developer&文艺工作者',
-    bio: '运营宣传与文字编辑，负责团队内容创作和对外传播。',
+    role: '内容运营',
+    bio: '负责宣传与文案撰写。',
     image: '/image/contributer/殷子豪.jpg',
-    tags: ['运营宣传', '文字编辑', '内容创作', '团队传播', '文案策划', '品牌建设'],
+    tags: ['文案', '运营'],
     github: 'https://github.com/yinzihao'
   },
   {
     name: '孙如婕',
-    role: '灵巧手横向开发贡献者',
-    bio: '专注于灵巧手的横向开发，为项目提供创新的技术解决方案和开发支持。',
+    role: '机械设计',
+    bio: '负责灵巧手结构设计与制作。',
     image: '/image/contributer/孙如婕.jpg',
-    tags: ['灵巧手开发', '横向开发', '技术创新', '开发支持', '项目贡献', '技术解决方案'],
+    tags: ['SolidWorks', '机械设计'],
     github: 'https://github.com/sunrujie'
   },
   {
     name: '杨彩妮',
-    role: 'Contributor',
-    bio: 'AIC工业视觉SIG pre-sponsor，专注于工业视觉技术的研究和应用。',
+    role: '视觉开发',
+    bio: '负责工业视觉算法开发。',
     image: '/image/contributer/杨彩妮.jpg',
-    tags: ['工业视觉', 'AIC', 'SIG', 'pre-sponsor', '视觉技术', '技术研究'],
+    tags: ['机器视觉', 'OpenCV'],
     github: 'https://github.com/yangcaini'
   },
   {
     name: '孙诗睿',
-    role: 'Contributor',
-    bio: 'AIC工业视觉SIG 嵌硬-单片机专家，专注于嵌入式硬件和单片机开发。',
+    role: '嵌入式硬件',
+    bio: '负责嵌入式硬件设计与调试。',
     image: '/image/contributer/孙诗睿.jpg',
-    tags: ['嵌入式硬件', '单片机', 'AIC', '工业视觉', 'SIG', '硬件开发'],
+    tags: ['单片机', '硬件设计'],
     github: 'https://github.com/sunshirui'
   },
   {
     name: '梁新雷',
-    role: '队员',
-    bio: '毫无经验的一只小白，正在努力学习中。',
+    role: '嵌入式学徒',
+    bio: '嵌入式系统开发学习者，专注电控技术。',
     image: '/image/contributer/梁新雷.jpg',
-    tags: ['小白', '队员', '学习中']
+    tags: ['STM32', '电控']
   },
   {
     name: '顾佳欣',
-    role: 'Contributor',
-    bio: '专注于数据库与Unity数据传导技术。',
+    role: 'Unity开发',
+    bio: '负责Unity应用开发与数据库。',
     image: '/image/contributer/顾佳欣.jpg',
-    tags: ['数据库', 'Unity', '数据传导']
+    tags: ['Unity', 'C#']
   },
-
   {
     name: '王欣怡',
-    role: '电控组成员',
-    bio: '只要是学习机构中的电控部分，学习过51，32单片机以及sw建模。',
+    role: '电控',
+    bio: '负责电控开发与调试。',
     image: '/image/contributer/王欣怡.jpg',
-    tags: ['电控', '51单片机', 'STM32', 'SW建模']
+    tags: ['STM32', '电控']
   },
   {
     name: '汪奕希',
-    role: 'Contributor',
-    bio: '目前在视觉岗位，探索计算机视觉技术。',
+    role: '视觉算法',
+    bio: '负责计算机视觉算法开发。',
     image: '/image/contributer/汪奕希.jpg',
-    tags: ['视觉', '计算机视觉', '算法']
+    tags: ['OpenCV', 'Python']
   },
   {
     name: '岳添俊',
-    role: 'Contributor',
-    bio: '专注于C语言开发与学习。',
+    role: '软件开发',
+    bio: '负责嵌入式软件开发。',
     image: '/image/contributer/岳添俊.jpg',
-    tags: ['C语言', '编程', '软件开发']
+    tags: ['C语言', '嵌入式']
   },
   {
     name: '李畅畅',
-    role: 'Contributor',
-    bio: '负责电控与场地相关工作。',
+    role: '电控/场地',
+    bio: '负责电控调试与场地维护。',
     image: '/image/contributer/李畅畅.jpg',
-    tags: ['电控', '场地运营', '硬件维护']
+    tags: ['电控', '场地']
   },
   {
     name: '孙雯艳',
-    role: 'Designer',
-    bio: '对机械方面了解较多，熟练sw建模，参加过3d设计大赛和农业智能装备大赛，自学单片机。',
+    role: '机械设计',
+    bio: '负责机械建模与设计。',
     image: '/image/contributer/孙雯艳.jpg',
-    tags: ['机械设计', 'SW建模', '3D设计', '单片机', '智能装备']
+    tags: ['SolidWorks', '机械设计']
   },
-
   {
     name: '吴梦婷',
-    role: 'Contributor',
-    bio: '大创的汽车发动机/电机初创项目进行中。',
+    role: '电机控制',
+    bio: '负责电机控制系统开发。',
     image: '/image/contributer/吴梦婷.jpg',
-    tags: ['大创', '汽车发动机', '电机', '初创项目']
+    tags: ['电机控制', '电力电子']
   },
   {
     name: '陈春林',
     role: '视觉算法',
-    bio: '高二奥林匹克化学广西市二等奖，RC27预备队员。',
+    bio: '负责视觉算法开发与调试。',
     image: '/image/contributer/陈春林.jpg',
-    tags: ['视觉算法', '奥林匹克化学', 'RC27', '预备队员']
+    tags: ['OpenCV', 'Python']
   },
   {
     name: '白逸鸣',
-    role: 'Contributor',
-    bio: 'RC 全国机器人大赛参与者，仓库数字化，AI飞书原生开发。',
+    role: '全栈开发',
+    bio: '负责飞书应用开发与数字化。',
     image: '/image/contributer/白逸鸣.jpg',
-    tags: ['RC', '全国机器人大赛', '仓库数字化', 'AI飞书', '原生开发']
+    tags: ['JavaScript', '飞书开发']
   },
   {
     name: '严文颖',
-    role: 'Contributor',
-    bio: '负责数据库管理与运营工作。',
+    role: '数据管理',
+    bio: '负责数据库管理与维护。',
     image: '/image/contributer/严文颖.jpg',
-    tags: ['数据库', '运营', '数据管理']
+    tags: ['MySQL', '数据库']
   },
   {
     name: '李嘉涵',
-    role: 'Contributor',
-    bio: '获得过国家奖学金，会SolidWorks、CATIA等软件，目前在做大创。',
+    role: '机械设计',
+    bio: '负责机械结构设计与建模。',
     image: '/image/contributer/李嘉涵.jpg',
-    tags: ['国家奖学金', 'SolidWorks', 'CATIA', '大创']
+    tags: ['SolidWorks', 'CATIA']
   },
   {
     name: '黄宇雯',
-    role: 'Contributor',
-    bio: '运用三维建模软件进行机构设计、动画演示。',
+    role: '机械设计',
+    bio: '负责机构设计与动画制作。',
     image: '/image/contributer/黄宇雯.jpg',
-    tags: ['三维建模', '机构设计', '动画演示']
+    tags: ['SolidWorks', '动画']
   },
   {
     name: '魏卫',
-    role: 'Contributor',
-    bio: '野心大的半吊子全栈(不碰硬件版)。',
+    role: '软件开发',
+    bio: '负责前后端开发。',
     image: '/image/contributer/魏卫.jpg',
-    tags: ['全栈开发', '软件开发']
+    tags: ['Python', 'JavaScript']
   }
 ];
 
@@ -562,6 +550,48 @@ export const sponsors: Sponsor[] = [
       { item: '结构件打样' }
     ],
     website: 'https://m.tb.cn/h.7C6uKBnRQ1NxAMB'
+  },
+  {
+    name: 'GPUfree 算力自由',
+    role: 'Computing Partner',
+    level: 'partner',
+    bio: '提供GPU算力资源，助力AI模型训练与科研探索。',
+    image: '/assets/logo_GPU_Free.png',
+    tags: ['GPU算力', 'AI训练'],
+    supports: [
+      { item: 'GPU算力代金券', quantity: '1000元额度' },
+      { item: '模型训练资源' },
+      { item: '科研算力支持' }
+    ],
+    website: 'https://gpufree.org/'
+  },
+  {
+    name: '脉塔智能',
+    role: 'Motor Partner',
+    level: 'silver',
+    bio: '专业RMD电机及驱动解决方案提供商，专注高性能伺服系统。',
+    image: '/image/sponsor/麦塔智能.png',
+    tags: ['RMD电机', '伺服系统'],
+    supports: [
+      { item: 'RMD电机采购额度', quantity: '1万元' },
+      { item: '驱动器技术支持' },
+      { item: '批量采购优惠' }
+    ],
+    website: '#'
+  },
+  {
+    name: '华为云',
+    role: 'Cloud Partner',
+    level: 'partner',
+    bio: '华为云提供开发板及云计算资源支持，助力嵌入式开发与边缘计算。',
+    image: '/image/sponsor/华为云.png',
+    tags: ['开发板', '云计算'],
+    supports: [
+      { item: '香橙派开发板', quantity: '项目支持' },
+      { item: '云服务器资源' },
+      { item: '技术文档支持' }
+    ],
+    website: 'https://www.huaweicloud.com/'
   }
 ];
 

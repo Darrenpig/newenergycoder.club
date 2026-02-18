@@ -114,7 +114,7 @@ export const enTranslations: Translations = {
     phase2: {
       title: 'Phase 2 Development',
       description: 'Future enhancements and expanded features coming soon',
-      content: '一群做开源项目养机器人的开发者&设计师们'
+      content: 'A community of developers and designers building open-source projects and robots'
     },
     contributing: {
       title: 'Contributing Guidelines',

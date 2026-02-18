@@ -2,13 +2,15 @@ import { ChevronRight, Code, Cpu, GitBranch, ArrowRight, Users } from 'lucide-re
 import { Button } from '@/components/ui/button'
 import { Link } from 'react-router-dom'
 import { Badge } from '@/components/ui/badge'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 // GitHub/Gitee 统计数据展示组件
 function GitHubStats() {
+  const { language } = useLanguage()
   const stats = [
-    { label: 'Commits', value: '260+', icon: GitBranch },
-    { label: 'Contributors', value: '45+', icon: Users },
-    { label: 'Projects', value: '12', icon: Code },
+    { label: language === 'en' ? 'Commits' : 'Commits', value: '260+', icon: GitBranch },
+    { label: language === 'en' ? 'Contributors' : '贡献者', value: '45+', icon: Users },
+    { label: language === 'en' ? 'Projects' : '项目', value: '12', icon: Code },
   ]
 
   return (
@@ -28,6 +30,9 @@ function GitHubStats() {
 }
 
 export function HeroSection() {
+  const { t, language } = useLanguage()
+  const isEn = language === 'en'
+  
   return (
     <div className="relative overflow-hidden bg-slate-950 text-slate-50">
       {/* 工程蓝图风格背景 */}
@@ -78,31 +83,50 @@ export function HeroSection() {
               className="px-4 py-1.5 text-sm bg-emerald-500/10 border-emerald-500/30 text-emerald-400 backdrop-blur-sm"
             >
               <Cpu className="mr-2 h-4 w-4" />
-              面向 ROBOCON 与新能源工程的开源社区
+              {isEn 
+                ? 'Open Source Community for ROBOCON & New Energy Engineering'
+                : '面向 ROBOCON 与新能源工程的开源社区'
+              }
             </Badge>
           </div>
           
           {/* 主标题 */}
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-            <span className="text-slate-100">提供经过</span>
-            <br />
-            <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-              真实竞赛验证
-            </span>
-            <br />
-            <span className="relative inline-block">
-              <span className="relative z-10 bg-gradient-to-r from-amber-400 via-orange-400 to-amber-400 bg-clip-text text-transparent font-extrabold">
-                成本敏感
-              </span>
-              <span className="absolute inset-0 -skew-x-6 bg-amber-500/20 rounded-lg -z-0 animate-pulse"/>
-            </span>
-            <span className="text-slate-100">开源方案</span>
+            {isEn ? (
+              <>
+                <span className="text-slate-100">Battle-Tested</span>
+                <br />
+                <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+                  Cost-Effective
+                </span>
+                <br />
+                <span className="text-slate-100">Open Source Solutions</span>
+              </>
+            ) : (
+              <>
+                <span className="text-slate-100">提供经过</span>
+                <br />
+                <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+                  真实竞赛验证
+                </span>
+                <br />
+                <span className="relative inline-block">
+                  <span className="relative z-10 bg-gradient-to-r from-amber-400 via-orange-400 to-amber-400 bg-clip-text text-transparent font-extrabold">
+                    成本敏感
+                  </span>
+                  <span className="absolute inset-0 -skew-x-6 bg-amber-500/20 rounded-lg -z-0 animate-pulse"/>
+                </span>
+                <span className="text-slate-100">开源方案</span>
+              </>
+            )}
           </h1>
           
           {/* 副标题 */}
           <p className="mt-6 text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto">
-            模块化代码基线、硬件方案与协作工具。NEC 新能源开发者社区 出品，
-            服务多所高校 ROBOCON 竞赛队伍。
+            {isEn 
+              ? 'Modular code baselines, hardware designs, and collaboration tools. Built by NEC for ROBOCON teams nationwide.'
+              : '模块化代码基线、硬件方案与协作工具。NEC 新能源开发者社区 出品，服务多所高校 ROBOCON 竞赛队伍。'
+            }
           </p>
           
           {/* GitHub 统计数据 */}
@@ -121,7 +145,7 @@ export function HeroSection() {
                 rel="noopener noreferrer"
               >
                 <Code className="mr-2 h-5 w-5" />
-                查看开源项目
+                {isEn ? 'View Projects' : '查看开源项目'}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>
@@ -133,16 +157,21 @@ export function HeroSection() {
             >
               <Link to="/join">
                 <Users className="mr-2 h-5 w-5" />
-                加入协作
+                {isEn ? 'Join Us' : '加入协作'}
               </Link>
             </Button>
           </div>
           
           {/* 技术栈展示 */}
           <div className="mt-16 pt-8 border-t border-slate-800">
-            <p className="text-sm text-slate-500 mb-6 uppercase tracking-wider">技术栈覆盖</p>
+            <p className="text-sm text-slate-500 mb-6 uppercase tracking-wider">
+              {isEn ? 'Tech Stack' : '技术栈覆盖'}
+            </p>
             <div className="flex flex-wrap items-center justify-center gap-3">
-              {['嵌入式 C/C++', 'ROS/ROS2', '计算机视觉', '机械设计', 'FPGA', '电机控制'].map((tech) => (
+              {(isEn 
+                ? ['Embedded C/C++', 'ROS/ROS2', 'Computer Vision', 'Mechanical Design', 'FPGA', 'Motor Control']
+                : ['嵌入式 C/C++', 'ROS/ROS2', '计算机视觉', '机械设计', 'FPGA', '电机控制']
+              ).map((tech) => (
                 <span 
                   key={tech}
                   className="px-3 py-1.5 text-sm bg-slate-900 border border-slate-800 rounded-md text-slate-400 hover:border-emerald-500/50 hover:text-emerald-400 transition-colors"
