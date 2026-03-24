@@ -3,79 +3,6 @@ import { Translations } from '../types/translations';
 import { learningTranslations } from '../constants/learning';
 
 export const enTranslations: Translations = {
-  join: {
-    form: {
-      title: 'Join New Energy Coder Club',
-      subtitle: 'Fill out this form to become a member of our community',
-      basicInfo: {
-        title: 'Basic Information',
-        description: 'Please provide your basic contact information',
-        name: 'Full Name',
-        email: 'Email Address',
-        phone: 'Phone Number',
-        organization: 'Organization/Company',
-        namePlaceholder: 'Enter your full name',
-        emailPlaceholder: 'Enter your email address',
-        phonePlaceholder: 'Enter your phone number',
-        organizationPlaceholder: 'Enter your organization or company'
-      },
-      roleInfo: {
-        title: 'Role Information',
-        description: 'Tell us about your professional background',
-        role: 'Role',
-        rolePlaceholder: 'Enter your role',
-        experience: 'Experience',
-        experiencePlaceholder: 'Describe your experience',
-        identityLabel: 'Identity',
-        student: 'Student',
-        professional: 'Professional',
-        freelancer: 'Freelancer',
-        other: 'Other'
-      },
-      techStack: {
-        title: 'Technical Skills',
-        description: 'Select your areas of expertise',
-        frontend: 'Frontend Development',
-        backend: 'Backend Development',
-        embedded: 'Embedded Systems',
-        ai: 'AI/Machine Learning',
-        other: 'Other',
-        otherPlaceholder: 'Specify other skills',
-        options: ['Frontend', 'Backend', 'Mobile', 'AI/ML', 'DevOps', 'Data Science']
-      },
-      experience: {
-        title: 'Experience & Motivation',
-        description: 'Share your background and goals',
-        motivation: 'Motivation',
-        motivationPlaceholder: 'Why do you want to join?',
-        experienceLabel: 'Technical Experience',
-        motivationLabel: 'Motivation',
-        contributionLabel: 'Expected Contribution',
-        experiencePlaceholder: 'Describe your technical background',
-        contributionPlaceholder: 'How do you plan to contribute?'
-      },
-      timeExpectation: {
-        title: 'Time Commitment',
-        description: 'Help us understand your availability',
-        expectationsLabel: 'Expectations',
-        expectationsPlaceholder: 'What do you expect from the club?',
-        availabilityLabel: 'Weekly Availability (hours)',
-        selectPlaceholder: 'Select your availability',
-        option1to2: '1-2 hours',
-        option3to5: '3-5 hours',
-        option6to10: '6-10 hours',
-        option10plus: '10+ hours'
-      },
-      submit: {
-        button: 'Submit Application',
-        submitting: 'Submitting...',
-        success: 'Application Submitted',
-        successMessage: 'Thank you for your application! We will review it and get back to you soon.',
-        error: 'Submission Failed',
-        errorMessage: 'There was an error submitting your application. Please try again.'
-      }
-    }
-  },
   nav: {
     home: 'Home',
     team: 'Team',
@@ -259,19 +186,19 @@ export const enTranslations: Translations = {
           duration: '1-2 hours'
         },
         {
-          title: 'Submit Application',
-          description: 'Fill out the join application form',
-          duration: '10-15 minutes'
+          title: 'Join Organization',
+          description: 'Follow our open-source organization on GitHub and explore projects',
+          duration: '1-5 minutes'
         },
         {
-          title: 'Wait for Review',
-          description: 'Team reviews your application',
-          duration: '1-3 business days'
+          title: 'Start Contributing',
+          description: 'Find a Good First Issue and submit your first PR or Issue',
+          duration: '1-3 days'
         },
         {
-          title: 'Welcome Aboard',
-          description: 'Receive invitation and start collaboration journey',
-          duration: 'Instant'
+          title: 'Deepen Collaboration',
+          description: 'Develop core modules with the team and join technical meetings',
+          duration: 'Long-term'
         }
       ]
     },

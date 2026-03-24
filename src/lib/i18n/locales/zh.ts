@@ -22,32 +22,32 @@ export const zhTranslations: Translations = {
     },
     roadmap: {
       title: '你的路线',
-      description: '从申请到成为我们社区活跃成员的路径？',
+      description: '从关注到成为我们社区活跃贡献者的路径：',
       steps: [
         {
-          title: '提交申请',
-          description: '填写我们的会员申请表，告诉我们你的背景、技能和动机',
+          title: '了解我们',
+          description: '浏览项目介绍和团队文化',
           duration: '5-10分钟'
         },
         {
-          title: '初步联系',
-          description: '我们的团队成员将在24小时内通过电子邮件与您联系，安排介绍会议',
-          duration: '24小时内？'
+          title: '技术准备',
+          description: '准备基础开发环境和技能',
+          duration: '1-2小时'
         },
         {
-          title: '介绍会议',
-          description: '参加介绍会议，了解我们的项目、社区规则以及如何开始',
-          duration: '30-45分钟'
+          title: '加入组织',
+          description: '在 GitHub 上关注我们的开源组织并了解项目',
+          duration: '1-5分钟'
         },
         {
-          title: '项目分配',
-          description: '根据你的兴趣和技能，我们将为你分配一个合适的项目团队',
-          duration: '1-2天？'
+          title: '参与贡献',
+          description: '寻找 Good First Issue，提交你的第一个 PR 或 Issue',
+          duration: '1-3天'
         },
         {
-          title: '开始贡献',
-          description: '开始参与您的项目团队，参加每周会议，并开始为开源项目做贡献',
-          duration: '立即开始？'
+          title: '深入合作',
+          description: '与团队成员共同开发核心模块，参加线上/线下技术会议',
+          duration: '长期'
         }
       ]
     },
@@ -75,79 +75,6 @@ export const zhTranslations: Translations = {
       learning: '学习机会',
       projects: '项目参与',
       career: '职业发展'
-    }
-  },
-  join: {
-    form: {
-      title: '加入 NEC 新能源开发者社区？',
-      subtitle: '填写此表格成为我们社区的一员',
-      basicInfo: {
-        title: '基本信息',
-        description: '请提供您的基本联系信息',
-        name: '姓名',
-        email: '邮箱地址',
-        phone: '电话号码',
-        organization: '组织/公司',
-        namePlaceholder: '请输入您的姓名',
-        emailPlaceholder: '请输入您的邮箱地址',
-        phonePlaceholder: '请输入您的电话号码',
-        organizationPlaceholder: '请输入您的组织或公司'
-      },
-      roleInfo: {
-        title: '角色信息',
-        description: '告诉我们您的专业背景',
-        role: '角色',
-        rolePlaceholder: '请输入您的角色',
-        experience: '经验',
-        experiencePlaceholder: '描述您的经验',
-        identityLabel: '身份',
-        student: '学生',
-        professional: '专业人士',
-        freelancer: '自由职业者',
-        other: '其他'
-      },
-      techStack: {
-        title: '技术技能',
-        description: '选择您的专业领域',
-        frontend: '前端开发',
-        backend: '后端开发',
-        embedded: '嵌入式系统',
-        ai: 'AI/机器学习',
-        other: '其他',
-        otherPlaceholder: '请说明其他技术',
-        options: ['前端', '后端', '移动开发', 'AI/ML', 'DevOps', '数据科学']
-      },
-      experience: {
-        title: '经验与动机',
-        description: '分享您的背景和目标',
-        motivation: '动机',
-        motivationPlaceholder: '您为什么想加入？',
-        experienceLabel: '技术经验',
-        motivationLabel: '动机',
-        contributionLabel: '预期贡献',
-        experiencePlaceholder: '描述您的技术背景',
-        contributionPlaceholder: '您计划如何贡献？'
-      },
-      timeExpectation: {
-        title: '时间投入',
-        description: '帮助我们了解您的可用时间',
-        expectationsLabel: '期望',
-        expectationsPlaceholder: '您对俱乐部有什么期望？',
-        availabilityLabel: '每周可用时间（小时）',
-        selectPlaceholder: '选择您的可用时间',
-        option1to2: '1-2小时',
-        option3to5: '3-5小时',
-        option6to10: '6-10小时',
-        option10plus: '10+小时'
-      },
-      submit: {
-        button: '提交申请',
-        submitting: '提交中...',
-        success: '申请已提交',
-        successMessage: '感谢您的申请，我们将尽快回复您。',
-        error: '提交失败',
-        errorMessage: '提交申请时出现错误，请重试。'
-      }
     }
   },
   nav: {

@@ -5,7 +5,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 const HomePage = React.lazy(() => import("@/pages/HomePage"));
 const NotFoundPage = React.lazy(() => import("@/pages/NotFoundPage"));
 const JoinPage = React.lazy(() => import("@/pages/JoinPage").then(module => ({ default: module.JoinPage })));
-const FeishuJoinFormPage = React.lazy(() => import("@/pages/FeishuJoinFormPage").then(module => ({ default: module.FeishuJoinFormPage })));
 const DashboardPage = React.lazy(() => import("@/pages/DashboardPage"));
 const ProjectsPage = React.lazy(() => import("@/pages/ProjectsPage").then(module => ({ default: module.ProjectsPage })));
 const EventsPage = React.lazy(() => import("@/pages/EventsPage").then(module => ({ default: module.EventsPage })));
@@ -64,7 +63,6 @@ function App() {
             
 
             <Route path="/join" element={<JoinPage />} />
-            <Route path="/join/form" element={<FeishuJoinFormPage />} />
             
             {/* Protected Routes */}
             <Route path="/dashboard" element={

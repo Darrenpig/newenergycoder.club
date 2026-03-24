@@ -129,31 +129,31 @@ export function JoinPage() {
           </div>
         </section>
 
-        {/* 飞书表单入口 */}
+        {/* 加入 GitHub 组织入口 */}
         <section className="py-16 bg-primary/5">
           <div className="container">
             <div className="max-w-2xl mx-auto text-center">
               <Card className="glass-card border-primary/20">
                 <CardHeader>
                   <div className="mx-auto mb-4 h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center">
-                    <ArrowRight className="h-8 w-8 text-primary" />
+                    <Code className="h-8 w-8 text-primary" />
                   </div>
-                  <CardTitle className="text-2xl">在线申请表</CardTitle>
+                  <CardTitle className="text-2xl">加入 GitHub 组织</CardTitle>
                   <CardDescription>
-                    填写飞书表单，快速完成加入申请
+                    加入我们的 GitHub 组织，参与开源项目协作与贡献
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <Button 
                     size="lg" 
                     className="group"
-                    onClick={() => window.open('/join/form', '_self')}
+                    onClick={() => window.open('https://github.com/new-energy-coder-club', '_blank')}
                   >
-                    填写申请表
+                    前往 GitHub
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                   <div className="text-sm text-muted-foreground">
-                    <p>✨ 推荐：填写完整表单，团队将在24小时内审核</p>
+                    <p>✨ 推荐：关注我们的开源仓库，提交 Issue 或 PR 参与建设</p>
                   </div>
                 </CardContent>
               </Card>
