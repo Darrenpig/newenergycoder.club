@@ -16,9 +16,10 @@ import WeChatLogo from '@/assets/wechat.png?url'
 interface LoginButtonProps {
   children: React.ReactNode
   className?: string
+  onTriggerClick?: () => void
 }
 
-export function LoginButton({ children, className }: LoginButtonProps) {
+export function LoginButton({ children, className, onTriggerClick }: LoginButtonProps) {
   const [open, setOpen] = useState(false)
   const { login, isLoading } = useAuthStore()
   
@@ -43,7 +44,7 @@ export function LoginButton({ children, className }: LoginButtonProps) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="outline" className={className}>
+        <Button variant="outline" className={className} onClick={onTriggerClick}>
           {children}
         </Button>
       </DialogTrigger>

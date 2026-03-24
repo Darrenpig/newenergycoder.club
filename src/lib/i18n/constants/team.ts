@@ -256,6 +256,13 @@ export const researchers: TeamMember[] = [
     bio: '在读研究生，专注于学术与Aspen V8与AI技术研究。',
     image: '/image/researcher/陆宇豪.jpg',
     tags: ['研究生', '学术研究', '技术探索']
+  },
+  {
+    name: '魏鹏程',
+    role: 'Researcher',
+    bio: '研究生，正在参与 RC 赛事，关注学术研究与工程实践。',
+    image: '/image/researcher/魏鹏程.jpg',
+    tags: ['研究生', 'RC赛事', '学术研究']
   }
 ];
 
@@ -477,6 +484,20 @@ export const contributors: TeamMember[] = [
     bio: '负责前后端开发。',
     image: '/image/contributer/魏卫.jpg',
     tags: ['Python', 'JavaScript']
+  },
+  {
+    name: '张娈馨',
+    role: '嵌入式学习',
+    bio: '学习嵌入式开发，专注于 STM32，同时熟练使用 SolidWorks 等软件。',
+    image: '/image/contributer/张娈馨.jpg',
+    tags: ['STM32', 'SolidWorks', '嵌入式学习']
+  },
+  {
+    name: '庄皓钧',
+    role: '机械设计',
+    bio: '负责机械结构设计与装配。',
+    image: '/image/contributer/庄皓钧.jpg',
+    tags: ['机械设计', '装配']
   }
 ];
 

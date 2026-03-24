@@ -287,16 +287,12 @@ export function Header() {
                 </Button>
               ) : (
                 <>
-                  <Button 
-                    variant="outline" 
-                    size="sm"
-                    onClick={() => {
-                      document.querySelector('[role="dialog"]')?.classList.remove('hidden')
-                      setMobileMenuOpen(false)
-                    }}
+                  <LoginButton 
+                    className="text-sm"
+                    onTriggerClick={() => setMobileMenuOpen(false)}
                   >
                     {t.nav.login}
-                  </Button>
+                  </LoginButton>
                   <Button size="sm" asChild>
                     <Link to="/join" onClick={() => setMobileMenuOpen(false)}>
                       加入协作
