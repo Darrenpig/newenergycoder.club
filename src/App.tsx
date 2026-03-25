@@ -13,6 +13,7 @@ const GettingStartedPage = React.lazy(() => import("@/pages/GettingStartedPage")
 const TeamPage = React.lazy(() => import("@/pages/TeamPage").then(module => ({ default: module.TeamPage })));
 const InnovationShowcasePage = React.lazy(() => import("@/pages/InnovationShowcasePage").then(module => ({ default: module.InnovationShowcasePage })));
 const AdminDashboard = React.lazy(() => import("@/pages/AdminDashboard"));
+const StoryPage = React.lazy(() => import("@/pages/StoryPage"));
 
 
 const TechnicalDocsLayout = React.lazy(() => import("@/components/TechnicalDocsLayout").then(module => ({ default: module.TechnicalDocsLayout })));
@@ -56,8 +57,9 @@ function App() {
             <Route path="/team" element={<TeamPage />} />
             <Route path="/innovation" element={<PageLayout><InnovationShowcasePage /></PageLayout>} />
             <Route path="/getting-started" element={<PageLayout><GettingStartedPage /></PageLayout>} />
+            <Route path="/story" element={<StoryPage />} />
             
-            {/* Document Routes */}
+            {/* Document Routes -->
             <Route path="/docs/technical" element={<PageLayout><TechnicalDocsLayout /></PageLayout>} />
 
             

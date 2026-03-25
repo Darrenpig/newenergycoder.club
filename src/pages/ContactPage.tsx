@@ -9,13 +9,13 @@ import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react'
 import { useTranslation } from '@/contexts/LanguageContext'
 import wechatImg from '@/assets/wechat.png'
 import { PageLayout } from '@/components/layout/PageLayout'
-import { type FloatingControls, type AspectRatio } from '@/components/ui/floating-controls'
+import { type AspectRatio } from '@/components/ui/floating-controls'
 import { AmapLocation } from '@/components/ui/amap-location'
 import FeiShuForm from '@/FeiShu-Form.svg?url'
 // 使用 public 目录下的资源
 const NECApplicationForm = FeiShuForm
-const TeamPhoto1 = '/image/校门合照.jpg'
-const TeamPhoto2 = '/image/横向项目合照.jpg'
+const CONTACT_API_PATH = import.meta.env.VITE_CONTACT_API_PATH || '/api/contact'
+const CONTACT_API_FORCE = import.meta.env.VITE_CONTACT_API_FORCE === 'true'
 
 interface ContactFormData {
   name: string
@@ -63,15 +63,28 @@ export function ContactPage() {
     setIsSubmitting(true)
 
     try {
-      if (import.meta.env.PROD) {
-        const resp = await fetch('/api/contact', {
+      if (!import.meta.env.PROD && !CONTACT_API_FORCE) {
+        await new Promise(resolve => setTimeout(resolve, 800))
+      } else {
+        const resp = await fetch(CONTACT_API_PATH, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData)
         })
-        if (!resp.ok) throw new Error('submit_failed')
-      } else {
-        await new Promise(resolve => setTimeout(resolve, 800))
+        if (!resp.ok) {
+          let detail = ''
+          try {
+            const data = await resp.json()
+            detail = data?.error || data?.message || ''
+          } catch {
+            try {
+              detail = await resp.text()
+            } catch {
+              detail = ''
+            }
+          }
+          throw new Error(detail || `HTTP ${resp.status}`)
+        }
       }
       
       // Reset form
@@ -84,7 +97,7 @@ export function ContactPage() {
     } catch (error) {
       toast({
         title: t.contact.form.messageError,
-        description: "请检查网络或服务配置(.env)后重试。",
+        description: error instanceof Error && error.message ? error.message : "请检查网络或服务配置(.env)后重试。",
         variant: "destructive",
       })
     } finally {
@@ -218,11 +231,11 @@ export function ContactPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="flex flex-col items-center space-y-4">
-                      <div className={`${selectedRatio} overflow-hidden relative w-full max-w-md`}>
+                      <div className={`${selectedRatio} overflow-hidden relative w-full max-w-sm bg-background/60 rounded-lg p-2 shadow-md hover:shadow-lg transition-shadow duration-200`}>
                         <img 
                           src={NECApplicationForm} 
                           alt="NEC官网上线申请表" 
-                          className="w-full h-full object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200"
+                          className="w-full h-full object-contain rounded-md"
                         />
                       </div>
                       <a

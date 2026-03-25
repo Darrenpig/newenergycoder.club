@@ -1,4 +1,4 @@
-import { ChevronRight, Code, Cpu, GitBranch, ArrowRight, Users } from 'lucide-react'
+import { ChevronRight, Code, Cpu, GitBranch, ArrowRight, Users, BookOpen } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Link } from 'react-router-dom'
 import { Badge } from '@/components/ui/badge'
@@ -153,6 +153,21 @@ export function HeroSection() {
                 <Users className="mr-2 h-5 w-5" />
                 {isEn ? 'Meet the Survivors' : '认识幸存者'}
               </Link>
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="border-emerald-700/50 text-emerald-400 hover:bg-emerald-900/30 hover:text-emerald-300 px-8 h-12 text-base"
+              asChild
+            >
+              <a 
+                href="https://docs.newenergycoder.club/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <BookOpen className="mr-2 h-5 w-5" />
+                {isEn ? 'Read Docs' : '查阅文档'}
+              </a>
             </Button>
           </div>
           

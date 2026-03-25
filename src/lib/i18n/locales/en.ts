@@ -529,6 +529,7 @@ export const enTranslations: Translations = {
     contact: 'Contact',
     learningMaterials: 'Learning Materials',
     joinClub: 'Join Club',
+    documentation: 'Documentation',
     gettingStarted: 'Getting Started',
     techRoadmap: {
       title: 'Tech Roadmap',

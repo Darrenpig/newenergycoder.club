@@ -386,6 +386,7 @@ export const zhTranslations: Translations = {
     contact: '联系',
     learningMaterials: '学习材料',
     joinClub: '加入NEC仓库实验室',
+    documentation: '文档中心',
     gettingStarted: '入门文档',
     techRoadmap: {
       title: '技术路线',

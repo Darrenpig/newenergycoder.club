@@ -1,8 +1,9 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Clock, Banknote, Cpu, Users, Trophy, AlertTriangle } from 'lucide-react'
+import { Clock, Banknote, Cpu, Users, Trophy, AlertTriangle, ExternalLink } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 export function OriginStory() {
@@ -162,7 +163,7 @@ export function OriginStory() {
             </>
           )}
 
-          <div className="text-center">
+          <div className="text-center flex gap-4 justify-center">
             <Button 
               variant="outline" 
               onClick={() => setShowDetails(!showDetails)}
@@ -170,8 +171,17 @@ export function OriginStory() {
             >
               {showDetails 
                 ? (isEn ? 'Show Less' : '收起详情')
-                : (isEn ? 'Read Full Story' : '阅读完整故事')
+                : (isEn ? 'Show More' : '显示更多')
               }
+            </Button>
+            <Button 
+              asChild
+              className="bg-amber-500 hover:bg-amber-600 text-slate-900"
+            >
+              <Link to="/story">
+                {isEn ? 'Read Full Story' : '阅读完整故事'}
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </Link>
             </Button>
           </div>
         </div>

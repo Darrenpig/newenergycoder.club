@@ -35,7 +35,11 @@ export default async function handler(req: any, res: any) {
     return
   }
   try {
-    const { name, email, subject, message } = req.body || {}
+    const body =
+      typeof req.body === 'string'
+        ? JSON.parse(req.body || '{}')
+        : (req.body || {})
+    const { name, email, subject, message } = body
     if (!name || !email || !subject || !message) {
       res.status(400).json({ error: 'Invalid payload' })
       return

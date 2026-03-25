@@ -29,6 +29,11 @@ export function CTASection() {
             <Button variant="outline" size="lg" className="glass-card hover-lift px-8 py-4 text-lg" asChild>
               <Link to="/contact">{t.nav.contact}</Link>
             </Button>
+            <Button variant="outline" size="lg" className="glass-card hover-lift px-8 py-4 text-lg" asChild>
+              <a href="https://docs.newenergycoder.club/" target="_blank" rel="noopener noreferrer">
+                {t.footer?.documentation || '文档中心'}
+              </a>
+            </Button>
           </div>
         </div>
       </div>

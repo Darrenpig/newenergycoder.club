@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { PageLayout } from '@/components/layout/PageLayout'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { CheckCircle, Users, Code, Heart, ArrowRight, Calendar, Target, Send, Download } from 'lucide-react'
+import { Users, Code, Heart, ArrowRight, Target, Send, Download } from 'lucide-react'
 import { useTranslation } from '@/contexts/LanguageContext'
-import { type FloatingControls, type AspectRatio } from '@/components/ui/floating-controls'
+import { type AspectRatio } from '@/components/ui/floating-controls'
 import WeChatIcon from '@/assets/wechat.png?url'
 import FeishuIcon from '@/feishu.png?url'
 import DarrenPigFeishu from '@/DarrenPig_Feishu.png?url'
@@ -27,24 +27,24 @@ const roadmapSteps = [
   },
   {
     id: 3,
-    title: "提交申请",
-    description: "填写加入申请表单",
+    title: "加入组织",
+    description: "在 GitHub 上关注我们的开源组织并了解项目",
     icon: Target,
-    duration: "10-15分钟"
+    duration: "1-5分钟"
   },
   {
     id: 4,
-    title: "等待审核",
-    description: "团队审核您的申请",
-    icon: Calendar,
-    duration: "1-3个工作日"
+    title: "参与贡献",
+    description: "寻找 Good First Issue，提交你的第一个 PR 或 Issue",
+    icon: Send,
+    duration: "1-3天"
   },
   {
     id: 5,
-    title: "欢迎加入",
-    description: "获得邀请，开始协作之旅",
+    title: "深入合作",
+    description: "与团队成员共同开发核心模块，参加线上/线下技术会议",
     icon: Heart,
-    duration: "即时"
+    duration: "长期"
   }
 ]
 

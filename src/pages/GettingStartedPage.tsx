@@ -454,6 +454,25 @@ export default function GettingStartedPage() {
               <Card className="hover:shadow-lg transition-all duration-300 text-center">
                 <CardContent className="p-6">
                   <BookOpen className="h-12 w-12 mx-auto mb-4 text-primary" />
+                  <h3 className="font-semibold mb-2">NEC 文档中心</h3>
+                  <p className="text-sm text-muted-foreground mb-4">NEC官方文档中心，提供系统的学习指南与技术参考</p>
+                  <Button variant="outline" size="sm" asChild>
+                    <a href="https://docs.newenergycoder.club/" target="_blank" rel="noopener noreferrer">
+                      查阅文档
+                      <ExternalLink className="ml-2 h-3 w-3" />
+                    </a>
+                  </Button>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+            >
+              <Card className="hover:shadow-lg transition-all duration-300 text-center">
+                <CardContent className="p-6">
+                  <BookOpen className="h-12 w-12 mx-auto mb-4 text-primary" />
                   <h3 className="font-semibold mb-2">NEC知识库</h3>
                   <p className="text-sm text-muted-foreground mb-4">飞书知识库（需登录），包含项目文档、技术资料和学习资源</p>
                   <Button variant="outline" size="sm" asChild>

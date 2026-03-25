@@ -27,6 +27,12 @@ const getToolItems = (isEn: boolean) => [
 // 资源菜单项 - 支持国际化
 const getResourceItems = (isEn: boolean) => [
   { 
+    label: isEn ? 'Documentation' : '文档中心', 
+    href: 'https://docs.newenergycoder.club/',
+    description: isEn ? 'Complete documentation and guides' : '完整的文档和指南',
+    external: true
+  },
+  { 
     label: isEn ? 'Getting Started' : '入门文档', 
     href: '/getting-started',
     description: isEn ? 'Quick start guide for beginners' : '新手指南与快速开始'

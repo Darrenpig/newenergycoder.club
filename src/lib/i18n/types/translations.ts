@@ -391,6 +391,7 @@ export interface Translations {
     contact: string;
     learningMaterials: string;
     joinClub: string;
+    documentation: string;
     gettingStarted: string;
     techRoadmap: {
       title: string;
