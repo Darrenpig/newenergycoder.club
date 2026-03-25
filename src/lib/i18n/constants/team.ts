@@ -498,6 +498,20 @@ export const contributors: TeamMember[] = [
     bio: '负责机械结构设计与装配。',
     image: '/image/contributer/庄皓钧.jpg',
     tags: ['机械设计', '装配']
+  },
+  {
+    name: '朱靓颖',
+    role: 'Contributer',
+    bio: '数据预测，数据分析，数学建模',
+    image: '/image/contributer/朱靓颖.jpg',
+    tags: ['数据预测', '数据分析', '数学建模']
+  },
+  {
+    name: '黄奕',
+    role: 'Contributer',
+    bio: '数据分析、数学建模等',
+    image: '/image/contributer/黄奕.jpg',
+    tags: ['数据分析', '数学建模']
   }
 ];
 
@@ -613,6 +627,16 @@ export const sponsors: Sponsor[] = [
       { item: '技术文档支持' }
     ],
     website: 'https://www.huaweicloud.com/'
+  },
+  {
+    name: '王浩',
+    role: '赞助商',
+    level: 'partner',
+    bio: 'FA社团，睿抗社团在职队员，熟练运用sw',
+    image: '/image/sponsor/王浩.jpg',
+    tags: ['SolidWorks'],
+    supports: [],
+    website: '#'
   }
 ];
 
