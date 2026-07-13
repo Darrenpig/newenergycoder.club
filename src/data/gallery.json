@@ -3512,5 +3512,16 @@
         "filename": "f20ee14678e4e875622c595e227dfec1.jpg"
       }
     ]
+  },
+  {
+    "id": "RC2026_official_alltuu",
+    "title": "2026 ROBOCON 官方素材（云相册）",
+    "titleEn": "2026 ROBOCON Official Materials (Cloud Album)",
+    "description": "2026 年 ROBOCON 官方素材照片直播，由 alltuu 云相册提供。后续将批量同步至 NEC R2 CDN。",
+    "descriptionEn": "2026 ROBOCON official materials photo live stream provided by alltuu cloud album. Will be synced to NEC R2 CDN in batch later.",
+    "cover": "",
+    "count": 0,
+    "externalUrl": "https://m.alltuu.com/album/73a32108739142c368e1fa39230fa9c4/?menu=live",
+    "photos": []
   }
 ]

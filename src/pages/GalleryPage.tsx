@@ -11,7 +11,7 @@ import {
   DialogDescription,
 } from '@/components/ui/dialog'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { ImageIcon, ChevronLeft, ChevronRight, X, Grid3X3, Images } from 'lucide-react'
+import { ImageIcon, ChevronLeft, ChevronRight, X, Grid3X3, Images, ExternalLink } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import galleryData from '@/data/gallery.json'
 
@@ -29,6 +29,7 @@ interface Album {
   descriptionEn: string
   cover: string
   count: number
+  externalUrl?: string
   photos: Photo[]
 }
 
@@ -187,43 +188,60 @@ export function GalleryPage() {
                 </CardContent>
               </Card>
 
-              {typedGalleryData.map(album => (
-                <Card
-                  key={album.id}
-                  className={cn(
-                    'cursor-pointer transition-all duration-300 hover:shadow-md hover:-translate-y-1 overflow-hidden',
-                    selectedAlbumId === album.id ? 'ring-2 ring-primary' : ''
-                  )}
-                  onClick={() => handleAlbumChange(album.id)}
-                >
-                  <div className="aspect-video relative overflow-hidden">
-                    {album.cover ? (
-                      <img
-                        src={getThumbnailUrl(album.cover)}
-                        alt={isZh ? album.title : album.titleEn}
-                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                        loading="lazy"
-                        decoding="async"
-                        onError={e => {
-                          e.currentTarget.src = album.cover
-                        }}
-                      />
-                    ) : (
-                      <div className="absolute inset-0 bg-muted flex items-center justify-center">
-                        <ImageIcon className="h-10 w-10 text-muted-foreground/50" />
-                      </div>
+              {typedGalleryData.map(album => {
+                const isExternal = Boolean(album.externalUrl)
+                return (
+                  <Card
+                    key={album.id}
+                    className={cn(
+                      'cursor-pointer transition-all duration-300 hover:shadow-md hover:-translate-y-1 overflow-hidden',
+                      selectedAlbumId === album.id ? 'ring-2 ring-primary' : ''
                     )}
-                  </div>
-                  <CardContent className="p-4">
-                    <h3 className="font-semibold line-clamp-1">
-                      {isZh ? album.title : album.titleEn}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      {album.count} {t.gallery.photoCount}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
+                    onClick={() => {
+                      if (isExternal && album.externalUrl) {
+                        window.open(album.externalUrl, '_blank', 'noopener,noreferrer')
+                      } else {
+                        handleAlbumChange(album.id)
+                      }
+                    }}
+                  >
+                    <div className="aspect-video relative overflow-hidden">
+                      {album.cover ? (
+                        <img
+                          src={getThumbnailUrl(album.cover)}
+                          alt={isZh ? album.title : album.titleEn}
+                          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                          loading="lazy"
+                          decoding="async"
+                          onError={e => {
+                            e.currentTarget.src = album.cover
+                          }}
+                        />
+                      ) : (
+                        <div className="absolute inset-0 bg-muted flex items-center justify-center">
+                          <ImageIcon className="h-10 w-10 text-muted-foreground/50" />
+                        </div>
+                      )}
+                      {isExternal && (
+                        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-white opacity-0 hover:opacity-100 transition-opacity duration-300">
+                          <ExternalLink className="h-8 w-8 mb-2" />
+                          <span className="text-sm font-medium">{t.gallery.viewCloudAlbum}</span>
+                        </div>
+                      )}
+                    </div>
+                    <CardContent className="p-4">
+                      <h3 className="font-semibold line-clamp-1">
+                        {isZh ? album.title : album.titleEn}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        {isExternal
+                          ? t.gallery.viewCloudAlbum
+                          : `${album.count} ${t.gallery.photoCount}`}
+                      </p>
+                    </CardContent>
+                  </Card>
+                )
+              })}
             </div>
           </div>
         </section>
@@ -239,15 +257,17 @@ export function GalleryPage() {
                 >
                   {t.gallery.allAlbums}
                 </TabsTrigger>
-                {typedGalleryData.map(album => (
-                  <TabsTrigger
-                    key={album.id}
-                    value={album.id}
-                    className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
-                  >
-                    {isZh ? album.title : album.titleEn}
-                  </TabsTrigger>
-                ))}
+                {typedGalleryData
+                  .filter(album => !album.externalUrl)
+                  .map(album => (
+                    <TabsTrigger
+                      key={album.id}
+                      value={album.id}
+                      className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                    >
+                      {isZh ? album.title : album.titleEn}
+                    </TabsTrigger>
+                  ))}
               </TabsList>
             </Tabs>
           </div>

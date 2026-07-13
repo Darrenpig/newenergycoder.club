@@ -176,7 +176,8 @@ export const zhTranslations: Translations = {
     loading: '加载中...',
     loadError: '图片加载失败',
     noPhotos: '暂无照片',
-    backToAlbums: '返回相册'
+    backToAlbums: '返回相册',
+    viewCloudAlbum: '查看云相册'
   },
   hero: {
     tagline: '从200块生活费到竞赛机器人',

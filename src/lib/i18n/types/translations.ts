@@ -48,6 +48,7 @@ export interface Translations {
     loadError: string;
     noPhotos: string;
     backToAlbums: string;
+    viewCloudAlbum: string;
   };
   
   // Hero Section
