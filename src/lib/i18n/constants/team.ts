@@ -301,10 +301,10 @@ export const contributors: TeamMember[] = [
   { name: '岳添俊', role: 'C/Contributor', bio: 'c语言', image: 'https://cdn.newenergycoder.club/images/src/image/contributors/岳添俊.jpg' },
   {
     name: '崇瑶',
-    role: 'Contributor',
-    bio: '正在学习机械相关知识',
+    role: '仓库运营贡献者',
+    bio: '具备NEC仓库运营相关参与经验，作为贡献者致力于优化仓库运营流程，当前专注于仓库相关事务的落地与优化工作。',
     image: 'https://cdn.newenergycoder.club/images/src/image/contributors/崇瑶.jpg',
-    tags: ['NEC新人', 'Contributor', '学习成长', '可持续能源']
+    tags: ['仓库运营', '流程优化', '运营落地', 'Contributor']
   },
   {
     name: '崔正阳',

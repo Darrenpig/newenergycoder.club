@@ -79,7 +79,7 @@ src/image/
 | `殷子豪.jpg` | 殷子豪 | Developer&文艺工作者 | 运营宣传与文字编辑，负责团队内容创作和对外传播。 | `https://cdn.newenergycoder.club/images/src/image/contributer/殷子豪.jpg` |
 | `孙如婕.jpg` | 孙如婕 | 灵巧手横向开发贡献者 | 专注于灵巧手的横向开发，为项目提供创新的技术解决方案和开发支持。 | `https://cdn.newenergycoder.club/images/src/image/contributer/孙如婕.jpg` |
 | `凌敏菲.jpg` | 凌敏菲 | Contributor | 硬件组成员，积极参与NEC社区建设与项目贡献。 | `https://cdn.newenergycoder.club/images/src/image/contributer/凌敏菲.jpg` |
-| `崇瑶.jpg` | 崇瑶 | Contributor | NEC新人，正在练习，期待在可持续能源与机器人领域持续成长。 | `https://cdn.newenergycoder.club/images/src/image/contributer/崇瑶.jpg` |
+| `崇瑶.jpg` | 崇瑶 | 仓库运营贡献者 | 具备NEC仓库运营相关参与经验，作为贡献者致力于优化仓库运营流程，当前专注于仓库相关事务的落地与优化工作。 | `https://cdn.newenergycoder.club/images/src/image/contributors/崇瑶.jpg` |
 
 ### 💰 赞助商团队 (Sponsors Team)
 对应i18n.ts中的 `team.sponsors` 数组
