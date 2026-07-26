@@ -48,6 +48,8 @@ export interface Translations {
     loadError: string;
     noPhotos: string;
     backToAlbums: string;
+    videosTitle: string;
+    videosDescription: string;
   };
   
   // Hero Section

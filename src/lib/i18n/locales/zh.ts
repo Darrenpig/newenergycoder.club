@@ -176,7 +176,9 @@ export const zhTranslations: Translations = {
     loading: '加载中...',
     loadError: '图片加载失败',
     noPhotos: '暂无照片',
-    backToAlbums: '返回相册'
+    backToAlbums: '返回相册',
+    videosTitle: '赛场视频',
+    videosDescription: 'ROBOCON 2026 国内选拔赛现场影像。'
   },
   hero: {
     tagline: '从200块生活费到竞赛机器人',

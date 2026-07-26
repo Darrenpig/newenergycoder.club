@@ -1,0 +1,23 @@
+[
+  {
+    "id": "RC2026-venue-video-01",
+    "title": "ROBOCON 2026 赛场视频 01",
+    "titleEn": "ROBOCON 2026 Venue Video 01",
+    "src": "https://cdn.newenergycoder.club/videos/robocon/RC2026_venue/RC2026-venue-video-01.mp4",
+    "poster": "https://cdn.newenergycoder.club/videos/robocon/RC2026_venue/posters/RC2026-venue-video-01.jpg"
+  },
+  {
+    "id": "RC2026-venue-video-02",
+    "title": "ROBOCON 2026 赛场视频 02",
+    "titleEn": "ROBOCON 2026 Venue Video 02",
+    "src": "https://cdn.newenergycoder.club/videos/robocon/RC2026_venue/RC2026-venue-video-02.mp4",
+    "poster": "https://cdn.newenergycoder.club/videos/robocon/RC2026_venue/posters/RC2026-venue-video-02.jpg"
+  },
+  {
+    "id": "RC2026-venue-video-03",
+    "title": "ROBOCON 2026 赛场视频 03",
+    "titleEn": "ROBOCON 2026 Venue Video 03",
+    "src": "https://cdn.newenergycoder.club/videos/robocon/RC2026_venue/RC2026-venue-video-03.mp4",
+    "poster": "https://cdn.newenergycoder.club/videos/robocon/RC2026_venue/posters/RC2026-venue-video-03.jpg"
+  }
+]

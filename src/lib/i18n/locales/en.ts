@@ -102,7 +102,9 @@ export const enTranslations: Translations = {
     loading: 'Loading...',
     loadError: 'Failed to load image',
     noPhotos: 'No photos yet',
-    backToAlbums: 'Back to Albums'
+    backToAlbums: 'Back to Albums',
+    videosTitle: 'Venue Videos',
+    videosDescription: 'On-site footage from the ROBOCON 2026 national competition.'
   },
   hero: {
     tagline: 'From broke student stipend to competition robots',
