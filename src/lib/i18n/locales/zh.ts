@@ -354,10 +354,10 @@ export const zhTranslations: Translations = {
         github: 'https://github.com/zhengqinwen'
       },
       {
-        name: '杨力滔',
+        name: '杨力涛',
         role: '星闪手柄开发工程师',
         bio: '星闪手柄开发专家，熟悉STM32+RTOS C语言开发。',
-        image: 'https://cdn.newenergycoder.club/images/src/image/developer/杨力滔.JPG',
+        image: 'https://cdn.newenergycoder.club/images/src/image/developer/杨力涛.JPG',
         tags: ['星闪手柄', 'STM32', 'RTOS', 'C语言', '嵌入式开发', '硬件控制'],
         github: 'https://github.com/yanglitao'
       },

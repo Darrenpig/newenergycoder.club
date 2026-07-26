@@ -40,7 +40,7 @@ src/image/
 | `李硕.png` | 李硕 | 硬件系统架构师 | 专注于硬件系统架构设计和技术选型，为项目提供技术指导。 | `https://cdn.newenergycoder.club/images/src/image/developer/李硕.png` |
 | `牛良旭.jpg` | 牛良旭 | DevOps电池管理工程师 | 负责项目的持续集成和部署，保障开发流程的高效运行。 | `https://cdn.newenergycoder.club/images/src/image/developer/牛良旭.jpg` |
 | `郑钦文.jpg` | 郑钦文 | 机电一体化开发工程师 | 专注于机电设计开发，为用户提供优质的移动端体验。 | `https://cdn.newenergycoder.club/images/src/image/developer/郑钦文.jpg` |
-| `杨力滔.JPG` | 杨力滔 | 星闪手柄开发工程师 | 星闪手柄开发专家，熟悉STM32+RTOS C语言开发。 | `https://cdn.newenergycoder.club/images/src/image/developer/杨力滔.JPG` |
+| `杨力涛.JPG` | 杨力涛 | 星闪手柄开发工程师 | 星闪手柄开发专家，熟悉STM32+RTOS C语言开发。 | `https://cdn.newenergycoder.club/images/src/image/developer/杨力涛.JPG` |
 | `彭柯颖.jpg` | 彭柯颖 | 机械R1机器人开发者 | 新加入的开发团队成员，积极参与机器人项目开发，学习新技术。 | `https://cdn.newenergycoder.club/images/src/image/developer/彭柯颖.jpg` |
 
 ### 🎨 设计团队 (Designers Team)
