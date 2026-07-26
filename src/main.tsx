@@ -14,6 +14,12 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger, SplitText, Flip)
 }
 
+// 新版本部署后，旧标签页中的动态 import 会因 chunk 哈希变化而失败，
+// 监听 vite:preloadError 自动刷新加载新版本，避免白屏错误页
+window.addEventListener('vite:preloadError', () => {
+  window.location.reload()
+})
+
 // 初始化Sentry错误监控（防止初始化失败阻断启动）
 try {
   initSentry();
