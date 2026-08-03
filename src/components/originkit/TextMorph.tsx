@@ -77,9 +77,9 @@ export function TextMorph({
   )
 
   return (
-    <span ref={containerRef} className={`inline-grid ${className}`} aria-label={words.join(' ')}>
-      <span ref={wordARef} className="col-start-1 row-start-1 whitespace-nowrap will-change-transform" />
-      <span ref={wordBRef} className="col-start-1 row-start-1 whitespace-nowrap will-change-transform" aria-hidden="true" />
+    <span ref={containerRef} className="inline-grid" aria-label={words.join(' ')}>
+      <span ref={wordARef} className={`col-start-1 row-start-1 whitespace-nowrap will-change-transform ${className}`} />
+      <span ref={wordBRef} className={`col-start-1 row-start-1 whitespace-nowrap will-change-transform ${className}`} aria-hidden="true" />
     </span>
   )
 }

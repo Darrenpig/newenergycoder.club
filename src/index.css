@@ -126,6 +126,14 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  /* SplitText 等子元素包裹场景：渐变背景需继承到子元素自身裁剪，否则文字透明且无背景导致不可见 */
+  .gradient-text .title-word,
+  .gradient-text .highlight-word {
+    background: inherit;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
   
   /* Enhanced glass morphism effect */
   .glass-card {
