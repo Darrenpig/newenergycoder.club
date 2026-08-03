@@ -15,10 +15,10 @@ export function ManifestoSection() {
   const textRef = useRef<HTMLDivElement>(null)
   const sloganRef = useRef<HTMLParagraphElement>(null)
   const marqueeRef = useRef<HTMLDivElement>(null)
-  const marqueeTween = useRef<gsap.core.Tween | null>(null)
+  const rowTweens = useRef<gsap.core.Tween[]>([])
 
-  // 汇总所有成员（去重），并复制一份实现无缝滚动
-  const members = useMemo(() => {
+  // 汇总所有成员（去重），均分为三行，每行复制一份实现无缝滚动
+  const memberRows = useMemo(() => {
     const groups = [t.team.maintainers, t.team.developers, t.team.designers, t.team.contributors]
     const seen = new Set<string>()
     const all = groups
@@ -28,7 +28,12 @@ export function ManifestoSection() {
         seen.add(m.name)
         return true
       })
-    return [...all, ...all]
+    const rowCount = 3
+    const perRow = Math.ceil(all.length / rowCount)
+    return Array.from({ length: rowCount }, (_, i) => {
+      const slice = all.slice(i * perRow, (i + 1) * perRow)
+      return [...slice, ...slice]
+    })
   }, [t])
 
   useGSAP(
@@ -96,18 +101,23 @@ export function ManifestoSection() {
           }
         )
 
-        const track = marqueeRef.current?.querySelector('.member-track') as HTMLElement | null
-        if (track) {
+        // 三行成员墙：奇偶行反向交错无限滚动
+        const tracks = marqueeRef.current?.querySelectorAll<HTMLElement>('.member-track')
+        rowTweens.current = []
+        tracks?.forEach((track, i) => {
           const totalWidth = track.scrollWidth / 2
-          if (totalWidth > 0) {
-            marqueeTween.current = gsap.to(track, {
-              x: -totalWidth,
-              duration: Math.max(30, members.length * 1.6),
-              repeat: -1,
-              ease: 'none',
-            })
-          }
-        }
+          if (totalWidth <= 0) return
+          const duration = Math.max(28, (track.children.length / 2) * 1.6)
+          const reverse = i % 2 === 1
+          const tween = reverse
+            ? gsap.fromTo(
+                track,
+                { x: -totalWidth },
+                { x: 0, duration, repeat: -1, ease: 'none' }
+              )
+            : gsap.to(track, { x: -totalWidth, duration, repeat: -1, ease: 'none' })
+          rowTweens.current.push(tween)
+        })
 
         return () => {
           splits.forEach((s) => s.revert())
@@ -116,18 +126,18 @@ export function ManifestoSection() {
 
       return () => ctx.revert()
     },
-    { scope: sectionRef, dependencies: [members.length] }
+    { scope: sectionRef, dependencies: [memberRows] }
   )
 
   const handleMarqueeEnter = () => {
-    if (marqueeTween.current) {
-      gsap.to(marqueeTween.current, { timeScale: 0.25, duration: 0.4, ease: 'power2.out' })
-    }
+    rowTweens.current.forEach((tween) => {
+      gsap.to(tween, { timeScale: 0.25, duration: 0.4, ease: 'power2.out' })
+    })
   }
   const handleMarqueeLeave = () => {
-    if (marqueeTween.current) {
-      gsap.to(marqueeTween.current, { timeScale: 1, duration: 0.4, ease: 'power2.out' })
-    }
+    rowTweens.current.forEach((tween) => {
+      gsap.to(tween, { timeScale: 1, duration: 0.4, ease: 'power2.out' })
+    })
   }
 
   return (
@@ -169,32 +179,34 @@ export function ManifestoSection() {
           </p>
         </div>
 
-        {/* 成员滚动墙 */}
+        {/* 成员滚动墙：三行交错方向 */}
         <div
           ref={marqueeRef}
-          className="mt-16 overflow-hidden py-2 opacity-0 [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]"
+          className="mt-16 space-y-4 overflow-hidden py-2 opacity-0 [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]"
           onMouseEnter={handleMarqueeEnter}
           onMouseLeave={handleMarqueeLeave}
         >
-          <div className="member-track flex w-max items-stretch gap-4 px-2">
-            {members.map((member, index) => (
-              <div
-                key={`${member.name}-${index}`}
-                className="flex w-52 flex-shrink-0 items-center gap-3 rounded-2xl border border-border/50 bg-card/40 p-3 backdrop-blur-sm transition-colors hover:border-primary/40"
-              >
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="h-12 w-12 flex-shrink-0 rounded-full border border-primary/20 object-cover"
-                  loading="lazy"
-                />
-                <div className="min-w-0">
-                  <p className="truncate text-sm font-semibold">{member.name}</p>
-                  <p className="truncate text-xs text-muted-foreground">{member.role}</p>
+          {memberRows.map((row, rowIndex) => (
+            <div key={rowIndex} className="member-track flex w-max items-stretch gap-4 px-2">
+              {row.map((member, index) => (
+                <div
+                  key={`${member.name}-${index}`}
+                  className="flex w-52 flex-shrink-0 items-center gap-3 rounded-2xl border border-border/50 bg-card/40 p-3 backdrop-blur-sm transition-colors hover:border-primary/40"
+                >
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="h-12 w-12 flex-shrink-0 rounded-full border border-primary/20 object-cover"
+                    loading="lazy"
+                  />
+                  <div className="min-w-0">
+                    <p className="truncate text-sm font-semibold">{member.name}</p>
+                    <p className="truncate text-xs text-muted-foreground">{member.role}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
     </section>
