@@ -112,6 +112,9 @@ export const enTranslations: Translations = {
     description: 'Join a community of developers passionate about creating innovative software solutions for renewable energy, sustainability, and a greener tomorrow.',
     joinCommunity: 'Explore Open Source',
     viewGithub: 'View on Gitee',
+    scanQRTitle: 'New here? Scan to connect',
+    scanQRDesc: 'Scan with WeChat to add our community buddy (note your name + school/field)',
+    morphWords: ['Open Source', 'Green Energy Tech', 'Robotics Engineering', 'Embedded Systems', 'AI Pair Programming'],
     codingWorkshops: 'Coding Workshops',
     codingWorkshopsDesc: 'Weekly sessions to learn sustainable tech development',
     innovationProjects: 'Innovation Projects',
@@ -240,6 +243,7 @@ export const enTranslations: Translations = {
       id: 'New Energy Programming Club',
       copyButton: 'Copy Group Name',
       copied: 'Copied!',
+      qrHint: 'Scan the QR code above to add our community buddy on WeChat',
       addTips: 'How to join:',
       addTipsList: [
         'Copy the group name above',

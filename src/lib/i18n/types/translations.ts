@@ -59,6 +59,9 @@ export interface Translations {
     description: string;
     joinCommunity: string;
     viewGithub: string;
+    scanQRTitle: string;
+    scanQRDesc: string;
+    morphWords: string[];
     codingWorkshops: string;
     codingWorkshopsDesc: string;
     innovationProjects: string;
@@ -180,6 +183,7 @@ export interface Translations {
       id: string
       copyButton: string
       copied: string
+      qrHint: string
       addTips: string
       addTipsList: string[]
     }

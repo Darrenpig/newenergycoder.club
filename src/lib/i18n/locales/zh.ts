@@ -30,6 +30,7 @@ export const zhTranslations: Translations = {
       id: '新能源编程俱乐部',
       copyButton: '复制群名',
       copied: '已复制！',
+      qrHint: '扫一扫上方二维码，添加社区伙伴为好友，备注来意即可',
       addTips: '如何加入：',
       addTipsList: [
         '复制上面的群名',
@@ -186,6 +187,9 @@ export const zhTranslations: Translations = {
     description: '加入我们的社区，通过开源项目、技术研讨会和协作学习，推动可再生能源和可持续技术的发展。',
     joinCommunity: '探索开源项目',
     viewGithub: '查看Gitee',
+    scanQRTitle: '新成员扫码了解',
+    scanQRDesc: '微信扫一扫添加社区伙伴，备注姓名 + 学校/方向',
+    morphWords: ['开源协作', '新能源科技', '机器人工程', '嵌入式开发', 'Vibe coding'],
     codingWorkshops: '编程工作坊',
     codingWorkshopsDesc: '每周动手编程工作坊',
     innovationProjects: '创新项目',

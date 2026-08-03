@@ -7,6 +7,8 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { SplitText } from 'gsap/SplitText'
 import giteeStats from '@/data/team-gitee-stats.json'
+import { Particles } from '@/components/reactbits/Particles'
+import { TextMorph } from '@/components/originkit/TextMorph'
 
 export function HeroSection() {
   const t = useTranslation()
@@ -16,6 +18,7 @@ export function HeroSection() {
   const titleRef = useRef<HTMLHeadingElement>(null)
   const highlightRef = useRef<HTMLSpanElement>(null)
   const subtitleRef = useRef<HTMLParagraphElement>(null)
+  const morphRef = useRef<HTMLDivElement>(null)
   const statsRef = useRef<HTMLDivElement>(null)
   const buttonsRef = useRef<HTMLDivElement>(null)
   const cardsRef = useRef<HTMLDivElement>(null)
@@ -120,6 +123,14 @@ export function HeroSection() {
           { opacity: 0, y: 40 },
           { opacity: 1, y: 0, duration: 0.8 },
           0.95
+        )
+
+        // 4b. TextMorph keywords line fades up right after subtitle
+        master.fromTo(
+          morphRef.current,
+          { opacity: 0, y: 30 },
+          { opacity: 1, y: 0, duration: 0.7 },
+          1.05
         )
 
         // 5. Stats row: slide up + counters roll
@@ -439,6 +450,9 @@ export function HeroSection() {
       <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-gradient-to-tr from-accent/25 to-primary/15 blur-3xl animate-pulse" />
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-48 w-48 rounded-full bg-primary/10 blur-3xl" />
 
+      {/* ReactBits-style interactive particles layer */}
+      <Particles className="absolute inset-0" particleCount={90} />
+
       <div className="container relative z-10">
         <div className="mx-auto max-w-5xl text-center">
           <div className="flex items-center justify-center mb-8">
@@ -470,6 +484,14 @@ export function HeroSection() {
           >
             {t.hero.description}
           </p>
+
+          {/* OriginKit-style morphing keywords */}
+          <div ref={morphRef} className="mt-6 opacity-0">
+            <TextMorph
+              words={t.hero.morphWords}
+              className="text-2xl sm:text-3xl font-bold gradient-text"
+            />
+          </div>
 
           {/* Stats row */}
           <div
@@ -535,6 +557,29 @@ export function HeroSection() {
                 <span className="relative z-10">{t.hero.viewGithub}</span>
               </a>
             </Button>
+          </div>
+
+          {/* New member WeChat QR entry */}
+          <div className="mt-8 flex justify-center">
+            <Link
+              to="/join"
+              className="group flex items-center gap-4 rounded-2xl border border-primary/15 bg-card/50 px-5 py-3 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"
+            >
+              <img
+                src="/images/wechat-qr-new-member-square.jpg"
+                alt="WeChat QR code for new members"
+                className="h-16 w-16 rounded-lg border border-muted object-cover transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div className="text-left">
+                <p className="text-sm font-semibold text-foreground">
+                  {t.hero.scanQRTitle}
+                </p>
+                <p className="text-xs text-muted-foreground mt-0.5">
+                  {t.hero.scanQRDesc}
+                </p>
+              </div>
+            </Link>
           </div>
 
           {/* Tech stack marquee */}

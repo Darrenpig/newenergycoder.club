@@ -112,6 +112,17 @@ export function JoinPage() {
                        {copied ? t.joinPage.wechat.copied : t.joinPage.wechat.copyButton}
                      </Button>
                   </div>
+
+                  {/* New member WeChat QR code */}
+                  <div className="flex flex-col items-center gap-3">
+                    <img
+                      src="/images/wechat-qr-new-member.jpg"
+                      alt="WeChat QR code for new members"
+                      className="h-64 w-auto rounded-xl border border-muted shadow-sm bg-white p-2"
+                      loading="lazy"
+                    />
+                    <p className="text-sm text-muted-foreground">{t.joinPage.wechat.qrHint}</p>
+                  </div>
                   
                   <div className="bg-muted/50 p-4 rounded-lg">
                     <h4 className="font-semibold mb-2">{t.joinPage.wechat.addTips}</h4>
