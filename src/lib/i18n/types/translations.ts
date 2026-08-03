@@ -112,12 +112,25 @@ export interface Translations {
       conditions: string[];
     };
   };
-  
-  
+
+  // Manifesto Section
+  manifesto: {
+    title: string;
+    p1: string;
+    p2DifferentLabel: string;
+    p2Different: string;
+    p2SameLabel: string;
+    p2Same: string;
+    p3: string;
+    slogan: string;
+  };
+
+
   // Team Section
   team: {
     title: string;
     description: string;
+    shortDescription: string;
     maintainerTitle: string;
     developerTitle: string;
     designerTitle: string;

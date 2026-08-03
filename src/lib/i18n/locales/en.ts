@@ -179,8 +179,19 @@ export const enTranslations: Translations = {
       ]
     }
   },
+  manifesto: {
+    title: 'Our Manifesto',
+    p1: 'We met where code meets dreams — students debugging late into the night, developers in pursuit of elegance, and believers in sustainable technology obsessed with one question: how to make the world more efficient and cleaner.',
+    p2DifferentLabel: 'We are different',
+    p2Different: 'Majors, backgrounds — even our favorite programming languages may differ.',
+    p2SameLabel: 'We are the same',
+    p2Same: 'We believe in tech for good, in the power of youth, and that sustainability is not a choice, but a must.',
+    p3: 'Here, curiosity is the passport and practice the common tongue. We are not just building products — we are building the greener, fairer, smarter future we believe in.',
+    slogan: 'We are a verb.'
+  },
   team: {
     title: 'Who Are We?',
+    shortDescription: 'Meet the people building the community — maintainers, developers, designers, and contributors.',
     description: 'We are a group meeting at the intersection of code and dreams. There are students debugging late at night, developers chasing elegance, and sustainability believers obsessed with "how to make the world more efficient and cleaner". We differ — in majors, backgrounds, and even the programming languages we love. Yet we are the same — we believe in technology for good, in the power of youth, and that sustainability is not a choice but a necessity. Here, curiosity is a passport and practice is the common language. We are not only building products; we are building a greener, fairer, and smarter future. We are a verb in action.',
     maintainerTitle: 'Maintainer',
     developerTitle: 'Developer',

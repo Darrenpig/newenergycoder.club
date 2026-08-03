@@ -185,7 +185,7 @@ export function TeamSection({ selectedRatio }: TeamSectionProps) {
         <div ref={headerRef} className="text-center mb-16">
           <h2 className="text-3xl font-bold gradient-text sm:text-4xl">{t.team.title}</h2>
           <p className="mt-6 text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            {t.team.description}
+            {t.team.shortDescription}
           </p>
 
 

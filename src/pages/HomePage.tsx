@@ -1,6 +1,7 @@
 import { PageLayout } from '@/components/layout/PageLayout'
 import { HeroSection } from '@/components/home/HeroSection'
 import { AboutSection } from '@/components/home/AboutSection'
+import { ManifestoSection } from '@/components/home/ManifestoSection'
 
 import { TeamSection } from '@/components/home/TeamSection'
 import { TeamAnalysisSection } from '@/components/home/TeamAnalysisSection'
@@ -25,6 +26,7 @@ function HomePage() {
     >
       <HeroSection />
       <AboutSection />
+      <ManifestoSection />
       <TeamSection selectedRatio={selectedRatio} />
       <TeamAnalysisSection />
       <ProjectsSection selectedRatio={selectedRatio} />
