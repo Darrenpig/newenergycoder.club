@@ -5,6 +5,7 @@ import { GiteeIcon } from '@/components/ui/gitee-icon'
 import { useTranslation } from '@/contexts/LanguageContext'
 import { type AspectRatio } from '@/components/ui/floating-controls'
 import type { Translations } from '@/lib/i18n/types/translations'
+import { sponsorMetas } from '@/lib/i18n/constants/team'
 import { Button } from '@/components/ui/button'
 import { Link } from 'react-router-dom'
 import { useGSAP } from '@gsap/react'
@@ -23,28 +24,41 @@ interface TeamGroup {
   members: TeamMember[];
 }
 
-const getTeamGroups = (t: Translations): TeamGroup[] => [
-  {
-    title: t.team.maintainerTitle,
-    members: t.team.maintainers
-  },
-  {
-    title: t.team.developerTitle,
-    members: t.team.developers
-  },
-  {
-    title: t.team.designerTitle,
-    members: t.team.designers
-  },
-  {
-    title: t.team.contributorTitle,
-    members: t.team.contributors
-  },
-  {
-    title: t.team.sponsorTitle,
-    members: t.team.sponsors
-  }
-]
+const getTeamGroups = (t: Translations): TeamGroup[] => {
+  // 合并 sponsorMetas（不可译） + t.team.sponsors（可译） 得到 TeamMember 形状
+  const sponsors: TeamMember[] = sponsorMetas.map((meta, idx) => {
+    const text = t.team.sponsors[idx]
+    return {
+      name: meta.name,
+      role: text?.role ?? '',
+      bio: text?.bio ?? '',
+      image: meta.image ?? '',
+    }
+  })
+
+  return [
+    {
+      title: t.team.maintainerTitle,
+      members: t.team.maintainers
+    },
+    {
+      title: t.team.developerTitle,
+      members: t.team.developers
+    },
+    {
+      title: t.team.designerTitle,
+      members: t.team.designers
+    },
+    {
+      title: t.team.contributorTitle,
+      members: t.team.contributors
+    },
+    {
+      title: t.team.sponsorTitle,
+      members: sponsors
+    }
+  ]
+}
 
 interface TeamSectionProps {
   selectedRatio?: AspectRatio;

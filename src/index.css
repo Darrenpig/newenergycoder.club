@@ -189,6 +189,46 @@
     box-shadow: 0 0 30px hsl(var(--primary) / 0.5);
     transition: box-shadow 0.3s ease;
   }
+
+  /* MemberCard hover：纯 CSS 实现卡片上浮 + 头像放大，
+     替代原先每张卡挂 GSAP timeline 的方案，避免几十份监听器 */
+  .team-card {
+    transition:
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.35s ease,
+      border-color 0.35s ease;
+    will-change: transform;
+  }
+
+  .team-card:hover {
+    transform: translateY(-10px) scale(1.015);
+    box-shadow:
+      0 24px 48px -12px rgba(0, 0, 0, 0.35),
+      0 0 40px hsl(var(--primary) / 0.35);
+    border-color: hsl(var(--primary) / 0.6);
+  }
+
+  .team-card .member-avatar-zoom {
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .team-card:hover .member-avatar-zoom {
+    transform: scale(1.05);
+  }
+
+  /* 无障碍：用户开启减少动画时禁用 hover 位移 */
+  @media (prefers-reduced-motion: reduce) {
+    .team-card,
+    .team-card .member-avatar-zoom {
+      transition: none;
+    }
+    .team-card:hover {
+      transform: none;
+    }
+    .team-card:hover .member-avatar-zoom {
+      transform: none;
+    }
+  }
   
   /* Text clamp utilities */
   .line-clamp-2 {
