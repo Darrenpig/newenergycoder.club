@@ -45,6 +45,10 @@ export const ImageProxy: React.FC<ImageProxyProps> = ({
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [triedEncoded, setTriedEncoded] = useState(false);
+  // 重试次数上限：编码 URL → fallbackSrc → 内置代理服务，每条最多 1 次
+  // 避免源站持续 4xx/5xx 时用户看到反复"加载中-失败"的闪烁
+  const retryCountRef = React.useRef(0);
+  const MAX_RETRIES = 3;
 
   useEffect(() => {
     const nextSrc = encodeImageUrl(src);
@@ -52,6 +56,7 @@ export const ImageProxy: React.FC<ImageProxyProps> = ({
     setIsLoading(true);
     setHasError(false);
     setTriedEncoded(false);
+    retryCountRef.current = 0;
   }, [src]);
 
   const handleLoad = () => {
@@ -61,6 +66,13 @@ export const ImageProxy: React.FC<ImageProxyProps> = ({
 
   const handleError = () => {
     setIsLoading(false);
+
+    // 已达重试上限，停止再尝试，直接展示失败占位
+    if (retryCountRef.current >= MAX_RETRIES) {
+      setHasError(true);
+      return;
+    }
+    retryCountRef.current += 1;
     setHasError(true);
 
     // 首次出错且当前不是编码后的 URL，尝试编码后重试

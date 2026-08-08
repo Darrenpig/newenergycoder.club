@@ -143,7 +143,57 @@ export interface Translations {
     developers: TeamMember[];
     designers: TeamMember[];
     contributors: TeamMember[];
-    sponsors: TeamMember[];
+    /**
+     * 赞助商的可译字段（不含 id/image/website/level，那些在 constants/team.ts 的 sponsorMetas）。
+     * 数组顺序必须与 sponsorMetas 一一对应。
+     */
+    sponsors: Array<{
+      role: string;
+      bio: string;
+      tags: string[];
+      supports: Array<{ item: string; quantity?: string }>;
+    }>;
+    /** 赞助商区块的 UI 文案 */
+    sponsorSection: {
+      title: string;
+      subtitle: string;
+      levelNames: {
+        strategic: string;
+        gold: string;
+        silver: string;
+        bronze: string;
+        partner: string;
+      };
+      goldGroupTitle: string;
+      silverBronzeGroupTitle: string;
+      supportLabel: string;
+      visitWebsite: string;
+      ctaTitle: string;
+      ctaDescription: string;
+      ctaButton: string;
+    };
+    /** 成员筛选按钮的 i18n 标签 */
+    filterLabels: {
+      all: string;
+      maintainers: string;
+      developers: string;
+      designers: string;
+      contributors: string;
+    };
+    /** 团队统计区块的硬编码 UI 文案 */
+    statsLabels: {
+      maintainers: string;
+      maintainersDesc: string;
+      developers: string;
+      developersDesc: string;
+      designers: string;
+      designersDesc: string;
+      contributors: string;
+      contributorsDesc: string;
+      roleTypeHeader: string;
+      countHeader: string;
+      percentageHeader: string;
+    };
   };
   
   // CTA Section
