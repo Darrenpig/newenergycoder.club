@@ -1,4 +1,4 @@
-import { useRef, useLayoutEffect, useState } from 'react'
+import { useState } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { AvatarFallback } from '@/components/ui/avatar'
@@ -10,7 +10,6 @@ import { GiteeIcon } from '@/components/ui/gitee-icon'
 import { ImageProxy } from '@/components/ui/image-proxy'
 import { getProjectById } from '@/data/projects'
 import { cn } from '@/lib/utils'
-import { gsap } from 'gsap'
 import type { TeamMember } from '@/lib/i18n/types/translations'
 import type { AspectRatio } from '@/types/ui'
 
@@ -27,7 +26,7 @@ interface MemberCardProps {
 }
 
 const CARD_BASE_STYLES =
-  'team-card group overflow-hidden hover:shadow-lg transition-colors duration-300 bg-card/90 backdrop-blur-md border-primary/30 hover:border-primary/50 shadow-lg'
+  'team-card group overflow-hidden bg-card/90 backdrop-blur-md border-primary/30 shadow-lg'
 
 function SocialLinks({ member, compact = false }: { member: TeamMember; compact?: boolean }) {
   const iconSize = compact ? 'h-3.5 w-3.5' : 'h-4 w-4'
@@ -134,70 +133,13 @@ export function MemberCard({
   priority = false,
   className,
 }: MemberCardProps) {
-  const cardRef = useRef<HTMLDivElement>(null)
-  const avatarRef = useRef<HTMLDivElement>(null)
-  const timelineRef = useRef<gsap.core.Timeline | null>(null)
-
   const isFeatured = variant === 'featured'
 
-  // Hover timeline：头像放大 + 浮动 + 卡片上浮
-  useLayoutEffect(() => {
-    const card = cardRef.current
-    const avatar = avatarRef.current
-    if (!card) return
-
-    const tl = gsap.timeline({ paused: true })
-    tl.to(card, {
-      y: -10,
-      scale: 1.015,
-      boxShadow: '0 24px 48px -12px rgba(0,0,0,0.35), 0 0 40px hsl(var(--primary) / 0.35)',
-      borderColor: 'hsl(var(--primary) / 0.6)',
-      duration: 0.35,
-      ease: 'power2.out',
-    })
-
-    if (avatar) {
-      tl.to(
-        avatar,
-        {
-          scale: 1.05,
-          y: -4,
-          duration: 0.35,
-          ease: 'power2.out',
-        },
-        0
-      )
-      tl.to(
-        avatar,
-        {
-          y: -8,
-          duration: 0.8,
-          ease: 'sine.inOut',
-          yoyo: true,
-          repeat: -1,
-        },
-        0.35
-      )
-    }
-
-    timelineRef.current = tl
-
-    const onEnter = () => tl.play()
-    const onLeave = () => tl.reverse()
-
-    card.addEventListener('mouseenter', onEnter)
-    card.addEventListener('mouseleave', onLeave)
-
-    return () => {
-      card.removeEventListener('mouseenter', onEnter)
-      card.removeEventListener('mouseleave', onLeave)
-      tl.kill()
-    }
-  }, [])
+  // hover 动画由 index.css 中的 .team-card / .member-avatar-zoom 规则驱动，
+  // 不再为每张卡挂 GSAP timeline + 监听器（页面上几十张卡时开销可观）
 
   return (
     <Card
-      ref={cardRef}
       className={cn(CARD_BASE_STYLES, onClick && 'cursor-pointer', className)}
       onClick={(e) => {
         const target = e.target as HTMLElement
@@ -205,7 +147,7 @@ export function MemberCard({
         onClick?.()
       }}
     >
-      <div ref={avatarRef}>
+      <div className="member-avatar-zoom">
         <MemberAvatar member={member} aspectRatio={aspectRatio} priority={priority} />
       </div>
 

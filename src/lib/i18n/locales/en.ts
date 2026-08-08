@@ -1,4 +1,4 @@
-import { maintainers, developers, designers, contributors, sponsors } from '../constants/team';
+import { maintainers, developers, designers, contributors } from '../constants/team';
 import { Translations } from '../types/translations';
 import { learningTranslations } from '../constants/learning';
 
@@ -207,7 +207,136 @@ export const enTranslations: Translations = {
     developers,
     designers,
     contributors,
-    sponsors
+    sponsors: [
+      // Order must match sponsorMetas in constants/team.ts
+      {
+        role: 'Motor Partner',
+        bio: 'Professional motor solutions provider focused on high-performance brushless motors and drive systems.',
+        tags: ['Motors', 'Drive Systems'],
+        supports: [
+          { item: 'AK-series motors', quantity: 'Competition project support' },
+          { item: 'Driver kits' },
+          { item: 'Technical consulting' }
+        ]
+      },
+      {
+        role: 'Computing Partner',
+        bio: 'Provides GPU compute resources to support AI model training and research.',
+        tags: ['GPU Compute', 'AI Training'],
+        supports: [
+          { item: 'GPU compute credits', quantity: '¥1,000 quota' },
+          { item: 'Model training resources' },
+          { item: 'Research compute support' }
+        ]
+      },
+      {
+        role: 'Cloud Partner',
+        bio: 'Huawei Cloud provides dev boards and cloud computing resources for embedded and edge computing.',
+        tags: ['Dev Boards', 'Cloud Computing'],
+        supports: [
+          { item: 'Orange Pi dev boards', quantity: 'Project support' },
+          { item: 'Cloud server resources' },
+          { item: 'Technical documentation' }
+        ]
+      },
+      {
+        role: 'Hardware Partner',
+        bio: '华艺塑业 specializes in carbon fiber and engineering plastics machining for custom robot structural parts.',
+        tags: ['Carbon Fiber', 'Structural Machining'],
+        supports: [
+          { item: 'Carbon fiber sheet machining' },
+          { item: 'Acrylic cutting' },
+          { item: 'Structural prototyping' }
+        ]
+      },
+      {
+        role: 'Strategic Partner',
+        bio: 'Co-hosted by ISCAS, Huawei, and Nanjing Institute of Software Technology, focused on open-source talent development.',
+        tags: ['Student Programs', 'Tech Incubation'],
+        supports: [
+          { item: 'Open-source project funding', quantity: 'Annual project slots' },
+          { item: 'Mentor matching' },
+          { item: 'Community event support' }
+        ]
+      },
+      {
+        role: 'Gold Sponsor',
+        bio: 'Focused on R&D and applications of intelligent spatial perception and 3D reconstruction.',
+        tags: ['3D Printing', 'Innovative Tech'],
+        supports: [
+          { item: 'Spatial memory modules' },
+          { item: 'Technical consulting' }
+        ]
+      },
+      {
+        role: 'Gold Sponsor',
+        bio: 'Professional open-source hardware platform offering one-stop PCB prototyping and component sourcing.',
+        tags: ['Open Hardware', 'PCB Prototyping'],
+        supports: [
+          { item: 'PCB prototyping credits', quantity: 'Annual quota' },
+          { item: 'Component sourcing support' },
+          { item: 'OSHWHUB featured placement' }
+        ]
+      },
+      {
+        role: 'Motor Partner',
+        bio: '脉塔智能 specializes in RMD motors and drive solutions for high-performance servo systems.',
+        tags: ['RMD Motors', 'Servo Systems'],
+        supports: [
+          { item: 'RMD motor purchase credit', quantity: '¥10,000' },
+          { item: 'Driver technical support' },
+          { item: 'Bulk purchase discounts' }
+        ]
+      },
+      {
+        role: 'Tool Partner',
+        bio: '萝卜小酱 is a professional precision tool brand focused on electronics repair and robot assembly tools.',
+        tags: ['Precision Tools', 'Screwdrivers'],
+        supports: [
+          { item: 'Precision screwdriver sets', quantity: 'Team standard issue' },
+          { item: 'Soldering tool kits' },
+          { item: 'Repair workbenches' }
+        ]
+      }
+    ],
+    sponsorSection: {
+      title: 'Partners & Sponsors',
+      subtitle: 'Thanks to these organizations for technical support and resource sponsorship',
+      levelNames: {
+        strategic: 'Strategic Partner',
+        gold: 'Gold Sponsor',
+        silver: 'Silver Sponsor',
+        bronze: 'Bronze Sponsor',
+        partner: 'Community Partner'
+      },
+      goldGroupTitle: 'Gold Sponsors',
+      silverBronzeGroupTitle: 'Silver & Bronze',
+      supportLabel: 'What they provide',
+      visitWebsite: 'Visit website',
+      ctaTitle: 'Become a Partner',
+      ctaDescription: 'Support open-source engineering education, grow with NEC',
+      ctaButton: 'Contact Us'
+    },
+    filterLabels: {
+      all: 'All Members',
+      maintainers: 'Core Team',
+      developers: 'Developers',
+      designers: 'UI/UX',
+      contributors: 'Contributors'
+    },
+    statsLabels: {
+      maintainers: 'Maintainers',
+      maintainersDesc: 'Core team members',
+      developers: 'Developers',
+      developersDesc: 'Technical developers',
+      designers: 'Designers',
+      designersDesc: 'UI/UX designers',
+      contributors: 'Contributors',
+      contributorsDesc: 'Community contributors',
+      roleTypeHeader: 'Role',
+      countHeader: 'Count',
+      percentageHeader: 'Share'
+    }
   },
   cta: {
     title: 'Ready to Make an Impact?',

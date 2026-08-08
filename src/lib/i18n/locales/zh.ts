@@ -419,70 +419,135 @@ export const zhTranslations: Translations = {
       // 如果需要为特定成员添加中文翻译，可以在这里处理
     })),
     sponsors: [
+      // 顺序必须与 constants/team.ts 中的 sponsorMetas 一一对应
       {
-        name: '开源之夏',
-        role: '战略合作伙伴',
-        bio: '中国科学院软件研究所、华为技术有限公司、中科南京软件技术研究院联合主办，专注开源人才培养。',
-        image: 'https://cdn.newenergycoder.club/images/src/image/sponsor/开源之夏Logo.png',
-        tags: ['学生项目', '技术孵化']
-      },
-      {
-        name: '立创开源硬件平台',
-        role: '金牌赞助商',
-        bio: '专业开源硬件开发平台，提供PCB打样、元器件采购一站式服务。',
-        image: 'https://cdn.newenergycoder.club/images/src/image/sponsor/立创开源广场.png',
-        tags: ['开源硬件', 'PCB打样']
-      },
-      {
-        name: 'CubeMars',
-        role: '金牌合作伙伴',
+        role: '电机合作伙伴',
         bio: '专业电机解决方案提供商，专注高性能无刷电机及驱动系统。',
-        image: 'https://cdn.newenergycoder.club/images/src/image/sponsor/CubeMars.png',
-        tags: ['电机', '驱动系统']
+        tags: ['电机', '驱动系统'],
+        supports: [
+          { item: 'AK系列电机', quantity: '竞赛项目支持' },
+          { item: '驱动器套件' },
+          { item: '技术咨询支持' }
+        ]
       },
       {
-        name: '留形科技',
-        role: '金牌赞助商',
-        bio: '专注于智能空间感知与三维重建技术的研发与应用。',
-        image: 'https://cdn.newenergycoder.club/images/src/image/sponsor/留形科技.png',
-        tags: ['3D打印', '创新科技']
-      },
-      {
-        name: '萝卜小酱',
-        role: '银牌合作伙伴',
-        bio: '专业精密工具品牌，专注电子维修与机器人组装工具。',
-        image: 'https://cdn.newenergycoder.club/images/src/image/sponsor/萝卜小酱.png',
-        tags: ['精密工具', '螺丝刀']
-      },
-      {
-        name: '华艺塑业',
-        role: '铜牌合作伙伴',
-        bio: '专业碳纤维及工程塑料加工，提供机器人结构件定制服务。',
-        image: 'https://cdn.newenergycoder.club/images/src/image/sponsor/华艺塑业.png',
-        tags: ['碳纤维', '结构加工']
-      },
-      {
-        name: 'GPUfree 算力自由',
         role: '算力合作伙伴',
         bio: '提供GPU算力资源，助力AI模型训练与科研探索。',
-        image: 'https://cdn.newenergycoder.club/images/src/image/logo_GPU_Free.png',
-        tags: ['GPU算力', 'AI训练']
+        tags: ['GPU算力', 'AI训练'],
+        supports: [
+          { item: 'GPU算力代金券', quantity: '1000元额度' },
+          { item: '模型训练资源' },
+          { item: '科研算力支持' }
+        ]
       },
       {
-        name: '脉塔智能',
-        role: '银牌合作伙伴',
-        bio: '专业RMD电机及驱动解决方案提供商，专注高性能伺服系统。',
-        image: 'https://cdn.newenergycoder.club/images/src/image/sponsor/麦塔智能.png',
-        tags: ['RMD电机', '伺服系统']
-      },
-      {
-        name: '华为云',
         role: '云计算合作伙伴',
         bio: '华为云提供开发板及云计算资源支持，助力嵌入式开发与边缘计算。',
-        image: 'https://cdn.newenergycoder.club/images/src/image/sponsor/华为云.png',
-        tags: ['开发板', '云计算']
+        tags: ['开发板', '云计算'],
+        supports: [
+          { item: '香橙派开发板', quantity: '项目支持' },
+          { item: '云服务器资源' },
+          { item: '技术文档支持' }
+        ]
+      },
+      {
+        role: '硬件合作伙伴',
+        bio: '专业碳纤维及工程塑料加工，提供机器人结构件定制服务。',
+        tags: ['碳纤维', '结构加工'],
+        supports: [
+          { item: '碳纤维板加工' },
+          { item: '亚克力切割' },
+          { item: '结构件打样' }
+        ]
+      },
+      {
+        role: '战略合作伙伴',
+        bio: '中国科学院软件研究所、华为技术有限公司、中科南京软件技术研究院联合主办，专注开源人才培养。',
+        tags: ['学生项目', '技术孵化'],
+        supports: [
+          { item: '开源项目资助', quantity: '年度项目名额' },
+          { item: '导师资源对接' },
+          { item: '社区活动支持' }
+        ]
+      },
+      {
+        role: '金牌赞助商',
+        bio: '专注于智能空间感知与三维重建技术的研发与应用。',
+        tags: ['3D打印', '创新科技'],
+        supports: [
+          { item: '空间记忆模组' },
+          { item: '技术咨询支持' }
+        ]
+      },
+      {
+        role: '金牌赞助商',
+        bio: '专业开源硬件开发平台，提供PCB打样、元器件采购一站式服务。',
+        tags: ['开源硬件', 'PCB打样'],
+        supports: [
+          { item: 'PCB打样券', quantity: '年度额度' },
+          { item: '元器件采购支持' },
+          { item: '开源广场曝光推荐' }
+        ]
+      },
+      {
+        role: '电机合作伙伴',
+        bio: '专业RMD电机及驱动解决方案提供商，专注高性能伺服系统。',
+        tags: ['RMD电机', '伺服系统'],
+        supports: [
+          { item: 'RMD电机采购额度', quantity: '1万元' },
+          { item: '驱动器技术支持' },
+          { item: '批量采购优惠' }
+        ]
+      },
+      {
+        role: '工具合作伙伴',
+        bio: '专业精密工具品牌，专注电子维修与机器人组装工具。',
+        tags: ['精密工具', '螺丝刀'],
+        supports: [
+          { item: '精密螺丝刀套装', quantity: '团队标配' },
+          { item: '焊接工具套件' },
+          { item: '维修工作台' }
+        ]
       }
-    ]
+    ],
+    sponsorSection: {
+      title: '合作伙伴 & 赞助商',
+      subtitle: '感谢以下组织为 NEC 社区提供的技术支持与资源赞助',
+      levelNames: {
+        strategic: '战略合作伙伴',
+        gold: '金牌赞助商',
+        silver: '银牌赞助商',
+        bronze: '铜牌赞助商',
+        partner: '社区合作伙伴'
+      },
+      goldGroupTitle: '金牌赞助商',
+      silverBronzeGroupTitle: '银牌 & 铜牌',
+      supportLabel: '支持内容',
+      visitWebsite: '访问官网',
+      ctaTitle: '成为我们的合作伙伴',
+      ctaDescription: '支持开源工程教育，与 NEC 社区共同成长',
+      ctaButton: '联系我们'
+    },
+    filterLabels: {
+      all: '全部成员',
+      maintainers: '核心团队',
+      developers: '开发设计',
+      designers: 'UI/UX',
+      contributors: '贡献者'
+    },
+    statsLabels: {
+      maintainers: '维护者',
+      maintainersDesc: '核心团队成员',
+      developers: '开发者',
+      developersDesc: '技术开发人员',
+      designers: '设计师',
+      designersDesc: 'UI/UX设计师',
+      contributors: '贡献者',
+      contributorsDesc: '社区贡献者',
+      roleTypeHeader: '角色类型',
+      countHeader: '人数',
+      percentageHeader: '占比'
+    }
   },
   cta: {
     title: '准备好开始了吗？',

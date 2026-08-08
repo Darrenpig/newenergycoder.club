@@ -81,7 +81,7 @@ const TECH_MODULES: TechModule[] = [
     id: 'algorithm',
     name: '算法与控制',
     icon: GitBranch,
-    keywords: ['算法', '控制', '运动控制', '路径规划', 'MPC', 'PID', '逆运动学', ' Slam'],
+    keywords: ['算法', '控制', '运动控制', '路径规划', 'MPC', 'PID', '逆运动学', 'Slam'],
   },
   {
     id: 'ai',
@@ -139,6 +139,23 @@ const TECH_MODULES: TechModule[] = [
   },
 ]
 
+/**
+ * 关键词匹配：拉丁字符关键词用词边界匹配（避免 "AI" 匹配到 "brain"），
+ * 中文关键词退化为子串匹配（中文没有词边界）。
+ */
+function keywordMatchesTag(keyword: string, lowerTag: string): boolean {
+  const k = keyword.toLowerCase().trim()
+  if (!k) return false
+  // 含 CJK 字符的关键词直接子串匹配
+  if (/[一-鿿]/.test(k)) {
+    return lowerTag.includes(k)
+  }
+  // 拉丁关键词：要求两侧是词边界（非字母数字）
+  const escaped = k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  const re = new RegExp(`(?<![a-z0-9])${escaped}(?![a-z0-9])`, 'i')
+  return re.test(lowerTag)
+}
+
 function deriveModules(tags: string[] = []): TechModule[] {
   const matched = new Set<string>()
   const result: TechModule[] = []
@@ -146,7 +163,7 @@ function deriveModules(tags: string[] = []): TechModule[] {
     const lowerTag = tag.toLowerCase()
     for (const mod of TECH_MODULES) {
       if (matched.has(mod.id)) continue
-      if (mod.keywords.some(k => lowerTag.includes(k.toLowerCase()))) {
+      if (mod.keywords.some(k => keywordMatchesTag(k, lowerTag))) {
         matched.add(mod.id)
         result.push(mod)
       }
