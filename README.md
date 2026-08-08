@@ -1293,6 +1293,45 @@ A: 在技术接口中添加评分字段，创建评分组件，并实现评分�
 
 本项目采用 [MIT 许可证](LICENSE)。
 
+## 📝 Changelog
+
+### 2026-08-08 — `fix(team)` 团队页稳定性与 i18n 全面修复
+
+PR: [`fix/team-i18n`](https://github.com/new-energy-coder-club/newenergycoder.club/pull/new/fix/team-i18n) · Commit: `1ab11f9b`
+
+#### 🐛 Bug 修复
+- **替换失效外链背景图**：TeamPage 浅色模式背景与 Hero 大图原引用 `darrenpig.github.io/files/news10.jpg`，已切换为 CDN 上的团队合照，并删除 Hero 下方重复素材
+- **MemberStrip 空行塌陷**：三行 marquee 中某行无成员时仍会渲染并跑空动画，现在按行过滤空数组
+- **MemberBadge 死链跳转**：成员无 GitHub/Gitee 时 `href="#"` 会跳页首，现在降级为 `<span aria-hidden>`
+- **成员 React key 冲突**：同名成员的 key 由 `name-index` 改为 `github || gitee || email || name`
+- **Flip 筛选切换时序**：`requestAnimationFrame` 在 React 18 并发渲染下偶发读到旧 DOM，改用 `flushSync` 同步提交后再 `Flip.from`
+- **空分类筛选死状态**：目标分类成员数为 0 时跳过 Flip，直接 setFilter
+- **TeamSection 入场动画与 Flip 叠加**：通过 `hasPlayedIntroRef` 让入场只跑一次，filter 切换由 Flip 接管
+- **MemberTechDetail 关键词误匹配**：`'AI'` 误中 `'brain'`、`'React'` 误中 `'Reactive'` 等，改为拉丁词边界正则；同时修掉 `' Slam'` 前导空格
+- **ImageProxy 重试无上限**：源站持续 4xx/5xx 时反复"加载中-失败"闪烁，加 `MAX_RETRIES = 3` 上限
+
+#### 🌍 i18n 完整覆盖团队页
+- **赞助商区块**：`Sponsor` 拆为 `sponsorMetas`（不可译 id/level/image/website）+ `t.team.sponsors`（可译 role/bio/tags/supports），公司名按"官网英文名 + 中文括注"策略（如 `Huawei Cloud (华为云)`、`OSPP (开源之夏)`、`OSHWHUB (立创开源硬件平台)`），无官网英文名保留中文
+- **筛选按钮**：`FILTER_LABELS` 硬编码常量删除，改走 `t.team.filterLabels`
+- **统计区块**：`StatCard` 标题/描述、表格表头与首列改走 `t.team.statsLabels`
+- **UI 框架文案**：等级徽章、分组标题、"支持内容"、"访问官网"、CTA 全部走 `t.team.sponsorSection`
+
+#### ⚡ 性能优化
+- **MemberCard hover 纯 CSS 化**：移除每张卡的 GSAP timeline + 监听器，改用 `index.css` 全局规则（`.team-card` / `.member-avatar-zoom`），保留 `prefers-reduced-motion` 支持
+- **MemberStrip 离屏暂停**：`IntersectionObserver` 检测可见性，离屏时给容器加 `data-paused` 暂停 CSS 动画
+- **`renderBracketStyled` 节点数**：从逐字 `<span>` 改为按「」分段 + `React.Fragment`，节点数从 O(n) 降到 O(角引号数)
+- **`filteredMembers` 依赖细粒度**：`useMemo` 依赖 `[filter, t.team]` 改为 4 个具体数组字段，避免 LanguageContext 引用变化导致 memo 失效
+
+#### 🎨 视觉一致性
+- **PhotoCard hover 对齐 MemberCard**：增加卡片上浮 + 阴影加深 + 边框变 primary，图片缩放改 `group-hover`
+- **英文宣言强调正则补全**：新增 `We are a group meeting...` / `We differ —` / `We are a verb in action` 三条匹配，与中文版加粗语义对齐；英文版宣言结尾也获得 `{ }` 大括号主题色强调
+- **`TEAM_PHOTOS` 整合**：从散数组改为 `{ background, project, gallery }` 对象，便于后续替换/轮播
+
+#### 📊 数据展示
+- **`lastUpdated` 真实数据时间**：从 `new Date()`（构建当天）改为 `team-gitee-stats.json` 的 `generatedAt` 字段
+
+---
+
 ## 📞 联系我们
 
 - **Gitee 仓库**: [https://gitee.com/darrenpig/new_energy_coder_club](https://gitee.com/darrenpig/new_energy_coder_club)
