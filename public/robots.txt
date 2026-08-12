@@ -1,3 +1,11 @@
+# ============================================================
+# 新能源编程俱乐部 (New Energy Coder Club) - robots.txt
+# https://newenergycoder.club
+#
+# 默认对所有爬虫开放，仅限制内部管理/工具路径
+# 显式放行主流 AI 爬虫，便于大模型联网检索与引用
+# ============================================================
+
 User-agent: *
 Allow: /
 Disallow: /dashboard
@@ -6,4 +14,106 @@ Disallow: /markdown
 Disallow: /markdown/editor
 Disallow: /markdown/viewer
 
+# -------------------- 国内 AI 爬虫 --------------------
+# DeepSeek (深度求索)
+User-agent: DeepSeekBot
+Allow: /
+
+# 字节跳动 - 豆包 / 抖音搜索
+User-agent: Bytespider
+Allow: /
+
+# 月之暗面 - Kimi
+User-agent: MoonshotBot
+Allow: /
+
+# 阿里 - 通义千问
+User-agent: TongyiBot
+Allow: /
+
+# 百度 - 文心一言 / 百度搜索
+User-agent: Baiduspider
+Allow: /
+
+# 搜狗搜索（腾讯元宝引用源之一）
+User-agent: Sogou web spider
+Allow: /
+
+User-agent: Sogou inst spider
+Allow: /
+
+# 360 搜索 / 360 AI
+User-agent: 360Spider
+Allow: /
+
+User-agent: HaosouSpider
+Allow: /
+
+# 神马搜索（阿里/UC）
+User-agent: YisouSpider
+Allow: /
+
+# -------------------- 国际 AI 爬虫 --------------------
+# OpenAI - ChatGPT
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic - Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+User-agent: cohere-training-data-crawler
+Allow: /
+
+# Meta - Llama
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Apple - Apple Intelligence
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Google - Gemini
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Microsoft - Copilot / Bing
+User-agent: bingbot
+Allow: /
+
+# 其他国际搜索引擎
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# -------------------- Sitemap --------------------
 Sitemap: https://newenergycoder.club/sitemap.xml
+Sitemap: https://newenergycoder.club/sitemap-index.xml

@@ -19,6 +19,7 @@ const TeamPhoto5 = 'https://cdn.newenergycoder.club/images/src/image/合照3.jpg
 const TeamPhoto6 = 'https://cdn.newenergycoder.club/images/src/image/合照4.jpg'
 const RCBBLogo = 'https://cdn.newenergycoder.club/images/src/RCBB.png'
 import GifAnimation from '@/components/ui/GifAnimation'
+import SEO from '@/components/SEO'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { SplitText } from 'gsap/SplitText'
@@ -782,6 +783,12 @@ export function TeamPage() {
 
   return (
     <div ref={pageRef} className="flex min-h-screen flex-col">
+      <SEO
+        title="团队介绍"
+        description="认识 NEC 新能源编程俱乐部的核心成员与贡献者：硬件组、软件组、算法组、设计组，覆盖机器人全栈开发。开源社区的每一位 Maintainer 与 Contributor 都在这里。"
+        keywords="NEC团队,新能源编程俱乐部成员,开源贡献者,Maintainer,机器人团队"
+        path="/team"
+      />
       <Header />
       <div className="flex-1 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
         {/* Background with team photos */}

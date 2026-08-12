@@ -9,6 +9,7 @@ import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react'
 import { useTranslation } from '@/contexts/LanguageContext'
 const wechatImg = 'https://cdn.newenergycoder.club/images/src/assets/wechat.png'
 import { PageLayout } from '@/components/layout/PageLayout'
+import SEO from '@/components/SEO'
 import { type FloatingControls, type AspectRatio } from '@/components/ui/floating-controls'
 import { AmapLocation } from '@/components/ui/amap-location'
 const NECApplicationForm = 'https://cdn.newenergycoder.club/images/src/image/NEC官网上线申请表.png'
@@ -85,11 +86,17 @@ export function ContactPage() {
   const isFormValid = formData.name && formData.email && formData.subject && formData.message
 
   return (
-    <PageLayout 
+    <PageLayout
       showAspectRatio={true}
       aspectRatio={selectedRatio}
       onAspectRatioChange={setSelectedRatio}
     >
+      <SEO
+        title="联系我们"
+        description="联系 NEC 新能源编程俱乐部：技术讲座、竞赛赞助、联合孵化、人才推荐等合作洽谈。线上通过 Gitee/微信/邮件，线下 A416 实验室欢迎来访。"
+        keywords="NEC联系方式,新能源编程俱乐部合作,开源社区赞助,机器人社区合作"
+        path="/contact"
+      />
       <div className="min-h-screen bg-gradient-to-br from-background to-accent/5">
         {/* Hero Section */}
         <section className="py-16 lg:py-20 bg-gradient-to-br from-primary/5 to-accent/5 relative">

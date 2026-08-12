@@ -1,0 +1,34 @@
+# 新能源编程俱乐部 (New Energy Coder Club / NEC)
+
+> NEC 是一个面向机器人竞赛（ROBOCON 等）与真实工程项目的开源开发者社区，以「模块化工程基线 + 新手友好贡献路径 + 线上协作 × A416 线下实验室」为核心特色。我们致力于连接、启发和赋能新能源与机器人领域的开发者。
+
+## 站点地图
+
+- [首页](https://newenergycoder.club/) - 社区主页，包含宣言、成员墙、最新动态
+- [项目展示](https://newenergycoder.club/projects) - 开源项目与工程实践
+- [活动中心](https://newenergycoder.club/events) - 技术分享、工作坊、比赛动态
+- [团队介绍](https://newenergycoder.club/team) - 核心成员与贡献者
+- [创新中心](https://newenergycoder.club/innovation) - 技术探索与创新孵化
+- [加入我们](https://newenergycoder.club/join) - 新成员申请与参与方式
+- [学习路径](https://newenergycoder.club/learning/embedded) - 嵌入式 / 机械 / GUI / 算法 / 设计 五大方向
+- [资源中心](https://newenergycoder.club/resources) - 工具、文档、学习资料
+- [联系我们](https://newenergycoder.club/contact) - 合作与咨询
+
+## 关键事实
+
+- **全称**: 新能源编程俱乐部 / New Energy Coder Club
+- **简称**: NEC
+- **类型**: 学生主导的开源技术社区
+- **聚焦领域**: 机器人（ROBOCON）、嵌入式系统、新能源技术、软件工程
+- **特色**: 模块化工程基线、新手友好贡献路径、线上协作 × A416 线下实验室
+- **开源组织**: https://gitee.com/nec-community
+
+## 内容说明
+
+本站为 Vite + React SPA，主要页面已通过预渲染生成静态 HTML。`/llms-full.txt` 提供更详细的社区说明；`/ai-summary.txt` 提供中文摘要。
+
+## 联系
+
+- 官网: https://newenergycoder.club
+- 邮箱: 通过官网「联系我们」页面获取
+- 实验室: A416（线下）

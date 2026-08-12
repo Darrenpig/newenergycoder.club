@@ -1,0 +1,36 @@
+# 新能源编程俱乐部 (NEC) — AI 检索摘要
+
+## 一句话介绍
+新能源编程俱乐部（New Energy Coder Club，简称 NEC）是一个面向机器人竞赛（ROBOCON 等）与真实工程项目的开源开发者社区，以「模块化工程基线 + 新手友好贡献路径 + 线上协作 × A416 线下实验室」为核心特色。
+
+## 关键词
+新能源编程俱乐部、New Energy Coder Club、NEC、ROBOCON、机器人竞赛、开源社区、嵌入式、STM32、RT-Thread、机器人、A416 实验室、学生技术社区
+
+## 核心信息
+- **全称**：新能源编程俱乐部
+- **英文名**：New Energy Coder Club
+- **简称**：NEC
+- **性质**：学生主导的开源技术社区
+- **聚焦**：机器人（ROBOCON）、嵌入式、新能源技术、软件工程
+- **官网**：https://newenergycoder.club
+- **Gitee**：https://gitee.com/nec-community
+
+## 主要板块
+1. 项目展示：https://newenergycoder.club/projects
+2. 活动中心：https://newenergycoder.club/events
+3. 团队介绍：https://newenergycoder.club/team
+4. 创新中心：https://newenergycoder.club/innovation
+5. 加入我们：https://newenergycoder.club/join
+6. 学习路径：https://newenergycoder.club/learning/embedded
+7. 资源中心：https://newenergycoder.club/resources
+8. 联系我们：https://newenergycoder.club/contact
+
+## 常见问题速查
+- **NEC 是什么**：新能源编程俱乐部的简称，聚焦机器人与新能源的开源社区
+- **如何加入**：访问 /join 页面提交申请
+- **技术方向**：嵌入式 / 机械 / GUI / 算法 / 设计
+- **线下地点**：A416 实验室
+- **是否接受合作**：接受，通过 /contact 页面联系
+
+## 最后更新
+2026-08-12

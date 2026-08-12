@@ -21,6 +21,7 @@ import {
   InnovationFilters
 } from '@/types/innovation';
 import { useTranslation } from '@/contexts/LanguageContext';
+import SEO from '@/components/SEO';
 
 // 图标映射
 const iconMap = {
@@ -314,6 +315,12 @@ export function InnovationShowcasePage() {
 
   return (
     <PageLayout>
+      <SEO
+        title="创新中心"
+        description="NEC 新能源编程俱乐部创新中心：太阳能、风能、储能、电动车、核能等新能源技术与机器人、AI、物联网的交叉探索，开源项目孵化与技术趋势洞察。"
+        keywords="新能源,创新中心,机器人,太阳能,储能,电动车,AI,物联网,开源孵化"
+        path="/innovation"
+      />
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
         {/* 英雄区域 */}
         <section className="relative py-20 px-4">
