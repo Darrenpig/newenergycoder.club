@@ -21,7 +21,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 const distDir = resolve(__dirname, '../dist');
 
-const SITE_URL = 'https://newenergycoder.club';
+const SITE_URL = 'https://www.newenergycoder.club';
 const SITE_NAME = '新能源编程俱乐部 NEC';
 const DEFAULT_OG_IMAGE = 'https://cdn.newenergycoder.club/images/public/og-image.svg';
 
