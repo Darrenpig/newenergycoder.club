@@ -12,7 +12,10 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "generate:gallery-thumbnails": "node scripts/generate-gallery-thumbnails.mjs",
-    "fetch:gitee-team-stats": "node scripts/fetch-gitee-team-stats.mjs"
+    "fetch:gitee-team-stats": "node scripts/fetch-gitee-team-stats.mjs",
+    "indexnow:push": "node scripts/indexnow-push.mjs",
+    "indexnow:push:all": "node scripts/indexnow-push.mjs --from-sitemap",
+    "indexnow:dry": "node scripts/indexnow-push.mjs --dry-run"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
