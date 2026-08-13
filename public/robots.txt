@@ -1,6 +1,6 @@
 # ============================================================
 # 新能源编程俱乐部 (New Energy Coder Club) - robots.txt
-# https://newenergycoder.club
+# https://www.newenergycoder.club
 #
 # 默认对所有爬虫开放，仅限制内部管理/工具路径
 # 显式放行主流 AI 爬虫，便于大模型联网检索与引用
@@ -115,5 +115,5 @@ User-agent: YandexBot
 Allow: /
 
 # -------------------- Sitemap --------------------
-Sitemap: https://newenergycoder.club/sitemap.xml
-Sitemap: https://newenergycoder.club/sitemap-index.xml
+Sitemap: https://www.newenergycoder.club/sitemap.xml
+Sitemap: https://www.newenergycoder.club/sitemap-index.xml

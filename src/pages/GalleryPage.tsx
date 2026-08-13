@@ -14,6 +14,7 @@ import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ImageIcon, ChevronLeft, ChevronRight, X, Grid3X3, Images, ExternalLink } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import galleryData from '@/data/gallery.json'
+import SEO from '@/components/SEO'
 
 interface Photo {
   src: string
@@ -146,6 +147,12 @@ export function GalleryPage() {
 
   return (
     <>
+      <SEO
+        title="活动相册"
+        description="NEC 新能源编程俱乐部活动相册：RoboMaster/RoboCon 竞赛、工作坊、线下聚会与实验室日常影像记录。"
+        keywords="NEC相册,机器人竞赛照片,RoboMaster,RoboCon,社团活动"
+        path="/gallery"
+      />
       <div className="min-h-screen bg-gradient-to-br from-background to-accent/5">
         {/* Hero Section */}
         <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/10 via-background to-accent/10 relative overflow-hidden">

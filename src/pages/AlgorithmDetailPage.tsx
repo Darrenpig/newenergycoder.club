@@ -17,6 +17,7 @@ import {
   Code,
   Download
 } from 'lucide-react';
+import SEO from '@/components/SEO';
 
 interface LearningStage {
   id: string;
@@ -134,6 +135,12 @@ const AlgorithmDetailPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-50">
+      <SEO
+        title="算法学习路线"
+        description="NEC 算法学习路线：从控制理论、SLAM、计算机视觉到路径规划，覆盖机器人感知与决策算法的完整学习路径。"
+        keywords="机器人算法,SLAM,计算机视觉,控制理论,路径规划,学习路线"
+        path="/learning/algorithm"
+      />
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">

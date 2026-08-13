@@ -12,18 +12,18 @@
 - **简称**：NEC
 - **性质**：学生主导的开源技术社区
 - **聚焦**：机器人（ROBOCON）、嵌入式、新能源技术、软件工程
-- **官网**：https://newenergycoder.club
+- **官网**：https://www.newenergycoder.club
 - **Gitee**：https://gitee.com/nec-community
 
 ## 主要板块
-1. 项目展示：https://newenergycoder.club/projects
-2. 活动中心：https://newenergycoder.club/events
-3. 团队介绍：https://newenergycoder.club/team
-4. 创新中心：https://newenergycoder.club/innovation
-5. 加入我们：https://newenergycoder.club/join
-6. 学习路径：https://newenergycoder.club/learning/embedded
-7. 资源中心：https://newenergycoder.club/resources
-8. 联系我们：https://newenergycoder.club/contact
+1. 项目展示：https://www.newenergycoder.club/projects
+2. 活动中心：https://www.newenergycoder.club/events
+3. 团队介绍：https://www.newenergycoder.club/team
+4. 创新中心：https://www.newenergycoder.club/innovation
+5. 加入我们：https://www.newenergycoder.club/join
+6. 学习路径：https://www.newenergycoder.club/learning/embedded
+7. 资源中心：https://www.newenergycoder.club/resources
+8. 联系我们：https://www.newenergycoder.club/contact
 
 ## 常见问题速查
 - **NEC 是什么**：新能源编程俱乐部的简称，聚焦机器人与新能源的开源社区

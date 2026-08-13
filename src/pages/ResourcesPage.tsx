@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input'
 import { ExternalLink, Download, Search, Star, BookOpen, Code, Wrench, GraduationCap, FileText, ChevronDown, ChevronUp } from 'lucide-react'
 import { useTranslation } from '@/contexts/LanguageContext'
 import { PageLayout } from '@/components/layout/PageLayout'
+import SEO from '@/components/SEO'
 import { type AspectRatio } from '@/components/ui/floating-controls'
 import { ImageProxy } from '@/components/ui/image-proxy'
 
@@ -1322,11 +1323,16 @@ export function ResourcesPage() {
   }
 
   return (
-    <PageLayout 
+    <PageLayout
       showAspectRatio={true}
       aspectRatio={selectedRatio}
       onAspectRatioChange={setSelectedRatio}
     >
+      <SEO
+        title="学习资源"
+        description="新能源编程俱乐部精选学习资源：嵌入式开发、机器人、算法、GUI 与机械设计教程、文档、工具与开源库。"
+        path="/resources"
+      />
       <div className="min-h-screen bg-gradient-to-br from-background to-accent/5">
         {/* Hero Section */}
         <section className="py-16 lg:py-20 bg-gradient-to-r from-primary/5 to-accent/5 relative">

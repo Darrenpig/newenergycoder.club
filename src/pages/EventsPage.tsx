@@ -6,6 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Calendar, MapPin, Users, Clock, ExternalLink } from 'lucide-react'
 import { useTranslation } from '@/contexts/LanguageContext'
 import { PageLayout } from '@/components/layout/PageLayout'
+import SEO from '@/components/SEO'
 import { FeishuForm } from '@/components/forms/FeishuForm'
 import { type AspectRatio } from '@/components/ui/floating-controls'
 import { ImageProxy } from '@/components/ui/image-proxy'
@@ -341,11 +342,16 @@ export function EventsPage() {
   ))
 
   return (
-    <PageLayout 
+    <PageLayout
       showAspectRatio={true}
       aspectRatio={selectedRatio}
       onAspectRatioChange={setSelectedRatio}
     >
+      <SEO
+        title="社区活动"
+        description="新能源编程俱乐部活动日历：工作坊、黑客松、技术分享、RoboMaster 等机器人竞赛与开发者线下聚会。"
+        path="/events"
+      />
       <div className="min-h-screen bg-gradient-to-br from-background to-accent/5">
         {/* Hero Section */}
         <section className="py-24 bg-gradient-to-br from-primary/10 to-accent/10 relative overflow-hidden">

@@ -18,6 +18,7 @@ import {
   Calculator,
   Download
 } from 'lucide-react';
+import SEO from '@/components/SEO';
 
 // 学习阶段接口
 interface LearningStage {
@@ -166,6 +167,12 @@ const MechanicalDetailPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-red-50">
+      <SEO
+        title="机械设计学习路线"
+        description="NEC 机械设计学习路线：SolidWorks/建模、结构设计与加工工艺，面向机器人本体结构设计的系统学习路径。"
+        keywords="机械设计,SolidWorks,机器人结构,CAD,学习路线"
+        path="/learning/mechanical"
+      />
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">

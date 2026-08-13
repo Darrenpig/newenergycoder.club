@@ -1,4 +1,5 @@
 import { PageLayout } from '@/components/layout/PageLayout'
+import SEO, { orgAndWebsiteJsonLd } from '@/components/SEO'
 import { HeroSection } from '@/components/home/HeroSection'
 import { AboutSection } from '@/components/home/AboutSection'
 import { ManifestoSection } from '@/components/home/ManifestoSection'
@@ -24,6 +25,11 @@ function HomePage() {
       aspectRatio={selectedRatio}
       onAspectRatioChange={setSelectedRatio}
     >
+      <SEO
+        fullTitle="新能源编程俱乐部 | New Energy Coder Club - 连接新能源领域开发者"
+        path="/"
+        jsonLd={orgAndWebsiteJsonLd()}
+      />
       <HeroSection />
       <AboutSection />
       <ManifestoSection />

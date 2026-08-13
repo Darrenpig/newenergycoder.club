@@ -17,6 +17,7 @@ import {
   Code,
   Download
 } from 'lucide-react';
+import SEO from '@/components/SEO';
 
 interface LearningStage {
   id: string;
@@ -134,6 +135,12 @@ const GuiDetailPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50">
+      <SEO
+        title="GUI 开发学习路线"
+        description="NEC GUI 开发学习路线：Qt、上位机与人机交互界面开发，覆盖机器人调试工具与可视化系统的完整学习路径。"
+        keywords="GUI开发,Qt,上位机,人机交互,机器人调试,学习路线"
+        path="/learning/gui"
+      />
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">

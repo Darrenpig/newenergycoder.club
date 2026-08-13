@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { PageLayout } from '@/components/layout/PageLayout'
+import SEO from '@/components/SEO'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { CheckCircle, Users, Code, Heart, ArrowRight, Calendar, Target, Send, Download } from 'lucide-react'
@@ -70,6 +71,11 @@ export function JoinPage() {
       aspectRatio={selectedRatio}
       onAspectRatioChange={setSelectedRatio}
     >
+      <SEO
+        title="加入我们"
+        description="加入新能源编程俱乐部：与嵌入式、机器人、算法与设计方向的开发者一起成长，参与 RoboMaster 等竞赛与开源项目。"
+        path="/join"
+      />
       <div className="min-h-screen bg-gradient-to-br from-background to-accent/5">
         {/* Hero Section */}
         <section className="py-24 bg-gradient-to-br from-primary/10 to-accent/10 relative overflow-hidden">

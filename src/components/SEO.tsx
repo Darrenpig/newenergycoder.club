@@ -26,7 +26,7 @@ interface SEOProps {
 
 const SITE_NAME = '新能源编程俱乐部 NEC';
 const SITE_NAME_EN = 'New Energy Coder Club';
-const SITE_URL = 'https://newenergycoder.club';
+const SITE_URL = 'https://www.newenergycoder.club';
 const DEFAULT_OG_IMAGE = 'https://cdn.newenergycoder.club/images/public/og-image.svg';
 const DEFAULT_DESCRIPTION =
   '新能源编程俱乐部（New Energy Coder Club，简称 NEC）是面向 ROBOCON 等机器人竞赛与真实工程项目的开源开发者社区。';

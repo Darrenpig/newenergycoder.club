@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { PageLayout } from '@/components/layout/PageLayout'
+import SEO from '@/components/SEO'
 import { useTranslation } from '@/contexts/LanguageContext'
 import { type FloatingControls, type AspectRatio } from '@/components/ui/floating-controls'
 
@@ -16,6 +17,7 @@ function NotFoundPage() {
       aspectRatio={selectedRatio}
       onAspectRatioChange={setSelectedRatio}
     >
+      <SEO title="页面未找到" noindex />
       <div className="flex-1 flex items-center justify-center py-20">
         <div className="text-center">
           <h1 className="text-6xl font-bold mb-4 gradient-text">{t.notFound.title}</h1>

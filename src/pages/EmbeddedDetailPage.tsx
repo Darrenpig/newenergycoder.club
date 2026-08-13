@@ -18,6 +18,7 @@ import {
   Code,
   Download
 } from 'lucide-react';
+import SEO from '@/components/SEO';
 
 // 学习阶段接口
 interface LearningStage {
@@ -166,6 +167,12 @@ const EmbeddedDetailPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50">
+      <SEO
+        title="嵌入式开发学习路线"
+        description="NEC 嵌入式开发学习路线：从 STM32 单片机入门到 RT-Thread 实时操作系统，覆盖机器人电控系统开发的完整路径与项目实战。"
+        keywords="嵌入式学习,STM32,RT-Thread,单片机,机器人电控,学习路线"
+        path="/learning/embedded"
+      />
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">

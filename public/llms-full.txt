@@ -33,7 +33,7 @@
 ## 参与方式
 
 ### 对于新手
-1. 访问 https://newenergycoder.club/join 提交申请
+1. 访问 https://www.newenergycoder.club/join 提交申请
 2. 加入新生群，领取「新手任务包」
 3. 在 mentor 指导下完成第一个 PR
 4. 选择感兴趣的方向深耕
@@ -45,7 +45,7 @@
 4. 成为新成员的 mentor
 
 ### 对于企业/组织合作
-通过 https://newenergycoder.club/contact 联系我们，支持：
+通过 https://www.newenergycoder.club/contact 联系我们，支持：
 - 技术讲座 / 工作坊
 - 竞赛赞助
 - 联合项目孵化
@@ -63,7 +63,7 @@
 A: 新能源编程俱乐部（New Energy Coder Club）的简称，一个聚焦机器人与新能源的开源技术社区。
 
 **Q: 如何加入 NEC？**
-A: 访问 https://newenergycoder.club/join 提交申请，或直接参与 Gitee 开源贡献。
+A: 访问 https://www.newenergycoder.club/join 提交申请，或直接参与 Gitee 开源贡献。
 
 **Q: NEC 有哪些技术方向？**
 A: 嵌入式、机械、GUI、算法、设计五大方向，覆盖机器人全栈。
@@ -76,7 +76,7 @@ A: 接受。支持技术讲座、竞赛赞助、联合孵化等多种形式，�
 
 ## 相关链接
 
-- 官网：https://newenergycoder.club
+- 官网：https://www.newenergycoder.club
 - Gitee 组织：https://gitee.com/nec-community
 - 文档站：https://docs.newenergycoder.club
 - 微信公众号：通过官网底部二维码关注

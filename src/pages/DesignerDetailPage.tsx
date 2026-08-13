@@ -18,6 +18,7 @@ import {
   Brush,
   Download
 } from 'lucide-react';
+import SEO from '@/components/SEO';
 
 // 学习阶段接口
 interface LearningStage {
@@ -166,6 +167,12 @@ const DesignerDetailPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50">
+      <SEO
+        title="设计学习路线"
+        description="NEC 设计学习路线：视觉设计、品牌宣传与交互体验，为开源社区与机器人竞赛团队打造专业视觉输出。"
+        keywords="视觉设计,品牌设计,UI设计,机器人团队宣传,学习路线"
+        path="/learning/designer"
+      />
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">

@@ -6,6 +6,7 @@ import { ExternalLink, Calendar, User, ChevronDown, ChevronUp } from 'lucide-rea
 import { GiteeIcon } from '@/components/ui/gitee-icon'
 import { useTranslation } from '@/contexts/LanguageContext'
 import { PageLayout } from '@/components/layout/PageLayout'
+import SEO from '@/components/SEO'
 import { FloatingControls, type AspectRatio } from '@/components/ui/floating-controls'
 import { ProjectImage } from '@/components/ui/project-image'
 import { projects as mockProjects, type ProjectCategory } from '@/data/projects'
@@ -33,11 +34,16 @@ export function ProjectsPage() {
     : mockProjects.filter(project => project.category === selectedCategory)
 
   return (
-    <PageLayout 
+    <PageLayout
       showAspectRatio={true}
       aspectRatio={selectedRatio}
       onAspectRatioChange={setSelectedRatio}
     >
+      <SEO
+        title="项目展示"
+        description="新能源编程俱乐部成员的开源项目展示：嵌入式系统、机器人、AI 物联网、Web 与移动应用等创新实践。"
+        path="/projects"
+      />
       {/* 主容器div - 设置最小高度为全屏，添加从背景色到强调色的渐变背景 */}
       <div className="min-h-screen bg-gradient-to-br from-background to-accent/5">
       {/* Hero Section - 页面顶部英雄区域 */}

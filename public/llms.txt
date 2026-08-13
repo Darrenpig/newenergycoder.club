@@ -4,15 +4,15 @@
 
 ## 站点地图
 
-- [首页](https://newenergycoder.club/) - 社区主页，包含宣言、成员墙、最新动态
-- [项目展示](https://newenergycoder.club/projects) - 开源项目与工程实践
-- [活动中心](https://newenergycoder.club/events) - 技术分享、工作坊、比赛动态
-- [团队介绍](https://newenergycoder.club/team) - 核心成员与贡献者
-- [创新中心](https://newenergycoder.club/innovation) - 技术探索与创新孵化
-- [加入我们](https://newenergycoder.club/join) - 新成员申请与参与方式
-- [学习路径](https://newenergycoder.club/learning/embedded) - 嵌入式 / 机械 / GUI / 算法 / 设计 五大方向
-- [资源中心](https://newenergycoder.club/resources) - 工具、文档、学习资料
-- [联系我们](https://newenergycoder.club/contact) - 合作与咨询
+- [首页](https://www.newenergycoder.club/) - 社区主页，包含宣言、成员墙、最新动态
+- [项目展示](https://www.newenergycoder.club/projects) - 开源项目与工程实践
+- [活动中心](https://www.newenergycoder.club/events) - 技术分享、工作坊、比赛动态
+- [团队介绍](https://www.newenergycoder.club/team) - 核心成员与贡献者
+- [创新中心](https://www.newenergycoder.club/innovation) - 技术探索与创新孵化
+- [加入我们](https://www.newenergycoder.club/join) - 新成员申请与参与方式
+- [学习路径](https://www.newenergycoder.club/learning/embedded) - 嵌入式 / 机械 / GUI / 算法 / 设计 五大方向
+- [资源中心](https://www.newenergycoder.club/resources) - 工具、文档、学习资料
+- [联系我们](https://www.newenergycoder.club/contact) - 合作与咨询
 
 ## 关键事实
 
@@ -29,6 +29,6 @@
 
 ## 联系
 
-- 官网: https://newenergycoder.club
+- 官网: https://www.newenergycoder.club
 - 邮箱: 通过官网「联系我们」页面获取
 - 实验室: A416（线下）
