@@ -1,8 +1,8 @@
 {
   "buildCommand": "pnpm build",
   "outputDirectory": "dist",
-  "devCommand": "npm run dev",
-  "installCommand": "pnpm install",
+  "devCommand": "pnpm dev",
+  "installCommand": "pnpm install --no-frozen-lockfile",
   "framework": "vite",
   "redirects": [
     {

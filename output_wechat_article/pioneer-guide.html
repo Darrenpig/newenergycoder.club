@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2" />
+    <title>🚩 领航模式指南 - 帮助文档</title>
+    <link rel="preload" href="/upload/WechatIMG1341.png" as="image" />
+    <link rel="stylesheet" href="/themes/theme-earth/assets/dist/style.css?v=1.12.3" />
+    <script>
+      window.i18nResources = {
+        "jsModule.colorSchemeSwitcher.dark": `Dark`,
+        "jsModule.colorSchemeSwitcher.light": `Light`,
+        "jsModule.colorSchemeSwitcher.auto": `Auto`,
+        "jsModule.share.qzone": `QQ Zone`,
+        "jsModule.share.weibo": `Weibo`,
+        "jsModule.share.douban": `Douban`,
+        "jsModule.share.wechat": `WeChat`,
+        "jsModule.share.native": `System`,
+        "jsModule.share.windowTitle": `Share`,
+        "jsModule.upvote.networkError": `Network request failed, please try again later`,
+      };
+    </script>
+    <script src="/themes/theme-earth/assets/dist/main.iife.js?v=1.12.3"></script>
+    
+      
+    <link
+      rel="stylesheet"
+      href="/themes/theme-earth/assets/styles/github-markdown.css?v=1.12.3"
+    />
+  
+    
+    <script>
+      main.initColorScheme("light",false)
+    </script>
+  <meta content="Halo 2.22.14" name="generator"/><meta name="description" content="本页面为开源之夏2026新模式&mdash;&mdash;领航计划指南，请认真阅读并理解规则。"/><script async defer src="/halo-tracker.js" data-group="content.halo.run" data-plural="posts" data-name="019eee9e-f3b9-7589-b005-b72ca4245cd3"></script>
+</head>
+  <body class="bg-slate-50 dark:bg-slate-900">
+    <header
+  id="header-menu"
+  class="sticky top-0 z-10 flex h-16 bg-white py-3 shadow-sm transition-all dark:bg-gray-800"
+  x-data="{ open : false }"
+>
+  <div class="mx-auto flex h-full w-full max-w-7xl justify-between px-4 lg:px-6">
+    <div class="flex h-full items-center gap-6">
+      <div class="mr-2 h-full">
+        <a href="/" class="inline-flex h-full items-center">
+          
+          <span
+            id="site-title"
+            class="text-lg font-medium text-gray-900 dark:text-slate-100"
+          >帮助文档</span>
+        </a>
+      </div>
+      
+    </div>
+    <div class="flex items-center">
+      <ul x-data="colorSchemeSwitcher" class="flex items-center gap-4">
+        <li class="sm:hidden" x-on:click="open = true">
+          <div class="i-tabler-menu-2 text-lg text-gray-600 hover:text-blue-600 dark:text-slate-100"></div>
+        </li>
+        
+        <!-- https://github.com/halo-sigs/plugin-search-widget -->
+        
+        <li
+          x-data="dropdown"
+          class="relative cursor-pointer transition-all"
+          @mouseenter="open()"
+          @mouseleave="close()"
+        >
+          <div>
+            <div class="size-5 text-gray-600 hover:text-blue-600 dark:text-slate-100">
+              <img
+                class="size-5 rounded-full"
+                src="/themes/theme-earth/assets/images/default-avatar.svg"
+                alt="Anonymous User"
+              />
+            </div>
+            <ul
+              @mouseenter="open()"
+              @mouseleave="close()"
+              x-show="show"
+              x-transition:enter="transition ease-out duration-100"
+              x-transition:enter-start="transform opacity-0 scale-95"
+              x-transition:enter-end="transform opacity-100 scale-100"
+              x-transition:leave="transition ease-in duration-75"
+              x-transition:leave-start="transform opacity-100 scale-100"
+              x-transition:leave-end="transform opacity-0 scale-95"
+              class="absolute right-0 z-10 mt-2 w-40 divide-y divide-gray-50 overflow-hidden rounded bg-white shadow dark:divide-slate-600 dark:bg-slate-700"
+            >
+              
+              
+              <li
+                class="flex w-full items-center text-left text-sm hover:bg-gray-50 dark:hover:bg-slate-600"
+              >
+                <a
+                  class="size-full truncate px-4 py-2 text-gray-600 hover:text-blue-600 dark:text-slate-50 dark:hover:text-gray-300"
+                  href="/login"
+                  onclick="this.href = '/login?redirect_uri=' + encodeURIComponent(window.location.href)"
+                >Login</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+</header>
+
+    
+      
+    <section>
+      <div class="relative flex items-center" style="height:24rem">
+        <div
+          class="before:z-1 relative size-full bg-cover bg-center bg-no-repeat before:absolute before:inset-0 before:bg-black/40"
+          style="background-image: url(&#39;/upload/%E9%A2%86%E8%88%AA%E8%AE%A1%E5%88%92.jpg&#39;)"
+        ></div>
+        
+      </div>
+    </section>
+  
+    
+    
+    <section
+      class="mx-auto mt-6 grid max-w-7xl grid-cols-1 gap-6 px-4 md:grid-cols-[1fr_18rem] lg:px-6"
+    >
+      <div class="z-0 min-w-0">
+        
+    <div x-data="upvote('post','content.halo.run','posts')" class="rounded-xl bg-white p-4 dark:bg-slate-800">
+      <div
+        class="flex flex-col items-center justify-between gap-2 sm:flex-row" x-data="{name:&#39;019eee9e-f3b9-7589-b005-b72ca4245cd3&#39;}"
+      >
+        <div class="flex w-full items-center justify-start gap-2">
+          
+          <div class="flex flex-col gap-0.5">
+            <a
+              href="/authors/admin"
+              title="OSPP"
+              class="text-sm font-semibold text-gray-900 hover:text-gray-600 dark:text-slate-100 dark:hover:text-slate-200"
+            >OSPP</a>
+            <div class="flex items-center gap-2 text-xs font-light text-gray-600 dark:text-slate-100">
+              <span>Published on 2026-06-24</span>
+              <span class="text-gray-300 dark:text-slate-200">/</span>
+              <span>755 Visits</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-row items-center gap-1.5 self-end">
+          
+          <div
+            @click="handleUpvote(name)"
+            class="group inline-flex cursor-pointer items-center rounded-lg"
+          >
+            <div
+              class="inline-flex items-center justify-center rounded-full p-2 transition-all group-hover:bg-gray-100 dark:group-hover:bg-slate-700"
+            >
+              <div
+                class="i-tabler-heart text-lg text-gray-600 group-hover:text-red-600 dark:text-slate-500"
+                x-show="!upvoted(name)"
+              ></div>
+              <div class="i-tabler-heart-filled text-lg text-red-600" x-show="upvoted(name)"></div>
+            </div>
+            <span
+              class="text-sm text-gray-600 group-hover:text-red-600 dark:text-slate-500"
+              data-upvote-post-name="019eee9e-f3b9-7589-b005-b72ca4245cd3"
+            >0</span>
+          </div>
+          
+
+          <div
+            class="group inline-flex cursor-pointer items-center gap-0.5 rounded-lg"
+            @click="shareModal = true" x-data="share([{&quot;id&quot;:&quot;wechat&quot;},{&quot;id&quot;:&quot;x&quot;},{&quot;id&quot;:&quot;telegram&quot;},{&quot;id&quot;:&quot;facebook&quot;},{&quot;id&quot;:&quot;qq&quot;},{&quot;id&quot;:&quot;qzone&quot;},{&quot;id&quot;:&quot;weibo&quot;},{&quot;id&quot;:&quot;douban&quot;},{&quot;id&quot;:&quot;native&quot;}],[&quot;wechat&quot;,&quot;x&quot;,&quot;facebook&quot;,&quot;qq&quot;,&quot;native&quot;])"
+          >
+            <div
+              class="inline-flex items-center justify-center rounded-full p-2 transition-all group-hover:bg-gray-100 dark:group-hover:bg-slate-700"
+            >
+              <div class="i-tabler-share text-lg text-gray-600 group-hover:text-green-500 dark:text-slate-500"></div>
+            </div>
+            <template x-teleport="body">
+  <div>
+    <div
+      class="fixed inset-0 z-50 bg-gray-800/40 opacity-100 backdrop-blur-sm dark:bg-black/80"
+      aria-hidden="true"
+      x-show="shareModal"
+      x-transition:enter="ease-in-out duration-300"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="ease-in-out duration-300"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+    ></div>
+    <div
+      class="fixed inset-0 z-50 overflow-y-auto"
+      tabindex="-1"
+      x-show="shareModal"
+      x-transition:enter="ease-out duration-200"
+      x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+      x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+      x-transition:leave="ease-in duration-100"
+      x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+      x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+    >
+      <div class="flex min-h-full flex-col items-center justify-center p-4 text-center sm:p-0">
+        <div
+          @click.outside="shareModal = false"
+          class="relative my-4 transform overflow-hidden rounded-lg bg-white p-4 text-left shadow-xl transition-all dark:bg-slate-800 dark:text-slate-100 sm:w-full sm:max-w-xl"
+        >
+          <h1 class="text-lg font-semibold">Share</h1>
+          <div class="my-8">
+            <div class="grid grid-cols-5 gap-6 sm:grid-cols-6">
+              <template x-for="item in activeShareItems">
+                <div class="inline-flex flex-col items-center justify-center gap-1.5 rounded-full">
+                  <div
+                    class="inline-flex size-12 cursor-pointer items-center justify-center rounded-full bg-gray-100 transition-all hover:bg-gray-200 dark:bg-slate-600 dark:text-slate-50 dark:hover:bg-slate-700 dark:hover:text-slate-100 sm:size-16"
+                    @click="handleShare(item.id)"
+                  >
+                    <div class="text-xl text-gray-900 dark:text-slate-50" :class="item.icon"></div>
+                  </div>
+                  <div class="hidden text-xs text-gray-600 dark:text-slate-100 sm:block" x-text="item.name"></div>
+                </div>
+              </template>
+            </div>
+            <div class="mt-10">
+              <div
+                class="flex flex-wrap items-center justify-center gap-1 rounded-lg bg-gray-100 px-3 py-2 dark:bg-slate-700 sm:justify-between"
+              >
+                <div
+                  class="flex-1 select-all truncate text-xs font-light text-gray-600 dark:text-slate-100"
+                  x-text="permalink"
+                ></div>
+                <div
+                  class="flex-none cursor-pointer select-none text-sm text-gray-600 hover:text-gray-900 dark:text-slate-400 dark:hover:text-slate-500"
+                  @click="handleCopy" x-text="copied ? &#39;Copied&#39; : &#39;Copy&#39;"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            @click="shareModal = false"
+            class="group inline-flex items-center justify-center rounded-full bg-white p-1.5 dark:bg-slate-800"
+          >
+            <i
+              class="i-tabler-x block text-gray-600 hover:text-gray-900 dark:text-slate-100 dark:hover:text-slate-500"
+            ></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+          </div>
+        </div>
+      </div>
+      <h1
+        class="mt-3 text-3xl font-medium dark:text-slate-50"
+      >🚩 领航模式指南</h1>
+      <div class="mt-3 flex gap-2">
+        
+      </div>
+      <article
+        id="content"
+        class="!max-w-none break-words markdown-body"
+      ><figure data-content-type="image" style="display: flex; flex-direction: column;"><img src="/upload/%E9%A2%86%E8%88%AA%E8%AE%A1%E5%88%92.jpg" alt="领航计划.jpg" width="2710px" sizes="(max-width: 640px) 94vw, (max-width: 768px) 92vw, (max-width: 1024px) 88vw, min(800px, 85vw)" srcset="/upload/%E9%A2%86%E8%88%AA%E8%AE%A1%E5%88%92.jpg?width=1600 1600w, /upload/%E9%A2%86%E8%88%AA%E8%AE%A1%E5%88%92.jpg?width=800 800w, /upload/%E9%A2%86%E8%88%AA%E8%AE%A1%E5%88%92.jpg?width=400 400w, /upload/%E9%A2%86%E8%88%AA%E8%AE%A1%E5%88%92.jpg?width=1200 1200w"></figure><h2 style="" id="%E2%98%80%EF%B8%8F-%E9%A2%86%E8%88%AA%E6%A8%A1%E5%BC%8F%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F">☀️ 领航模式是什么？</h2><p style="text-align: justify">领航模式是开源之夏于2026年推出的全新运作模式，与传统模式相比，领航模式的不同在于<strong>学生说了算</strong>——社区提供方向，学生定义问题，学生设计方案，学生推动落地。</p><p style="text-align: justify">首期领航模式参与社区采用邀请制，受邀社区发布社区需求方向，学生选择感兴趣的方向深入社区，挖掘待解决需求问题，生成提案提交社区。社区沟通选拔提案，被选中的学生基于提案优化生成具体项目任务并进行方案设计及开发工作。</p><h2 style="text-align: justify" id="%F0%9F%92%81-%E5%8F%82%E4%B8%8E%E6%B5%81%E7%A8%8B">💁 参与流程</h2><h3 style="" id="%F0%9F%91%A5-%E7%A4%BE%E5%8C%BA%E5%8F%8A%E5%AD%A6%E7%94%9F%E5%8F%82%E4%B8%8E%E8%B5%84%E6%A0%BC"><span style="color: #2563eb">👥 社区及学生参与资格</span></h3><p style="">首期领航模式参与社区为组委会邀请。</p><p style="">活动面向年满 18 周岁的高校在校学生。项目开发周期内，学生需保持在校学生状态。</p><p style="">一名学生同时只能申请/承担一个项目任务（含领航模式项目）；落选/结项后可再申请其他项目任务。</p><h3 style="" id="%F0%9F%93%A4-%E7%A4%BE%E5%8C%BA%E5%8F%91%E5%B8%83%E9%9C%80%E6%B1%82%E6%96%B9%E5%90%91"><span style="color: #2563eb">📤 社区发布需求方向</span></h3><p style="">受邀社区在系统内完成组织报名后，在系统内发布需求方向。</p><p style=""><span style="color: #2563eb"><strong>方向要求</strong></span></p><ul><li><p style=""><strong>数量要求：</strong>每个社区累计可发布 1-3 个方向，每个方向单独填写发布。</p></li><li><p style=""><strong>方向名称：</strong>简洁明确，易于快速识别。示例：“RISC-V 驱动性能优化”、“基础库的跨平台适配”、“固件构建系统改进”等</p></li><li><p style=""><strong>方向简述：</strong>用 2-3 句话说明这个方向关注什么，不需要描述具体任务。示例：</p><ul><li><p style="">我们关注 RISC-V 平台上的驱动性能优化，尤其是外设驱动的中断延迟、DMA 传输效率以及多核环境下的并发访问开销。目前社区缺少系统性的分析和优化工具，我们希望有学生能在这个方向上做出实质性的推进。</p></li></ul></li><li><p style=""><strong>方向重要性：</strong>说明这个方向对社区的价值。它将解决了什么用户痛点或技术债。示例：</p><ul><li><p style="">随着 RISC-V 硬件平台从嵌入式走向高性能场景，驱动性能已成为用户反馈的主要瓶颈。当前多个开发板的网络和存储驱动性能远低于同级别 ARM 平台，直接影响用户体验和生态吸引力。</p></li></ul></li><li><p style=""><strong>对学生的期望：</strong>说明学生需要具备哪些背景知识或能力。</p></li><li><p style=""><strong>社区提供支持</strong>：说明社区可以为学生提供什么支持。示例：</p><ul><li><p style="">导师每周一次 30 分钟线上同步</p></li><li><p style="">指定 RISC-V 开发板的远程访问权限</p></li><li><p style="">社区现有性能分析文档和测试集</p></li><li><p style="">相关模块的代码导读</p></li><li><p style="">建议切入点（可选）：如果社区有一些已经想到的、但没精力做的具体方向，可以出供学生参考。</p></li></ul></li></ul><p style=""><span style="color: #2563eb"><strong>提案接收渠道</strong></span></p><ul><li><p style="">活动系统外提交，社区指定接收邮箱或其他渠道。</p></li></ul><p style=""><span style="color: #2563eb"><strong>社区开放Pitch时段</strong></span></p><ul><li><p style="">社区发布方向时填写社区计划开放的 Pitch 时段，例如：2026 年 X 月 X 日 19:00-21:00。/另行通知。</p></li></ul><h3 style="" id="%F0%9F%93%83-%E5%AD%A6%E7%94%9F%E6%8F%90%E4%BA%A4%E6%8F%90%E6%A1%88"><span style="color: #2563eb"><strong>📃 学生提交提案</strong></span></h3><ul><li><p style="">学生选择感兴趣的需求方向，深入社区发掘需解决的问题 ，并提交简易提案至社区指定渠道。</p></li></ul><h3 style="" id="%F0%9F%94%97-%E7%A4%BE%E5%8C%BA%E5%BC%80%E6%94%BEpitch%EF%BC%8C%E4%B8%8E%E5%AD%A6%E7%94%9F%E8%AE%A8%E8%AE%BA%E6%8F%90%E6%A1%88"><span style="color: #2563eb">🔗 社区开放Pitch，与学生讨论提案</span></h3><ul><li><p style="">社区定期组织提案沟通并确认学生提案是否通过。</p></li><li><p style="">Pitch形式：线上会议/其他。</p></li></ul><h3 style="" id="%F0%9F%93%8D-%E6%A0%B9%E6%8D%AE%E9%80%89%E5%AE%9A%E6%8F%90%E6%A1%88%E7%94%9F%E6%88%90%E5%85%B7%E4%BD%93%E9%A1%B9%E7%9B%AE%E4%BB%BB%E5%8A%A1"><span style="color: #2563eb">📍 根据选定提案生成具体项目任务</span></h3><ul><li><p style="">学生和导师共同细化项目任务细节，项目格式要求同常规模式。</p></li><li><p style="">开发周期以月为单位，最短开发周期为 2 个月，最长开发周期为 6 个月。</p></li><li><p style="">社区帐号系统内提交项目。</p></li><li><p style="">学生提交正式申请书。</p></li></ul><h3 style="" id="%F0%9F%A7%91%E2%80%8D%F0%9F%92%BB-%E5%BC%80%E5%8F%91%E4%B8%8E%E7%BB%93%E9%A1%B9"><span style="color: #2563eb">🧑‍💻 开发与结项</span></h3><ul><li><p style="">学生完成项目开发并结项</p></li><li><p style="">学生接收结项报酬</p></li></ul><h2 style="text-align: justify" id="%F0%9F%92%A1-%E9%9A%BE%E5%BA%A6%E4%B8%8E%E6%8A%A5%E9%85%AC">💡 <span style="color: #2563eb">难度与报酬</span></h2><p style=""><strong>领航模式模式</strong>项目难度分为基础、进阶和挑战三档，对应结项劳务报酬分别为:税前 6000 元人民币、8000元人民币和税前 10000 元人民币。</p><p style=""></p></article>
+      <div
+        class="mt-10 flex flex-col sm:flex-row sm:justify-between"
+      >
+        <div class="flex justify-start">
+          <a
+            role="navigation"
+            class="group inline-flex items-center gap-2 truncate text-sm text-gray-600 hover:text-gray-900 dark:text-slate-100 dark:hover:text-slate-200"
+            href="/help/CommunityGuide"
+            title="🟢 组织指南"
+          >
+            <span class="i-tabler-chevron-left translate-x-1 text-lg transition-all group-hover:-translate-x-0"></span>
+            <span>🟢 组织指南</span>
+          </a>
+        </div>
+        <div class="flex justify-end">
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  
+      </div>
+      
+        
+    <aside class="z-0 hidden w-72 flex-col gap-6 md:flex">
+  
+    
+      
+    <div
+      class="toc-container sticky top-20 z-[5] w-full cursor-pointer rounded-xl bg-white p-3 shadow transition-all duration-500 hover:shadow-md dark:bg-slate-800"
+    >
+      <h2 class="inline-flex items-center gap-2 text-base dark:text-slate-50">
+        <span class="i-tabler-list text-lg"></span>
+        Table of Contents
+      </h2>
+      <div class="toc mt-2 max-h-64 overflow-auto"></div>
+    </div>
+  
+    
+    
+      <div
+  class="w-full overflow-hidden rounded-xl bg-white p-3 shadow transition-all duration-500 hover:shadow-md dark:bg-slate-800"
+>
+  <h2 class="inline-flex items-center gap-2 text-base dark:text-slate-50">
+    <span class="i-tabler-stairs-up text-lg text-red-600 dark:text-red-700"></span>
+    Popular Posts
+  </h2>
+  <div>
+    <ul
+      role="list"
+      class="divide-y divide-gray-100 dark:divide-slate-700"
+    >
+      <li class="py-3">
+        <div class="flex items-center justify-between">
+          <div class="flex flex-col gap-1">
+            <h3 class="line-clamp-2 text-sm font-medium hover:text-gray-500 hover:underline dark:text-slate-100">
+              <a href="/help/student%20guide" title="🟣 学生指南">🟣 学生指南</a>
+            </h3>
+            <p
+              class="text-xs tabular-nums text-gray-500 dark:text-slate-400"
+            >2026-03-03</p>
+          </div>
+          <div class="inline-flex items-center gap-1 text-xs text-gray-600 dark:text-slate-500">
+            <span class="i-tabler-eye"></span>
+            <span class="tabular-nums">24556</span>
+          </div>
+        </div>
+      </li>
+      <li class="py-3">
+        <div class="flex items-center justify-between">
+          <div class="flex flex-col gap-1">
+            <h3 class="line-clamp-2 text-sm font-medium hover:text-gray-500 hover:underline dark:text-slate-100">
+              <a href="/help/FAQ" title="🔥 2026 热点问题">🔥 2026 热点问题</a>
+            </h3>
+            <p
+              class="text-xs tabular-nums text-gray-500 dark:text-slate-400"
+            >2026-03-03</p>
+          </div>
+          <div class="inline-flex items-center gap-1 text-xs text-gray-600 dark:text-slate-500">
+            <span class="i-tabler-eye"></span>
+            <span class="tabular-nums">7138</span>
+          </div>
+        </div>
+      </li>
+      <li class="py-3">
+        <div class="flex items-center justify-between">
+          <div class="flex flex-col gap-1">
+            <h3 class="line-clamp-2 text-sm font-medium hover:text-gray-500 hover:underline dark:text-slate-100">
+              <a href="/help/CommunityGuide" title="🟢 组织指南">🟢 组织指南</a>
+            </h3>
+            <p
+              class="text-xs tabular-nums text-gray-500 dark:text-slate-400"
+            >2026-03-03</p>
+          </div>
+          <div class="inline-flex items-center gap-1 text-xs text-gray-600 dark:text-slate-500">
+            <span class="i-tabler-eye"></span>
+            <span class="tabular-nums">6627</span>
+          </div>
+        </div>
+      </li>
+      <li class="py-3">
+        <div class="flex items-center justify-between">
+          <div class="flex flex-col gap-1">
+            <h3 class="line-clamp-2 text-sm font-medium hover:text-gray-500 hover:underline dark:text-slate-100">
+              <a href="/help/student%20application%20advice" title=" 😶 保姆级教程：手把手教你搞定项目申请"> 😶 保姆级教程：手把手教你搞定项目申请</a>
+            </h3>
+            <p
+              class="text-xs tabular-nums text-gray-500 dark:text-slate-400"
+            >2026-03-03</p>
+          </div>
+          <div class="inline-flex items-center gap-1 text-xs text-gray-600 dark:text-slate-500">
+            <span class="i-tabler-eye"></span>
+            <span class="tabular-nums">6318</span>
+          </div>
+        </div>
+      </li>
+      <li class="py-3">
+        <div class="flex items-center justify-between">
+          <div class="flex flex-col gap-1">
+            <h3 class="line-clamp-2 text-sm font-medium hover:text-gray-500 hover:underline dark:text-slate-100">
+              <a href="/help/mentor%20guide" title="🟡 导师指南">🟡 导师指南</a>
+            </h3>
+            <p
+              class="text-xs tabular-nums text-gray-500 dark:text-slate-400"
+            >2026-03-03</p>
+          </div>
+          <div class="inline-flex items-center gap-1 text-xs text-gray-600 dark:text-slate-500">
+            <span class="i-tabler-eye"></span>
+            <span class="tabular-nums">5660</span>
+          </div>
+        </div>
+      </li>
+      <li class="py-3">
+        <div class="flex items-center justify-between">
+          <div class="flex flex-col gap-1">
+            <h3 class="line-clamp-2 text-sm font-medium hover:text-gray-500 hover:underline dark:text-slate-100">
+              <a href="/help/Pioneer-guide" title="🚩 领航模式指南">🚩 领航模式指南</a>
+            </h3>
+            <p
+              class="text-xs tabular-nums text-gray-500 dark:text-slate-400"
+            >2026-06-24</p>
+          </div>
+          <div class="inline-flex items-center gap-1 text-xs text-gray-600 dark:text-slate-500">
+            <span class="i-tabler-eye"></span>
+            <span class="tabular-nums">755</span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+    
+  
+</aside>
+  
+      
+      
+    </section>
+    
+
+<footer class="mt-10 bg-white py-8 dark:bg-slate-800">
+  <div class="mx-auto max-w-7xl px-4 md:flex md:justify-between md:gap-10 lg:px-6">
+    <div class="mb-6 max-w-full md:mb-0 md:max-w-md">
+      <a href="/" class="mb-6 flex items-center">
+        <img
+          src="/upload/WechatIMG1341.png"
+          class="mr-3 h-8"
+          alt="帮助文档" sizes="(max-width: 640px) 94vw, (max-width: 768px) 92vw, (max-width: 1024px) 88vw, min(800px, 85vw)" srcset="/upload/WechatIMG1341.png?width=1600 1600w, /upload/WechatIMG1341.png?width=800 800w, /upload/WechatIMG1341.png?width=400 400w, /upload/WechatIMG1341.png?width=1200 1200w"
+        />
+        <span
+          class="self-center whitespace-nowrap text-2xl font-semibold dark:text-slate-50"
+        >帮助文档</span>
+      </a>
+      <span
+        class="text-sm font-light text-gray-600 dark:text-slate-200"
+      >Copyright © 2020 - 2025 开源软件供应链点亮计划 活动组委会</span>
+    </div>
+    
+
+    
+    
+  </div>
+  <hr class="my-6 border-gray-200 dark:border-slate-700 sm:mx-auto lg:my-8" />
+  <div class="mx-auto flex max-w-7xl flex-col px-4 sm:flex-row sm:items-center sm:justify-between lg:px-6">
+    <div class="flex flex-col space-y-1 text-center sm:text-left">
+      <span class="text-sm text-gray-500 dark:text-slate-300 sm:text-center">
+        ©
+        2026
+        <a href="/" class="hover:underline">帮助文档</a>. All Rights Reserved. Powered by
+        <a href="https://halo.run" class="hover:underline" target="_blank">Halo</a>.
+      </span>
+
+      <div class="flex flex-col gap-1 sm:flex-row">
+        
+        
+      </div>
+
+      <p class="text-sm text-gray-500 dark:text-slate-300">
+        
+      </p>
+    </div>
+
+    
+  
+
+
+  </div>
+</footer>
+
+    
+      
+    <script>
+      main.generateToc();
+    </script>
+  
+    
+
+    <button
+      type="button"
+      id="btn-scroll-to-top"
+      aria-label="Back to Top"
+      class="fixed bottom-5 right-5 flex items-center justify-center rounded-full bg-white p-3 opacity-0 shadow transition-all duration-300 hover:opacity-70 hover:shadow-lg dark:bg-slate-600 lg:bottom-10 lg:right-10"
+    >
+      <span class="i-tabler-chevron-up text-2xl text-gray-600 dark:text-slate-200"></span>
+    </button>
+  </body>
+</html>

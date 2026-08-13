@@ -20,3 +20,4 @@ pnpm-debug.log*
 src/data/team-gitee-stats.json.backup
 src/data/team-gitee-stats.json.orig
 src/data/team-gitee-stats.json.fallback
+.claude/

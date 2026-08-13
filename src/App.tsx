@@ -25,12 +25,14 @@ const DocumentPage = React.lazy(() => import("@/components/DocumentPage").then(m
 const TechnicalDocsLayout = React.lazy(() => import("@/components/TechnicalDocsLayout").then(module => ({ default: module.TechnicalDocsLayout })));
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { HelmetProvider } from "react-helmet-async";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import ErrorBoundary from "@/components/ErrorBoundary";
+import AssistantWidget from "@/components/AssistantWidget";
 import PerformanceMonitor from "@/components/PerformanceMonitor";
 import RoutePreloader from "@/components/RoutePreloader";
 import { initFontOptimization } from "@/utils/fontOptimization";
@@ -54,11 +56,13 @@ function App() {
   return (
     <ErrorBoundary>
       <PerformanceMonitor />
+      <HelmetProvider>
       <LanguageProvider>
         {typeof window !== 'undefined' ? (
           <TooltipProvider>
           <BrowserRouter>
             <RoutePreloader />
+            <AssistantWidget />
           <Suspense fallback={<div className="flex items-center justify-center min-h-screen"><div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div></div>}>
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -122,6 +126,7 @@ function App() {
           </BrowserRouter>
         )}
       </LanguageProvider>
+      </HelmetProvider>
     </ErrorBoundary>
   );
 }

@@ -1,1 +1,16 @@
-{"projectId":"prj_yBFSRWHzuYpSosfXFGVW2xgLvfvN","orgId":"team_1GqQvTHBGz1X22ZbEjEUyN7s","projectName":"newenergycoder-club"}
+{
+  "projectId": "prj_yBFSRWHzuYpSosfXFGVW2xgLvfvN",
+  "orgId": "team_1GqQvTHBGz1X22ZbEjEUyN7s",
+  "projectName": "newenergycoder-club",
+  "settings": {
+    "createdAt": 1756318497863,
+    "framework": "vite",
+    "devCommand": "pnpm dev",
+    "installCommand": "pnpm install --no-frozen-lockfile",
+    "buildCommand": "pnpm build",
+    "outputDirectory": "dist",
+    "rootDirectory": null,
+    "directoryListing": false,
+    "nodeVersion": "22.x"
+  }
+}
