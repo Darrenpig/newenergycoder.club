@@ -25,11 +25,6 @@ const CRITICAL_RESOURCES: PreloadResource[] = [
     as: 'font',
     type: 'font/woff2',
     crossorigin: 'anonymous'
-  },
-  // 预加载关键CSS
-  {
-    href: '/css/critical.css',
-    as: 'style'
   }
 ];
 

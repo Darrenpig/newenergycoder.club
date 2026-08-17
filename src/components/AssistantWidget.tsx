@@ -17,7 +17,7 @@ declare global {
 // 模块级标记：防止 React StrictMode 下 effect 双重执行导致重复初始化
 let initStarted = false;
 
-function injectScript(src: string, id?: string): Promise<void> {
+function injectScript(src: string, id?: string, module = false): Promise<void> {
   return new Promise((resolve, reject) => {
     const selector = id ? `script#${CSS.escape(id)}` : `script[src="${src}"]`;
     const existing = document.querySelector<HTMLScriptElement>(selector);
@@ -27,6 +27,9 @@ function injectScript(src: string, id?: string): Promise<void> {
     }
     const script = document.createElement('script');
     if (id) script.id = id;
+    // Mintlify embed.js 是 ES Module，必须以 type="module" 注入，
+    // 否则会报 "Cannot use 'import.meta' outside a module"
+    if (module) script.type = 'module';
     script.src = src;
     script.async = true;
     script.onload = () => resolve();
@@ -37,7 +40,7 @@ function injectScript(src: string, id?: string): Promise<void> {
 
 async function initMintlify() {
   const { widgetId, embedUrl } = assistantConfig.mintlify;
-  await injectScript(embedUrl);
+  await injectScript(embedUrl, undefined, true);
   await window.MintlifyAssistant?.init({ id: widgetId });
 }
 
