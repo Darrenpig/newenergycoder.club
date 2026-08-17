@@ -18,6 +18,10 @@ import { LinkValidator } from './LinkValidator';
 import { LinkTransformer } from './LinkTransformer';
 import { globalCacheManager } from './CacheManager';
 import { globalLinkBatchProcessor } from '../utils/BatchProcessor';
+import {
+  extractCandidateLinksFromMarkdown,
+  isMeaningfulLinkCandidate,
+} from '../utils/linkExtraction.js'
 
 /**
  * 链接处理器类
@@ -127,39 +131,16 @@ export class LinkProcessor implements ILinkDetectionService {
    * @returns 提取的链接数组
    */
   extractLinks(content: string, context: DocumentContext): string[] {
-    const links: string[] = [];
     const config = getDifficultyConfig(context.difficulty);
+    const extractedLinks = extractCandidateLinksFromMarkdown(content)
 
-    // Markdown链接正则表达式
-    const markdownLinkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
-    // HTML链接正则表达式
-    const htmlLinkRegex = /<a[^>]+href=["']([^"']+)["'][^>]*>/gi;
-    // 纯URL正则表达式
-    const urlRegex = /https?:\/\/[^\s<>"{}|\\^`\[\]]+/g;
-
-    let match;
-
-    // 提取Markdown链接
-    while ((match = markdownLinkRegex.exec(content)) !== null) {
-      links.push(match[2]);
-    }
-
-    // 提取HTML链接
-    while ((match = htmlLinkRegex.exec(content)) !== null) {
-      links.push(match[1]);
-    }
-
-    // 如果启用深度检测，提取纯URL
     if (config.enableDeepLinkDetection) {
-      while ((match = urlRegex.exec(content)) !== null) {
-        if (!links.includes(match[0])) {
-          links.push(match[0]);
-        }
-      }
+      return extractedLinks.filter(link => this.isValidLinkFormat(link));
     }
 
-    // 去重并过滤
-    return [...new Set(links)].filter(link => this.isValidLinkFormat(link));
+    return extractedLinks
+      .filter(link => link.startsWith('/') || link.startsWith('#') || link.startsWith('mailto:'))
+      .filter(link => this.isValidLinkFormat(link));
   }
 
   /**
@@ -482,15 +463,8 @@ export class LinkProcessor implements ILinkDetectionService {
    */
   private isValidLinkFormat(link: string): boolean {
     if (!link || link.trim().length === 0) return false;
-    
-    // 排除一些明显无效的链接
-    const invalidPatterns = [
-      /^javascript:/i,
-      /^data:/i,
-      /^blob:/i
-    ];
-    
-    return !invalidPatterns.some(pattern => pattern.test(link));
+
+    return isMeaningfulLinkCandidate(link);
   }
 
   /**
