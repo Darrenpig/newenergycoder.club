@@ -10,6 +10,10 @@ const preloaderFile = readFileSync(
   'utf8'
 )
 const learningRoutesPath = new URL('../src/routes/learningRoutes.tsx', import.meta.url)
+const resourcesPage = readFileSync(
+  new URL('../src/pages/ResourcesPage.tsx', import.meta.url),
+  'utf8'
+)
 
 const requiredPhrases = [
   '官网 SPA',
@@ -52,5 +56,14 @@ if (appFile.includes('Phase 2 Routes (currently placeholders)')) {
   throw new Error('App.tsx 仍保留误导性的占位路由注释')
 }
 
+if (resourcesPage.includes('const mockResources')) {
+  throw new Error('ResourcesPage 仍然保留页内 mockResources 数据')
+}
+
+if (!resourcesPage.includes("from '@/data/siteResources'")) {
+  throw new Error('ResourcesPage 尚未改为消费统一的数据模块')
+}
+
 console.log('PASS architecture')
 console.log('PASS routes')
+console.log('PASS resources')
