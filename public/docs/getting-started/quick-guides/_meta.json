@@ -8,18 +8,6 @@
       "title": "环境搭建",
       "description": "开发环境的安装和配置指南",
       "order": 1
-    },
-    {
-      "slug": "first-project",
-      "title": "第一个项目",
-      "description": "创建和运行你的第一个项目",
-      "order": 2
-    },
-    {
-      "slug": "community-join",
-      "title": "加入社区",
-      "description": "如何参与新能源编程俱乐部社区",
-      "order": 3
     }
   ]
 }

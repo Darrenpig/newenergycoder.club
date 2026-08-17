@@ -7,6 +7,7 @@ import React, { useState, useCallback, useMemo } from 'react';
 import { Link, Hash, Copy, Check } from 'lucide-react';
 import { DocumentDifficulty } from '../types/link-detection';
 import { getDifficultyConfig } from '../config/DifficultyConfig';
+import { getDifficultyAccentClasses } from '@/utils/difficultyStyles'
 
 /**
  * 标题级别类型
@@ -131,6 +132,7 @@ const AnchorButton: React.FC<{
   const [isHovered, setIsHovered] = useState(false);
   
   const difficultyConfig = difficulty ? getDifficultyConfig(difficulty) : null;
+  const accentClasses = difficulty ? getDifficultyAccentClasses(difficulty) : null
   
   const handleAnchorClick = useCallback((event: React.MouseEvent) => {
     event.preventDefault();
@@ -180,14 +182,14 @@ const AnchorButton: React.FC<{
   const buttonClasses = useMemo(() => {
     let classes = "inline-flex items-center gap-1 ml-2 opacity-0 group-hover:opacity-100 transition-all duration-200";
     
-    if (difficultyConfig) {
-      classes += ` text-${difficultyConfig.color.replace('#', '')}-600 hover:text-${difficultyConfig.color.replace('#', '')}-800`;
+    if (difficultyConfig && accentClasses) {
+      classes += ` ${accentClasses.text}`;
     } else {
       classes += " text-gray-400 hover:text-gray-600";
     }
     
     return classes;
-  }, [difficultyConfig]);
+  }, [accentClasses, difficultyConfig]);
   
   return (
     <span 
@@ -250,6 +252,7 @@ export const HeaderWithAnchor: React.FC<HeaderWithAnchorProps> = ({
   
   // 获取难度配置
   const difficultyConfig = difficulty ? getDifficultyConfig(difficulty) : null;
+  const accentClasses = difficulty ? getDifficultyAccentClasses(difficulty) : null
   
   // 生成标题样式
   const headerClasses = useMemo(() => {
@@ -266,12 +269,12 @@ export const HeaderWithAnchor: React.FC<HeaderWithAnchorProps> = ({
     let classes = `${baseClasses} ${levelClasses[level]} ${className}`;
     
     // 添加难度相关样式
-    if (difficultyConfig) {
-      classes += ` border-l-4 border-l-${difficultyConfig.color.replace('#', '')} pl-4`;
+    if (difficultyConfig && accentClasses) {
+      classes += ` border-l-4 ${accentClasses.border} pl-4`;
     }
     
     return classes;
-  }, [level, className, difficultyConfig]);
+  }, [accentClasses, level, className, difficultyConfig]);
   
   // 创建标题元素
   const HeaderTag = `h${level}` as keyof JSX.IntrinsicElements;

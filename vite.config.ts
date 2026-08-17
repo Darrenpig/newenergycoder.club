@@ -1,6 +1,7 @@
 import path from "path"
 import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
+import { getManualChunk } from "./build/manualChunks.js"
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -42,129 +43,7 @@ export default defineConfig({
     // 启用代码分割
     rollupOptions: {
       output: {
-        manualChunks: (id) => {
-          // 简化拆分策略以对齐 2113f5d，降低运行时分块加载风险
-          // React 全家桶合并为一个 vendor chunk，避免 react-core / react-dom / react-jsx 之间循环引用
-          if (
-            id.includes('react-dom') ||
-            id.includes('react/jsx-runtime') ||
-            (id.includes('react') && !id.includes('react-router') && !id.includes('react-helmet') && !id.includes('react-i18next') && !id.includes('react-markdown') && !id.includes('react-syntax-highlighter'))
-          ) {
-            return 'react-vendor';
-          }
-          
-          // 移除Three.js相关细分，当前项目已移除3D动画依赖
-          
-          // 路由相关细分
-          if (id.includes('react-router-dom')) {
-            return 'router-dom';
-          }
-          if (id.includes('react-router')) {
-            return 'router-core';
-          }
-          
-          // UI 组件库更细分 - 解决radix过大问题
-          if (id.includes('@radix-ui/react-dialog')) {
-            return 'radix-dialog';
-          }
-          if (id.includes('@radix-ui/react-dropdown-menu')) {
-            return 'radix-dropdown';
-          }
-          if (id.includes('@radix-ui/react-select')) {
-            return 'radix-select';
-          }
-          if (id.includes('@radix-ui/react-tabs')) {
-            return 'radix-tabs';
-          }
-          if (id.includes('@radix-ui/react-toast')) {
-            return 'radix-toast';
-          }
-          if (id.includes('@radix-ui/react-tooltip')) {
-            return 'radix-tooltip';
-          }
-          if (id.includes('@radix-ui')) {
-            return 'radix-base';
-          }
-          if (id.includes('lucide-react')) {
-            return 'icons';
-          }
-          
-          // 动画和交互库
-          if (id.includes('framer-motion')) {
-            return 'animations';
-          }
-          
-          // 样式工具库细分
-          if (id.includes('tailwind-merge')) {
-            return 'tailwind-merge';
-          }
-          if (id.includes('tailwindcss-animate')) {
-            return 'tailwind-animate';
-          }
-          if (id.includes('@tailwindcss/typography')) {
-            return 'tailwind-typography';
-          }
-          if (id.includes('clsx') || id.includes('class-variance-authority')) {
-            return 'style-utils';
-          }
-          
-          // 状态管理
-          if (id.includes('zustand')) {
-            return 'state-management';
-          }
-          
-          // Markdown 相关 - 细分
-          if (id.includes('react-markdown')) {
-            return 'react-markdown';
-          }
-          if (id.includes('remark-gfm')) {
-            return 'remark-gfm';
-          }
-          if (id.includes('remark') || id.includes('rehype')) {
-            return 'markdown-processors';
-          }
-          
-          // 代码高亮合并，避免 prismjs 与 syntax-highlighter / react 之间循环引用
-          if (id.includes('react-syntax-highlighter') || id.includes('prismjs')) {
-            return 'syntax-highlighter';
-          }
-          
-          // 监控和分析工具分离
-          if (id.includes('@vercel/analytics')) {
-            return 'vercel-analytics';
-          }
-          if (id.includes('@vercel/speed-insights')) {
-            return 'vercel-insights';
-          }
-          if (id.includes('@sentry/react')) {
-            return 'sentry-react';
-          }
-          if (id.includes('@sentry/tracing')) {
-            return 'sentry-tracing';
-          }
-          if (id.includes('@sentry')) {
-            return 'sentry-core';
-          }
-          
-          // 国际化
-          if (id.includes('react-i18next')) {
-            return 'react-i18next';
-          }
-          if (id.includes('i18next')) {
-            return 'i18next-core';
-          }
-          
-          // React 相关工具
-          if (id.includes('react-helmet-async')) {
-            return 'react-helmet';
-          }
-          
-          // 按使用频率和大小分组的vendor chunks - 更细粒度拆分
-          if (id.includes('node_modules')) {
-            // 其余依赖交由默认策略处理，减少开发模式分块复杂度
-            return undefined;
-          }
-        },
+        manualChunks: getManualChunk,
       },
     },
     // 启用压缩

@@ -1,4 +1,5 @@
 import { DocumentContent, DocumentMeta, DocumentFrontMatter, TableOfContentsItem, DocumentLoadResult } from '../types/document';
+import { shouldFallbackToDirectMarkdown } from '@/utils/documentFetch'
 
 /**
  * 文档加载服务
@@ -53,8 +54,9 @@ export class DocumentLoader {
       let response = await fetch(indexPath);
       let finalPath = indexPath;
       
-      // 如果index.md文件不存在，尝试加载直接的.md文件
-      if (!response.ok) {
+      // 在 Vite/Vercel dev fallback 下，不存在的 index.md 可能返回 HTML。
+      // 这时需要继续回退到真正的 slug.md。
+      if (shouldFallbackToDirectMarkdown(response)) {
         const docPath = subcategory
           ? `/docs/${category}/${subcategory}/${slug}.md`
           : `/docs/${category}/${slug}.md`;

@@ -1182,4 +1182,4 @@ exe = EXE(
 
 ---
 
-**需要帮助？** [查看常见问题](/docs/resources/faq) 或 [加入讨论社区](/community)
+**需要帮助？** [查看常见问题](/docs/resources/faq) 或 [加入讨论社区](/join)

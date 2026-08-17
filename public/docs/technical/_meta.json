@@ -26,12 +26,6 @@
       "title": "集成指南",
       "description": "第三方服务集成指南",
       "order": 4
-    },
-    {
-      "slug": "deployment",
-      "title": "部署文档",
-      "description": "项目部署和运维指南",
-      "order": 5
     }
   ]
 }

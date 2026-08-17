@@ -1,197 +1,170 @@
-# ALIGNMENT - Markdown文档仓库自动渲染系统
+# ALIGNMENT - Markdown 文档仓库自动渲染系统
 
-## 1. 原始需求分析
+## 1. 对齐目标
 
-### 用户需求
-- **核心需求**: 创建一个Markdown文档仓库，能够自动渲染为/getting-started页面指向的文档页面
-- **目标**: 建立文档管理系统，实现Markdown文档的自动化渲染和展示
+本文档按当前仓库真实状态重写，用于明确 Markdown 文档系统已经落地的范围、当前实现边界以及与原始需求之间的偏差，作为后续维护与继续演进的对齐基线。
 
-### 需求解读
-用户希望建立一个文档管理系统，其中：
-1. 有一个专门的文档仓库存储Markdown文件
-2. 这些文档能够自动渲染为网页格式
-3. 渲染后的页面能够通过/getting-started页面进行访问和导航
-4. 保持与现有项目的视觉风格一致
+## 2. 原始需求与当前现状
 
-## 2. 现有项目分析
+### 2.1 原始需求
 
-### 项目技术栈
-- **前端框架**: React + TypeScript + Vite
-- **UI组件库**: shadcn/ui (基于Tailwind CSS)
-- **路由**: React Router DOM
-- **动画**: Framer Motion
-- **Markdown处理**: 已有react-markdown + remark-gfm + react-syntax-highlighter
+- 建立一个 Markdown 文档仓库
+- 支持文档自动渲染为网页
+- 能从 `/getting-started` 或相关学习入口访问文档
+- 页面风格与主站保持一致
 
-### 现有Markdown功能
-- **MarkdownRenderer组件**: 功能完善的Markdown渲染器
-  - 支持语法高亮
-  - 支持GitHub风格Markdown (GFM)
-  - 支持代码复制功能
-  - 支持自定义主题
-  - 支持表格、任务列表等扩展语法
-- **MarkdownPage组件**: 完整的Markdown编辑器页面
-  - 实时预览
-  - 配置面板
-  - 文件导入导出
-  - 工具栏功能
-- **MarkdownViewer页面**: 独立的Markdown查看器页面
+### 2.2 当前现状
 
-### 现有路由结构
-- `/getting-started` - Getting Started页面
-- `/markdown` - Markdown编辑器
-- `/markdown/editor` - Markdown编辑器
-- `/markdown/viewer` - Markdown查看器
+- 文档仓库已存在，实际目录位于 `public/docs/`
+- 通用 Markdown 文档访问已接入 `/docs/...` 路由
+- 核心加载与缓存能力已经落地，分别由 `DocumentLoader` 与 `DocumentCache` 承担
+- 技术文档模块已实现增强布局：`TechnicalDocsLayout + TechnicalDocsNavigation + TechnicalDocsSearch + DocumentTOC`
+- 通用文档页 `DocumentPage` 已支持 Front Matter、TOC、标题锚点、任务列表渲染、链接检测区块
+- `/getting-started` 当前不再直接进入本地文档系统，而是重定向到外部站点 `https://docs.newenergycoder.club/start-here`
 
-### GettingStartedPage分析
-- **页面结构**: Hero Section + 学习统计 + 技术方向 + 快速指南 + 培训资源
-- **技术方向卡片**: 包含嵌入式开发、GUI界面开发、算法与数据结构
-- **导航链接**: 指向具体的学习路径页面
-- **视觉风格**: 使用渐变背景、卡片布局、动画效果
+### 2.3 与原需求的主要偏差
 
-## 3. 需求边界确认
+- 原规划中的 `docs/` 目录，实际落地为 `public/docs/`
+- 原规划中的通用 `DocumentNavigation / DocumentBreadcrumb / DocumentSidebar` 未按设计独立落地
+- 现状中 `DocumentPage` 集中了页面加载、数据读取、Markdown 渲染和增强逻辑，没有按最初规划细拆
+- 原需求强调 `/getting-started` 作为本地文档入口，但当前实现已经改为外部跳转
+- 搜索能力只覆盖 `technical` 分类，不是全局文档搜索
 
-### 明确任务范围
-1. **文档仓库结构设计**: 建立合理的文档目录结构
-2. **自动渲染机制**: 实现Markdown文档的自动加载和渲染
-3. **导航集成**: 将文档页面集成到/getting-started页面的导航中
-4. **视觉一致性**: 确保渲染页面与现有项目风格一致
-5. **文档管理**: 提供文档的增删改查功能
+## 3. 现有项目分析
 
-### 不包含的功能
-- 在线编辑功能（已有MarkdownViewer页面）
-- 用户权限管理
-- 版本控制系统
-- 搜索功能（可作为后续扩展）
+### 3.1 技术栈
 
-## 4. 技术实现方案
+- 前端框架：React + TypeScript + Vite
+- 路由：React Router DOM
+- 样式系统：Tailwind CSS + shadcn/ui
+- Markdown 渲染：`react-markdown` + `remark-gfm`
+- 缓存：内存缓存 + `sessionStorage`
 
-### 4.1 文档仓库结构
-```
-docs/
-├── getting-started/
-│   ├── index.md                 # Getting Started主页内容
-│   ├── embedded-development.md  # 嵌入式开发指南
-│   ├── gui-development.md       # GUI开发指南
-│   ├── algorithm-design.md      # 算法设计指南
-│   └── quick-guides/
-│       ├── environment-setup.md
-│       ├── first-project.md
-│       └── community-join.md
-├── tutorials/
-│   ├── basic/
-│   ├── intermediate/
-│   └── advanced/
-└── resources/
-    ├── tools.md
-    ├── libraries.md
-    └── references.md
-```
+### 3.2 当前相关实现
 
-### 4.2 自动渲染机制
-1. **文档加载器**: 创建DocumentLoader服务，负责从文档仓库加载Markdown文件
-2. **路由映射**: 建立文档路径与URL路径的映射关系
-3. **动态路由**: 使用React Router的动态路由功能
-4. **缓存机制**: 实现文档内容缓存，提升加载性能
+- `src/services/DocumentLoader.ts`
+  - 加载 `_meta.json`
+  - 读取 Markdown 文件
+  - 解析 Front Matter
+  - 生成 TOC
+- `src/services/DocumentCache.ts`
+  - 内存缓存
+  - 会话缓存
+  - TTL 与统计
+- `src/components/DocumentPage.tsx`
+  - 通用文档详情页
+  - 集成 `ReactMarkdown`
+  - 集成 `HeaderWithAnchor`
+  - 集成 `LinkDetectorComponent`
+- `src/components/TechnicalDocsLayout.tsx`
+  - 技术文档三栏布局
+- `src/components/TechnicalDocsNavigation.tsx`
+  - 技术文档左侧导航
+- `src/components/TechnicalDocsSearch.tsx`
+  - 技术文档前端搜索
+- `src/components/DocumentTOC.tsx`
+  - 右侧目录与滚动高亮
 
-### 4.3 组件架构
-```
-DocumentSystem/
-├── DocumentLoader.ts           # 文档加载服务
-├── DocumentRouter.tsx          # 文档路由组件
-├── DocumentPage.tsx            # 文档页面组件
-├── DocumentNavigation.tsx      # 文档导航组件
-├── DocumentBreadcrumb.tsx      # 面包屑导航
-└── DocumentSidebar.tsx         # 侧边栏目录
-```
+### 3.3 当前相关路由
 
-### 4.4 与GettingStarted页面集成
-1. **导航链接更新**: 将技术方向卡片的链接指向对应的文档页面
-2. **快速指南集成**: 将快速指南内容从硬编码改为从文档仓库加载
-3. **动态内容**: 支持从Markdown文件动态加载页面内容
+- `/docs/technical`
+- `/docs/technical/:slug`
+- `/docs/:category/:subcategory/:slug`
+- `/docs/:category/:slug`
+- `/docs/:category`
+- `/getting-started` -> 外部跳转
 
-## 5. 疑问澄清
+## 4. 当前任务边界确认
 
-### 需要确认的问题
-1. **文档存储位置**: 文档是存储在项目内部还是外部仓库？
-   - **建议**: 存储在项目的`docs/`目录下，便于版本管理
+### 4.1 已经落地的范围
 
-2. **文档更新方式**: 如何更新文档内容？
-   - **建议**: 通过Git提交更新，支持热重载
+- 建立静态 Markdown 文档目录
+- 文档自动加载与渲染
+- 文档缓存
+- 技术文档导航、搜索与 TOC
+- 标题锚点增强
+- 文档链接检测区块
 
-3. **文档分类**: 需要哪些文档分类？
-   - **建议**: getting-started、tutorials、resources三大类
+### 4.2 当前未完整落地的范围
 
-4. **导航方式**: 如何在/getting-started页面中展示文档导航？
-   - **建议**: 保持现有卡片式布局，点击后跳转到对应文档页面
+- 通用分类统一导航体系
+- 全局文档搜索
+- 规划中的独立 `DocumentRouter`
+- 规划中的独立 `DocumentBreadcrumb`
+- 规划中的独立 `DocumentSidebar`
+- 完整自动化测试体系
 
-5. **SEO优化**: 是否需要考虑搜索引擎优化？
-   - **建议**: 添加meta标签和结构化数据
+### 4.3 明确不在本轮同步范围内
 
-## 6. 验收标准
+- 重构代码实现
+- 修改业务路由策略
+- 恢复 `/getting-started` 的本地文档入口
+- 新增后端服务
 
-### 功能验收
-1. ✅ 文档仓库结构清晰，支持分类管理
-2. ✅ Markdown文档能够正确渲染为网页
-3. ✅ /getting-started页面能够正确导航到文档页面
-4. ✅ 文档页面保持与项目一致的视觉风格
-5. ✅ 支持文档的动态加载和缓存
-6. ✅ 提供面包屑导航和侧边栏目录
-7. ✅ 响应式设计，支持移动端访问
+## 5. 技术实现现状
 
-### 技术验收
-1. ✅ 代码结构清晰，遵循项目规范
-2. ✅ 组件可复用，易于维护
-3. ✅ 性能优化，加载速度快
-4. ✅ 错误处理完善
-5. ✅ TypeScript类型定义完整
+### 5.1 文档目录结构
 
-### 用户体验验收
-1. ✅ 导航直观，用户能够快速找到所需文档
-2. ✅ 页面加载流畅，无明显延迟
-3. ✅ 视觉效果与现有页面保持一致
-4. ✅ 支持代码高亮、表格等Markdown扩展功能
+当前以 `public/docs/` 为根目录，实际包含以下主要分类：
 
-## 7. 技术约束
+- `getting-started/`
+- `tutorials/`
+- `resources/`
+- `technical/`
+- `events/`
+- `theme-integration/`
 
-### 必须遵循的约束
-1. **技术栈一致性**: 使用现有的React + TypeScript技术栈
-2. **UI组件复用**: 使用现有的shadcn/ui组件库
-3. **Markdown处理**: 复用现有的MarkdownRenderer组件
-4. **路由集成**: 与现有的React Router配置兼容
-5. **性能要求**: 不影响现有页面的加载性能
+### 5.2 文档加载机制
 
-### 设计约束
-1. **视觉一致性**: 保持与GettingStartedPage相同的设计风格
-2. **响应式设计**: 支持桌面端和移动端
-3. **无障碍访问**: 遵循Web无障碍访问标准
+- `DocumentLoader.loadDocument()` 先尝试 `index.md`
+- 若目录型文档不存在，则回退到 `slug.md`
+- `DocumentLoader.loadMeta()` 按分类读取 `_meta.json`
+- Markdown 文件通过浏览器 `fetch('/docs/...')` 读取
 
-## 8. 集成方案
+### 5.3 页面集成方式
 
-### 与现有系统集成
-1. **路由集成**: 在App.tsx中添加文档相关路由
-2. **组件集成**: 复用现有的PageLayout、Card等组件
-3. **样式集成**: 使用现有的Tailwind CSS配置
-4. **类型集成**: 扩展现有的TypeScript类型定义
+- 通用文档通过 `DocumentPage` 渲染
+- 技术文档通过 `TechnicalDocsLayout` 提供增强阅读体验
+- `/getting-started` 与本地 Markdown 仓库的耦合关系已经弱化
 
-### 数据流设计
-```
-文档仓库 → DocumentLoader → 缓存 → DocumentPage → MarkdownRenderer → 渲染输出
-```
+## 6. 待确认问题
 
-## 9. 下一步行动
+当前以“现状同步”为目标，本轮不再保留规划期疑问；但后续如果要继续演进，需要优先确认以下事项：
 
-### 立即执行
-1. 创建CONSENSUS文档，确认技术方案
-2. 设计详细的系统架构
-3. 制定具体的实施计划
+1. 是否要把 `/getting-started` 重新接回本地文档系统
+2. 是否要将技术文档专用能力推广为全站统一文档框架
+3. 是否要将前端串行搜索替换为预构建索引
+4. 是否要补齐文档系统自动化测试
 
-### 需要用户确认
-1. 文档仓库的具体分类和结构
-2. 与/getting-started页面的具体集成方式
-3. 是否需要额外的功能（如搜索、标签等）
+## 7. 现状验收基线
+
+### 7.1 已满足
+
+1. 已存在分类清晰的 Markdown 文档仓库
+2. 已支持 Markdown 自动渲染
+3. 已支持缓存与错误处理
+4. 已支持技术文档导航、搜索、目录
+5. 已支持响应式阅读页面
+
+### 7.2 部分满足
+
+1. 学习入口与文档系统存在关联，但 `/getting-started` 已外跳，不再是本地统一入口
+2. 搜索已存在，但只覆盖 `technical`
+3. 目录能力已存在，但主要服务于技术文档布局
+
+### 7.3 未满足或与原规划不同
+
+1. 未形成全站统一的文档导航系统
+2. 未落地原设计中的全部拆分组件
+3. 未补齐体系化自动化测试
+
+## 8. 结论
+
+本任务不应再被描述为“待建设的 Markdown 文档系统”，而应视为“已落地但存在结构偏移和局部欠账的文档系统”。后续文档应统一以当前真实实现为准，避免继续沿用早期规划态描述。
 
 ---
 
-**文档状态**: 待确认  
+**文档状态**: 已按现状同步  
 **创建时间**: 2024-12-19  
+**最后更新**: 2026-08-17  
 **负责人**: SOLO Document  

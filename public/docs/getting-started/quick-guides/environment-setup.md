@@ -456,8 +456,8 @@ sudo apt install build-essential
 
 环境搭建完成后，您可以：
 
-1. [开始第一个项目](./first-project)
-2. [加入学习社区](./community-join)
+1. [开始第一个项目](/docs/tutorials/basic/introduction)
+2. [加入学习社区](/join)
 3. [查看完整教程](/docs/tutorials/basic)
 
 ---

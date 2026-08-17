@@ -1097,4 +1097,4 @@ def monitor_battery(voltage):
 
 ---
 
-**准备好深入学习了吗？** [开始下一章](./fundamentals) 或 [查看实践项目](/docs/tutorials/basic/projects)
+**准备好深入学习了吗？** [开始下一章](./fundamentals) 或 [查看实践项目](/docs/tutorials/basic/learning-links)

@@ -1535,4 +1535,4 @@ if __name__ == "__main__":
 
 ---
 
-**需要帮助？** [查看常见问题](/docs/resources/faq) 或 [加入技术讨论](/community)
+**需要帮助？** [查看常见问题](/docs/resources/faq) 或 [加入技术讨论](/join)

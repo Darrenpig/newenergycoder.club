@@ -1,207 +1,152 @@
-# CONSENSUS - Markdown文档仓库自动渲染系统
+# CONSENSUS - Markdown 文档仓库自动渲染系统
 
-## 1. 最终需求描述
+## 1. 共识结论
 
-### 核心需求确认
-- **主要目标**: 建立Markdown文档仓库，实现自动渲染为/getting-started页面指向的文档页面
-- **功能范围**: 文档存储、自动渲染、导航集成、视觉一致性
-- **用户价值**: 提供结构化的学习文档，提升用户学习体验
+本任务已不再定义为“从零建设文档系统”，而是明确为：
 
-### 具体功能需求
-1. **文档仓库管理**: 支持分类存储Markdown文档
-2. **自动渲染**: Markdown文档自动转换为网页格式
-3. **导航集成**: 与/getting-started页面无缝集成
-4. **视觉一致性**: 保持项目统一的设计风格
-5. **响应式设计**: 支持桌面端和移动端访问
+- 以当前仓库中的 Markdown 文档系统实现为基线
+- 用现状文档替换早期规划态描述
+- 记录已实现能力、未完成能力和与原始目标的偏差
 
-## 2. 技术实现方案
+## 2. 当前系统共识描述
 
-### 2.1 文档仓库结构
-```
-docs/
-├── getting-started/
-│   ├── index.md                 # Getting Started主页内容
-│   ├── embedded-development.md  # 嵌入式开发指南
-│   ├── gui-development.md       # GUI开发指南
-│   ├── algorithm-design.md      # 算法设计指南
-│   └── quick-guides/
-│       ├── environment-setup.md
-│       ├── first-project.md
-│       └── community-join.md
-├── tutorials/
-│   ├── basic/
-│   │   ├── introduction.md
-│   │   └── fundamentals.md
-│   ├── intermediate/
-│   │   ├── advanced-concepts.md
-│   │   └── best-practices.md
-│   └── advanced/
-│       ├── optimization.md
-│       └── architecture.md
-└── resources/
-    ├── tools.md
-    ├── libraries.md
-    └── references.md
-```
+### 2.1 文档仓库
 
-### 2.2 核心组件架构
-```
-src/components/docs/
-├── DocumentLoader.ts           # 文档加载服务
-├── DocumentPage.tsx            # 文档页面组件
-├── DocumentNavigation.tsx      # 文档导航组件
-├── DocumentBreadcrumb.tsx      # 面包屑导航
-├── DocumentSidebar.tsx         # 侧边栏目录
-└── DocumentSearch.tsx          # 文档搜索（可选）
+- 实际根目录为 `public/docs/`
+- 已存在多类文档内容与 `_meta.json` 元数据文件
+- 当前主要分类包括：
+  - `getting-started`
+  - `tutorials`
+  - `resources`
+  - `technical`
+  - `events`
+
+### 2.2 页面与服务实现
+
+- `DocumentLoader`
+  - 已实现文档内容加载、Front Matter 解析、TOC 生成
+- `DocumentCache`
+  - 已实现内存缓存与 `sessionStorage` 双层缓存
+- `DocumentPage`
+  - 已作为通用文档详情页投入使用
+- `TechnicalDocsLayout`
+  - 已作为技术文档增强布局投入使用
+- `TechnicalDocsNavigation`
+  - 已实现技术文档导航
+- `TechnicalDocsSearch`
+  - 已实现技术文档前端搜索
+- `DocumentTOC`
+  - 已实现目录渲染和滚动高亮
+
+### 2.3 当前路由共识
+
+当前有效文档路由以 `src/App.tsx` 为准：
+
+```text
+/docs/technical
+/docs/technical/:slug
+/docs/:category/:subcategory/:slug
+/docs/:category/:slug
+/docs/:category
 ```
 
-### 2.3 技术栈选择
-- **前端框架**: React + TypeScript + Vite（现有）
-- **UI组件**: shadcn/ui + Tailwind CSS（现有）
-- **路由**: React Router DOM（现有）
-- **Markdown处理**: react-markdown + remark-gfm + react-syntax-highlighter（现有）
-- **动画**: Framer Motion（现有）
-- **状态管理**: React Hooks + Context API
+补充说明：
 
-### 2.4 路由设计
-```
-/docs/:category/:slug          # 动态文档路由
-/docs/getting-started/index    # Getting Started主页
-/docs/getting-started/embedded-development
-/docs/tutorials/basic/introduction
-/docs/resources/tools
-```
+- `/getting-started` 当前不是本地文档入口，而是重定向到外部文档站
+- 技术文档具有独立布局能力，普通文档仍走通用页面
 
-## 3. 技术约束和集成方案
+## 3. 技术实现共识
 
-### 3.1 必须遵循的约束
-1. **技术栈一致性**: 使用现有React + TypeScript技术栈
-2. **UI组件复用**: 复用现有shadcn/ui组件库
-3. **Markdown处理**: 复用现有MarkdownRenderer组件
-4. **路由兼容**: 与现有React Router配置兼容
-5. **性能要求**: 不影响现有页面加载性能
-6. **代码规范**: 遵循项目现有代码风格和规范
+### 3.1 文档加载方式
 
-### 3.2 集成方案
-1. **路由集成**: 在App.tsx中添加文档路由配置
-2. **组件集成**: 复用PageLayout、Card、Button等现有组件
-3. **样式集成**: 使用现有Tailwind CSS配置和自定义样式
-4. **类型集成**: 扩展现有TypeScript类型定义
-5. **导航集成**: 更新GettingStartedPage的导航链接
+- 不使用运行时扫描本地源码目录
+- 通过浏览器 `fetch('/docs/...')` 读取 `public/docs` 静态资源
+- 文档加载顺序为：
+  1. 优先尝试目录型 `index.md`
+  2. 再回退到同名 `slug.md`
 
-### 3.3 数据流设计
-```
-文档仓库(docs/) → DocumentLoader → 缓存层 → DocumentPage → MarkdownRenderer → 用户界面
-```
+### 3.2 Markdown 渲染方式
 
-## 4. 任务边界限制
+- 正文渲染采用 `ReactMarkdown + remark-gfm`
+- 标题增强采用 `HeaderWithAnchor`
+- 文档后处理能力包含 `LinkDetectorComponent`
 
-### 4.1 包含的功能
-- ✅ 文档仓库结构设计和实现
-- ✅ 文档自动加载和渲染
-- ✅ 与/getting-started页面的导航集成
-- ✅ 响应式文档页面设计
-- ✅ 面包屑导航和侧边栏目录
-- ✅ 文档缓存机制
-- ✅ 错误处理和加载状态
+### 3.3 缓存方式
 
-### 4.2 不包含的功能
-- ❌ 在线编辑功能（已有MarkdownViewer页面）
-- ❌ 用户权限管理系统
-- ❌ 版本控制系统集成
-- ❌ 全文搜索功能（可作为后续扩展）
-- ❌ 评论和互动功能
-- ❌ 多语言支持（可作为后续扩展）
+- 优先从内存缓存读取
+- 内存未命中后读取 `sessionStorage`
+- 默认缓存为短时 TTL 策略
 
-### 4.3 技术边界
-- 仅处理静态Markdown文件
-- 不涉及后端API开发
-- 不修改现有页面的核心功能
-- 不引入新的重型依赖库
+## 4. 边界与限制共识
 
-## 5. 验收标准
+### 4.1 已纳入当前系统范围
 
-### 5.1 功能验收标准
-1. **文档加载**: 能够正确加载和解析docs/目录下的Markdown文件
-2. **渲染质量**: Markdown内容正确渲染，支持代码高亮、表格、链接等
-3. **导航功能**: /getting-started页面能够正确跳转到对应文档页面
-4. **视觉一致性**: 文档页面与现有项目保持一致的视觉风格
-5. **响应式设计**: 在桌面端和移动端都能正常显示和操作
-6. **性能表现**: 文档页面加载时间不超过2秒
-7. **错误处理**: 文档不存在时显示友好的404页面
+- 静态 Markdown 文档读取
+- 分类元数据读取
+- 文档详情页展示
+- 技术文档导航、搜索、目录
+- 文档缓存
+- 文档错误态展示
 
-### 5.2 技术验收标准
-1. **代码质量**: 遵循项目代码规范，通过ESLint检查
-2. **类型安全**: 完整的TypeScript类型定义，无类型错误
-3. **组件复用**: 最大化复用现有UI组件
-4. **性能优化**: 实现文档内容缓存，避免重复加载
-5. **错误边界**: 实现完善的错误处理机制
-6. **可维护性**: 代码结构清晰，易于扩展和维护
+### 4.2 未纳入或尚未完成
 
-### 5.3 用户体验验收标准
-1. **导航直观**: 用户能够轻松找到和访问所需文档
-2. **加载流畅**: 页面切换无明显延迟，有适当的加载提示
-3. **阅读体验**: 文档排版清晰，代码高亮准确
-4. **交互反馈**: 链接点击、页面跳转有明确的视觉反馈
+- 全站统一文档导航体系
+- 全局全文搜索
+- 自动化测试闭环
+- 原规划中的 `DocumentRouter`
+- 原规划中的独立 `DocumentBreadcrumb`
+- 原规划中的独立 `DocumentSidebar`
 
-## 6. 实施计划
+### 4.3 与原规划不一致但已接受的现状
 
-### 6.1 开发阶段
-1. **阶段1**: 创建文档仓库结构和示例文档
-2. **阶段2**: 实现DocumentLoader服务和缓存机制
-3. **阶段3**: 开发DocumentPage和相关UI组件
-4. **阶段4**: 集成路由和导航功能
-5. **阶段5**: 更新GettingStartedPage的导航链接
-6. **阶段6**: 测试和优化
+- `public/docs/` 替代 `docs/`
+- `DocumentPage` 承担了更多聚合职责
+- `technical` 分类拥有专项增强能力，而不是所有分类统一增强
+- `/getting-started` 改为外部跳转
 
-### 6.2 质量保证
-- 每个阶段完成后进行功能测试
-- 确保与现有系统的兼容性
-- 进行性能测试和优化
-- 代码审查和重构
+## 5. 验收共识
 
-## 7. 风险评估和缓解
+### 5.1 认定为已完成
 
-### 7.1 技术风险
-- **风险**: 文档加载性能问题
-- **缓解**: 实现文档内容缓存和懒加载
+1. 文档仓库与基础分类已落地
+2. Markdown 文档可以被正确加载和渲染
+3. 文档缓存能力已存在
+4. 技术文档导航、搜索、目录已存在
+5. 错误态和加载态已有基本处理
 
-- **风险**: 与现有路由冲突
-- **缓解**: 仔细设计路由规则，避免冲突
+### 5.2 认定为部分完成
 
-### 7.2 用户体验风险
-- **风险**: 导航复杂度增加
-- **缓解**: 保持简洁的导航结构，提供面包屑导航
+1. 学习入口与文档系统存在连接，但不再由 `/getting-started` 本地页统一承载
+2. 搜索已实现，但仅限技术文档
+3. 文档结构化能力已具备，但不是完全按原设计拆分落地
 
-## 8. 成功指标
+### 5.3 认定为待补齐
 
-### 8.1 技术指标
-- 文档页面加载时间 < 2秒
-- 代码覆盖率 > 80%
-- 无TypeScript类型错误
-- 通过所有ESLint规则检查
+1. 自动化测试
+2. 文档正文相对链接一致性校验
+3. 通用分类的统一布局体验
+4. 搜索性能与覆盖范围
 
-### 8.2 用户指标
-- 文档访问成功率 > 99%
-- 用户能够在3次点击内找到目标文档
-- 移动端和桌面端体验一致
+## 6. 风险与注意事项共识
 
-## 9. 后续扩展计划
+- `DocumentTOC` 使用动态 Tailwind 缩进类名，存在样式失效风险
+- `TechnicalDocsSearch` 采用前端串行加载文档进行搜索，后续扩展成本较高
+- `DocumentLoader.searchDocuments()` 与 `DocumentCache.preload()` 仍为占位接口
+- 文档正文中的相对链接尚未建立自动一致性校验，仍可能出现链接指向缺失文档的情况
 
-### 9.1 短期扩展（可选）
-- 文档全文搜索功能
-- 文档标签和分类筛选
-- 文档阅读进度跟踪
+## 7. 后续方向共识
 
-### 9.2 长期扩展（可选）
-- 多语言文档支持
-- 文档评论和反馈系统
-- 文档版本管理
-- 文档统计和分析
+后续如果继续演进本系统，优先级建议如下：
+
+1. 建立正文相对链接的一致性校验
+2. 为 `DocumentLoader`、`DocumentCache`、`DocumentPage` 补齐测试
+3. 将技术文档能力抽象为全站统一文档框架
+4. 将前端串行搜索替换为静态索引或预构建索引
 
 ---
 
-**文档状态**: 已确认  
+**文档状态**: 已按现状确认  
 **创建时间**: 2024-12-19  
+**最后更新**: 2026-08-17  
 **确认人**: SOLO Document  
-**下一步**: 进入架构设计阶段(DESIGN文档)
+**下一步**: 以现状版 DESIGN / TASK / ACCEPTANCE 文档为执行与维护基线

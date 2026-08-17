@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams, useNavigate, Link } from 'react-router-dom'
+import { useParams, useNavigate, useLocation, Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
@@ -17,6 +17,8 @@ import { DocumentCache } from '../services/DocumentCache';
 import { LinkDetectorComponent } from './LinkDetectorComponent';
 import { HeaderWithAnchor } from './HeaderWithAnchor';
 import { DocumentDifficulty } from '../types/link-detection';
+import { resolveDocumentRouteParams } from '@/utils/documentRoute'
+import ErrorBoundary from './ErrorBoundary'
 
 // 交互式任务列表项组件（避免在映射函数中直接调用 Hook）
 function DocTaskListItem({ children, checked }: { children: React.ReactNode; checked?: boolean }) {
@@ -43,11 +45,17 @@ function DocTaskListItem({ children, checked }: { children: React.ReactNode; che
  * 负责显示单个文档内容，集成加载和缓存功能
  */
 export const DocumentPage: React.FC = () => {
-  const { category, subcategory, slug } = useParams<DocumentRouteParams>();
+  const routeParams = useParams<DocumentRouteParams>();
   const navigate = useNavigate();
+  const location = useLocation();
   const [document, setDocument] = useState<DocumentContent | null>(null);
   const [loadState, setLoadState] = useState<DocumentLoadState>('idle');
   const [error, setError] = useState<string | null>(null);
+
+  const resolvedRouteParams = resolveDocumentRouteParams(routeParams, location.pathname);
+  const category = resolvedRouteParams?.category;
+  const subcategory = resolvedRouteParams?.subcategory;
+  const slug = resolvedRouteParams?.slug;
 
   const documentLoader = DocumentLoader.getInstance();
   const documentCache = DocumentCache.getInstance();
@@ -383,22 +391,30 @@ export const DocumentPage: React.FC = () => {
               </ReactMarkdown>
               
               {/* 链接检测组件 */}
-              <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">文档链接检测</h3>
-                <LinkDetectorComponent
-                  content={document.content}
-                  difficulty={mapDifficultyToEnum(document.frontMatter.difficulty)}
-                  documentPath={`/docs/${category}/${subcategory || ''}/${slug}`}
-                  showValidationStatus={true}
-                  autoValidate={true}
-                  onError={(error) => {
-                    console.error('链接检测错误:', error);
-                  }}
-                  onValidationComplete={(results) => {
-                    console.log('链接验证完成:', results);
-                  }}
-                />
-              </div>
+              <ErrorBoundary
+                fallback={
+                  <div className="mt-8 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+                    文档链接检测暂时不可用，但正文内容已正常加载。
+                  </div>
+                }
+              >
+                <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">文档链接检测</h3>
+                  <LinkDetectorComponent
+                    content={document.content}
+                    difficulty={mapDifficultyToEnum(document.frontMatter.difficulty)}
+                    documentPath={`/docs/${category}${subcategory ? `/${subcategory}` : ''}/${slug}`}
+                    showValidationStatus={true}
+                    autoValidate={true}
+                    onError={(error) => {
+                      console.error('链接检测错误:', error);
+                    }}
+                    onValidationComplete={(results) => {
+                      console.log('链接验证完成:', results);
+                    }}
+                  />
+                </div>
+              </ErrorBoundary>
             </div>
           </div>
         </div>

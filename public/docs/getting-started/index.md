@@ -55,9 +55,9 @@ toc: true
 
 ## 📖 推荐阅读
 
-- [环境搭建指南](./environment-setup)
-- [第一个项目教程](./first-project)
-- [社区参与指南](./community-join)
+- [环境搭建指南](./quick-guides/environment-setup)
+- [第一个项目教程](/docs/tutorials/basic/introduction)
+- [社区参与指南](/join)
 
 ## 💡 学习建议
 

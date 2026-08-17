@@ -8,6 +8,7 @@ import { ProcessedLink, DocumentDifficulty, LinkType, ValidationResult } from '.
 import { useLinkProcessor, useLinkStats } from '../hooks/useLinkProcessor';
 import { getDifficultyConfig } from '../config/DifficultyConfig';
 import { ExternalLink, Mail, Phone, FileText, Anchor, AlertCircle, CheckCircle, Clock, RefreshCw } from 'lucide-react';
+import { getDifficultyAccentClasses } from '@/utils/difficultyStyles'
 
 /**
  * 组件属性
@@ -95,6 +96,7 @@ const LinkComponent: React.FC<{
   onClick 
 }) => {
   const difficultyConfig = difficulty ? getDifficultyConfig(difficulty) : null;
+  const accentClasses = difficulty ? getDifficultyAccentClasses(difficulty) : null
   
   const handleClick = useCallback((event: React.MouseEvent) => {
     if (onClick) {
@@ -117,8 +119,8 @@ const LinkComponent: React.FC<{
     let classes = `${baseClasses} ${typeClasses[link.type]}`;
     
     // 添加难度相关样式
-    if (difficultyConfig) {
-      classes += ` border-l-2 border-l-${difficultyConfig.color.replace('#', '')}`;
+    if (difficultyConfig && accentClasses) {
+      classes += ` border-l-2 ${accentClasses.border}`;
     }
     
     // 添加验证状态样式
@@ -127,7 +129,7 @@ const LinkComponent: React.FC<{
     }
     
     return classes;
-  }, [link.type, difficultyConfig, validationResult]);
+  }, [accentClasses, link.type, difficultyConfig, validationResult]);
   
   const title = useMemo(() => {
     let titleText = `${link.type.toUpperCase()}: ${link.originalUrl}`;

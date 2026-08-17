@@ -1,6 +1,5 @@
 # Ignore dependencies and build outputs
 node_modules
-build
 dist
 .vercel
 .trae
