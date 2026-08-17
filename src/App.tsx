@@ -67,7 +67,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             
-            {/* Phase 2 Routes (currently placeholders) */}
+            {/* Primary site routes */}
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/events" element={<EventsPage />} />
             <Route path="/resources" element={<ResourcesPage />} />
