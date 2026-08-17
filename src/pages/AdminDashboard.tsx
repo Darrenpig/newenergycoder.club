@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import MonitoringDashboard from '@/components/MonitoringDashboard';
 import ErrorLogManager from '@/components/ErrorLogManager';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ArrowLeft, Shield, Activity, Bug } from 'lucide-react';
+import { MockAuthNotice } from '@/components/auth/MockAuthNotice';
 
 const AdminDashboard: React.FC = () => {
   const navigate = useNavigate();
@@ -41,6 +42,7 @@ const AdminDashboard: React.FC = () => {
 
       {/* 主要内容 */}
       <div className="max-w-7xl mx-auto p-6">
+        <MockAuthNotice scope="admin" />
         <Tabs defaultValue="performance" className="space-y-6">
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="performance" className="flex items-center gap-2">

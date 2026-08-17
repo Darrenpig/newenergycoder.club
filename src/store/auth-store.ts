@@ -1,6 +1,8 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
+export const AUTH_IMPLEMENTATION = 'mock' as const
+
 type AuthProvider = 'google' | 'wechat' | null
 
 interface AuthUser {
@@ -9,7 +11,7 @@ interface AuthUser {
   email?: string
   avatar?: string
   provider: AuthProvider
-  providerData?: any
+  providerData?: unknown
 }
 
 interface AuthState {
@@ -37,8 +39,8 @@ export const useAuthStore = create<AuthState>()(
         set({ isLoading: true })
         
         try {
-          // This is a placeholder implementation
-          // In a real implementation, we would integrate with the actual provider SDKs
+          // 当前仓库仅实现本地持久化的 mock 鉴权，用于演示受保护页面流程。
+          // 这里不接真实 OAuth，也不提供服务端令牌校验。
           
           if (provider === 'google') {
             // Simulate Google login

@@ -14,6 +14,13 @@ const resourcesPage = readFileSync(
   new URL('../src/pages/ResourcesPage.tsx', import.meta.url),
   'utf8'
 )
+const authStore = readFileSync(new URL('../src/store/auth-store.ts', import.meta.url), 'utf8')
+const protectedRoute = readFileSync(
+  new URL('../src/components/auth/ProtectedRoute.tsx', import.meta.url),
+  'utf8'
+)
+const dashboardPage = readFileSync(new URL('../src/pages/DashboardPage.tsx', import.meta.url), 'utf8')
+const adminDashboard = readFileSync(new URL('../src/pages/AdminDashboard.tsx', import.meta.url), 'utf8')
 
 const requiredPhrases = [
   '官网 SPA',
@@ -64,6 +71,27 @@ if (!resourcesPage.includes("from '@/data/siteResources'")) {
   throw new Error('ResourcesPage 尚未改为消费统一的数据模块')
 }
 
+if (!authStore.includes("export const AUTH_IMPLEMENTATION = 'mock'")) {
+  throw new Error('auth-store 尚未显式声明当前鉴权实现为 mock')
+}
+
+if (!protectedRoute.includes('AUTH_IMPLEMENTATION')) {
+  throw new Error('ProtectedRoute 尚未引用统一的鉴权实现常量')
+}
+
+if (!dashboardPage.includes('MockAuthNotice')) {
+  throw new Error('DashboardPage 尚未显示 mock 鉴权提示')
+}
+
+if (!adminDashboard.includes('MockAuthNotice')) {
+  throw new Error('AdminDashboard 尚未显示 mock 鉴权提示')
+}
+
+if (!appFile.includes('path="/admin"') || !appFile.includes('<ProtectedRoute>')) {
+  throw new Error('/admin 路由尚未纳入 ProtectedRoute')
+}
+
 console.log('PASS architecture')
 console.log('PASS routes')
 console.log('PASS resources')
+console.log('PASS auth')

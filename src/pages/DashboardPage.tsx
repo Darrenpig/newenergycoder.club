@@ -16,8 +16,6 @@ import { Link } from 'react-router-dom'
 import {
   Calendar,
   Code,
-  Users,
-  Trophy,
   BookOpen,
   MessageCircle,
   ExternalLink,
@@ -25,7 +23,7 @@ import {
   Zap
 } from 'lucide-react'
 import { GiteeIcon } from '@/components/ui/gitee-icon'
-import { FloatingControls, type AspectRatio } from '@/components/ui/floating-controls'
+import { MockAuthNotice } from '@/components/auth/MockAuthNotice'
 
 function DashboardPage() {
   const { user, logout } = useAuthStore()
@@ -83,6 +81,7 @@ function DashboardPage() {
           <h1 className="text-3xl font-bold mb-2">{t.dashboard.title}</h1>
           <p className="text-muted-foreground">{t.dashboard.welcome}, {user.name}!</p>
         </div>
+        <MockAuthNotice scope="dashboard" />
 
         {/* Main Grid */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

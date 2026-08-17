@@ -104,7 +104,11 @@ function App() {
             } />
             
             {/* Admin Routes */}
-            <Route path="/admin" element={<PageLayout><AdminDashboard /></PageLayout>} />
+            <Route path="/admin" element={
+              <ProtectedRoute>
+                <PageLayout><AdminDashboard /></PageLayout>
+              </ProtectedRoute>
+            } />
             
             <Route path="*" element={<PageLayout><NotFoundPage /></PageLayout>} />
           </Routes>
