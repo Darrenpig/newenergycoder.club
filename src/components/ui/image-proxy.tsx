@@ -149,17 +149,22 @@ export const ImageProxy: React.FC<ImageProxyProps> = ({
       {isLoading && (
         <div
           className={cn(
-            'flex items-center justify-center bg-gray-100 animate-pulse',
+            'absolute inset-0 z-10 flex items-center justify-center bg-gray-100 animate-pulse',
             className
           )}
         >
           <div className="text-gray-400 text-sm">加载中...</div>
         </div>
       )}
+      {/*
+        加载中用 invisible 而非 hidden：display:none 的 loading=lazy 图片
+        在 Chromium 下不会发起请求，onLoad 永不触发，占位图会永久卡住；
+        visibility:hidden 保留布局盒，懒加载可正常计算交叉区域。
+      */}
       <img
         src={imageSrc}
         alt={alt}
-        className={cn(className, isLoading && 'hidden')}
+        className={cn(className, isLoading && 'invisible')}
         onLoad={handleLoad}
         onError={handleError}
         crossOrigin="anonymous"
