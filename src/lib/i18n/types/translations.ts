@@ -49,6 +49,8 @@ export interface Translations {
     noPhotos: string;
     backToAlbums: string;
     viewCloudAlbum: string;
+    videosTitle: string;
+    videosDescription: string;
   };
   
   // Hero Section

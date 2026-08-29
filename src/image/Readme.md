@@ -40,7 +40,7 @@ src/image/
 | `李硕.png` | 李硕 | 硬件系统架构师 | 专注于硬件系统架构设计和技术选型，为项目提供技术指导。 | `https://cdn.newenergycoder.club/images/src/image/developer/李硕.png` |
 | `牛良旭.jpg` | 牛良旭 | DevOps电池管理工程师 | 负责项目的持续集成和部署，保障开发流程的高效运行。 | `https://cdn.newenergycoder.club/images/src/image/developer/牛良旭.jpg` |
 | `郑钦文.jpg` | 郑钦文 | 机电一体化开发工程师 | 专注于机电设计开发，为用户提供优质的移动端体验。 | `https://cdn.newenergycoder.club/images/src/image/developer/郑钦文.jpg` |
-| `杨力滔.JPG` | 杨力滔 | 星闪手柄开发工程师 | 星闪手柄开发专家，熟悉STM32+RTOS C语言开发。 | `https://cdn.newenergycoder.club/images/src/image/developer/杨力滔.JPG` |
+| `杨力涛.JPG` | 杨力涛 | 星闪手柄开发工程师 | 星闪手柄开发专家，熟悉STM32+RTOS C语言开发。 | `https://cdn.newenergycoder.club/images/src/image/developer/杨力涛.JPG` |
 | `彭柯颖.jpg` | 彭柯颖 | 机械R1机器人开发者 | 新加入的开发团队成员，积极参与机器人项目开发，学习新技术。 | `https://cdn.newenergycoder.club/images/src/image/developer/彭柯颖.jpg` |
 
 ### 🎨 设计团队 (Designers Team)
@@ -79,7 +79,7 @@ src/image/
 | `殷子豪.jpg` | 殷子豪 | Developer&文艺工作者 | 运营宣传与文字编辑，负责团队内容创作和对外传播。 | `https://cdn.newenergycoder.club/images/src/image/contributer/殷子豪.jpg` |
 | `孙如婕.jpg` | 孙如婕 | 灵巧手横向开发贡献者 | 专注于灵巧手的横向开发，为项目提供创新的技术解决方案和开发支持。 | `https://cdn.newenergycoder.club/images/src/image/contributer/孙如婕.jpg` |
 | `凌敏菲.jpg` | 凌敏菲 | Contributor | 硬件组成员，积极参与NEC社区建设与项目贡献。 | `https://cdn.newenergycoder.club/images/src/image/contributer/凌敏菲.jpg` |
-| `崇瑶.jpg` | 崇瑶 | Contributor | NEC新人，正在练习，期待在可持续能源与机器人领域持续成长。 | `https://cdn.newenergycoder.club/images/src/image/contributer/崇瑶.jpg` |
+| `崇瑶.jpg` | 崇瑶 | 仓库运营贡献者 | 具备NEC仓库运营相关参与经验，作为贡献者致力于优化仓库运营流程，当前专注于仓库相关事务的落地与优化工作。 | `https://cdn.newenergycoder.club/images/src/image/contributors/崇瑶.jpg` |
 
 ### 💰 赞助商团队 (Sponsors Team)
 对应i18n.ts中的 `team.sponsors` 数组

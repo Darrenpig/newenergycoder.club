@@ -178,7 +178,9 @@ export const zhTranslations: Translations = {
     loadError: '图片加载失败',
     noPhotos: '暂无照片',
     backToAlbums: '返回相册',
-    viewCloudAlbum: '查看云相册'
+    viewCloudAlbum: '查看云相册',
+    videosTitle: '赛场视频',
+    videosDescription: 'ROBOCON 2026 国内选拔赛现场影像。'
   },
   hero: {
     tagline: '从200块生活费到竞赛机器人',
@@ -368,10 +370,10 @@ export const zhTranslations: Translations = {
         github: 'https://github.com/zhengqinwen'
       },
       {
-        name: '杨力滔',
+        name: '杨力涛',
         role: '星闪手柄开发工程师',
         bio: '星闪手柄开发专家，熟悉STM32+RTOS C语言开发。',
-        image: 'https://cdn.newenergycoder.club/images/src/image/developer/杨力滔.JPG',
+        image: 'https://cdn.newenergycoder.club/images/src/image/developer/杨力涛.JPG',
         tags: ['星闪手柄', 'STM32', 'RTOS', 'C语言', '嵌入式开发', '硬件控制'],
         github: 'https://github.com/yanglitao'
       },

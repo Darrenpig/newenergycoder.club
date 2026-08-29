@@ -313,10 +313,10 @@ export const contributors: TeamMember[] = [
   { name: '岳添俊', role: 'C/Contributor', bio: 'c语言', image: 'https://cdn.newenergycoder.club/images/src/image/contributors/岳添俊.jpg' },
   {
     name: '崇瑶',
-    role: 'Contributor',
-    bio: '正在学习机械相关知识',
+    role: '仓库运营贡献者',
+    bio: '具备NEC仓库运营相关参与经验，作为贡献者致力于优化仓库运营流程，当前专注于仓库相关事务的落地与优化工作。',
     image: 'https://cdn.newenergycoder.club/images/src/image/contributors/崇瑶.jpg',
-    tags: ['NEC新人', 'Contributor', '学习成长', '可持续能源']
+    tags: ['仓库运营', '流程优化', '运营落地', 'Contributor']
   },
   {
     name: '崔正阳',
@@ -346,10 +346,10 @@ export const contributors: TeamMember[] = [
   { name: '朱靓颖', role: '数据分析贡献者', bio: '数据预测，数据分析，数学建模', image: 'https://cdn.newenergycoder.club/images/src/image/contributors/朱靓颖.jpeg' },
   { name: '李嘉涵', role: '机械设计贡献者', bio: '获得过国家奖学金，会solidworks，CATIA等软件，目前在做大创', image: 'https://cdn.newenergycoder.club/images/src/image/contributors/李嘉涵.jpg' },
   {
-    name: '杨力滔',
+    name: '杨力涛',
     role: '星闪手柄开发工程师',
     bio: '做过星闪手柄，熟悉stm32+rtos 和c语言编程',
-    image: 'https://cdn.newenergycoder.club/images/src/image/contributors/杨力滔.JPG',
+    image: 'https://cdn.newenergycoder.club/images/src/image/contributors/杨力涛.JPG',
     tags: ['星闪手柄', 'STM32', 'RTOS', 'C语言', '嵌入式开发', '硬件控制'],
     avatarStyle: 'bilevel',
     projects: [

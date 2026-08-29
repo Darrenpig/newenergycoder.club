@@ -11,9 +11,10 @@ import {
   DialogDescription,
 } from '@/components/ui/dialog'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { ImageIcon, ChevronLeft, ChevronRight, X, Grid3X3, Images, ExternalLink } from 'lucide-react'
+import { ImageIcon, ChevronLeft, ChevronRight, X, Grid3X3, Images, ExternalLink, Video } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import galleryData from '@/data/gallery.json'
+import videosData from '@/data/videos.json'
 import SEO from '@/components/SEO'
 
 interface Photo {
@@ -34,7 +35,16 @@ interface Album {
   photos: Photo[]
 }
 
+interface VideoItem {
+  id: string
+  title: string
+  titleEn: string
+  src: string
+  poster: string
+}
+
 const typedGalleryData = galleryData as Album[]
+const typedVideosData = videosData as VideoItem[]
 const PHOTOS_PER_PAGE = 30
 
 /**
@@ -339,6 +349,49 @@ export function GalleryPage() {
             )}
           </div>
         </section>
+
+        {/* Venue Videos */}
+        {typedVideosData.length > 0 && (
+          <section className="py-12 border-t bg-background/50">
+            <div className="container">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                  <Video className="h-5 w-5" />
+                </div>
+                <div>
+                  <h2 className="text-2xl font-bold">{t.gallery.videosTitle}</h2>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    {t.gallery.videosDescription}
+                  </p>
+                </div>
+              </div>
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {typedVideosData.map(video => (
+                  <Card
+                    key={video.id}
+                    className="overflow-hidden transition-all duration-300 hover:shadow-md"
+                  >
+                    <div className="aspect-video bg-black">
+                      <video
+                        src={video.src}
+                        poster={video.poster}
+                        controls
+                        preload="metadata"
+                        playsInline
+                        className="w-full h-full"
+                      />
+                    </div>
+                    <CardContent className="p-4">
+                      <h3 className="font-semibold line-clamp-1">
+                        {isZh ? video.title : video.titleEn}
+                      </h3>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
       </div>
 
       {/* Lightbox Dialog */}
