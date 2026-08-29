@@ -137,7 +137,7 @@ export const developers: TeamMember[] = [
     github: 'https://github.com/sunshirui'
   },
   { name: '孟洁', role: '嵌入式开发工程师', bio: '嵌入式开发工程师', image: 'https://cdn.newenergycoder.club/images/src/image/developers/孟洁.jpg' },
-  { name: '张娈馨', role: '嵌入式开发工程师', bio: '学习嵌入式开发，专注于stm32，同时熟练使用sw等软件。', image: 'https://cdn.newenergycoder.club/images/src/image/developers/张娈馨.jpg' },
+  { name: '张娈馨', role: '嵌入式开发工程师', bio: '学习嵌入式开发，专注于stm32，同时熟练使用sw等软件。', image: 'https://cdn.newenergycoder.club/images/src/image/developers/张娈馨.JPG' },
   {
     name: '彭柯尹',
     role: '机械R1机器人开发者',
@@ -150,7 +150,7 @@ export const developers: TeamMember[] = [
     ],
     github: 'https://github.com/pengkeying'
   },
-  { name: '文钰婷', role: '嵌入式开发工程师', bio: '嵌入式开发工程师', image: 'https://cdn.newenergycoder.club/images/src/image/developers/文钰婷.jpeg' },
+  { name: '文钰婷', role: '嵌入式开发工程师', bio: '嵌入式开发工程师', image: 'https://cdn.newenergycoder.club/images/src/image/developers/文钰婷.JPEG' },
   { name: '李畅畅', role: '嵌入式开发工程师', bio: '电控，场地', image: 'https://cdn.newenergycoder.club/images/src/image/developers/李畅畅.jpg' },
   {
     name: '李硕',
@@ -274,7 +274,7 @@ export const contributors: TeamMember[] = [
     name: '单广志',
     role: '嵌入式开发工程师',
     bio: '嵌入式开发工程师 机器人行业电控驱动开发以及硬件电路设计',
-    image: 'https://cdn.newenergycoder.club/images/src/image/contributors/单广志.jpeg',
+    image: 'https://cdn.newenergycoder.club/images/src/image/contributors/单广志.JPEG',
     tags: ['嵌入式开发', '电控驱动', '硬件电路设计', '机器人', 'STM32', 'PCB设计'],
     avatarStyle: 'bilevel',
     projects: [
@@ -349,7 +349,7 @@ export const contributors: TeamMember[] = [
     name: '杨力滔',
     role: '星闪手柄开发工程师',
     bio: '做过星闪手柄，熟悉stm32+rtos 和c语言编程',
-    image: 'https://cdn.newenergycoder.club/images/src/image/contributors/杨力滔.jpg',
+    image: 'https://cdn.newenergycoder.club/images/src/image/contributors/杨力滔.JPG',
     tags: ['星闪手柄', 'STM32', 'RTOS', 'C语言', '嵌入式开发', '硬件控制'],
     avatarStyle: 'bilevel',
     projects: [
