@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { AvatarFallback } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import { Linkedin, Mail, ExternalLink } from 'lucide-react'
 import BonjourIcon from '@/bonjour.ico?url'
@@ -100,9 +99,10 @@ function MemberAvatar({
           onError={() => setHasError(true)}
         />
       ) : (
-        <AvatarFallback className="w-full h-full rounded-none text-2xl font-bold bg-gradient-to-br from-primary/20 to-secondary/20">
+        // 注意：不要用裸 AvatarFallback（缺少 Avatar 父级 Radix 会抛错）
+        <div className="w-full h-full flex items-center justify-center text-2xl font-bold bg-gradient-to-br from-primary/20 to-secondary/20">
           {member.name.slice(0, 2)}
-        </AvatarFallback>
+        </div>
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
     </div>
